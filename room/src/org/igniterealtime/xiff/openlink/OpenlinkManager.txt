@@ -1,0 +1,606 @@
+package org.igniterealtime.xiff.openlink
+{		
+	import flash.utils.Dictionary;
+	import flash.xml.XMLNode;
+	import org.igniterealtime.xiff.openlink.*;
+	
+	import mx.collections.ArrayCollection;
+	import mx.controls.Alert;
+	import mx.core.Application;
+	
+	import org.igniterealtime.xiff.core.XMPPConnection;
+	import org.igniterealtime.xiff.data.IQ;
+	import org.igniterealtime.xiff.data.Message;
+	import org.igniterealtime.xiff.events.IncomingDataEvent;
+	import org.igniterealtime.xiff.events.MessageEvent;
+	import org.igniterealtime.xiff.events.OutgoingDataEvent;
+
+	import com.bt.itrader.directline.control.ConnectionManager;
+		
+	public class OpenlinkManager
+	{	
+		private var getProfileID:GetProfile;
+		private var getIntrest:GetIntrest;
+		private var getFeature:GetFeature;
+		private var makeCallol:MakeCall;
+		private var subscribe:Subscribe;
+		private var queryFeature:QueryFeatures;
+		private var requestAction:RequestAction;
+		private var setfeature:SetFeature;
+		private var makeIntercomCall:MakeIntercomCall;
+		private var manageVoiceMessage:ManageVoiceMessage;
+		private var _callIDArray:Array;
+		private var intrestID_label:Dictionary = new Dictionary();
+		//			[Bindable]
+		//			private var callIDArray:Array;
+		[Bindable]
+		private var myLoginJID:String = null;
+		private var myProfileID:String = null;
+		private var myInterest:String = null;
+		private var myFeature:String = null;
+		private var myValue1:String = null;
+		private var myValue2:String = null;
+		private var myDestination:String = null;
+		private var xmppComponent:String = null;	
+		private var _profileComboBoxDataProvider:Array ;
+		private var _interestComboBoxDataProvider:Array ;
+		private var _interestLabel:Array ;
+		private var _featureComboBoxDataProvider:Array ;
+		private var _callId:Array = new Array();
+		private var mycallID:String;
+		private var xmppConnection:XMPPConnection;
+		private var actioncollection:ArrayCollection;
+		private var interestrequest:String;
+		private var myRequestList:Array;
+		private var myInterestArray:Array = new Array();
+		private var myFeatureArray:Array = new Array();
+		private var handsetFeatureArray:Array = new Array();
+		private var myParticipants:Array = new Array();
+		private var handsetFeature:String;
+		private var masterArrayColl:ArrayCollection = new ArrayCollection();
+		private var myMasterArrayColl:ArrayCollection = new ArrayCollection();
+		private var _interestId:Array = new Array();
+		private var interestArrayColl:ArrayCollection = new ArrayCollection();
+		private var myInterestArrayColl:ArrayCollection = new ArrayCollection();
+		
+		public function OpenlinkManager()
+		{
+		
+		}
+		
+		public function init():void
+		{	
+			xmppConnection = ConnectionManager.connection;;
+			xmppConnection.addEventListener(MessageEvent.MESSAGE, messageHandler);			
+			xmppComponent ="openlink";
+			callIDArray = new Array();
+			
+			olGetProfile();			
+		}
+		
+		public function olMakeCall():void
+		{
+/*			
+			makeCallol = new MakeCall(IQ.TYPE_SET,(xmppComponent+"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+			makeCallol.setJID(xmppConnection.username+"@"+xmppConnection.server);
+			
+			for(var val:int=0 ; val<_interestComboBoxDataProvider.length ; val++)
+			{
+				intrestID_label[_interestLabel[val]] = _interestComboBoxDataProvider[val];
+			}
+			
+			for(var val:int=0 ; val<_interestLabel.length ; val++){
+				
+				if(_interestLabel[val] == Application.application.contactListCont.deviceLoader.getChildAt(0).lines.selectLineLabel){
+					makeCallol.setInterest(intrestID_label[_interestLabel[val]]);
+				}
+			}
+			
+			
+			makeCallol.setDestination(Application.application.contactListCont.deviceLoader.getChildAt(0).topModule.dialNumTxt.text);
+			var iq:IQ = makeCallol.addQuery();
+			xmppConnection.send(iq);
+*/			
+		}
+		public function olGetProfile():void{
+			
+			getProfileID = new GetProfile(IQ.TYPE_SET,(xmppComponent +"."+ xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+			getProfileID.setJId(xmppConnection.username+"@"+xmppConnection.server);
+			var iq:IQ = getProfileID.addQuery();
+			iq.callback = profileCallbackHandler;
+			//iq.callbackScope = this;
+			xmppConnection.send(iq);
+			
+		}
+		
+		
+		
+		public function profileCallbackHandler(iq:IQ):void {
+			var commandNode:XMLNode = iq.getNode().firstChild;
+			var replyNode:XMLNode = commandNode.firstChild;
+			
+			if(replyNode.nodeName == "note")
+			{	
+				
+			}
+			else if(replyNode.nodeName == "iodata")
+			{
+				var outNode:XMLNode = replyNode.firstChild;
+				if(outNode.nodeName == "out")
+				{		
+					var profilesNode:XMLNode = outNode.firstChild;
+					if(profilesNode.nodeName == "profiles")
+					{
+						var profileArray:Array = profilesNode.childNodes;
+						_profileComboBoxDataProvider = new Array();
+						
+						for(var i:int=0; i < profileArray.length ; i++)
+						{
+							var profile:XMLNode = profileArray[i];
+							var profileID:String = profile.attributes.id;
+							_profileComboBoxDataProvider[i] = [profile.attributes.id, profile.attributes.label, profile.attributes.default, profile.attributes.online];							
+						
+							//this.olGetInterest(profileID);
+							//this.olGetFeature(profileID);							
+						}
+
+					}//end profile
+				}//end out				
+			}//end iodata
+			
+		}
+		
+		public function olGetInterest(profileID:String) : void
+		{	
+			
+			//Application.application.contactListCont.deviceLoader.getChildAt(0).navigation.setUserIDLabel(myProfileID);
+			getIntrest = new GetIntrest(IQ.TYPE_SET,(xmppComponent +"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+			getIntrest.setProfileId(profileID);
+			var iq:IQ = getIntrest.addQuery();
+			iq.callback = intrestCallBackHandler;
+			//iq.callbackScope = this;
+			xmppConnection.send(iq);
+			
+		}
+		
+		public function intrestCallBackHandler(iq:IQ):void
+		{	
+			var commandNode:XMLNode = iq.getNode().firstChild;
+			var replyNode:XMLNode = commandNode.firstChild;
+			
+			if(replyNode.nodeName == "note")
+			{	
+				
+			}
+			else if(replyNode.nodeName == "iodata")
+			{	var outNode:XMLNode = replyNode.lastChild;
+				
+				if(outNode.nodeName == "out")
+				{	var interestsNode:XMLNode = outNode.lastChild;
+					if(interestsNode.nodeName =="interests")
+					{	var interestArray:Array = interestsNode.childNodes;
+						_interestComboBoxDataProvider = new Array();
+						_interestLabel = new Array();
+						
+						for(var i:int=0; i < interestArray.length ; i++)
+						{	var interest:XMLNode = interestArray[i];
+							var interestLabel:String = interest.attributes.label;
+							var interestID:String = interest.attributes.id;
+							var interestType:String = interest.attributes.type;
+							_interestLabel[i] = [interestLabel];
+							_interestComboBoxDataProvider[i] = [interestID];
+							_interestId.push({interestid:interestID,interestlabel:interestLabel,interesttype:interestType});
+						}
+						
+						this.interestListArray = _interestLabel;
+						interestArrayColl.source = _interestId;
+						myInterestDetalis = interestArrayColl;
+
+						//this.olSubscribe();
+					}
+					
+				}				
+			}
+			
+			
+		}
+		
+		public function olGetFeature(profileID:String):void
+		{	
+		
+			getFeature = new GetFeature(IQ.TYPE_SET,(xmppComponent+"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+			getFeature.setProfileId(profileID);
+			var iq:IQ = getFeature.addQuery();
+			iq.callback = featureCallBackHandler;
+			//iq.callbackScope = this;
+			xmppConnection.send(iq);
+		}
+		
+		
+		public function featureCallBackHandler(iq:IQ):void
+		{
+			var commandNode:XMLNode = iq.getNode().firstChild;
+			var replyNode:XMLNode = commandNode.firstChild;
+			
+			if(replyNode.nodeName == "note")
+			{	
+				
+			}
+			else if(replyNode.nodeName == "iodata")
+			{	
+				var outNode:XMLNode = replyNode.lastChild;
+				if(outNode.nodeName == "out")
+				{	
+					var featuresNode:XMLNode = outNode.lastChild;
+					if(featuresNode.nodeName =="features")
+					{
+						var featureArray:Array = featuresNode.childNodes;
+						_featureComboBoxDataProvider = new Array();
+						for(var i:int=0; i < featureArray.length ; i++)
+						{
+							var feature:XMLNode = featureArray[i];
+							var featureID:String = feature.attributes.id;
+							var featuretype:String = feature.attributes.type;
+							if(featuretype == "Handset"){
+								
+								handsetFeatureArray.push(featureID);
+								
+							}
+							_featureComboBoxDataProvider[i] = [featureID];
+							
+						}
+						
+					}
+					
+				}				
+			}
+		}
+		
+		
+		
+		
+		
+		public function messageHandler(msgevent:MessageEvent):void
+		{
+			var m:Message = msgevent.data as Message;
+			var x:XML = msgevent.data as XML;
+			
+			var actionList:Array = new Array();
+			var participantsList:Array = new Array();
+			
+			if(m.type == null)
+			{	
+				var callID:String = null;
+				var callState:String = null;
+				var callerNumber:String = null;
+				var calledNumber:String = null;
+				var callerName:String = null;
+				var privacyStatus:String = null;
+				var calledName:String = null;
+				var interestId:String = null;
+				var _direction:String;
+				var actionn:Array = new Array();
+				var participants:Array = new Array();
+				var features:Array = new Array();
+				var feature:String = null;
+				var eventNode:XMLNode = m.getNode().firstChild;
+				var itemNode:XMLNode = eventNode.firstChild.firstChild;
+				var callStatusNode:XMLNode = itemNode.firstChild;
+				var callNode:XMLNode = callStatusNode.firstChild;
+				var callChilds:Array =callNode.childNodes;	
+				for each(var callChild:XMLNode in callChilds)
+				{	
+					if(callChild.nodeName == 'id')
+					{	
+						callID = callChild.firstChild.nodeValue;
+					}else if(callChild.nodeName == 'state')
+					{	
+						callState = callChild.firstChild.nodeValue;
+					}else if(callChild.nodeName == 'direction')
+					{	
+						_direction = callChild.firstChild.nodeValue;
+					}else if(callChild.nodeName == 'caller')
+					{	
+						if(callChild.firstChild.hasChildNodes())
+						{
+							callerNumber = callChild.firstChild.firstChild.nodeValue;
+							callerName = callChild.lastChild.firstChild.nodeValue;
+							
+						}
+						
+					}else if(callChild.nodeName == 'called')
+					{	
+						if(callChild.firstChild.hasChildNodes()){
+							calledNumber = callChild.firstChild.firstChild.nodeValue;
+							calledName = callChild.lastChild.firstChild.nodeValue;
+						
+						}
+						
+					}else if(callChild.nodeName == 'actions')
+					{	
+						actionn = callChild.childNodes;
+						for(var j:int = 0; j < actionn.length; j++)
+						{
+							var action:XMLNode = actionn[j];
+							
+							actionList.push(action.nodeName);
+						}
+					}else if(callChild.nodeName == 'interest')
+					{	
+						this.interest1 = callChild.firstChild.nodeValue;
+						interestId = callChild.firstChild.nodeValue;
+					}
+					else if(callChild.nodeName == 'participants')
+					{	participants = callChild.childNodes;
+						for(var h:int = 0; h < participants.length; h++)
+						{
+							var partici:XMLNode = participants[h];
+							participantsList.push(partici.attributes.jid);
+						}
+					}
+					else if(callChild.nodeName == 'features')
+					{	
+						
+						features = callChild.childNodes;
+						for(var ct:int = 0; ct < features.length; ct++)
+						{
+							var featureNode:XMLNode = features[ct];
+							if(featureNode.attributes.id =="priv_1"){
+								
+								privacyStatus = featureNode.firstChild.nodeValue;
+							}else if(featureNode.attributes.id =="hs_1"){
+								if(featureNode.firstChild.nodeValue == "true"){
+									this.featureList = "HS1";
+								}
+							}else if(featureNode.attributes.id =="hs_2"){
+								if(featureNode.firstChild.nodeValue == "true"){
+									this.featureList = "HS2";
+								}
+							}
+						}
+					}
+					var found:int = 0;
+					for (var i:int = 0; i < _callId.length; ++i)
+					{
+						if(_callId[i].callid == callID)
+						{
+							found = 1;
+							_callId[i].callstate = callState;
+							_callId[i].actionlist = actionList;
+							_callId[i].interestid = interestId;
+							_callId[i].callername = callerName;
+							_callId[i].calledname = calledName;
+							_callId[i].participantslist = participantsList;
+						}
+					}
+					if(found == 0)
+						_callId.push({callid:callID,callstate:callState,interestid:interestId,actionlist:actionList,callername:callerName,calledname:calledName,participantslist:participantsList,privacystatus:privacyStatus});
+					
+				}
+				
+				this.requestList = actionList;
+				this.callId = callID;
+				//Application.application.contactListCont.deviceLoader.getChildAt(0).lines.getlineNumber(calledName,callerName,callState,calledNumber,callerNumber,callID,participantsList,interestId,privacyStatus);
+				
+				
+				
+				
+			}
+			masterArrayColl.source = _callId;
+			myMasterArrayColl = masterArrayColl;
+		}
+		
+		
+		public function olSubscribe():void
+		{	
+			if(xmppComponent.length == 0){
+				
+			}
+			subscribe = new Subscribe(IQ.TYPE_SET,("pubsub."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server);
+			for(var i:int =0; i<_interestComboBoxDataProvider.length; i++){
+				subscribe.setJId(xmppConnection.username+"@"+xmppConnection.server);
+				subscribe.setNode(_interestComboBoxDataProvider[i]);
+				var iq:IQ = subscribe.addQuery();
+				xmppConnection.send(iq);
+			}
+			//Application.application.contactListCont.webTurretReady() ;
+			
+		}
+		
+//		public function olQueryFeature():void
+//		{
+//			queryFeature = new QueryFeatures(IQ.TYPE_GET,(xmppComponent+"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+//			queryFeature.setProfileId(profileSelector.text);
+//			var iq:IQ=queryFeature.addQuery();
+//			xmppConnection.send(iq);
+//			
+//		}
+		
+		public function olrequestAction(action:String,interestid:String,callid:String,value1:String):void
+		{	
+			//var linemodule:LineModule = new LineModule();
+			//commLog.text += "in request action";
+			requestAction= new RequestAction(IQ.TYPE_SET,(xmppComponent+"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+			requestAction.setActionType(action);
+			requestAction.setCallID(callid);
+			requestAction.setInterest(interestid);
+						if(value1 != null){
+							requestAction.setValue1(value1);
+						}
+			var iq:IQ= requestAction.addQuery();
+			xmppConnection.send(iq);
+			
+		}
+		
+//		public function olSetFeature():void
+//		{	
+//			setfeature = new SetFeature(IQ.TYPE_SET,(xmppComponent+"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+//			setfeature.setProfileId(profileID);
+//			setfeature.setFeature(featureSelector.text);
+//			setfeature.setValue1(value1_value.text);
+//			setfeature.setValue2(value2_value.text);
+//			var iq:IQ = setfeature.addQuery();
+//			xmppConnection.send(iq);
+//			
+//		}
+		
+//		public function olMakeIntercomCall():void
+//		{	
+//			
+//			
+//			var jid:String = JIDValue.text;
+//			var featureIdSelected:String = featureSelector.text;
+//			makeIntercomCall = new MakeIntercomCall(IQ.TYPE_SET,(xmppComponent+"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+//			makeIntercomCall.setDestination(destinationValue.text);
+//			makeIntercomCall.setProfile(profileSelector.text);
+//			makeIntercomCall.setFeatureID(featureIdSelected);
+//			makeIntercomCall.setValue1(value1_value.text);
+//			var iq:IQ = makeIntercomCall.addQuery();
+//			xmppConnection.send(iq);
+//		}
+		
+		
+		
+//		public function olManageVoiceMessage():void
+//		{	
+//			
+//			var featureIdSelected:String = featureSelector.text;
+//			manageVoiceMessage = new ManageVoiceMessage(IQ.TYPE_SET,(xmppComponent+"."+xmppConnection.server),xmppConnection.username+"@"+xmppConnection.server,"execute");
+//			manageVoiceMessage.setFeature(featureIdSelected);
+//			manageVoiceMessage.setActionType(action_value.text);
+//			manageVoiceMessage.setValue1(value1_value.text);
+//			var iq:IQ = manageVoiceMessage.addQuery();
+//			xmppConnection.send(iq);
+//		}
+		
+		
+		//********************************************
+		// 
+		// setter and getter
+		// *******************************************
+		
+		public function set loginJID(jid:String):void{
+			myLoginJID = jid;
+		}
+		public function get loginJID():String{
+			return myLoginJID;
+		}
+		public function set profileID(profileID:String):void{
+			myProfileID = profileID;
+		}
+		public function get profileID():String{
+			return myProfileID;
+		}
+		public function set interestValue(interest:String):void{
+			myInterest = interest;
+		}
+		public function get interestValue():String{
+			return myInterest;
+		}
+		public function set feature(feature:String):void{
+			myFeature = feature;
+		}
+		public function get feature():String{
+			return myFeature;
+		}
+		
+		public function set interestListArray(interest:Array):void{
+			//commLog.text += "in interestArray set";
+			myInterestArray = interest;
+		}
+		public function get interestListArray():Array{
+			//commLog.text += "in interestArray get";
+			return myInterestArray;
+		}
+		public function set value1(value1:String):void{
+			myValue1 = value1;
+		}
+		public function get value1():String{
+			return myValue1;
+		}
+		public function set value2(value2:String):void{
+			myValue2 = value2;
+		}
+		public function get value2():String{
+			return myValue2;
+		}
+		public function set destination(destination:String):void{
+			myDestination = destination;
+		}
+		public function get destination():String{
+			return myDestination;
+		}
+		public function set callIDArray(value:Array):void{
+			_callIDArray = value;
+		}
+		public function get callIDArray():Array{
+			return _callIDArray;
+		}
+		public function set callId(value:String):void{
+			mycallID = value;
+		}
+		public function get callId():String{
+			return mycallID;
+		}	
+		public function set interest1(value:String):void{
+			interestrequest = value;
+		}
+		public function get interest1():String{
+			return interestrequest;
+		}
+		public function set requestList(value:Array):void{
+			myRequestList = value;
+		}
+		public function get requestList():Array{
+			return myRequestList;
+		}
+		public function set featureList(value:String):void{
+			//commLog.text += "set fetlist";
+			handsetFeature = value;
+		}
+		public function get featureList():String{
+			//commLog.text += "get fetlist";
+			return handsetFeature;
+		}
+		public function set particiList(value:Array):void{
+			//commLog.text += "set partici";
+			myParticipants = value;
+		}
+		public function get particiList():Array{
+			//commLog.text += "get partici";
+			return myParticipants;
+		}
+		public function set myCallDetalis(value:ArrayCollection):void{
+			//commLog.text += "set mycalldetails";
+			myMasterArrayColl = value;
+		}
+		public function get myCallDetalis():ArrayCollection{
+			//commLog.text += "get mycalldetails";
+			return myMasterArrayColl;
+		}
+		public function set myInterestDetalis(value:ArrayCollection):void{
+			//commLog.text += "set mycalldetails";
+			myInterestArrayColl = value;
+		}
+		public function get myInterestDetalis():ArrayCollection{
+			//commLog.text += "get mycalldetails";
+			return myInterestArrayColl;
+		}
+		
+//		public function destinationChange():void{
+//			myDestination = destinationValue.text;
+//		}
+//		public function JIDChange():void{
+//			myLoginJID = JIDValue.text;
+//		}
+//		public function interestChange():void{
+//			myInterest = interestSelector.text;
+//		}
+//		public function featureChange():void{
+//			myFeature = featureSelector.text;
+//		}
+		public function profileChange():void{
+			myProfileID = "{profileSelector.text}";
+		}
+	}
+}

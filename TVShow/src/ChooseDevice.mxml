@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="334" height="244" creationComplete="creationCompleteHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+			
+			import spark.events.IndexChangeEvent;
+			[Bindable]
+			private var cameraArray:ArrayCollection;
+			[Bindable]
+			private var micArray:ArrayCollection;
+			public var selectCamera:String = '';
+			public var selectMic:int = -1;
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				// TODO Auto-generated method stub
+				Security.showSettings(SecurityPanel.CAMERA);
+				cameraArray = new ArrayCollection(Camera.names);
+				micArray = new ArrayCollection(Microphone.names);
+				
+			}
+			private function onCameraChanged(evt:IndexChangeEvent):void
+			{
+				selectCamera = cameraArray[cameras.selectedIndex];	
+				
+			}
+			private function onMicphoneChanged(evt:IndexChangeEvent):void
+			{
+				selectMic = micphones.selectedIndex;
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:ComboBox id="cameras" x="42" y="104" width="115" dataProvider="{cameraArray}" prompt="请选择摄像头"
+				change="onCameraChanged(event)"/>
+	<s:ComboBox id="micphones" x="188" y="104" width="102" dataProvider="{micArray}" prompt="请选择麦克风"
+			    change="onMicphoneChanged(event)"/>
+	<s:Button x="136" y="185" label="确定" id="ok"/>
+	<s:Label x="42" y="84" text="选择摄像头"/>
+	<s:Label x="188" y="84" text="选择麦克风"/>
+</s:Group>

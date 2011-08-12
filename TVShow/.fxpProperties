@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fxpProperties abbreviated="false" authoringTool="Flex Builder" compiles="true" parentProject="3a25ad48-3d75-49c2-8ea0-0f02ab927e94" projectUUID="3a25ad48-3d75-49c2-8ea0-0f02ab927e94" pureCatalystProject="false" sdkVersion="4.5.0" uuid="c6f3b7e1-41b3-4984-bdbc-bcbaab7f06ac" version="15">
+  <projects/>
+  <src/>
+  <swc>
+    <linked location="sdkPlaceHolder" path="sdkPlaceHolder" position="0" uuid="c6f3b7e1-41b3-4984-bdbc-bcbaab7f06ac"/>
+    <linked location="C:/Documents and Settings/Administrator/Adobe Flash Builder 4.5/TVShow/libs" path="/libs" position="1" uuid="c6f3b7e1-41b3-4984-bdbc-bcbaab7f06ac"/>
+  </swc>
+  <misc/>
+  <theme/>
+  <mxmlFormattingPrefs groupAttributesByState="true" maxLineWidth="100" mxmlAlignAttributes="true" mxmlAttributeOrder="id,userLabel,includeIn,excludeFrom,visible,x,y,z,left,right,top,bottom,width,height,minWidth,minHeight,maxWidth,maxHeight,label" mxmlKeepAttributeValuesOrganized="true"/>
+</fxpProperties>
