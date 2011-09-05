@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1595/flash/common/trunk/src/actionscript/org/flowplayer/util
+END
+InternetDomainName.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1595/flash/common/trunk/src/actionscript/org/flowplayer/util/InternetDomainName.as
+END
+TldPatterns.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1595/flash/common/trunk/src/actionscript/org/flowplayer/util/TldPatterns.as
+END
+DomainUtil.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1595/flash/common/trunk/src/actionscript/org/flowplayer/util/DomainUtil.as
+END
+StringUtils.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1595/flash/common/trunk/src/actionscript/org/flowplayer/util/StringUtils.as
+END

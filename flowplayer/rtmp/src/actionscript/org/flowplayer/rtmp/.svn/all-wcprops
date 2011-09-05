@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1661/flash/rtmp/trunk/src/actionscript/org/flowplayer/rtmp
+END
+RTMPConnectionProvider.as
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1115/flash/rtmp/trunk/src/actionscript/org/flowplayer/rtmp/RTMPConnectionProvider.as
+END
+Config.as
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1104/flash/rtmp/trunk/src/actionscript/org/flowplayer/rtmp/Config.as
+END
+DurationQueryingRTMPConnectionProvider.as
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1314/flash/rtmp/trunk/src/actionscript/org/flowplayer/rtmp/DurationQueryingRTMPConnectionProvider.as
+END
+SubscribingRTMPConnectionProvider.as
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1314/flash/rtmp/trunk/src/actionscript/org/flowplayer/rtmp/SubscribingRTMPConnectionProvider.as
+END
+RTMPStreamProvider.as
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1661/flash/rtmp/trunk/src/actionscript/org/flowplayer/rtmp/RTMPStreamProvider.as
+END
+RTMPStreaming.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/20/flash/rtmp/trunk/src/actionscript/org/flowplayer/rtmp/RTMPStreaming.as
+END

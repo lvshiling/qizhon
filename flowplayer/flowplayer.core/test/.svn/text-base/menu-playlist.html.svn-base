@@ -1,0 +1,81 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!--<script type="text/javascript" src="flowplayer-3.0.5.min.js"></script>-->
+    <script src="../flowplayer-3.2.6.min.js"></script>
+
+
+	<!-- page title -->
+	<title>Minimal Flowplayer setup</title>
+
+</head><body>
+
+	<div id="page">
+        <a
+                     href="http://pseudo01.hddn.com/vod/demo.flowplayervod/flowplayer-700.flv"
+                     style="display:block;width:440px;height:247px"
+                     id="player">
+                </a>
+<script>
+    flowplayer("player", "../build/flowplayer.swf",
+    {
+        log: { level: 'debug', filter: 'org.flowplayer.menu.ui.MenuItem' },
+//        log: { level: 'debug', filter: 'org.flowplayer.menu.Menu,org.flowplayer.bitrateselect.BitrateSelectProvider' },
+        onStart: function() {
+            console.log("onStart");
+        },
+
+        onFinish: function() {
+            console.log("onFinish");
+        },
+
+        onPause: function() {
+            console.log("onPause");
+        },
+
+        onResume: function() {
+            console.log("onResume");
+        },
+
+        clip: {
+            autoPlay: false,
+            baseUrl: 'http://blip.tv/file/get'
+        },
+        playlist: [
+            'KimAronson-TwentySeconds59483.flv',
+            'KimAronson-TwentySeconds58192.flv'
+        ],
+        plugins: {
+            menu: {
+                url: 'flowplayer.menu.swf',
+                items: [
+                    { label: '<b>first clip</b><br/><i>3:30</i>', imageUrl: 'http://static.flowplayer.org/img/demos/thumb1.jpg', index: 0 },
+                    { label: 'second clip', imageUrl: 'http://static.flowplayer.org/img/demos/thumb2.jpg', index: 1 }
+                ],
+
+                // default style for items
+                style: {
+//                    color: "rgba(10,10,10,1)",
+//                    overColor: "rgba(200,0,0,1)"
+
+//                    fontColor: "rgba(255,0,100, 0.1)"
+                    height: 70
+                },
+
+                right: 10,
+
+                onSelect: function(item) {
+                    console.log("onSelect()", item);
+
+                    if (item.index >= 0) {
+                        $f().play(item.index);
+                    }
+                }
+            }
+        }
+
+    });
+</script>
+	</div>
+	
+	
+</body></html>

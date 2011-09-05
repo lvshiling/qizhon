@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AS3Classpath>
+<AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">src/actionscript</AS3Classpath>
+<AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">test</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">playerglobal.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="source" useAsSharedCode="false">lib/corelib/src</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">lib/thunderbolt/ThunderBoltAS3_Flash.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">lib/flexunit/flexunit.swc</AS3Classpath>
+<AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">lib/goasp/src_go</AS3Classpath>
+<AS3Classpath generateProblems="false" type="source" useAsSharedCode="false">src/actionscript-commercial</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">flex.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">framework.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">rpc.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">utilities.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">airglobal.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">airframework.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">servicemonitor.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">src/flash/resources.swc</AS3Classpath>
+<AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">lib/licensekey/licensekey.swc</AS3Classpath>
+</AS3Classpath>

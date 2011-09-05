@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/701/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json
+END
+JSONParseError.as
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/339/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json/JSONParseError.as
+END
+JSONDecoder.as
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/339/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json/JSONDecoder.as
+END
+JSONTokenizer.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/339/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json/JSONTokenizer.as
+END
+JSONEncoder.as
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/701/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json/JSONEncoder.as
+END
+JSON.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/339/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json/JSON.as
+END
+JSONToken.as
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/339/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json/JSONToken.as
+END
+JSONTokenType.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/339/flowplayer/trunk/lib/corelib/src/com/adobe/serialization/json/JSONTokenType.as
+END

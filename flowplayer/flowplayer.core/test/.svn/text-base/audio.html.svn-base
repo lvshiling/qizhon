@@ -1,0 +1,73 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!--<script type="text/javascript" src="flowplayer-3.0.5.min.js"></script>-->
+    <script src="../flowplayer-3.2.6.min.js"></script>
+
+
+	<!-- page title -->
+	<title>Minimal Flowplayer setup</title>
+
+</head><body>
+
+	<div id="page">
+        <a
+                     href="01-beastie_boys-make_some_noise.mp3"
+                     style="display:block;width:440px;height:247px"
+                     id="player">
+                </a>
+<script>
+    flowplayer("player", "../build/flowplayer.swf",
+    {
+        log: { level: 'debug', filter: 'org.flowplayer.controller.PlayTimeTracker' },
+
+        onBegin: function() {
+            console.log("onBegin");
+        },
+
+        onStart: function(clip) {
+            console.log("onStart, " + clip.duration);
+        },
+
+        onFinish: function() {
+            console.log("onFinish");
+        },
+
+        onPause: function() {
+            console.log("onPause");
+        },
+
+        onResume: function() {
+            console.log("onResume");
+        },
+
+        onSeek: function() {
+            console.log("onSeek");
+        },
+
+        clip: {
+            baseUrl: '../build',
+            coverImage: '../build/play.png'
+        },
+        playlist:[
+//                "http://www.blacktrash.org/media/atap.mp3",
+                "01-boris-farewell.mp3"
+        ],
+
+        plugins: {
+            audio: {
+                url: 'flowplayer.audio.swf',
+                onDuration: function(info) {
+                    console.log("onDuration " + info);
+                }
+            },
+            controls: {
+                playlist: true
+            }
+        }
+
+    });
+</script>
+	</div>
+	
+	
+</body></html>

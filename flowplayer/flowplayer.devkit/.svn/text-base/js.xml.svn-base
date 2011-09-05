@@ -1,0 +1,98 @@
+<project name="Common build file used by JS plugins" default="min">
+
+	<!-- additional tasks -->
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+	<property name="shortname" value="${ant.project.name}"/>
+
+    <condition property="baseName" value="${shortname}" else="flowplayer.${shortname}">
+        <equals arg1="${shortname}" arg2="flowplayer"/>
+    </condition>
+
+	<property name="source.file" value="${basedir}/${baseName}.js"/>
+	<property name="rhino" value="${DEVKIT_HOME}/lib/rhino.jar"/>
+	<property name="yui.path" value="${DEVKIT_HOME}/lib/yuicompressor-2.4.2.jar"/>
+	<property file="//Users/api/code/setup/etc/version.properties" prefix="v"/>
+
+
+	<!-- target dir is dynamic -->
+	<var name="target.dir" value="${basedir}"/>
+
+	<if>
+		<contains string="${basedir}" substring="/tools/"/>
+		<then>
+			<var name="target.dir" value="${target.dir}/tools"/>
+		</then>
+	</if>
+
+	<!-- lint (http://www.jslint.com/lint.html)  -->
+   <target name="lint">
+		<java jar="${rhino}" fork="true">
+			<arg value="${DEVKIT_HOME}/lib/jslint.js" />
+			<arg value="${baseName}.js" />
+		</java>
+	</target>
+
+
+	<!-- copy source file & update tokens -->
+	<target name="source">
+
+		<property name="target.file" value="${target.dir}/${baseName}-${version}.js"/>
+		<copy file="${source.file}" tofile="${target.file}"/>
+		<echo message="${source.file} --> ${target.file} copied" />
+
+		<exec executable="svn" outputproperty="svnlog.out" >
+		<arg line="info ."/>
+		</exec>
+
+		<propertyregex property="revision" input="${svnlog.out}" select="\1">
+			<regexp pattern="Revision: ([0-9]*)"/>
+		</propertyregex>
+
+		<propertyregex property="date" input="${svnlog.out}" select="\1">
+			<regexp pattern="Date: (.+\))"/>
+		</propertyregex>
+
+		<replaceregexp match="@VERSION" replace="${version}" flags="g" byline="true"
+			file="${target.file}" />
+
+		<replaceregexp match="@DATE" replace="${date}" file="${target.file}" />
+      <replaceregexp match="@REVISION" replace="${revision}" file="${target.file}" />
+		<echo message="${target.file} build" />
+
+	</target>
+
+
+	<!-- yuicompress: http://www.julienlecomte.net/blog/2007/09/16/ -->
+	<target name="min" depends="source">
+
+		<property name="target.file" value="${target.dir}/${baseName}-${version}.min.js"/>
+
+		<apply executable="/usr/bin/java" parallel="false">
+			<fileset file="${target.file}"/>
+			<arg line="-jar"/>
+			<arg path="${yui.path}"/>
+			<srcfile/>
+			<arg line="-o"/>
+			<mapper type="glob" from="*.js" to="${target.dir}/*.min.js"/>
+			<targetfile/>
+		</apply>
+
+		<replaceregexp match="/\*!" replace="/\*\*" file="${target.file}" />
+		<echo message="${target.file} minified"/>
+
+	</target>
+
+	<!-- for releases.yaml file generation -->
+    <target name="write-version">
+        <echo message="writing ${basename}: ${version} to ${yaml-file}" />
+        <echo file="${yaml-file}" append="true" message="        ${shortname}: ${version}${line.separator}" />
+    </target>
+
+    <target name="write-filesize">
+        <length property="filesize" file="${target.dir}/${baseName}-${version}.js" />
+        <echo file="${yaml-file}" append="true" message="        ${baseName}.js: ${filesize}${line.separator}" />
+    </target>
+
+
+</project>
