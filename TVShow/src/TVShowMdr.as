@@ -2,6 +2,8 @@ package
 {
 	import com.demonsters.debugger.MonsterDebugger;
 	
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
 	import flash.events.ActivityEvent;
 	import flash.events.AsyncErrorEvent;
 	import flash.events.Event;
@@ -10,20 +12,28 @@ package
 	import flash.events.SecurityErrorEvent;
 	import flash.events.StatusEvent;
 	import flash.events.TimerEvent;
+	import flash.external.ExternalInterface;
 	import flash.media.Camera;
 	import flash.media.Microphone;
 	import flash.media.SoundCodec;
+	import flash.media.Video;
 	import flash.net.NetConnection;
 	import flash.net.NetStream;
 	import flash.utils.Timer;
 	
 	import mx.controls.Alert;
 	import mx.core.FlexGlobals;
+	import mx.managers.PopUpManager;
+	
+	import sina.Params;
+	
+	import spark.components.Button;
+
 	public class TVShowMdr
 	{
 		private var tvShow:TVShow;
-		//private var rtmpUrl:String = "rtmp://222.73.33.198/oflaDemo"; 
-		private var rtmpUrl:String = "rtmp://127.0.0.1/tvshow"; 
+		private var rtmpUrl:String = "rtmp://222.73.33.198/tvshow"; 
+		//private var rtmpUrl:String = "rtmp://127.0.0.1/tvshow"; 
 		private var streamKey:String = "key";
 		private var streamName:String = "me";
 		private var nc:NetConnection = null;
@@ -39,6 +49,13 @@ package
 		private var micAllowed:Boolean;
 		private var camAllowed:Boolean;
 		private var toolbarTimer:Timer = new Timer(5000,1);
+		private var capBitmapData:BitmapData;
+		private var saveUrl:String = "http://127.0.0.1/avatar/save.php";
+		private var uid:String='9999';
+		private var callback:String = 'getRecordName';
+		private var liveStartCallBack:String = 'onliveStart';
+		private var liveEndCallBack:String = 'onliveEnd';
+		private var id:String;
 		public function TVShowMdr(app:TVShow)
 		{
 			MonsterDebugger.initialize(this);
@@ -46,10 +63,17 @@ package
 			streamKey	= FlexGlobals.topLevelApplication.parameters.key == null 	? streamKey : 	FlexGlobals.topLevelApplication.parameters.key;
 			streamName	= FlexGlobals.topLevelApplication.parameters.streamMe == null 	? streamName : 	FlexGlobals.topLevelApplication.parameters.streamMe;
 			role = FlexGlobals.topLevelApplication.parameters.role == null 	? role : 	FlexGlobals.topLevelApplication.parameters.role;
+			saveUrl = FlexGlobals.topLevelApplication.parameters.saveUrl == null 	? saveUrl : 	FlexGlobals.topLevelApplication.parameters.saveUrl;
+			uid = FlexGlobals.topLevelApplication.parameters.uid == null 	? uid : 	FlexGlobals.topLevelApplication.parameters.uid;
+			var params:Params = Params.getInstance(FlexGlobals.topLevelApplication.loaderInfo);
+			params.saveUrl = saveUrl;
+			params.uid = uid;
 			MonsterDebugger.log('rtmpUrl: '+rtmpUrl);
 			MonsterDebugger.log('streamKey: '+streamKey);
 			MonsterDebugger.log('streamName: '+streamName);
 			MonsterDebugger.log('role: '+role);
+			MonsterDebugger.log('saveUrl: '+params.saveUrl);
+			MonsterDebugger.log('uid: '+params.uid);
 			tvShow = app;
 			tvShow.main.visible = false;
 			addListener();
@@ -62,7 +86,63 @@ package
 			tvShow.main.startLiveBtn.addEventListener(MouseEvent.CLICK, onStartLive);
 			tvShow.main.stopLiveBtn.addEventListener(MouseEvent.CLICK, onStopLive);
 			toolbarTimer.addEventListener(TimerEvent.TIMER_COMPLETE, onToolBarTimer);
+			tvShow.main.captureBtn.addEventListener(MouseEvent.CLICK, onCaptureBtn);
+			tvShow.main.recordBtn.addEventListener(MouseEvent.CLICK, onRecord);
+			//tvShow.main.uploadBtn.addEventListener(MouseEvent.CLICK, onUploadBtn);
+			//tvShow.main.uploadCancel.addEventListener(MouseEvent.CLICK, onUploadCancel);
 			//TODO
+		}
+		private function getRecordFlvName():String
+		{
+			var ret:String = '3295C76ACBF4CAAED33C36B1B5FC2CB1';
+			try {
+				ret = ExternalInterface.call(callback);
+			} catch (e:Error) {
+				MonsterDebugger.trace(callback, e);
+			}
+			if(!ret) ret='3295C76ACBF4CAAED33C36B1B5FC2CB1';
+			MonsterDebugger.log('getRecordFlvName: '+ ret);
+			return ret;
+		}
+		private function onRecord(evt:MouseEvent):void
+		{
+			if(nsMe)
+			{
+				nsMe.attachAudio(null);
+				nsMe.attachCamera(null);
+				nsMe.close();
+				nsMe = null;
+			}
+			var recordBtn:Button = evt.target as Button;
+			if(recordBtn.label == '开始录像')
+			{
+				id = getRecordFlvName();
+				handlePublish(id, 'record');
+				tvShow.main.stateTip.text = '录像中';
+				recordBtn.label = '结束录像';
+				MonsterDebugger.log('onStartRecord');
+			}
+			else if (recordBtn.label == '结束录像')
+			{
+				try {
+					ExternalInterface.call('onRecordEnd',id);
+				} catch (e:Error) {
+					MonsterDebugger.trace('onRecordEnd', e);
+				}
+				handlePublish(streamKey + streamName, 'live');
+				tvShow.main.stateTip.text = '直播中';
+				recordBtn.label = '开始录像';
+				tvShow.main.currentState = 'recordEndState';
+			}
+		}
+		
+		private function onCaptureBtn(evt:MouseEvent):void
+		{
+			
+			tvShow.main.currentState = 'captureState';
+			capBitmapData = new BitmapData(tvShow.main.videoDisplay.width, tvShow.main.videoDisplay.height);
+			capBitmapData.draw(tvShow.main.videoDisplay,null,null,null,null,true);
+			tvShow.main.capImg.source = capBitmapData;
 		}
 		private function onToolBarTimer(evt:TimerEvent):void
 		{
@@ -124,21 +204,19 @@ package
 			{
 				nc.close();
 			}
+			
+			try {
+				ExternalInterface.call(liveEndCallBack);
+			} catch (e:Error) {
+				MonsterDebugger.trace(liveEndCallBack, e);
+			}
+			
 			tvShow.main.startLiveBtn.visible = true;
 			tvShow.main.stateTip.text = '预览中';
 			tvShow.main.mainTop.removeEventListener(MouseEvent.MOUSE_MOVE, onVideoDisplayMoveOver);
 			tvShow.main.audioBar.visible = false;
 			tvShow.main.ActivityLevelBar.visible = false;
 			tvShow.main.liveCtlBar.visible = false;
-		}
-		
-		private function onRecordStream(evt:MouseEvent):void
-		{
-			if(nsMe)
-			{
-				nsMe.publish(streamKey + streamName,'record');
-				trace("onRecordStream: "+ 'record');
-			}
 		}
 		private function onVolumeBarChange(evt:Event):void
 		{
@@ -183,7 +261,7 @@ package
 				
 				case "NetConnection.Connect.Failed":
 				case "NetConnection.Connect.Rejected":
-					
+					tvShow.main.stateTip.text = '连接直播服务器失败，重连中';
 					timer = new Timer(1000);
 					timer.addEventListener(TimerEvent.TIMER, function onTimer(evt:TimerEvent):void
 					{
@@ -201,6 +279,7 @@ package
 					break;
 				
 				default:
+					//Alert.show('错误码：'+evt.info.code, '出错了');
 			}		    	
 		}
 		
@@ -213,14 +292,15 @@ package
 					break;
 				case "publisher":
 					//attach my camera and microphone to nsMe, publish them to nsMe
-					handlePublish();
+					handlePublish(streamKey + streamName,'live');
 					break;
 				default:
 			}			
 		}
-		private function handlePublish():void
+		private function handlePublish(id:String, type:String):void
 		{
-			trace("handlePublish");
+			if(!id||!type)
+				MonsterDebugger.log('handlePublish params error: ',id, type);
 			MonsterDebugger.log('handlePublish');
 			nsMe = new NetStream(nc);
 			nsMe.bufferTime = 0;		
@@ -265,9 +345,17 @@ package
 				nsMe.attachAudio(mic);
 			}
 			
-			//nsMe.publish(streamKey + streamName, "live");
-			nsMe.publish(streamKey + streamName, "record");
-			MonsterDebugger.log('published: '+streamKey+streamName);
+			nsMe.publish(id, type);
+			MonsterDebugger.log(type + ' published: '+id);
+			
+			if(type == 'live')
+			{
+				try {
+				 	ExternalInterface.call(liveStartCallBack);
+				} catch (e:Error) {
+					MonsterDebugger.trace(liveStartCallBack, e);
+				}
+			}
 			publishStared();
 		}
 		private function getCamera(name:String):void

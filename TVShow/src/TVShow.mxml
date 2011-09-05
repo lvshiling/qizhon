@@ -2,7 +2,7 @@
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
 			   xmlns:s="library://ns.adobe.com/flex/spark"
 			   xmlns:mx="library://ns.adobe.com/flex/mx"
-			   xmlns:ns1="*"
+			   xmlns:ns1="*" creationPolicy="all"
 			   width="460" height="350" minWidth="460" minHeight="350"
 			   creationComplete="creationCompleteHandler(event)">
 	<fx:Script>
