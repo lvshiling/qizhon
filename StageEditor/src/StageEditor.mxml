@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="940" height="500"
+					   creationComplete="onComplete(event)"
+					   >
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			import mx.events.FlexNativeMenuEvent;
+			private var stageManager:StageManager;
+			protected function onComplete(event:FlexEvent):void
+			{
+				//xmlBasedMenu.addEventListener(FlexNativeMenuEvent.ITEM_CLICK, onMenuItemClick);
+				stageManager = StageManager.getInstance(this);
+				stageManager.loadConfig();
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<!--<s:menu> 
+		<mx:FlexNativeMenu dataProvider="{myMenuData}"  id="xmlBasedMenu"
+						   labelField="@label"  
+						   showRoot="false"
+						   /> 
+	</s:menu>-->
+	
+	<fx:Declarations>
+		<fx:XML format="e4x" id="myMenuData"> 
+			<root> 
+				<menuitem label="File"> 
+					<menuitem label="open" /> 
+					<menuitem type="separator"/>      
+					<menuitem label="save"/> 
+					
+				</menuitem> 
+				
+			</root> 
+		</fx:XML>   
+	</fx:Declarations>
+	<mx:Tree x="10" y="13" width="121" height="440" id="shapes" labelField="@label">
+	</mx:Tree>
+	<mx:Canvas id="editor" x="202" y="29" width="486" height="424" backgroundColor="#EBB9B9">
+	</mx:Canvas>
+	<s:Group x="833" y="41" width="97" height="412" id="toolbar">
+		<s:Button x="17" y="34" label="新物件" id='newObjBtn'/>
+		<s:Button x="14" y="271" label="设置" id='setBtn'/>
+		<s:Button x="14" y="318" label="保存" id="saveBtn"/>
+		<s:NumericStepper x="22" y="79" id='leftNS' maximum="10000"/>
+		<s:Label x="33" y="55" text="左"/>
+		<s:NumericStepper x="22" y="126" id='topNS' maximum="10000"/>
+		<s:Label x="33" y="106" height="11" text="右"/>
+		<s:NumericStepper x="22" y="171" id="widthNS" value="486" enabled="false" maximum="10000"/>
+		<s:Label x="32" y="157" text="宽"/>
+		<s:NumericStepper x="22" y="227" id="heightNS" value="424" enabled="false" maximum="10000"/>
+		<s:Label x="32" y="202" text="高"/>
+		<s:Button x="17" y="9" label="重置编辑区" id="resetEditor"/>
+	</s:Group>
+</s:WindowedApplication>

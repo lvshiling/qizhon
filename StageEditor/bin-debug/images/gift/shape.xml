@@ -1,0 +1,9 @@
+<gift_shape label="main">
+<v label="v" url="http://v.6.cn/apple/flashComponent/gift/shapeGift/v.xml"/>
+<xin label="xin" url="http://v.6.cn/apple/flashComponent/gift/shapeGift/xin.xml"/>
+<xiaolian label="xiaolian" url="http://v.6.cn/apple/flashComponent/gift/shapeGift/xiaolian.xml"/>
+<love label="love" url="http://v.6.cn/apple/flashComponent/gift/shapeGift/love.xml"/>
+<x label="x" url="http://v.6.cn/apple/flashComponent/gift/shapeGift/x.xml"/>
+<v520 label="520" url="http://v.6.cn/apple/flashComponent/gift/shapeGift/v520.xml"/>
+<v1314 label="1314" url="http://v.6.cn/apple/flashComponent/gift/shapeGift/v1314.xml"/>
+</gift_shape>

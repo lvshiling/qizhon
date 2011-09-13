@@ -1,0 +1,56 @@
+<gift_shape>
+	<points leftWidth="320" topHeight="100">
+		<point x="0" y="0" /> 
+		<point x="30" y="0" />
+		<point x="60" y="0" />
+		<point x="266" y="0" />
+		<point x="296" y="0" />
+		<point x="326" y="0" />
+
+		<point x="11" y="35" /> 
+		<point x="41" y="35" />
+		<point x="71" y="35" />
+		<point x="255" y="35" />
+		<point x="285" y="35" />
+		<point x="315" y="35" />
+
+		<point x="52" y="70" /> 
+		<point x="82" y="70" />
+		<point x="244" y="70" />
+		<point x="274" y="70" />
+
+		<point x="63" y="105" /> 
+		<point x="93" y="105" />
+		<point x="233" y="105" />
+		<point x="263" y="105" />
+
+		<point x="74" y="140" /> 
+		<point x="104" y="140" />
+		<point x="222" y="140" />
+		<point x="252" y="140" />
+
+		<point x="85" y="175" /> 
+		<point x="115" y="175" />
+		<point x="211" y="175" />
+		<point x="241" y="175" /> 
+
+		<point x="96" y="210" /> 
+		<point x="126" y="210" />
+		<point x="200" y="210" />
+		<point x="230" y="210" />
+
+		<point x="107" y="245" /> 
+		<point x="137" y="245" />
+		<point x="189" y="245" />
+		<point x="219" y="245" />
+
+		<point x="118" y="280" /> 
+		<point x="148" y="280" />
+		<point x="178" y="280" />
+		<point x="208" y="280" />
+
+		<point x="129" y="315" /> 
+		<point x="163" y="315" />
+		<point x="197" y="315" />
+	</points>
+</gift_shape>
