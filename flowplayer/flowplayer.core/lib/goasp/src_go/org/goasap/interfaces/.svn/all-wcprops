@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/339/flowplayer/trunk/lib/goasp/src_go/org/goasap/interfaces
+END
+IPlayableBase.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/339/flowplayer/trunk/lib/goasp/src_go/org/goasap/interfaces/IPlayableBase.as
+END
+IPlayable.as
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/339/flowplayer/trunk/lib/goasp/src_go/org/goasap/interfaces/IPlayable.as
+END
+IManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/339/flowplayer/trunk/lib/goasp/src_go/org/goasap/interfaces/IManager.as
+END
+ILiveManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/339/flowplayer/trunk/lib/goasp/src_go/org/goasap/interfaces/ILiveManager.as
+END
+IManageable.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/339/flowplayer/trunk/lib/goasp/src_go/org/goasap/interfaces/IManageable.as
+END
+IUpdatable.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/339/flowplayer/trunk/lib/goasp/src_go/org/goasap/interfaces/IUpdatable.as
+END

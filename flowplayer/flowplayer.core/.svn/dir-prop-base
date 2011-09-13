@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 23
+build
+dist
+release.xml
+
+K 13
+svn:mergeinfo
+V 37
+/flowplayer/branches/3_0_3_dev:84-135
+END

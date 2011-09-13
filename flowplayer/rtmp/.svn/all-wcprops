@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/1661/flash/rtmp/trunk
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/20/flash/rtmp/trunk/LICENSE.txt
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/20/flash/rtmp/trunk/.project
+END
+.as3_classpath
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/20/flash/rtmp/trunk/.as3_classpath
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1480/flash/rtmp/trunk/build.properties
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1658/flash/rtmp/trunk/README.txt
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1658/flash/rtmp/trunk/build.xml
+END

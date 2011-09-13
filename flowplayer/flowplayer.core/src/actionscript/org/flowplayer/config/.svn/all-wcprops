@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/701/flowplayer/trunk/src/actionscript/org/flowplayer/config
+END
+ConfigParser.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/701/flowplayer/trunk/src/actionscript/org/flowplayer/config/ConfigParser.as
+END
+ExternalInterfaceHelper.as
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/616/flowplayer/trunk/src/actionscript/org/flowplayer/config/ExternalInterfaceHelper.as
+END
+Config.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/690/flowplayer/trunk/src/actionscript/org/flowplayer/config/Config.as
+END
+PluginBuilder.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/690/flowplayer/trunk/src/actionscript/org/flowplayer/config/PluginBuilder.as
+END
+RSSPlaylistParser.as
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/665/flowplayer/trunk/src/actionscript/org/flowplayer/config/RSSPlaylistParser.as
+END
+PlaylistBuilder.as
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/616/flowplayer/trunk/src/actionscript/org/flowplayer/config/PlaylistBuilder.as
+END

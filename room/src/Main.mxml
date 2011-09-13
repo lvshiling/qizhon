@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="100%"
+	backgroundColor="#ffffff"
+	layout="absolute"
+	paddingLeft="0" paddingRight="0" paddingBottom="0" paddingTop="0"	
+	applicationComplete="initApp()">
+	
+<mx:Script>
+
+<![CDATA[
+
+	import com.adobe.serialization.json.JSON;
+	import flash.net.NetConnection;
+	import flash.external.*;
+	import flash.utils.Timer;	
+	import mx.core.*;
+	import mx.controls.Alert;	
+	import mx.messaging.errors.MessageSerializationError;
+	import org.igniterealtime.xiff.conference.Room;
+	import org.igniterealtime.xiff.conference.RoomOccupant;
+	import org.igniterealtime.xiff.core.*;
+	import org.igniterealtime.xiff.data.*;
+	import org.igniterealtime.xiff.events.*;		
+	import org.igniterealtime.xiff.auth.Anonymous;
+    import org.igniterealtime.xiff.vcard.VCard;
+	import org.igniterealtime.xiff.openlink.*;
+	import com.demonsters.debugger.MonsterDebugger;
+	
+	private var connection:XMPPConnection;
+	private var connectiontype:String = "socket";
+	private var keepAliveTimer:Timer;
+	private var _lastSent:int = 0;
+	private var username:String;
+	private var password:String;
+	private var displayName:String;
+	private var nickName:String;
+	private var groupName:String;
+	private var anonymous:String;
+	
+	private var resource:String;
+	private var domain:String;
+	private var server:String;
+	
+	private var room:Room;
+	
+	private function initApp():void
+	{
+		trace("initApp: ");
+		ExternalInterface.call("log", "eeeeee", "uuuuuuuuuuuu");
+		MonsterDebugger.initialize(this);
+		MonsterDebugger.trace(this, "initApp: ");
+		//ExternalInterface.addCallback("logout", logout);
+		//ExternalInterface.addCallback("login", login);	
+		
+		ExternalInterface.call("log", "begin", "get parameters");		
+		
+		username 		= FlexGlobals.topLevelApplication.parameters.username;		
+		password 		= FlexGlobals.topLevelApplication.parameters.password;	
+		connectiontype 	= FlexGlobals.topLevelApplication.parameters.connectionType;
+		nickName    	= FlexGlobals.topLevelApplication.parameters.nickName;
+		groupName   	= FlexGlobals.topLevelApplication.parameters.groupName;
+		anonymous  		= FlexGlobals.topLevelApplication.parameters.anonymous;
+		server 			= FlexGlobals.topLevelApplication.parameters.server;
+		domain 			= FlexGlobals.topLevelApplication.parameters.domain;
+		resource 		= FlexGlobals.topLevelApplication.parameters.resource;
+		
+		ExternalInterface.call("log", "begin", "get parameters ok");
+		
+		ExternalInterface.addCallback("sendGroupMsg", sendGroupMsg);
+		ExternalInterface.addCallback("getPartList", getPartList);
+		mockUser();
+		mockServer();
+		ExternalInterface.call("log", groupName, anonymous);
+		ExternalInterface.call("log", server, domain+'/'+resource);
+		ExternalInterface.call("log", "begin", "begin connect");
+		connectSetup();	
+		
+		//ExternalInterface.call("ready");		
+	}
+	
+	private function mockUser():void
+	{
+		if (username == null)
+			username = "9999";
+		if (password == null)
+			password = "123456";
+		if (nickName == null)
+			nickName = 'fuck';
+		if (groupName == null)
+			groupName = 'group0';
+		
+		MonsterDebugger.trace(this, username);
+		MonsterDebugger.trace(this, password);
+	}
+	private function mockServer():void
+	{
+		resource = "web";
+		domain = "";     			
+		server = "192.168.82.234";
+		//server = "127.0.0.1";
+	}
+
+	public function login():void 
+	{
+		trace("login: ");
+	
+		connectiontype = ExternalInterface.call("getConnectionType");
+
+		if (connectiontype == "socket") {
+			connection.connect(XMPPConnection.STREAM_TYPE_STANDARD);
+		} else {			
+			connection.connect( XMPPConnection.STREAM_TYPE_STANDARD_TERMINATED);
+		}				
+	}
+
+	public function loginRoom():void
+	{
+		MonsterDebugger.trace(this, "loginRoom");
+		room = new Room(connection);
+		room.roomJID = new UnescapedJID(groupName+'@conference.'+connection.domain);
+		room.nickname = nickName;
+		room.addEventListener(RoomEvent.ROOM_JOIN, onRoomJoin);
+		room.addEventListener(RoomEvent.GROUP_MESSAGE, onGroupMsg, false, 0, true);
+		room.addEventListener(RoomEvent.ROOM_LEAVE, onRoomLeave);
+		room.addEventListener(RoomEvent.USER_JOIN, onUserJoin);
+		room.addEventListener(RoomEvent.USER_DEPARTURE, onUserDeparture);
+		room.join();
+	}
+	private function getPartList():String
+	{
+		var ret:String = '';
+		if (room)
+		{
+			for each ( var occ:RoomOccupant in room )
+			{
+				ret = ret +';' + occ.displayName;
+			}
+		}
+		return ret;
+	}
+	private function onUserJoin(evt:RoomEvent):void
+	{
+		ExternalInterface.call("onUserJoin", ''+evt.nickname);
+	}
+	private function onUserDeparture(evt:RoomEvent):void
+	{
+	   	ExternalInterface.call("onUserDeparture", ''+evt.nickname);
+	}
+	private function onRoomJoin(e:RoomEvent):void
+	{
+		MonsterDebugger.trace(this, "onRoomJoin......");
+		var msg:Message = e.data as Message;
+		if(msg)
+			ExternalInterface.call("onRoomJoin", '' + msg.from.resource, '' + msg.body);
+			
+	}
+	private function onRoomLeave(e:RoomEvent):void
+	{
+		MonsterDebugger.log("onRoomLeave");
+		var msg:Message = e.data as Message;
+		if(msg)
+			ExternalInterface.call("onRoomLeave", ''+msg.from.resource, ''+msg.body);
+	}
+	private function onGroupMsg(evt:RoomEvent):void
+	{
+		
+		MonsterDebugger.trace(this, "onGroupMsg");
+		MonsterDebugger.trace(this, "evt.data: " + evt.data);
+		
+		var msg:Message = evt.data as Message;
+		ExternalInterface.call("onReceivedGroupMsg", ''+msg.from.resource,  ''+msg.body);
+		MonsterDebugger.trace(this, ''+msg.from.resource, "%%%%%%" + msg.body);
+		ExternalInterface.call("log", 'onGroupMsg', ''+msg.body);
+		
+	}
+	private function sendGroupMsg(msg:String):void
+	{
+		MonsterDebugger.trace(this, 'send msg:' + msg);
+		if (room) {
+			room.sendMessage(msg);
+		}
+	}
+	public function logout():void
+	{
+		trace("logout: ");
+	
+		// Send an unavilable presence
+		//var recipient:EscapedJID = new EscapedJID(connection.domain);
+		//var unavailablePresence:Presence = new Presence(recipient, null, Presence.TYPE_UNAVAILABLE, null, "Logged out");
+		//connection.send(unavailablePresence);
+
+		connection.disconnect();
+	}
+
+	private function connectSetup():void 
+	{  
+		trace("connectSetup: ");
+		
+		switch(connectiontype)
+		{
+			case "http":
+				connection = new XMPPBOSHConnection(false);
+				connection.port = ExternalInterface.call("getPort");
+				break;
+
+			case "https":
+				connection = new XMPPBOSHConnection(true);
+				connection.port = ExternalInterface.call("getPort");				
+				break;
+
+			case "rtmp":
+				connection = new RTMPConnection();			
+				break;
+
+			case "rtmfp":
+				connection = new RTMFPConnection();			
+				break;
+
+			case "tls":
+				connection = new XMPPTLSConnection();
+				connection.port = 5222;										
+				//connection.tls = true;
+				break;
+
+			case "socket":
+
+			default:
+				connection = new XMPPConnection();
+				connection.port = 5222;										
+
+		}
+
+		
+		
+		
+		connection.addEventListener("outgoingData", function(event:Event):void 
+		{
+			_lastSent = new Date().getTime();
+		});
+
+
+		connection.addEventListener(ConnectionSuccessEvent.CONNECT_SUCCESS, function(evt:ConnectionSuccessEvent):void 
+		{
+			MonsterDebugger.trace(this, "ConnectionSuccessEvent");
+			ExternalInterface.call("log", "connect:", " success");
+		});
+
+
+		connection.addEventListener(LoginEvent.LOGIN, function( event:LoginEvent):void 
+		{
+			trace("addEventListener: LoginEvent.LOGIN " + event);
+			ExternalInterface.call("log", "login:", " success");
+			ExternalInterface.call("onRoomComplete");
+			displayName = connection.username;
+			var recipient:EscapedJID = new EscapedJID(connection.domain);
+			var availablePresence:Presence = new Presence(recipient, null, null, null, "Logged In");
+			connection.send(availablePresence);
+			
+			MonsterDebugger.trace(this, "server: " + connection.server);
+			MonsterDebugger.trace(this, "domain: " + connection.domain);
+			MonsterDebugger.trace(this, "resource: " + connection.resource);
+			
+			if (keepAliveTimer) keepAliveTimer.stop();
+
+			keepAliveTimer = new Timer(15000);
+			keepAliveTimer.addEventListener(TimerEvent.TIMER, checkKeepAlive);
+			keepAliveTimer.start();
+			
+			var vcard:VCard = VCard.getVCard(connection, connection.jid);
+			
+			if (vcard != null)
+			{
+				if (vcard.loaded)
+				{
+					handleVCard(vcard);
+
+				} else	{
+					vcard.addEventListener(VCardEvent.LOADED, function(event:VCardEvent):void { handleVCard(event.vcard); });
+				}
+			}
+			
+			loginRoom();
+
+		});
+
+		connection.addEventListener(XIFFErrorEvent.XIFF_ERROR, function(event:XIFFErrorEvent):void 
+		{
+			trace("addEventListener: XIFFErrorEvent.XIFF_ERROR " + event);
+		
+			MonsterDebugger.trace(this, event.errorCondition + "|" + event.errorMessage);
+			ExternalInterface.call("error", event.errorCondition, event.errorMessage); 
+		});
+
+		connection.addEventListener(DisconnectionEvent.DISCONNECT, function(event:DisconnectionEvent):void 
+		{
+			MonsterDebugger.trace(this, "DisconnectionEvent.DISCONNECT");
+			if (keepAliveTimer) keepAliveTimer.stop();
+		});
+		
+		connection.addEventListener(MessageEvent.MESSAGE, function(event:MessageEvent):void 
+		{
+			trace("addEventListener: MessageEvent.MESSAGE " + event);
+		
+			var message:Message = event.data as Message;
+			MonsterDebugger.trace(this, message.getNode());
+			
+			var xNode:XMLNode = message.getNode().firstChild;
+
+			if (xNode.nodeName == "x" && xNode.attributes.xmlns == "jabber:x:conference")
+			{
+				ExternalInterface.call("confInvite", xNode.attributes.jid, connection.username, connection.password);
+
+			}
+			
+			if (xNode.nodeName == "event" && xNode.attributes.xmlns == "http://jabber.org/protocol/pubsub#event")
+			{
+				handlePubsub(xNode);
+			}						
+
+			if (xNode.nodeName == "voicebridge" && xNode.attributes.xmlns == "http://xmpp.org/protocol/openlink:01:00:00/features#voice-bridge")
+			{
+				ExternalInterface.call("videoInvite", xNode.attributes.me, xNode.attributes.others);
+			}
+
+		});	
+		
+		
+		if (anonymous == 'YES')
+		{
+			connection.useAnonymousLogin = true;
+			ExternalInterface.call("log", "anonymous:", "YES");
+			connection.resource = resource;
+			connection.domain = domain;     			
+			connection.server = server;
+			
+		} else {
+		
+			connection.username = username;
+			connection.password = password;
+			connection.resource = resource;
+			connection.domain = domain;     			
+			connection.server = server;
+		}
+		//
+		connection.connect(XMPPConnection.STREAM_TYPE_STANDARD);
+		ExternalInterface.call("log", "connect:", "connecting");
+	}
+
+	private function handlePubsub(eventNode:XMLNode):void
+	{
+		var jid:String = null;		
+		var source:String = null;
+		var eventtype:String = null;
+		var dtmf:String = null;
+		var participants:String = null;
+		var callstate:String = null;
+		var conference:String = null;
+		var participant:String = null;
+		var callinfo:String = null;
+		var eventinfo:String = null;		
+		var sendstream:String = null;
+		var recievestream:String = null;
+		var videostream:String = null;		
+
+
+		var vbNode:XMLNode = eventNode.firstChild.firstChild.firstChild;
+
+		if (vbNode.nodeName == "voicebridge")
+		{	
+			var vbParameters:Array = vbNode.childNodes;	
+
+			for each(var vbParameter:XMLNode in vbParameters)
+			{	
+				if(vbParameter.nodeName == 'jid' && vbParameter.firstChild != null)
+				{
+					jid = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'source' && vbParameter.firstChild != null)
+				{
+					source = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'eventtype' && vbParameter.firstChild != null)
+				{
+					eventtype = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'participants' && vbParameter.firstChild != null)
+				{
+					participants = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'callstate'  && vbParameter.firstChild != null)
+				{
+					callstate = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'conference' && vbParameter.firstChild != null)
+				{
+					conference = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'participant' && vbParameter.firstChild != null)
+				{
+					participant = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'callinfo' && vbParameter.firstChild != null)
+				{
+					callinfo = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'eventinfo' && vbParameter.firstChild != null)
+				{
+					eventinfo = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'sendstream' && vbParameter.firstChild != null)
+				{
+					sendstream = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'recievestream' && vbParameter.firstChild != null)
+				{
+					recievestream = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'videostream' && vbParameter.firstChild != null)
+				{
+					videostream = vbParameter.firstChild.nodeValue;
+				}
+				
+				if(vbParameter.nodeName == 'dtmf' && vbParameter.firstChild != null)
+				{
+					dtmf = vbParameter.firstChild.nodeValue;
+				}								
+			}
+			
+			//Alert.show(jid + " " + source + " " + eventtype + " " + callstate + " " + conference + " " + videostream);
+		}				
+	}
+
+	public function subscribeCommand(jid:String): void
+	{
+		var subscribe:Subscribe = new Subscribe(IQ.TYPE_SET,("pubsub."+connection.server), connection.username+"@"+connection.server);
+		subscribe.setJID(connection.username+"@"+connection.server);
+		subscribe.setNode(jid);
+		
+		var iq1:IQ = subscribe.addQuery();
+		iq1.callback = bridgeCallBackHandler;
+		connection.send(iq1);
+	}
+	
+	public function bridgeCommand(jid:String, actions:Array) : void
+	{
+		var request:ManageVoiceBridge = new ManageVoiceBridge(IQ.TYPE_SET,("voicebridge1."+connection.server),connection.username+"@"+connection.server,"execute");
+		request.setJID(jid);
+		request.setActions(actions);
+		
+		var iq2:IQ = request.addQuery();
+		iq2.callback = bridgeCallBackHandler;
+		connection.send(iq2);
+		
+	}
+
+	public function bridgeCallBackHandler(iq:IQ):void
+	{	
+		var commandNode:XMLNode = iq.getNode().firstChild;
+		var replyNode:XMLNode = commandNode.firstChild;
+
+		if(replyNode != null && replyNode.nodeName == "note")
+		{	
+			Alert.show(replyNode.nodeValue);
+		}
+	}
+	
+	
+
+	public function checkKeepAlive(event:TimerEvent):void 
+	{
+		MonsterDebugger.trace(this, "checkKeepAlive");
+		if (new Date().getTime() - _lastSent > 15000)
+		{
+			if (connection.isLoggedIn() && connection.isActive())
+			{
+				//connection.sendKeepAlive();
+			}
+		}
+	}
+
+
+	public function handleVCard(card:VCard):void 
+	{	
+		MonsterDebugger.trace(this, "handleVCard.....");
+		if (card != null)
+		{
+			var nickname:String = card.nickname;
+			var firstName:String = "";
+			var lastName:String = "";			
+			
+			if (card.name != null)
+			{
+				firstName = card.name.given;
+				lastName = card.name.family;
+				
+				if(firstName && firstName.length > 0 && lastName && lastName.length > 0)
+					displayName = firstName + " " + lastName;									
+			}
+
+			if(nickname && nickname.length > 0)
+				displayName = nickname;
+				
+			MonsterDebugger.trace(this, "ExternalInterface.call displayName");
+			//ExternalInterface.call("displayName", displayName, firstName, lastName);								
+		}
+		
+	}	
+	
+]]>
+</mx:Script>	
+</mx:Application>

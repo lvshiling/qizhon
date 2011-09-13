@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1633/flash/common/trunk/src/actionscript/org/flowplayer/net
+END
+BitrateResource.as
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1633/flash/common/trunk/src/actionscript/org/flowplayer/net/BitrateResource.as
+END
+IStreamSelectionManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1610/flash/common/trunk/src/actionscript/org/flowplayer/net/IStreamSelectionManager.as
+END
+OsmfNetStreamAdapter.as
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1318/flash/common/trunk/src/actionscript/org/flowplayer/net/OsmfNetStreamAdapter.as
+END
+StreamSwitchManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1633/flash/common/trunk/src/actionscript/org/flowplayer/net/StreamSwitchManager.as
+END
+BitrateItem.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1571/flash/common/trunk/src/actionscript/org/flowplayer/net/BitrateItem.as
+END
+ClusterManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1487/flash/common/trunk/src/actionscript/org/flowplayer/net/ClusterManager.as
+END
+StreamSelectionManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1571/flash/common/trunk/src/actionscript/org/flowplayer/net/StreamSelectionManager.as
+END

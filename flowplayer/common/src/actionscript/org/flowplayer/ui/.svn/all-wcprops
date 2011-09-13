@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1665/flash/common/trunk/src/actionscript/org/flowplayer/ui
+END
+AutoHide.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1583/flash/common/trunk/src/actionscript/org/flowplayer/ui/AutoHide.as
+END
+DisplayObjectNotification.as
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1358/flash/common/trunk/src/actionscript/org/flowplayer/ui/DisplayObjectNotification.as
+END
+Notification.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1368/flash/common/trunk/src/actionscript/org/flowplayer/ui/Notification.as
+END
+AutoHideConfig.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1318/flash/common/trunk/src/actionscript/org/flowplayer/ui/AutoHideConfig.as
+END
+TextNotification.as
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1358/flash/common/trunk/src/actionscript/org/flowplayer/ui/TextNotification.as
+END
