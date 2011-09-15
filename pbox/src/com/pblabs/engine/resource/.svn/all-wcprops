@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/984/trunk/src/com/pblabs/engine/resource
+END
+ResourceBundle.as
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/922/trunk/src/com/pblabs/engine/resource/ResourceBundle.as
+END
+SWFResource.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/655/trunk/src/com/pblabs/engine/resource/SWFResource.as
+END
+ResourceManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/958/trunk/src/com/pblabs/engine/resource/ResourceManager.as
+END
+Resource.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/785/trunk/src/com/pblabs/engine/resource/Resource.as
+END
+MP3Resource.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/794/trunk/src/com/pblabs/engine/resource/MP3Resource.as
+END
+SoundResource.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/983/trunk/src/com/pblabs/engine/resource/SoundResource.as
+END
+ResourceEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/283/trunk/src/com/pblabs/engine/resource/ResourceEvent.as
+END
+ImageResource.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/762/trunk/src/com/pblabs/engine/resource/ImageResource.as
+END
+DataResource.as
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/983/trunk/src/com/pblabs/engine/resource/DataResource.as
+END
+XMLResource.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/540/trunk/src/com/pblabs/engine/resource/XMLResource.as
+END

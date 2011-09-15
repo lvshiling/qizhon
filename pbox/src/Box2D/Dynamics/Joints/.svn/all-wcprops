@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints
+END
+b2DistanceJointDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2DistanceJointDef.as
+END
+b2GearJointDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2GearJointDef.as
+END
+b2Joint.as
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2Joint.as
+END
+b2PrismaticJointDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2PrismaticJointDef.as
+END
+b2JointEdge.as
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2JointEdge.as
+END
+b2MouseJoint.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2MouseJoint.as
+END
+b2RevoluteJoint.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2RevoluteJoint.as
+END
+b2RevoluteJointDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2RevoluteJointDef.as
+END
+b2MouseJointDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2MouseJointDef.as
+END
+b2PrismaticJoint.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2PrismaticJoint.as
+END
+b2JointDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2JointDef.as
+END
+b2GearJoint.as
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2GearJoint.as
+END
+b2Jacobian.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2Jacobian.as
+END
+b2DistanceJoint.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2DistanceJoint.as
+END
+b2PulleyJointDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2PulleyJointDef.as
+END
+b2PulleyJoint.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/219/trunk/src/Box2D/Dynamics/Joints/b2PulleyJoint.as
+END

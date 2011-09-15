@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/968/trunk/src/com/pblabs/animation
+END
+PointAnimator.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/283/trunk/src/com/pblabs/animation/PointAnimator.as
+END
+Animator.as
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/968/trunk/src/com/pblabs/animation/Animator.as
+END
+AnimatorComponent.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/460/trunk/src/com/pblabs/animation/AnimatorComponent.as
+END
+AnimationEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/283/trunk/src/com/pblabs/animation/AnimationEvent.as
+END
+AnimatorType.as
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/431/trunk/src/com/pblabs/animation/AnimatorType.as
+END

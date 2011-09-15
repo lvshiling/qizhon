@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/983/trunk/src/com/pblabs/engine/serialization
+END
+Enumerable.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/538/trunk/src/com/pblabs/engine/serialization/Enumerable.as
+END
+ISerializable.as
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/283/trunk/src/com/pblabs/engine/serialization/ISerializable.as
+END
+TestForMetadata.as
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/983/trunk/src/com/pblabs/engine/serialization/TestForMetadata.as
+END
+TypeUtility.as
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/968/trunk/src/com/pblabs/engine/serialization/TypeUtility.as
+END
+Serializer.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/968/trunk/src/com/pblabs/engine/serialization/Serializer.as
+END

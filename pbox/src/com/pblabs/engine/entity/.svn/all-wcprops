@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/983/trunk/src/com/pblabs/engine/entity
+END
+allocateEntity.as
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/773/trunk/src/com/pblabs/engine/entity/allocateEntity.as
+END
+IEntity.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/817/trunk/src/com/pblabs/engine/entity/IEntity.as
+END
+EntityComponent.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/810/trunk/src/com/pblabs/engine/entity/EntityComponent.as
+END
+IPropertyBag.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/538/trunk/src/com/pblabs/engine/entity/IPropertyBag.as
+END
+PropertyReference.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/962/trunk/src/com/pblabs/engine/entity/PropertyReference.as
+END
+PropertyInfo.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/983/trunk/src/com/pblabs/engine/entity/PropertyInfo.as
+END
+Entity.as
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/983/trunk/src/com/pblabs/engine/entity/Entity.as
+END
+IEntityComponent.as
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/773/trunk/src/com/pblabs/engine/entity/IEntityComponent.as
+END

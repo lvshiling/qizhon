@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/484/trunk/src/br/com/stimuli/loading/lazyloaders
+END
+LazyJSONLoader.as
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/484/trunk/src/br/com/stimuli/loading/lazyloaders/LazyJSONLoader.as
+END
+LazyBulkLoader.as
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/484/trunk/src/br/com/stimuli/loading/lazyloaders/LazyBulkLoader.as
+END
+LazyXMLLoader.as
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/484/trunk/src/br/com/stimuli/loading/lazyloaders/LazyXMLLoader.as
+END

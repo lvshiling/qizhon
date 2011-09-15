@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes
+END
+b2MassData.as
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2MassData.as
+END
+b2PolygonDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2PolygonDef.as
+END
+b2PolygonShape.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2PolygonShape.as
+END
+b2CircleDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2CircleDef.as
+END
+b2ShapeDef.as
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2ShapeDef.as
+END
+b2FilterData.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2FilterData.as
+END
+b2Shape.as
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2Shape.as
+END
+b2CircleShape.as
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/219/trunk/src/Box2D/Collision/Shapes/b2CircleShape.as
+END

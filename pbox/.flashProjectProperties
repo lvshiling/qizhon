@@ -1,0 +1,33 @@
+<projectDescription>
+  <id>1281446874347</id>
+  <name>PBFlyerGame</name>
+  <asVersion>0</asVersion>
+  <boundTemplate>file:///Macintosh HD/Users/srivello/Library/Application Support/Adobe/Flash CS5/en_US/Configuration/ActionScript 3.0/Templates/boundClass_as3.as</boundTemplate>
+  <classTemplate>file:///Macintosh HD/Users/srivello/Library/Application Support/Adobe/Flash CS5/en_US/Configuration/ActionScript 3.0/Templates/standardClass_as3.as</classTemplate>
+  <classPath>.</classPath>
+  <defaultApp/>
+  <rootURI>file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/</rootURI>
+  <flexSDK/>
+  <sources editable="false"/>
+  <libraries editable="false">
+    <uri label="">./libs</uri>
+  </libraries>
+  <externalLibraries editable="false"/>
+  <compileList editable="false">
+    <uri label="PBFlyerGame_v1.fla">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/PBFlyerGame_v1.fla</uri>
+  </compileList>
+  <recentFiles editable="false">
+    <uri label="GameOverComponent.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/src/com/rmc/projects/pbflyergame/components/GameOverComponent.as</uri>
+    <uri label="MoveByKeyboardInputComponent.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/src/com/rmc/projects/pbflyergame/components/MoveByKeyboardInputComponent.as</uri>
+    <uri label="GameScreen.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/src/com/rmc/projects/pbflyergame/screens/GameScreen.as</uri>
+    <uri label="FlyerGameHelper.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/src/com/rmc/utils/pbe/FlyerGameHelper.as</uri>
+    <uri label="PBFlyerGame.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/src/com/rmc/projects/pbflyergame/PBFlyerGame.as</uri>
+    <uri label="CollisionDetectComponent.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/src/com/rmc/projects/pbflyergame/components/CollisionDetectComponent.as</uri>
+    <uri label="PBFlyerGame_v1.fla">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/PBFlyerGame_v1.fla</uri>
+    <uri label="PBFlyerGameDocumentClass.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/PBFlyerGameDocumentClass.as</uri>
+    <uri label="PBFlyerGame.as">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame/src/com/rmc/projects/pbflyergame/PBFlyerGame.as</uri>
+  </recentFiles>
+  <locations editable="true">
+    <uri label="src">file:///Macintosh HD/Users/srivello/Documents/workspaces/FlashBuilder4/PBFlyerGame_FlashCS5Only/src/</uri>
+  </locations>
+</projectDescription>
