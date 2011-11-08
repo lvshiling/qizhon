@@ -11,6 +11,7 @@ Fixes:
 - Issue #327, onStart was not dispatched for mp3 streams
 - Issue #338 don't set clip currentTime when dynamic stream switching.
 - Issue #355, setup targeted options for Flash 10.1 to provide support for 10.0
+- Issue #351, connectionArgs are not passed to RTMPT connections
 
 3.2.3
 -----

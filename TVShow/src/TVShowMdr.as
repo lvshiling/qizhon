@@ -19,6 +19,7 @@ package
 	import flash.media.Video;
 	import flash.net.NetConnection;
 	import flash.net.NetStream;
+	import flash.utils.*;
 	import flash.utils.Timer;
 	
 	import mx.controls.Alert;
@@ -32,15 +33,24 @@ package
 	public class TVShowMdr
 	{
 		private var tvShow:TVShow;
-		private var rtmpUrl:String = "rtmp://222.73.33.198/tvshow"; 
+		//private var rtmpUrl:String = "rtmp://222.73.33.202/tvshow"; //lvs
+		private var rtmpUrl:String = "rtmp://222.73.33.200/tvshow"; //now beta
+
 		//private var rtmpUrl:String = "rtmp://127.0.0.1/tvshow"; 
+		//private var rtmpUrl:String = "rtmp://192.168.82.140/tvshow"; 
+		//private var rtmpUrl:String = "rtmp://222.73.33.201/tvshow"; //origin
 		private var streamKey:String = "key";
+		//private var streamKey:String = "D89F3A35931C386956C1A402A8E09941";
 		private var streamName:String = "me";
 		private var nc:NetConnection = null;
+		private var ncSmall:NetConnection = null;
 		private var nsMe:NetStream;
+		private var nsMeSmall:NetStream;
 		private var timer:Timer;
 		private var camera:Camera;
 		private var mic:Microphone;
+		private var smallCamera:Camera;
+		private var smallMic:Microphone;
 		private var role:String = "publisher";
 		private var videoPicQuality:int = 0;
 		private var videoFps:int = 30;
@@ -56,6 +66,8 @@ package
 		private var liveStartCallBack:String = 'onliveStart';
 		private var liveEndCallBack:String = 'onliveEnd';
 		private var id:String;
+		private var startLiveTime:uint = 0;
+		
 		public function TVShowMdr(app:TVShow)
 		{
 			MonsterDebugger.initialize(this);
@@ -91,6 +103,16 @@ package
 			//tvShow.main.uploadBtn.addEventListener(MouseEvent.CLICK, onUploadBtn);
 			//tvShow.main.uploadCancel.addEventListener(MouseEvent.CLICK, onUploadCancel);
 			//TODO
+			tvShow.main.callHaiBaoOk.addEventListener(MouseEvent.CLICK, onCallHaiBaoOk);
+			tvShow.main.callHaiBaoCal.addEventListener(MouseEvent.CLICK, onCallHaiBaoCal);
+		}
+		private function onCallHaiBaoOk(evt:MouseEvent):void
+		{
+			onCaptureBtn(null);
+		}
+		private function onCallHaiBaoCal(evt:MouseEvent):void
+		{
+			tvShow.main.currentState = 'State1';
 		}
 		private function getRecordFlvName():String
 		{
@@ -176,8 +198,25 @@ package
 		}
 		private function onChooseok(evt:MouseEvent):void
 		{
+			if(tvShow.chooseDevice.selectCamera == -1)
+			{
+				Alert.show('请选择主画面摄像头设备','提示');
+				return;
+			}
+			if(tvShow.chooseDevice.selectMic == -1)
+			{
+				Alert.show('请选择主画面麦克风设备','提示');
+				return;
+			}
+			if(tvShow.chooseDevice.cameraArray.length>1&&tvShow.chooseDevice.selectCamera == tvShow.chooseDevice.selectCameraSmall)
+			{
+				Alert.show('主画面摄像头设备 与 画中画摄像头设备不能相同','提示');
+				return;
+			}
 			getCamera(tvShow.chooseDevice.selectCamera);
 			getMicrophone(tvShow.chooseDevice.selectMic);
+			getSmallCamera(tvShow.chooseDevice.selectCameraSmall);
+			//getSmallMicrophone(tvShow.chooseDevice.selectMicSmall);
 			tvShow.chooseDevice.visible = false;
 			tvShow.main.visible = true;
 			Alert.show('请晃动摄像头，以便将其激活','提示');
@@ -199,6 +238,10 @@ package
 			if(nsMe)
 			{
 				nsMe.close();
+			}
+			if(nsMeSmall)
+			{
+				nsMeSmall.close();
 			}
 			if(nc)
 			{
@@ -232,9 +275,13 @@ package
 		{
 			tvShow.main.currActivityLevel.setProgress(mic.activityLevel, 100);
 			//trace("mic.activityLevel: "+mic.activityLevel);
+			tvShow.main.liveTime.text = '直播时间:' + genTimeStr();
+			//MonsterDebugger.log('liveTime:',tvShow.main.liveTime.text);
 		}
 		private function publishStared():void
 		{
+			tvShow.main.currentState = 'callHaiBaoState';
+			startLiveTime = getTimer();
 			tvShow.main.volumeBar.visible = true;
 			tvShow.main.captureBtn.visible = true;
 			tvShow.main.currActivityLevel.visible = true;
@@ -243,6 +290,19 @@ package
 			tvShow.addEventListener(Event.ENTER_FRAME, tvShowEventLoop);
 			
 		}
+		private function genTimeStr():String
+		{
+			var hour:uint = 0;
+			var minute:uint = 0;
+			var second:uint = 0;
+			var delt:uint = 0;
+			
+			delt = getTimer() - startLiveTime;
+			hour = delt / (1000 * 60 * 60);
+			minute = (delt - hour *(1000 * 60 * 60)) / (1000 * 60);
+			second = (delt - hour * (1000 * 60 * 60) - minute * (1000 * 60)) / 1000;
+			return ''+hour+'时:'+minute+'分:'+second+'秒';
+		}
 		private function setupConnection():void
 		{					
 			nc = new NetConnection();
@@ -250,7 +310,11 @@ package
 			nc.addEventListener(NetStatusEvent.NET_STATUS, onNetStatus);
 			nc.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
 			nc.connect(rtmpUrl);
+			tvShow.main.currentState = "connectState";
 		}
+		private function onBWDone():void
+		{}
+		
 		private function onNetStatus(evt:NetStatusEvent):void
 		{
 			switch(evt.info.code) 
@@ -262,6 +326,7 @@ package
 				case "NetConnection.Connect.Failed":
 				case "NetConnection.Connect.Rejected":
 					tvShow.main.stateTip.text = '连接直播服务器失败，重连中';
+					tvShow.main.connTips.text += "连接直播服务器失败，重连中...";
 					timer = new Timer(1000);
 					timer.addEventListener(TimerEvent.TIMER, function onTimer(evt:TimerEvent):void
 					{
@@ -285,6 +350,7 @@ package
 		
 		private function connected():void
 		{	
+			tvShow.main.currentState = "State1";
 			switch (role)
 			{
 				case "viewer":
@@ -299,9 +365,11 @@ package
 		}
 		private function handlePublish(id:String, type:String):void
 		{
+			var parm1:String = '';
 			if(!id||!type)
 				MonsterDebugger.log('handlePublish params error: ',id, type);
 			MonsterDebugger.log('handlePublish');
+			//NORMAL NS Live
 			nsMe = new NetStream(nc);
 			nsMe.bufferTime = 0;		
 			nsMe.addEventListener(NetStatusEvent.NET_STATUS, function (evt:NetStatusEvent ):void 
@@ -333,7 +401,7 @@ package
 			
 			nsMe.addEventListener(AsyncErrorEvent.ASYNC_ERROR, function (event:AsyncErrorEvent):void 
 			{		    	
-				
+				MonsterDebugger.log('nsMe AsyncErrorEvent.ASYNC_ERROR');
 			});
 			
 			if (camera != null) 
@@ -347,26 +415,73 @@ package
 			
 			nsMe.publish(id, type);
 			MonsterDebugger.log(type + ' published: '+id);
+			MonsterDebugger.log(type + ' selectCameraSmall: '+tvShow.chooseDevice.selectCameraSmall);
+
+			if(tvShow.chooseDevice.selectCameraSmall != -1)
+			{
+				parm1 = 'HAS_SMALL';
+				//SMALL NS live,picture in picture
+				nsMeSmall = new NetStream(nc);
+				nsMeSmall.bufferTime = 0;		
+				nsMeSmall.addEventListener(NetStatusEvent.NET_STATUS, function (evt:NetStatusEvent ):void 
+				{	
+					
+					switch(evt.info.code) 
+					{
+						case "NetStream.Connect.Success":
+							
+						case "NetStream.Play.StreamNotFound":
+							break;
+						
+						case "NetStream.Play.Failed":	
+							break;
+						
+						case "NetStream.Play.Start":							
+							break;
+						
+						case "NetStream.Play.Stop":
+							break;
+						
+						case "NetStream.Buffer.Full":
+							break;
+						
+						default:
+					}		    	
+				});
+				
+				
+				nsMeSmall.addEventListener(AsyncErrorEvent.ASYNC_ERROR, function (event:AsyncErrorEvent):void 
+				{		    	
+					MonsterDebugger.log("nsMeSmall AsyncErrorEvent.ASYNC_ERROR");
+				});
+				
+				if (smallCamera != null) 
+				{
+					nsMeSmall.attachCamera(smallCamera);
+					MonsterDebugger.log("smallCamera not null");
+				}
+				nsMeSmall.publish(id+"SMALL", type);
+				MonsterDebugger.log(type + ' published: '+id+"SMALL");
 			
+			}
 			if(type == 'live')
 			{
 				try {
-				 	ExternalInterface.call(liveStartCallBack);
+				 	ExternalInterface.call(liveStartCallBack,parm1);
 				} catch (e:Error) {
-					MonsterDebugger.trace(liveStartCallBack, e);
+					MonsterDebugger.trace(liveStartCallBack, e,parm1);
 				}
 			}
 			publishStared();
 		}
-		private function getCamera(name:String):void
+		private function getCamera(name:int):void
 		{
-			camera = Camera.getCamera(name);
-			if (!camera)
-			{
-				camera = Camera.getCamera();
-			}
+			MonsterDebugger.log('getCamera: '+name);
+			camera = Camera.getCamera(name+'');
+
 			if (camera != null)
 			{
+				MonsterDebugger.log('getCamera: '+camera.name);
 				camera.addEventListener(ActivityEvent.ACTIVITY, cameraActivityHandler);
 				camera.addEventListener(StatusEvent.STATUS, onCameraStatus);
 				switch (camera.width) 
@@ -396,6 +511,47 @@ package
 				
 			}
 		}
+		private function getSmallCamera(name:int):void
+		{
+			MonsterDebugger.log('getSmallCamera: '+name);
+			if(name == -1) 
+			{
+				tvShow.main.videoDisplaySmall.visible = false;
+				return;
+			}
+			smallCamera = Camera.getCamera(name+'');
+			if (smallCamera != null)
+			{
+				MonsterDebugger.log('getSmallCamera: '+smallCamera.name);
+				smallCamera.addEventListener(ActivityEvent.ACTIVITY, cameraActivityHandler);
+				smallCamera.addEventListener(StatusEvent.STATUS, onCameraStatus);
+				switch (smallCamera.width) 
+				{
+					case 160:
+					case 320:
+						smallCamera.setMode(320, 240, 10); 
+						break;
+					default:
+						smallCamera.setMode(160, 120, 15);
+						break;
+				}
+				smallCamera.setQuality(videoBandwidth, videoPicQuality);
+				tvShow.main.videoDisplaySmall.attachCamera(smallCamera);
+				
+			}
+			else
+			{
+				if(Camera.names.length > 0)
+				{
+					Alert.show('其他程序正在使用你的摄像头','提示');
+				}
+				else
+				{
+					Alert.show('没发现任何摄像头','提示');
+				}
+				
+			}
+		}
 		private function getMicrophone(idx:int):void
 		{
 			//var mic:Microphone = Microphone.getEnhancedMicrophone();	
@@ -404,6 +560,7 @@ package
 			mic.setLoopBack(false);
 			if (mic != null)
 			{
+				
 				mic.setUseEchoSuppression(true);
 				mic.setSilenceLevel(10, 20000);
 				mic.gain = 60;

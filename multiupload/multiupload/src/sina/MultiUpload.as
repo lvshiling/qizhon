@@ -120,8 +120,8 @@ package sina
 		
 		public function init():void
 		{
-			_setHeightCallback = "MULTIUpload.instances[\"" + _movieName + "\"].setHeight";
-			_endUploadCallback = "MULTIUpload.instances[\"" + _movieName + "\"].endUpload";
+			_setHeightCallback = "setHeight";
+			_endUploadCallback = "endUpload";
 			
 			_addHeadGroup();
 			_addImgGroup();
@@ -451,6 +451,8 @@ package sina
 			if (_numImgUploadedError <= 0) {
 				try {
 					ExternalCall.endUpload(_endUploadCallback, _response);
+					MonsterDebugger.log("endUpload", _response);
+					
 				} catch (e:Error) {
 					MonsterDebugger.trace("endUpload", e);
 				}

@@ -10,39 +10,113 @@
 			
 			import spark.events.IndexChangeEvent;
 			[Bindable]
-			private var cameraArray:ArrayCollection;
+			public var cameraArray:ArrayCollection;
 			[Bindable]
-			private var micArray:ArrayCollection;
-			public var selectCamera:String = '';
+			public var micArray:ArrayCollection;
+			[Bindable]
+			public var smallCameraArray:ArrayCollection;
+			
+			public var defaultCameraArray:ArrayCollection;
+			
+			
+			public var selectCamera:int = -1;
 			public var selectMic:int = -1;
+			public var selectCameraSmall:int = -1;
+			public var selectMicSmall:int = -1;
 			protected function creationCompleteHandler(event:FlexEvent):void
 			{
 				// TODO Auto-generated method stub
-				Security.showSettings(SecurityPanel.CAMERA);
+				//Security.showSettings(SecurityPanel.CAMERA);
 				cameraArray = new ArrayCollection(Camera.names);
+				smallCameraArray = new ArrayCollection(Camera.names);
+				smallCameraArray.addItemAt('无',0);
+				defaultCameraArray = new ArrayCollection(Camera.names);
 				micArray = new ArrayCollection(Microphone.names);
 				
 			}
+			private function remapping(name:String):int
+			{
+				var idx:int = -1;
+				
+				for (var i:uint = 0; i < Camera.names.length; i++)
+				{
+					if(name == Camera.names[i] as String)
+					{
+						idx = i;
+						break;
+					}
+				
+				}
+				
+				return idx;
+			}
 			private function onCameraChanged(evt:IndexChangeEvent):void
 			{
-				selectCamera = cameraArray[cameras.selectedIndex];	
-				
-			}
+				selectCamera = cameras.selectedIndex;	
+				var name:String = cameraArray.getItemAt(selectCamera) as String;
+				for  (var i:uint = 0; i < smallCameraArray.length; i++)
+				{
+					var value:String = smallCameraArray.getItemAt(i) as String;
+					if(value == name)
+					{
+						smallCameraArray.removeItemAt(i);
+						break;
+					}
+				}
+				selectCamera = remapping(name);
+			}	
 			private function onMicphoneChanged(evt:IndexChangeEvent):void
 			{
 				selectMic = micphones.selectedIndex;
 			}
-			
+			private function onSmallCameraChanged(evt:IndexChangeEvent):void
+			{
+				selectCameraSmall = smallCameras.selectedIndex;	
+				var name:String = smallCameraArray.getItemAt(selectCameraSmall) as String;
+				
+				for  (var i:uint = 0; i < cameraArray.length; i++)
+				{
+					var value:String = cameraArray.getItemAt(i) as String;
+					if(value == name)
+					{
+						cameraArray.removeItemAt(i);
+						break;
+					}
+				}
+				selectCameraSmall = remapping(name);
+			}
+			private function onSmallMicphoneChanged(evt:IndexChangeEvent):void
+			{
+				selectMicSmall = smallMicphones.selectedIndex;
+			}
+			private function onReset(evt:MouseEvent):void
+			{
+				smallCameraArray.removeAll();
+				smallCameraArray.addItem('无');
+				smallCameraArray.addAll(new ArrayCollection(Camera.names));
+				cameraArray.removeAll();
+				cameraArray.addAll( new ArrayCollection(Camera.names));
+			}
 		]]>
 	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:ComboBox id="cameras" x="42" y="104" width="115" dataProvider="{cameraArray}" prompt="请选择摄像头"
+	<s:ComboBox id="cameras" x="44" y="66" width="115" dataProvider="{cameraArray}" prompt="请选择摄像头"
 				change="onCameraChanged(event)"/>
-	<s:ComboBox id="micphones" x="188" y="104" width="102" dataProvider="{micArray}" prompt="请选择麦克风"
+	<s:ComboBox id="micphones" x="179" y="66" width="102" dataProvider="{micArray}" prompt="请选择麦克风"
 			    change="onMicphoneChanged(event)"/>
-	<s:Button x="136" y="185" label="确定" id="ok"/>
-	<s:Label x="42" y="84" text="选择摄像头"/>
-	<s:Label x="188" y="84" text="选择麦克风"/>
+	<s:Button id="ok" x="89" y="174" width="53" label="确定"/>
+	<mx:HRule x="43" y="122" width="248"/>
+	<s:Label x="44" y="42" fontFamily="Arial" fontSize="14" text="主画面"/>
+	<s:ComboBox id="smallCameras" x="46" y="132" width="115" dataProvider="{smallCameraArray}" prompt="请选择摄像头"
+				change="onSmallCameraChanged(event)"/>
+	<s:ComboBox id="smallMicphones" x="188" y="177" width="102" dataProvider="{micArray}" prompt="请选择麦克风"
+				change="onSmallMicphoneChanged(event)" visible="false"/>
+	<s:Label x="44" y="101" fontSize="14" text="画中画"/>
+	<mx:HRule x="44" y="36" width="248" height="2"/>
+	<s:Label x="126" y="15" fontSize="15" text="请选择设备"/>
+	<s:Button id="reset" x="155" y="174" width="52" label="重置" click="onReset(event);"/>
+	<s:Label x="90" y="44" text="（必选）"/>
+	<s:Label x="88" y="102" text="（可选）"/>
 </s:Group>

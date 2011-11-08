@@ -90,7 +90,8 @@ package
 				queue.append( new SWFLoader(generateMcUrl(mcName), 
 						{ container:stageWin, hAlign:'center', name:'giftMc' + i, y:0, autoPlay:false , noCache:false, onComplete:onloaderComplete  } ));
 			}
-			//queue.append( new MP3Loader("mp3/audio.mp3", {name:"audio", repeat:2, autoPlay:true}) );
+			var sound:MP3Loader = new MP3Loader(generateMp3Url(''), { name:"sound", repeat:0, autoPlay:true, autoDispose:false });
+			queue.append(sound);
 			//LoaderMax.prioritize('giftMc');
 			queue.load();
 			function onloaderComplete(event:LoaderEvent):void
@@ -146,7 +147,9 @@ package
 					removeNum = removeNum + 1;
 					if (removeNum == num)
 					{
-						ExternalInterface.call('onEndShowGift');	
+						ExternalInterface.call('onEndShowGift');
+						sound.soundPaused = true;
+						sound.unload();
 					}
 				}
 			}
@@ -160,6 +163,8 @@ package
 			//queue.append( new DataLoader(generateGiftUrl(giftName), { name:"giftBin", format:"binary", estimatedBytes:3500 } ) );
 			//queue.append( new ImageLoader("img/photo1.jpg", {name:"photo1", estimatedBytes:2400, container:this, alpha:0, width:250, height:150, scaleMode:"proportionalInside"}) );
 			queue.append( new ImageLoader(generateGiftUrl(giftName), { name:'gift' } ));
+			var sound:MP3Loader = new MP3Loader(generateMp3Url(''), { name:"sound", repeat:0, autoPlay:true, autoDispose:false });
+			queue.append(sound);
 			queue.load();
 			
 			function randShowProgressHandler(event:LoaderEvent):void
@@ -174,6 +179,8 @@ package
 				
 				ExternalInterface.call('OnBeginShowGift');
 				gift = LoaderMax.getContent('gift');
+				if (!gift) 
+					return;
 				giftBitmapData = new BitmapData(gift.width, gift.height, true, 0xFFFFFF);
 				giftBitmapData.draw(gift,null,null,null,null,true);
 				
@@ -201,11 +208,18 @@ package
 					{
 						ExternalInterface.call('onEndShowGift');
 						MonsterDebugger.log("random show end");
+						sound.soundPaused = true;
+						sound.unload();
 					}
 				}
 			}
 			function randShowErrorHandler(event:LoaderEvent):void
 			{
+				if (sound)
+				{
+					sound.soundPaused = true;
+					sound.unload();
+				}
 			}
 		}
 		
@@ -219,7 +233,9 @@ package
 			loader = new DataLoader(shapeUrl, { name:"myText", requireWithRoot:this.stageWin.root, estimatedBytes:900 } );
 			queue.append(loader);
 			queue.append( new DataLoader(varUrl, {name:"myVariables", format:"variables"}) );
-			queue.append( new ImageLoader(giftUrl, {name:'gift'}));
+			queue.append( new ImageLoader(giftUrl, { name:'gift' } ));
+			var sound:MP3Loader = new MP3Loader(generateMp3Url(''), { name:"sound", repeat:0, autoPlay:true, autoDispose:false });
+			queue.append(sound);
 			queue.load();
 		
 			function progressHandler(event:LoaderEvent):void 
@@ -237,6 +253,9 @@ package
 				var gift_shape:XML = new XML(text);
 				var bornPoints:Array = [];
 				var shapePoints:Array = [];
+				
+				if (!gift)
+					return;
 				
 				ExternalInterface.call('OnBeginShowGift');
 				MonsterDebugger.log('OnBeginShowGift');
@@ -275,6 +294,8 @@ package
 					{
 						ExternalInterface.call('onEndShowGift');
 						MonsterDebugger.log('shape show end');
+						sound.soundPaused = true;
+						sound.unload();
 					}
 				}
 				
@@ -283,6 +304,11 @@ package
 			function errorHandler(event:LoaderEvent):void 
 			{
 				trace("error occured with " + event.target + ": " + event.text);
+				if (sound)
+				{
+					sound.soundPaused = true;
+					sound.unload();
+				}
 			}
 			
 		}
@@ -312,6 +338,14 @@ package
 			ret = ASSET_PATH + shapeName + '_var.txt';
 			return ret;
 		}
+		private function generateMp3Url(shapeName:String):String
+		{
+			shapeName = 'sexmic';
+			var ret:String = '';
+			ret = ASSET_PATH + shapeName + '.mp3';
+			return ret;
+		}
+		
 		private function generatePointArray(num:uint):Array
 		{
 			var ret:Array = [];

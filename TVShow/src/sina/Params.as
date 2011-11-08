@@ -12,7 +12,7 @@ package sina
 	public class Params
 	{
 		private static var instance:Params = null;
-		private static var callBack:String = "App.swfCall";
+		private static var callBack:String = null;
 		
 		private var loaderInfo:LoaderInfo;
 		private var _saveUrl:String = "http://127.0.0.1/avatar/save.php";
@@ -43,6 +43,7 @@ package sina
 			} catch (e:Error) {
 				MonsterDebugger.trace('Params.call', e);
 			}
+			MonsterDebugger.log(callBack, json);
 		}
 		
 		public function Params(loaderInfo:LoaderInfo = null) 
@@ -89,7 +90,7 @@ package sina
 			_token = String(parseParam("token", "8594A690213CAE455BF63C921B8D4BED"));
 			
 			// static
-			callBack = String(parseParam("callBack", "App.swfCall"));
+			callBack = String(parseParam("callBack", "savePicHander"));
 		}
 		
 		private function parseParam(key:String, defaults:* = null):*

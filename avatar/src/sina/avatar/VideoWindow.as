@@ -106,10 +106,10 @@ package sina.avatar
 						camera.setMode(320, 240, 10); 
 						break;
 					case 320:
-						camera.setMode(640, 480, 5); 
+						camera.setMode(320, 240, 10); 
 						break;
 					default:
-						camera.setMode(160, 120, 15);
+						camera.setMode(320, 240, 10);
 						break;
 				}
 				video = new Video(camera.width, camera.height);

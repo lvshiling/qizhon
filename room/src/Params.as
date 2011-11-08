@@ -27,7 +27,8 @@ package
 		private var _domain:String;
 		private var _resource:String;
 		private var _anonymous:String;
-		
+		private var _priority:uint;
+		private var _subject:String;
 		public static function getInstance(loaderInfo:LoaderInfo = null):Params
 		{
 			if (instance === null || loaderInfo is LoaderInfo) {
@@ -110,6 +111,14 @@ package
 		{
 			return _anonymous;
 		}
+		public function get priority():uint
+		{
+			return _priority;
+		}
+		public function get subject():String
+		{
+			return _subject;
+		}
 		private function parse():void
 		{
 			if (!(this.loaderInfo is LoaderInfo)) {
@@ -123,11 +132,13 @@ package
 			_userName = String(parseParam("userName", "9999"));
 			_password = String(parseParam("password", "123456"));
 			_nickName = String(parseParam("nickName", "lover"));
-			_groupName = String(parseParam("groupName", "1"));
+			_groupName = String(parseParam("groupName", "8888"));
 			_server = String(parseParam("server", "127.0.0.1"));
 			_domain = String(parseParam("domain", ""));
 			_resource = String(parseParam("resource", "web"));
-			_anonymous = String(parseParam("anonymous", "YES"));
+			_anonymous = String(parseParam("anonymous", "NO"));
+			_priority = uint(parseParam("priority", "3"));
+			_subject = String(parseParam("subject", "88888888888"));
 			// static
 			callBack = String(parseParam("callBack", "App.swfCall"));
 		}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   width="200" height="80" creationComplete="onCreate(event)">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.demonsters.debugger.MonsterDebugger;
+			
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			private var postUrl:String = "http://192.168.82.213:8080/user/ajaxGiveScoreApi.do";
+			private var ratingUid:String = "5345";
+			private var callBack:String = "ratingCallBack";
+			private var ratingVal:Number;
+			protected function onCreate(event:FlexEvent):void
+			{
+				postUrl = FlexGlobals.topLevelApplication.parameters.postUrl == null 	? postUrl : 	FlexGlobals.topLevelApplication.parameters.postUrl;
+				ratingUid = FlexGlobals.topLevelApplication.parameters.uid == null 	? ratingUid : 	FlexGlobals.topLevelApplication.parameters.uid;
+				callBack = FlexGlobals.topLevelApplication.parameters.callBack == null 	? callBack : 	FlexGlobals.topLevelApplication.parameters.callBack;
+				MonsterDebugger.initialize(this);
+				MonsterDebugger.log('ratingUid=',ratingUid);
+				MonsterDebugger.log('callBack', callBack);
+			}
+			
+			protected function ratingChanged(event:Event):void
+			{
+				trace(event.target.value);
+				ratingVal = event.target.value;
+				uploadRating();
+			}
+			
+			private function uploadRating():void
+			{
+				var request:URLRequest;
+				var params:Object = new Object;
+				params = {uid:ratingUid,value:ratingVal};
+				if (params is Object) {
+					var tmp:Array = new Array();
+					for (var key:String in params) {
+						tmp.push(key + "=" + encodeURIComponent(params[key]));
+					}
+					
+					postUrl += (postUrl.indexOf("?") > -1) ? "&" : "?";
+					postUrl += tmp.join("&");
+				}
+				MonsterDebugger.log('postUrl=', postUrl);
+				request = new URLRequest(postUrl);
+				request.method = URLRequestMethod.POST;
+				var url:URLLoader = new URLLoader(request);
+				url.addEventListener(Event.COMPLETE, onComplete);
+				function onComplete(event:Event):void
+				{
+					var txtData:String = event.target.data;
+					ExternalInterface.call(callBack, txtData);
+				}
+			}
+			
+			private function onMouseDown(evt:Event):void
+			{
+				
+			}
+	
+			private function onThumbDrag(evet:Event):void
+			{
+				
+			}
+			
+			private function dataTipFormatFunction(val:String):String
+			{
+				return ''+val+"分";
+			}
+			//skinClass="com.qizhon.skin.QizhonHSliderSkin"
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<mx:HSlider x="0" y="0" width="200" height="80" minimum="0" maximum="10" showTrackHighlight="true"
+				tickInterval="1" labels="['0分','2分','4分','6分','8分','10分']"
+			    snapInterval="0.5" mouseDown="onMouseDown(event)" thumbDrag="onThumbDrag(event)"
+			    horizontalCenter="0" verticalCenter="0"
+			    liveDragging="false" change="ratingChanged(event)"
+			    dataTipFormatFunction="dataTipFormatFunction"
+			    showDataTip="false"
+			   />
+</s:Application>

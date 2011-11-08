@@ -18,10 +18,14 @@ package
 	import org.igniterealtime.xiff.conference.RoomOccupant;
 	import org.igniterealtime.xiff.core.*;
 	import org.igniterealtime.xiff.data.*;
+	import org.igniterealtime.xiff.data.im.RosterGroup;
+	import org.igniterealtime.xiff.data.im.RosterItemVO;
 	import org.igniterealtime.xiff.events.*;		
 	import org.igniterealtime.xiff.auth.Anonymous;
     import org.igniterealtime.xiff.vcard.VCard;
 	import org.igniterealtime.xiff.openlink.*;
+	import org.igniterealtime.xiff.im.Roster;
+	import org.igniterealtime.xiff.events.RosterEvent;
 	import com.demonsters.debugger.MonsterDebugger;
 	
 	public class XmppTransporter 
@@ -29,6 +33,7 @@ package
 		private var connection:XMPPConnection;
 		private var connectiontype:String = "socket";
 		private var keepAliveTimer:Timer;
+		private var KEEP_ALIVE_PERIOD:int = 5 * 60 * 1000;
 		private var _lastSent:int = 0;
 		
 		private var userName:String;
@@ -37,12 +42,13 @@ package
 		private var nickName:String;
 		private var groupName:String;
 		private var anonymous:String;
-		
+		private var priority:uint;
 		private var resource:String;
 		private var domain:String;
 		private var server:String;
-	
+		private var subject:String;
 		private var room:Room;
+		private var _roster:Roster;
 		/**
 		 * For openfire system params,pls reference
 		 * http://community.igniterealtime.org/docs/DOC-1061
@@ -58,8 +64,8 @@ package
 			server = param.server; 
 			domain = param.domain;
 			resource = param.resource;
-			
-			weblog("XmppTransporter:", userName + '|' + password + '|' + nickName + '|' + groupName + '|' + anonymous + '|' + server + '|' + domain + '|' + resource);
+			priority = param.priority;
+			weblog("XmppTransporter:", userName + '|' + password + '|' + nickName + '|' + groupName + '|' + anonymous + '|' + server + '|' + domain + '|' + resource+'|'+priority);
 			MonsterDebugger.log(userName + '|' + password + '|' + nickName + '|' + groupName + '|' + anonymous + '|' + server + '|' + domain + '|' + resource);
 			addCallBack();
 			init();
@@ -79,28 +85,30 @@ package
 			connection.addEventListener(XIFFErrorEvent.XIFF_ERROR, onXiffError);
 			connection.addEventListener(DisconnectionEvent.DISCONNECT, onDisConnect); 	
 			connection.addEventListener(MessageEvent.MESSAGE, onMessage);
-			
+			setupRoster();
 			if (anonymous == 'YES')
 			{
 				connection.useAnonymousLogin = true;
-				ExternalInterface.call("log", "anonymous:", "YES");
+				weblog("anonymous:", "YES");
 				
 			} else {
 			
 				connection.username = userName;
 				connection.password = password;
-				ExternalInterface.call("log", "anonymous:", "NO");
+				weblog("anonymous:", "NO");
 			}
 			
 			connection.resource = resource;
 			connection.domain = domain;     			
 			connection.server = server;
 			connection.connect(XMPPConnection.STREAM_TYPE_STANDARD);
-			ExternalInterface.call("log", "connect:", "connecting");
+			weblog("connect:", "connecting");
+			
 		}
 		private function onOutGoingData(evt:OutgoingDataEvent):void
 		{
 			_lastSent = new Date().getTime();
+			weblog("send msg success", 'onOutGoingData');
 		}
 		private function onConnectSuccess(evt:ConnectionSuccessEvent):void
 		{
@@ -109,21 +117,16 @@ package
 		}
 		private function  onLogin(event:LoginEvent):void
 		{
-			trace("addEventListener: LoginEvent.LOGIN " + event);
 			weblog("login:", " success");
-			ExternalInterface.call("onRoomComplete");
-			
-			var recipient:EscapedJID = new EscapedJID(connection.domain);
-			var availablePresence:Presence = new Presence(recipient, null, null, null, "Logged In");
-			connection.send(availablePresence);
-			
+			//TOOPEN
+			ExternalInterface.call(CallList.onRoomComplete);
 			weblog("server: ", connection.server);
 			weblog("domain: ", connection.domain);
 			weblog("resource: ", connection.resource);
 			
 			if (keepAliveTimer) 
 				keepAliveTimer.stop();
-			keepAliveTimer = new Timer(15000);
+			keepAliveTimer = new Timer(KEEP_ALIVE_PERIOD);
 			keepAliveTimer.addEventListener(TimerEvent.TIMER, checkKeepAlive);
 			keepAliveTimer.start();
 			
@@ -160,24 +163,38 @@ package
 			
 			var message:Message = event.data as Message;
 			var xNode:XMLNode = message.getNode().firstChild;
+			var from:String = message.from.node;
+			var text:String = message.body;
+			var type:String = message.type;
+			//TOOPEN
+			//when type equals null,the message is a administrator msg.
+			//<message from="zt-2006009">
+			//  <body>nima</body>
+			//</message>
 			
-			weblog("onMessage: ", "xNode");
+			ExternalInterface.call(CallList.onReceivedPrivateMsg, ''+from,  ''+text, ''+type);
+			MonsterDebugger.log('onMessage from '+ from, text+'|'+type);
+			
 		}
 		private function onXiffError(event:XIFFErrorEvent):void
 		{
-			trace("addEventListener: XIFFErrorEvent.XIFF_ERROR " + event);
-			MonsterDebugger.trace(this, event.errorCondition + "|" + event.errorMessage);
+			MonsterDebugger.log('xifferror:'+event.errorCode+'|'+event.errorMessage);
 			weblog("error", event.errorCondition + event.errorMessage);
+			if (event.errorCode == 503)
+			{
+				//reconnect
+			}
 		}
 		private function checkKeepAlive(event:TimerEvent):void 
 		{
 			MonsterDebugger.trace(this, "checkKeepAlive");
-			if (new Date().getTime() - _lastSent > 15000)
+			if (new Date().getTime() - _lastSent > KEEP_ALIVE_PERIOD)
 			{
 				if (connection.isLoggedIn() && connection.isActive())
 				{
-					//connection.sendKeepAlive();
-					//weblog("heartbeat: ", "null package");
+					connection.sendKeepAlive();
+					_lastSent = new Date().getTime();
+					weblog("heartbeat: ", "ping package");
 				}
 			}
 		}
@@ -212,15 +229,24 @@ package
 		{
 			MonsterDebugger.trace(this, "loginRoom");
 			weblog("action:", "loginRoom");
+			
 			room = new Room(connection);
 			room.roomJID = new UnescapedJID(groupName+'@conference.'+connection.domain);
 			room.nickname = nickName;
+			//room.subject = subject;
 			room.addEventListener(RoomEvent.ROOM_JOIN, onRoomJoin);
 			room.addEventListener(RoomEvent.GROUP_MESSAGE, onGroupMsg);
 			room.addEventListener(RoomEvent.ROOM_LEAVE, onRoomLeave);
 			room.addEventListener(RoomEvent.USER_JOIN, onUserJoin);
 			room.addEventListener(RoomEvent.USER_DEPARTURE, onUserDeparture);
+			room.addEventListener(RoomEvent.ADMIN_ERROR, onAdminError);
+			room.addEventListener(RoomEvent.AFFILIATION_CHANGE_COMPLETE, onAffiliationChangeComplete);
+			room.addEventListener(RoomEvent.AFFILIATIONS, onAffiliations);
+			room.addEventListener(RoomEvent.USER_KICKED, onUserKicked);
+			room.addEventListener(RoomEvent.USER_BANNED, onUserBanded);
+			room.addEventListener(RoomEvent.USER_PRESENCE_CHANGE, onRoomUserPresenceChanged);
 			room.join();
+			
 		}
 		
 		private function getPartList():String
@@ -230,46 +256,113 @@ package
 			{
 				for each ( var occ:RoomOccupant in room )
 				{
+					//ret = ret +';' + occ.displayName+','+occ.jid.node;
 					ret = ret +';' + occ.displayName;
 				}
 			}
 			return ret;
 		}
+		
+		private function nicknameToUid(nickname:String):String
+		{
+			var ret:String = '';
+			if (room)
+			{
+				for each ( var occ:RoomOccupant in room )
+				{
+	
+					if (occ.displayName == nickname)
+					{
+						ret = occ.jid.node;
+					}
+				}
+			}
+			MonsterDebugger.log("nicknameToUid: ", ret);
+			return ret;
+		}
+		
+		private function onRoomUserPresenceChanged(evt:RoomEvent):void
+		{
+			MonsterDebugger.log("onRoomUserPresenceChanged", evt);
+		}
+		
+		private function onUserKicked(evt:RoomEvent):void
+		{
+			MonsterDebugger.log("onUserKicked", evt);
+			ExternalInterface.call(CallList.onUserKicked, evt.nickname);
+		}
+		
+		private function onUserBanded(evt:RoomEvent):void
+		{
+			MonsterDebugger.log("onUserBanded", evt);
+			ExternalInterface.call(CallList.onUserBaned, evt.nickname);
+		}
+			
+		private function onAffiliations(evt:RoomEvent):void
+		{
+			MonsterDebugger.log("onAffiliations", evt);
+		}
+		
+		private function onAdminError(evt:RoomEvent):void
+		{
+			MonsterDebugger.log("onAdminError:" + evt.errorMessage);
+		}
+		
+		private function onAffiliationChangeComplete(evt:RoomEvent):void
+		{
+			MonsterDebugger.log("onAffiliationChangeComplete", evt);
+		}
+		
 		private function onUserJoin(evt:RoomEvent):void
 		{
-			ExternalInterface.call("onUserJoin", ''+evt.nickname);
+			MonsterDebugger.log(this, "onUserJoin......", evt);
+			if (evt.data)
+			{
+				//var uid:String = nicknameToUid(evt.nickname);
+				MonsterDebugger.trace(this, "onUserJoin......", evt.nickname, room.role);
+				//TOOPEN
+				ExternalInterface.call(CallList.onUserJoin,''+evt.nickname, ''+ room.affiliation);
+			}
 		}
+		
 		private function onUserDeparture(evt:RoomEvent):void
 		{
-			ExternalInterface.call("onUserDeparture", ''+evt.nickname);
+			if (evt.data)
+			{
+				//var uid:String = nicknameToUid(evt.nickname);
+				MonsterDebugger.trace(this, "onUserDeparture......", evt.nickname);
+				ExternalInterface.call(CallList.onUserDeparture, ''+evt.nickname);
+			}
 		}
+		
 		private function onRoomJoin(e:RoomEvent):void
 		{
 			MonsterDebugger.trace(this, "onRoomJoin......");
 			var msg:Message = e.data as Message;
 			if(msg)
-				ExternalInterface.call("onRoomJoin", '' + msg.from.resource, '' + msg.body);
-				
+				ExternalInterface.call(CallList.onUserJoin, '' + msg.from.resource, '' + msg.body);
+		
 		}
+		
 		private function onRoomLeave(e:RoomEvent):void
 		{
 			MonsterDebugger.log("onRoomLeave");
 			var msg:Message = e.data as Message;
 			if(msg)
-				ExternalInterface.call("onRoomLeave", ''+msg.from.resource, ''+msg.body);
+				ExternalInterface.call(CallList.onRoomLeave, ''+msg.from.resource, ''+msg.body);
 		}
+		
 		private function onGroupMsg(evt:RoomEvent):void
 		{
 			
-			MonsterDebugger.trace(this, "onGroupMsg");
-			MonsterDebugger.trace(this, "evt.data: " + evt.data);
-			
 			var msg:Message = evt.data as Message;
-			ExternalInterface.call("onReceivedGroupMsg", ''+msg.from.resource,  ''+msg.body);
+			//TOOPEN
+			ExternalInterface.call(CallList.onReceivedGroupMsg, ''+msg.from.resource,  ''+msg.body);
 			MonsterDebugger.trace(this, ''+msg.from.resource, "%%%%%%" + msg.body);
-			ExternalInterface.call("log", 'onGroupMsg', ''+msg.body);
+			weblog('onGroupMsg', ''+msg.body);
 			
 		}
+		
 		private function sendGroupMsg(msg:String):void
 		{
 			MonsterDebugger.trace(this, 'send msg:' + msg);
@@ -278,14 +371,172 @@ package
 			}
 		}
 		
-		private function weblog(p1:String, p2:String):void
+		private function sendPrivate(to:String, text:String, res:String=null):void
 		{
-			ExternalInterface.call("log", p1, p2);
+			var toJid:EscapedJID
+			if (!to || !text) 
+				return;
+			if (res)
+			{
+				 toJid = new EscapedJID(to + '@'+connection.domain+'/'+res);
+			}
+			else
+			{
+				 toJid = new EscapedJID(to + '@'+connection.domain);
+			}
+			var msg:Message = new Message(toJid, null, text,null,Message.TYPE_CHAT);
+			connection.send(msg);
+			ExternalInterface.call(CallList.onOutGoing, to, text);
+			weblog('private msg to '+toJid.bareJID, text+'|'+toJid.resource);
+			MonsterDebugger.log('private msg to '+toJid.bareJID, text);
 		}
+		
+		private function setPassword(pw:String):void
+		{
+			if (room.isActive)
+			{
+				room.password = pw;	
+			}
+		}
+		/**
+		 * 
+		 * @param	role admin/none
+		 * @param	uid
+		 */
+		private function setRole(role:String, uid:String):void
+		{
+			MonsterDebugger.log('setRole '+role, uid);
+			var uids:Array = [];
+			uids.push(new UnescapedJID(uid + '@'+connection.domain));
+			if (role == Configure.admin)
+			{
+				room.grant(Room.AFFILIATION_ADMIN, uids);
+			} 
+			else if (role == Configure.none)
+			{
+				room.revoke(uids);	
+			}
+		}
+		
+		private function kickUser(nickName:String):void
+		{
+			room.kickOccupant(nickName, "对不起");
+		}
+		
+		private function banUser(uid:String):void
+		{
+			MonsterDebugger.log('banUser '+uid);
+
+			var uids:Array = [];
+			uids.push(new UnescapedJID(uid + '@'+connection.domain));
+			room.ban(uids);	
+		}
+		
+		private function allowUser(uid:String):void
+		{
+			var uids:Array = [];
+			uids.push(new UnescapedJID(uid + '@'+connection.domain));
+			room.allow(uids);	
+		}
+		
+		private function weblog(p1:String, p2:String):void
+		{	
+			//TOOPEN
+			ExternalInterface.call(CallList.log, p1, p2);
+		}
+		
 		private function addCallBack():void
 		{
-			ExternalInterface.addCallback("sendGroupMsg", sendGroupMsg);
-			ExternalInterface.addCallback("getPartList", getPartList);
+			//TOOPEN
+			ExternalInterface.addCallback(CallBackList.sendGroupMsg, sendGroupMsg);
+			ExternalInterface.addCallback(CallBackList.getPartList, getPartList);
+			ExternalInterface.addCallback(CallBackList.sendPrivate, sendPrivate);
+			ExternalInterface.addCallback(CallBackList.setPassword, setPassword);
+			ExternalInterface.addCallback(CallBackList.setRole, setRole);
+			ExternalInterface.addCallback(CallBackList.kickUser, kickUser);
+			ExternalInterface.addCallback(CallBackList.banUser, banUser);
+			ExternalInterface.addCallback(CallBackList.allowUser, allowUser);
+		}
+		private function getArchiveMsg():void
+		{
+			//var iq:IQ = new IQ(
+		}
+		private function setupRoster():void
+		{
+			_roster = new Roster();
+			_roster.addEventListener( RosterEvent.ROSTER_LOADED, onRosterLoaded );
+			_roster.addEventListener( RosterEvent.SUBSCRIPTION_DENIAL, onSubscriptionDenial );
+			_roster.addEventListener( RosterEvent.SUBSCRIPTION_REQUEST, onSubscriptionRequest );
+			_roster.addEventListener( RosterEvent.SUBSCRIPTION_REVOCATION, onSubscriptionRevocation );
+			_roster.addEventListener( RosterEvent.USER_ADDED, onUserAdded );
+			_roster.addEventListener( RosterEvent.USER_AVAILABLE, onUserAvailable );
+			_roster.addEventListener( RosterEvent.USER_PRESENCE_UPDATED, onUserPresenceUpdated );
+			_roster.addEventListener( RosterEvent.USER_REMOVED, onUserRemoved );
+			_roster.addEventListener( RosterEvent.USER_SUBSCRIPTION_UPDATED, onUserSubscriptionUpdated );
+			_roster.addEventListener( RosterEvent.USER_UNAVAILABLE, onUserUnavailable );
+			_roster.connection = connection;
+			
+		}
+		private function onRosterLoaded( event:RosterEvent ):void
+		{
+			
+			var recipient:EscapedJID = new EscapedJID(connection.domain);
+			MonsterDebugger.log('onRosterLoaded 1');
+			var availablePresence:Presence = new Presence(recipient, null, null, null, "Logged In",priority);
+			connection.send(availablePresence);
+			
+			MonsterDebugger.log('onRosterLoaded');
+			var group:RosterGroup = _roster.getGroup('Buddies');
+			//MonsterDebugger.log(group.label);
+			//MonsterDebugger.log(group.items);
+			
+		}
+		
+		private function onSubscriptionDenial( event:RosterEvent ):void
+		{
+		}
+		
+		private function onSubscriptionRequest( event:RosterEvent ):void
+		{
+			if( _roster.contains( RosterItemVO.get( event.jid, false ) ) )
+			{
+				_roster.grantSubscription( event.jid, true );
+			}
+			
+		}
+		
+		private function onSubscriptionRevocation( event:RosterEvent ):void
+		{
+		}
+		private function onUserAdded( event:RosterEvent ):void
+		{
+			MonsterDebugger.log('onUserAdded');
+		}
+		
+		private function onUserAvailable( event:RosterEvent ):void
+		{
+			MonsterDebugger.log('onUserAvailable');
+			
+		}
+		
+		private function onUserPresenceUpdated( event:RosterEvent ):void
+		{
+			MonsterDebugger.log('onUserPresenceUpdated');
+		}
+		
+		private function onUserRemoved( event:RosterEvent ):void
+		{
+			MonsterDebugger.log('onUserRemoved');
+		}
+		
+		private function onUserSubscriptionUpdated( event:RosterEvent ):void
+		{
+			MonsterDebugger.log('onUserSubscriptionUpdated');
+		}
+		
+		private function onUserUnavailable( event:RosterEvent ):void
+		{
+			MonsterDebugger.log('onUserUnavailable');
 		}
 	}
 

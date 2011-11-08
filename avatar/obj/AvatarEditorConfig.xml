@@ -16,31 +16,31 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2011-7-15'</value>
+      <value>'2011-10-28'</value>
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>D:\creative_game\flashAvatar\avatar\src</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\src</path-element>
       <path-element>C:\Program Files\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\sina.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\qizhon.swc</path-element>
-      <path-element>D:\creative_game\flashAvatar\avatar\lib\MonsterDebugger.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\sina.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\qizhon.swc</path-element>
+      <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\lib\MonsterDebugger.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>D:\creative_game\flashAvatar\avatar\src\Main.as</path-element>
+    <path-element>D:\Cygwin\home\lvshiling\qizhon\avatar\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>24</default-frame-rate>

@@ -2,17 +2,79 @@
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
 			   xmlns:s="library://ns.adobe.com/flex/spark"
 			   xmlns:mx="library://ns.adobe.com/flex/mx"
-			   xmlns:ns1="*" creationPolicy="all"
-			   width="460" height="350" minWidth="460" minHeight="350"
-			   creationComplete="creationCompleteHandler(event)">
+			   xmlns:ns1="*"
+			   width="450" height="333" minWidth="450" minHeight="333" backgroundColor="#BCB8B8"
+			   creationComplete="creationCompleteHandler(event)" creationPolicy="all"
+			   keyDown="onKeyDown(event)"
+			   mouseDown="onMouseDown(event)"
+			   mouseOut="moveOut(event)"
+			   activate="activateHandler(event)"
+			   deactivate="deactivateHandler(event)"
+			   rollOut="onRollOut(event)"
+			   >
 	<fx:Script>
 		<![CDATA[
+			import com.demonsters.debugger.MonsterDebugger;
+			
+			import mx.core.FlexGlobals;
 			import mx.events.FlexEvent;
+			import mx.managers.FocusManager;
+			import mx.managers.SystemManager;
+			
 			private var mdr:TVShowMdr;
 			protected function creationCompleteHandler(event:FlexEvent):void
 			{
 				// TODO Auto-generated method stub
 				mdr = new TVShowMdr(this);
+				
+			}
+			
+			private function onKeyDown(evt:KeyboardEvent):void
+			{
+				if(evt.keyCode == Keyboard.F12)
+				{
+				}
+			}
+			
+			protected function onMouseDown(event:MouseEvent):void
+			{
+				//if(stage.focus == null)
+				//	stage.focus = this;
+			}
+			
+			protected function moveOut(event:MouseEvent):void
+			{
+				
+			}
+			
+			protected function activateHandler(event:Event):void
+			{
+				// TODO Auto-generated method stub
+				MonsterDebugger.log("active");
+				focusManager.activate();
+				MonsterDebugger.log(Object(focusManager.getFocus()).name);
+			}
+			
+			protected function deactivateHandler(event:Event):void
+			{
+				// TODO Auto-generated method stub
+				MonsterDebugger.log("deactive");
+				focusManager.deactivate();
+				MonsterDebugger.log(Object(focusManager.getFocus()).name);
+			}
+			
+			protected function onRollOut(event:MouseEvent):void
+			{
+				if(Capabilities.hasIME){
+					try{
+						if(!IME.enabled){
+							IME.enabled=true;
+						}
+						IME.conversionMode="CHINESE";
+						MonsterDebugger.log(IME.conversionMode);
+					}catch(error:Error){
+					}
+				}
 			}
 			
 		]]>
@@ -20,8 +82,8 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<ns1:MainMenu x="0" y="0" id="main">
+	<ns1:MainMenu id="main" x="0" y="0" contentBackgroundColor="#FCFAFA">
 	</ns1:MainMenu>
-	<ns1:ChooseDevice x="61" y="53" id="chooseDevice">
+	<ns1:ChooseDevice x="61" y="29" id="chooseDevice">
 	</ns1:ChooseDevice>
 </s:Application>

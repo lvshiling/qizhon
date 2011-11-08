@@ -2,8 +2,9 @@
 <s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
 		 xmlns:s="library://ns.adobe.com/flex/spark"
 		 xmlns:mx="library://ns.adobe.com/flex/mx"
-		 xmlns:ns1="*" creationComplete="onCreate(event)"
-		 width="460" height="350" currentState="State1">
+		 xmlns:ns1="*"
+		 width="450" height="333" creationComplete="onCreate(event)" currentState="State1"
+		 contentBackgroundAlpha.callHaiBaoState="1.0">
 	
 	<fx:Script>
 		
@@ -59,6 +60,8 @@
 		<s:State name="liveEndState"/>
 		<s:State name="captureState"/>
 		<s:State name="recordEndState"/>
+		<s:State name="callHaiBaoState"/>
+		<s:State name="connectState"/>
 	</s:states>
 	
 	<fx:Declarations>
@@ -71,12 +74,15 @@
 	
 		
 	
-	<mx:VideoDisplay id="videoDisplay" includeIn="State1" x="0" y="0" width="460" height="350"
+	<mx:VideoDisplay id="videoDisplay" includeIn="State1" x="0" y="0" width="450" height="333"
 					 contentBackgroundColor="#F2E9E9" 
+					 />
+	<mx:VideoDisplay id="videoDisplaySmall" includeIn="State1" bottom="0" right="0" width="160" height="160"
+					 contentBackgroundColor="#000000" 
 					 />
 	<s:Button id="startLiveBtn" includeIn="State1" x="199" y="150" width="83" height="28"
 			  label="开始直播" fontFamily="Arial" fontSize="15" fontWeight="bold" filters="{new GlowFilter(0xFFFFFF)}"/>
-	<s:Group id="liveCtlBar" includeIn="State1" visible="true" x="353" y="44" width="97" height="268">
+	<s:Group id="liveCtlBar" includeIn="State1" visible="true" x="352" y="41" width="97" height="268">
 		<s:Rect x="0" y="0" width="100%" height="100%" alpha="0.5">
 			<s:stroke>
 				<s:SolidColorStroke color="0x000000" weight="1"/>
@@ -85,7 +91,7 @@
 				<mx:SolidColor color="#DDDDDD" />
 			</s:fill>
 		</s:Rect>
-		<s:Button x="16" y="43" label="拍摄照片" id="captureBtn" 
+		<s:Button x="16" y="43" label="拍摄海报" id="captureBtn" 
 				  toolTip="截图将做为房间默认海报"/>
 		<s:Button x="16" y="14" label="结束直播" id="stopLiveBtn" click="currentState='liveEndState'"/>
 		<s:Button x="16" y="72" label="开始录像" id="recordBtn" />
@@ -96,20 +102,25 @@
 		<s:Label x="19" y="145" width="67" fontSize="14" text="直播画质"/>
 	</s:Group>
 	<s:Label id="stateTip" includeIn="State1" x="374" y="8" width="77" height="19" fontSize="16"
-			 fontWeight="bold" text="预览中" color="0xFFFF00" filters="{new GlowFilter(0x000000)}"/>
+			 fontWeight="bold" text="预览中" color="0xD50BD3" filters="{new GlowFilter(0xffffff)}"/>
+	<s:Label id="systemMsg" includeIn="State1" x="160" y="8" width="77" height="19" fontSize="16"
+			 fontWeight="bold" text="系统提示:" color="0xD50BD3" filters="{new GlowFilter(0xffffff)}" visible="false"/>
+	
+	<s:Label id="liveTime" includeIn="State1" x="22" y="8" width="205" height="19" fontSize="16"
+			 fontWeight="bold" text="直播时间:" color="0xD50BD3" filters="{new GlowFilter(0xffffff)}"/>
 	<s:Panel includeIn="liveEndState" x="105" y="85" width="250" height="200" title="提示">
 		<s:Button x="89" y="116" label="确定" id='liveEndStateOk' click="currentState='State1'"/>
 		<s:RichText x="70" y="63" height="23" fontSize="15" text="你的直播已结束"/>
 	</s:Panel>
-	<s:Group includeIn="State1" x="70" y="274" width="320" height="26" id="ActivityLevelBar" visible="true">
+	<s:Group includeIn="State1" x="70" y="268" width="320" height="26" id="ActivityLevelBar" visible="true">
 		<mx:ProgressBar id="currActivityLevel" x="0" y="24" width="320" height="35"
-						label="麦克风活动量 %1/%2" color="0xFFFF00" filters="{new GlowFilter(0x000000)}"
+						label="麦克风活动量 %1/%2" color="0xD50BD3" filters="{new GlowFilter(0xffffff)}"
 						labelPlacement="top" maximum="100" minimum="0" mode="manual"
 						mouseChildren="false" mouseEnabled="false"/>
 		
 	</s:Group>
-	<s:Group includeIn="State1" x="10" y="196" width="37" height="150" id="audioBar" visible="true">
-		<s:Rect width="100%" height="100%" alpha="0.5">
+	<s:Group includeIn="State1" x="10" y="164" width="37" height="162" id="audioBar" visible="true">
+		<s:Rect x="0" y="-7" width="100%" height="140" alpha="0.5">
 			<s:stroke>
 				<s:SolidColorStroke color="0x000000" weight="1"/>
 			</s:stroke>
@@ -122,18 +133,32 @@
 		<s:Label x="7" y="6" text="音量"/>
 	</s:Group>
 	<s:Group id="mainTop" includeIn="State1,liveEndState" width="460" height="350"
-			 mouseChildren="false" mouseEnabled="true">
+			 mouseChildren="false" mouseEnabled="true"
+			 width.liveEndState="450" height.liveEndState="333"
+			 width.State1="450" height.State1="333">
 	</s:Group>
-	<s:Image includeIn="captureState" x="0" y="0" width="460" height="350" id="capImg" itemCreationPolicy="immediate"/>
-	<s:Button includeIn="captureState" x="365" y="251" label="上传" id="uploadBtn" toolTip="图片将设为房间海报"
+	
+	
+	<s:Image includeIn="captureState" x="0" y="0" width="450" height="333" id="capImg" 
+			 itemCreationPolicy="immediate" alpha="1"/>
+	<s:Button includeIn="captureState" x="145" y="167" label="上传" id="uploadBtn" toolTip="图片将设为房间海报"
 			  click="onUploadBtn(event)" itemCreationPolicy="immediate"/>
-	<s:Button includeIn="captureState" x="365" y="280" label="返回" id="uploadCancel" toolTip="点击返回到直播节目" 
+	<s:Button includeIn="captureState" x="224" y="167" label="返回" id="uploadCancel" toolTip="点击返回到直播节目" 
 			  itemCreationPolicy="immediate"
 			  click="currentState='State1'"/>
-	<mx:UIComponent id="transfer" includeIn="captureState" x="223" y="176" width="20" height="23"
+	<mx:UIComponent id="transfer" includeIn="captureState" x="210" y="133" width="20" height="23"
 					itemCreationPolicy="immediate"/>
 	<s:Panel includeIn="recordEndState" x="111" y="66" width="250" height="200" title="提示">
-		<s:RichText x="68" y="61" width="123" height="30" text="录像已结束，系统自动切换到直播状态"/>
-		<s:Button x="85" y="119" label="确定" click="currentState='State1'"/>
+		<s:RichText x="63" y="41" width="128" height="50" fontSize="14" text="录像已结束，系统自动切换到直播状态"/>
+		<s:Button x="85" y="95" label="确定" click="currentState='State1'"/>
 	</s:Panel>
+	<s:Label includeIn="callHaiBaoState" x="117" y="85" width="276" height="57" color="#D50BD3"
+			 fontSize="18" fontWeight="bold" itemCreationPolicy="immediate" text="请为你的直播房间设置海报"/>
+	<s:Button id="callHaiBaoOk" includeIn="callHaiBaoState" x="143" y="146" label="确定"  itemCreationPolicy="immediate"/>
+	<s:Button id="callHaiBaoCal" includeIn="callHaiBaoState" x="232" y="146" label="取消"  itemCreationPolicy="immediate"/>
+	<s:TextArea includeIn="captureState" x="120" y="82" height="51" color="#D50BD3" editable="false"
+				fontSize="16" text="点击上传按钮将把当前画面设为直播房间海报"/>
+	<s:Label includeIn="connectState" x="148" y="137" width="180" height="29" color="#D50BD3"
+			 fontSize="18" text="正在连接中。。" itemCreationPolicy="immediate"/>
+	<s:Label id="connTips" includeIn="connectState" x="101" y="174" width="227" height="59" color="#D50BD3" itemCreationPolicy="immediate"/>
 </s:Group>
