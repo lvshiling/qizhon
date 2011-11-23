@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="gpass" namespace="/gpass" extends="default">
+    	<action name="*Api" class="gpassAction" method="{1}">
+        </action>
+        <action name="index" class="gpassAction" method="index">
+            <result name="index">/WEB-INF/jsp/gpass/index.jsp</result>
+        </action>
+        <action name="*Page" class="gpassAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/gpass/{1}.jsp</result>
+        </action>
+        <action name="download" class="gpassAction" method="download">
+	   	    <!-- 设置文件名参数，由页面上传入 -->  
+	        <param name="fileName"></param>  
+	        <result name="success" type="stream">  
+	            <!-- 下载文件类型定义 -->  
+	            <param name="contentType">text/plain</param>  
+	            <!-- 下载文件处理方法 -->  
+	            <param name="contentDisposition">  
+	                attachment;filename="${downloadChineseFileName}"  
+	            </param>  
+	            <!-- 下载文件输出流定义 -->  
+	            <param name="inputName">downloadFile</param>
+	        </result> 
+	    </action>
+    </package>
+    
+    <package name="urls" namespace="/urls" extends="default">
+    	<action name="*Api" class="urlsAction" method="{1}">
+        </action>
+    	<action name="index" class="urlsAction" method="index">
+            <result name="index">/WEB-INF/jsp/urls/index.jsp</result>
+        </action>
+    	<action name="*Page" class="urlsAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/urls/{1}.jsp</result>
+        </action>
+    </package>
+    
+    <package name="bindSina" namespace="/bind/sina" extends="default">
+    	<action name="*Api" class="sinaAction" method="{1}">
+        </action>
+    	<action name="index" class="sinaAction" method="index">
+            <result name="index">/WEB-INF/jsp/bind/sina/index.jsp</result>
+        </action>
+    	<action name="*Page" class="sinaAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/bind/sina/{1}.jsp</result>
+        </action>
+    </package>
+    
+    <package name="bindGiantSso" namespace="/bind/giant" extends="default">
+    	<action name="index" class="giantSsoAction" method="index">
+            <result name="index">/WEB-INF/jsp/bind/giant/index.jsp</result>
+        </action>
+    	<action name="ajaxBindReturn" class="giantSsoAction" method="ajaxBindReturn">
+            <result name="ajaxBindReturn">/WEB-INF/jsp/bind/giantSso/ajaxBindReturn.jsp</result>
+        </action>
+    </package>
+
+    <package name="mailCheck" namespace="/mail" extends="default">
+    	<action name="*Api" class="mailAction" method="{1}">
+        </action>
+    	<action name="index" class="mailAction" method="index">
+            <result name="index">/WEB-INF/jsp/mail/index.jsp</result>
+        </action>
+    	<action name="loadMail" class="mailAction" method="loadMail">
+            <result name="loadMail">/WEB-INF/jsp/mail/loadMail.jsp</result>
+        </action>
+        <action name="*Page" class="mailAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/mail/{1}.jsp</result>
+        </action>
+    </package>
+
+    <package name="movie" namespace="/movie" extends="default">
+    	<action name="*Api" class="movieAction" method="{1}">
+        </action>
+    	<action name="index" class="movieAction" method="index">
+            <result name="index">/WEB-INF/jsp/movie/index.jsp</result>
+        </action>
+        <action name="*Page" class="movieAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/movie/{1}.jsp</result>
+        </action>
+    </package>
+
+    <package name="weibo" namespace="/weibo" extends="default">
+    	<action name="*Api" class="weiboAction" method="{1}">
+        </action>
+    	<action name="index" class="weiboAction" method="index">
+            <result name="index">/WEB-INF/jsp/weibo/index.jsp</result>
+        </action>
+        <action name="*Page" class="weiboAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/weibo/{1}.jsp</result>
+        </action>
+    </package>
+   	
+   	<package name="qqweibo" namespace="/weibo/qq" extends="default">
+    	<action name="*Api" class="qweiboAction" method="{1}">
+        </action>
+    	<action name="index" class="qweiboAction" method="index">
+            <result name="index">/WEB-INF/jsp/weibo/qq/index.jsp</result>
+        </action>
+        <action name="*Page" class="qweiboAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/weibo/qq/{1}.jsp</result>
+        </action>
+    </package>
+
+   	<package name="file" namespace="/file" extends="default">
+    	<action name="*Api" class="fileAction" method="{1}">
+        </action>
+    	<action name="index" class="fileAction" method="index">
+            <result name="index">/WEB-INF/jsp/file/index.jsp</result>
+        </action>
+        <action name="*Page" class="fileAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/file/{1}.jsp</result>
+        </action>
+    </package>
+    
+    <package name="163" namespace="/weibo/163" extends="default">
+    	<action name="*Api" class="neteasyWeiboAction" method="{1}">
+        </action>
+    	<action name="index" class="neteasyWeiboAction" method="index">
+            <result name="index">/WEB-INF/jsp/weibo/163/index.jsp</result>
+        </action>
+        <action name="*Page" class="neteasyWeiboAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/weibo/163/{1}.jsp</result>
+        </action>
+    </package>
+
+    <package name="stock" namespace="/app/stock" extends="default">
+    	<action name="index" class="stockAction" method="index">
+            <result name="index">/WEB-INF/jsp/app/stock/index.jsp</result>
+        </action>
+        <action name="*Page" class="stockAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/app/stock/{1}.jsp</result>
+        </action>
+    </package>
+
+    <package name="weather" namespace="/app/weather" extends="default">
+    	<action name="index" class="weatherAction" method="index">
+            <result name="index">/WEB-INF/jsp/app/weather/index.jsp</result>
+        </action>
+    </package>
+    
+    <package name="amt" namespace="/app/amt" extends="default">
+    	<action name="index" class="amtAction" method="index">
+            <result name="index">/WEB-INF/jsp/app/amt/index.jsp</result>
+        </action>
+        <action name="*Page" class="amtAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/app/amt/{1}.jsp</result>
+        </action>
+    </package>
+    
+</struts>

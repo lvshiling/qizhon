@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file
+END
+ajaxSearchTopic.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/ajaxSearchTopic.jsp
+END
+manager.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/manager.jsp
+END
+ajaxSearchMail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/ajaxSearchMail.jsp
+END
+ajaxSearchGpass.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/ajaxSearchGpass.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/index.jsp
+END
+ajaxSearchFile.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/ajaxSearchFile.jsp
+END
+ajaxSearchGpassHistory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/ajaxSearchGpassHistory.jsp
+END
+ajaxSearchFolder.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/file/ajaxSearchFolder.jsp
+END

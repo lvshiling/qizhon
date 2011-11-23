@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	>
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
+	<bean class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+		<property name="advice" ref="serviceAdvice" />
+		<property name="order" value="1" />
+		<property name="expression">
+		   <value>
+		     execution(* com.navigation.service..*.*(..))
+		   </value>
+		</property>
+	</bean>
+	
+	
+	<bean id="serviceAdvice" class="com.navigation.interceptor.ServiceMethodInterceptor">
+		<property name="statistics" value="true"/>
+		<property name="printCostTime" value="false"/>
+		<property name="printCostTimeWithOutMethod">
+			<list>
+			</list>
+		</property>
+		<property name="befordMethodAdvices">
+			<list>
+			</list>
+		</property>
+		<property name="afterMethodAdvices">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userService" class="com.navigation.service.Impl.UserServiceImpl"></bean>
+	<bean id="topicService" class="com.navigation.service.Impl.TopicServiceImpl"></bean>
+	<bean id="fileService" class="com.navigation.service.Impl.FileServiceImpl"></bean>
+	<bean id="payService" class="com.navigation.service.Impl.PayServiceImpl"></bean>
+
+	<bean id="weiboUtil" class="com.navigation.utils.WeiBoUtil">
+		<property name="userLinkDao" ref="userLinkDao"></property>
+	</bean>
+	<bean id="userCreditService" class="com.navigation.service.Impl.UserCreditServiceImpl"></bean>
+	
+	
+
+</beans>

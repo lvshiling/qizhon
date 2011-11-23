@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user
+END
+chat.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user/chat.jsp
+END
+ajaxGetUserPics.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user/ajaxGetUserPics.jsp
+END
+id.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user/id.jsp
+END
+ajaxGetNotice.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user/ajaxGetNotice.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user/index.jsp
+END
+im.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user/im.jsp
+END
+ajaxRecommendIcon.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/user/ajaxRecommendIcon.jsp
+END

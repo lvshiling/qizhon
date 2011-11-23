@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/config/spring
+END
+actionContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/12/trunk/release-1.0/WebRoot/WEB-INF/config/spring/actionContext.xml
+END
+serviceContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/9/trunk/release-1.0/WebRoot/WEB-INF/config/spring/serviceContext.xml
+END
+concurrentContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/config/spring/concurrentContext.xml
+END
+cacheContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/config/spring/cacheContext.xml
+END
+daoContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/config/spring/daoContext.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/36/trunk/release-1.0/WebRoot/WEB-INF/config/spring/applicationContext.xml
+END

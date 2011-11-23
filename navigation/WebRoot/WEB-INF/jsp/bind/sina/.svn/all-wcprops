@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/bind/sina
+END
+ajaxGetSinaReply.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/bind/sina/ajaxGetSinaReply.jsp
+END
+bind.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/bind/sina/bind.jsp
+END
+sinaLogin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/bind/sina/sinaLogin.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/bind/sina/index.jsp
+END
+backLogin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/bind/sina/backLogin.jsp
+END

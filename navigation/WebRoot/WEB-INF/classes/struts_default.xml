@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<!-- 
+    <package name="index" extends="default">
+    	<action name="index" class="indexAction" method="index">
+       		<result name="index">WEB-INF/jsp/index.jsp</result>
+        </action>
+        <action name="*Page" class="indexAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/{1}.jsp</result>
+        </action>
+        <action name="register" class="indexAction" method="register">
+            <result name="register">/WEB-INF/jsp/register.jsp</result>
+        </action>
+    </package>
+    
+    <package name="user" namespace="/user" extends="default">
+        <action name="ajaxUploadHeadApi" class="userAction" method="ajaxUploadHead">
+        </action>
+        <action name="ajaxUploadApi" class="userAction" method="ajaxUpload">
+        	<interceptor-ref name="fileUpload">  
+	          <param name="allowedTypes">  
+	　　　　　　		image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg
+	          </param>  
+	          <param name="maximumSize">4024000</param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack" />  
+        </action>
+        
+        <action name="ajaxMultUploadApi" class="fileAction" method="ajaxMultUpload">
+        	<interceptor-ref name="fileUpload">  
+	          <param name="allowedTypes">  
+	　　　　　　		image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg,application/octet-stream
+	          </param>
+	          <param name="maximumSize">4024000</param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack" />  
+        </action>
+        
+    	<action name="*Api" class="userAction" method="{1}">
+        </action>
+    	<action name="index" class="userAction" method="index">
+            <result name="index">/WEB-INF/jsp/user/index.jsp</result>
+        </action>
+    	<action name="id" class="userAction" method="id">
+            <result name="id">/WEB-INF/jsp/user/id.jsp</result>
+        </action>
+    	<action name="chat" class="userAction" method="chat">
+            <result name="chat">/WEB-INF/jsp/user/chat.jsp</result>
+        </action>
+    	<action name="*Page" class="userAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/user/{1}.jsp</result>
+        </action>
+    </package>
+
+    <package name="topic" namespace="/topic" extends="default">
+    	<action name="*Api" class="topicAction" method="{1}">
+        </action>
+        <action name="index" class="topicAction" method="index">
+            <result name="index">/WEB-INF/jsp/topic/index.jsp</result>
+        </action>
+        <action name="*Page" class="topicAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/topic/{1}.jsp</result>
+        </action>
+        <action name="rss" class="topicAction" method="rss">
+        </action>
+    </package>
+
+    <package name="pay" namespace="/pay" extends="default">
+        <action name="*Page" class="payAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/pay/{1}.jsp</result>
+        </action>
+    </package>
+
+ -->
+</struts>

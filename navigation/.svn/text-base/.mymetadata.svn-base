@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="navigation"
+  id="myeclipse.1302169980811"
+  context-root="/"
+  j2ee-spec="5.0"
+  archive="navigation.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

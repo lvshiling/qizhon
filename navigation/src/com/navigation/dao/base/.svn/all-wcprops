@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base
+END
+TransactionStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/TransactionStatus.java
+END
+ConditionItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/ConditionItem.java
+END
+SqlBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/SqlBuilder.java
+END
+QueryOrder.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/QueryOrder.java
+END
+TransactionCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/TransactionCallback.java
+END
+HQL.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/HQL.java
+END
+ResultCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/ResultCallback.java
+END
+DaoSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/DaoSupport.java
+END
+Result.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/Result.java
+END
+LazyLoadUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/LazyLoadUtil.java
+END
+GenericDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/GenericDao.java
+END
+Condition.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/Condition.java
+END
+DaoCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/DaoCallback.java
+END
+TransactionUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/TransactionUtils.java
+END
+ResultAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/base/ResultAdapter.java
+END

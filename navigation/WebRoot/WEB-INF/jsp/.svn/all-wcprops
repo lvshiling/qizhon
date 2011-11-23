@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp
+END
+gpass.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/gpass.jsp
+END
+manager.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/manager.jsp
+END
+ajaxGetChangeLog.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/ajaxGetChangeLog.jsp
+END
+app.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/app.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/index.jsp
+END
+register.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/register.jsp
+END
+detective.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/detective.jsp
+END

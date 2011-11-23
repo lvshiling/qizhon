@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <package name="index" extends="default">
+    	<action name="index" class="indexAction" method="index">
+       		<result name="index">WEB-INF/video/index.jsp</result>
+        </action>
+        <action name="*Page" class="indexAction" method="{1}">
+            <result name="{1}">/WEB-INF/video/{1}.jsp</result>
+        </action>
+        <action name="register" class="indexAction" method="register">
+            <result name="register">/WEB-INF/video/register.jsp</result>
+        </action>
+        <action name="*" class="userAction" method="redirect">
+        	<result name="chat">/WEB-INF/video/user/chat.jsp</result>
+        	<result name="404" type="redirect">/</result>
+        </action>
+    </package>
+    
+    <package name="user" namespace="/user" extends="default">
+        <action name="ajaxUploadHeadApi" class="userAction" method="ajaxUploadHead">
+        </action>
+        <action name="ajaxUploadApi" class="userAction" method="ajaxUpload">
+        	<interceptor-ref name="fileUpload">  
+	          <param name="allowedTypes">  
+	　　　　　　		image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg
+	          </param>  
+	          <param name="maximumSize">4024000</param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack" />  
+        </action>
+        
+        <action name="ajaxMultUploadApi" class="fileAction" method="ajaxMultUpload">
+        	<interceptor-ref name="fileUpload">  
+	          <param name="allowedTypes">  
+	　　　　　　		image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg,application/octet-stream
+	          </param>
+	          <param name="maximumSize">4024000</param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack" />  
+        </action>
+        
+    	<action name="*Api" class="userAction" method="{1}">
+        </action>
+    	<action name="index" class="userAction" method="index">
+            <result name="index">/WEB-INF/video/user/index.jsp</result>
+        </action>
+    	<action name="id" class="userAction" method="id">
+            <result name="id">/WEB-INF/video/user/id.jsp</result>
+        </action>
+    	<action name="chat" class="userAction" method="chat">
+            <result name="chat">/WEB-INF/video/user/chat.jsp</result>
+        </action>
+        <action name="auth" class="userAction" method="auth">
+            <result name="auth">/WEB-INF/video/user/auth.jsp</result>
+        </action>
+        <action name="score" class="userAction" method="score">
+            <result name="score">/WEB-INF/video/user/score.jsp</result>
+        </action>
+    	<action name="*Page" class="userAction" method="{1}">
+            <result name="{1}">/WEB-INF/video/user/{1}.jsp</result>
+        </action>
+    </package>
+
+    <package name="topic" namespace="/topic" extends="default">
+    	<action name="*Api" class="topicAction" method="{1}">
+        </action>
+        <action name="index" class="topicAction" method="index">
+            <result name="index">/WEB-INF/jsp/topic/index.jsp</result>
+        </action>
+        <action name="*Page" class="topicAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/topic/{1}.jsp</result>
+        </action>
+        <action name="rss" class="topicAction" method="rss">
+        </action>
+    </package>
+
+    <package name="pay" namespace="/pay" extends="default">
+        <action name="*Page" class="payAction" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/pay/{1}.jsp</result>
+        </action>
+        <action name="pay" class="payAction" method="pay">
+            <result name="pay">/WEB-INF/jsp/pay/pay.jsp</result>
+        </action>
+        <action name="topay" class="payAction" method="topay">
+            <result name="topay">/WEB-INF/jsp/pay/topay.jsp</result>
+        </action>
+    </package>
+
+	<package name="rank" namespace="/rank" extends="default">
+        <action name="rank" class="rankAction" method="rank">
+            <result name="rank">/WEB-INF/video/rank/rank.jsp</result>
+        </action>
+    </package>
+    
+    <package name="contest" namespace="/contest" extends="default">
+        <action name="bingwang" class="userAction" method="bingwang">
+            <result name="bingwang">/WEB-INF/video/user/bingwang.jsp</result>
+        </action>
+    </package>
+
+</struts>

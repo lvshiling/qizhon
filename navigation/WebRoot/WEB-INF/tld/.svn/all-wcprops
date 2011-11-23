@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld
+END
+fmt-1_0.tld
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/fmt-1_0.tld
+END
+x-1_0-rt.tld
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/x-1_0-rt.tld
+END
+struts-tags.tld
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/struts-tags.tld
+END
+sql-1_0.tld
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/sql-1_0.tld
+END
+c.tld
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/c.tld
+END
+fn.tld
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/fn.tld
+END
+sql-1_0-rt.tld
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/sql-1_0-rt.tld
+END
+x-1_0.tld
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/x-1_0.tld
+END
+fmt.tld
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/fmt.tld
+END
+fmt-1_0-rt.tld
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/fmt-1_0-rt.tld
+END
+sql.tld
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/sql.tld
+END
+permittedTaglibs.tld
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/permittedTaglibs.tld
+END
+scriptfree.tld
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/scriptfree.tld
+END
+c-1_0-rt.tld
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/c-1_0-rt.tld
+END
+c-1_0.tld
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/c-1_0.tld
+END
+x.tld
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/tld/x.tld
+END

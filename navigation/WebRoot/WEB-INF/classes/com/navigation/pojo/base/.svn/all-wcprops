@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/base
+END
+BaseFileSearch.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseFileSearch.java
+END
+BaseGame.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseGame.java
+END
+BaseUserTag.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserTag.java
+END
+BaseUserPicture.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserPicture.java
+END
+BaseUserCreditLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserCreditLog.java
+END
+BaseFileGpass.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseFileGpass.java
+END
+BaseUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/base/BaseUser.java
+END
+BaseTopic.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseTopic.java
+END
+BaseUserNotice.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserNotice.java
+END
+BaseTopicSort.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseTopicSort.java
+END
+BaseFileSearchConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseFileSearchConfig.java
+END
+BaseUserLink.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserLink.java
+END
+BaseUserVisitLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/7/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserVisitLog.java
+END
+BaseUserGameArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserGameArea.java
+END
+BaseGameArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseGameArea.java
+END
+BaseUserRecordVideo.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserRecordVideo.java
+END
+BaseUserArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserArea.java
+END
+BaseArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseArea.java
+END
+BaseUserCredit.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/54/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserCredit.java
+END
+BaseUserNews.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserNews.java
+END
+BaseTag.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseTag.java
+END
+BaseUserScoreLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserScoreLog.java
+END
+BaseRoom.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/pojo/base/BaseRoom.java
+END
+BaseNews.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseNews.java
+END
+BaseUserMail.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserMail.java
+END
+BaseUserLogState.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/19/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserLogState.java
+END
+BaseUserStock.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserStock.java
+END
+BaseUserTopicSort.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserTopicSort.java
+END
+BaseUserMsg.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserMsg.java
+END
+BaseTopicReply.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseTopicReply.java
+END
+BaseUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserInfo.java
+END
+BaseUserAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/base/BaseUserAuth.java
+END

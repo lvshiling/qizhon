@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    
+  <description>JSTL 1.1 XML library</description>
+  <display-name>JSTL XML</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>x</short-name>
+  <uri>http://java.sun.com/jsp/jstl/xml</uri>
+    
+  <validator>
+    <description>
+        Provides core validation features for JSTL tags.
+    </description>
+    <validator-class>
+        org.apache.taglibs.standard.tlv.JstlCoreTLV
+    </validator-class>
+  </validator>
+  
+  <tag>
+    <description>
+        返回整理好的时间格式
+    </description>
+    <name>dateformat</name>
+    <tag-class>com.navigation.utils.tags.DateFormat</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+        <description>
+        </description>
+        <name>value</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+</taglib>

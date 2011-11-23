@@ -1,0 +1,395 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo
+END
+Tag.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Tag.hbm.xml
+END
+Topic.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Topic.hbm.xml
+END
+BaseBoardBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/BaseBoardBean.java
+END
+UserTopicSort.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserTopicSort.hbm.xml
+END
+UserMsg.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserMsg.hbm.xml
+END
+UserNotice.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserNotice.java
+END
+UserVisitLog.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/7/trunk/release-1.0/src/com/navigation/pojo/UserVisitLog.hbm.xml
+END
+UserMsg.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserMsg.java
+END
+UserTopicSort.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserTopicSort.java
+END
+UserGameArea.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserGameArea.hbm.xml
+END
+FileSearchConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileSearchConfig.java
+END
+UserArea.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserArea.hbm.xml
+END
+UserLink.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserLink.java
+END
+UserCredit.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/54/trunk/release-1.0/src/com/navigation/pojo/UserCredit.hbm.xml
+END
+UserNews.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/UserNews.hbm.xml
+END
+UserGameArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserGameArea.java
+END
+User.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/User.hbm.xml
+END
+UserNotice.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserNotice.hbm.xml
+END
+UserLogState.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/32/trunk/release-1.0/src/com/navigation/pojo/UserLogState.hbm.xml
+END
+UserStock.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserStock.hbm.xml
+END
+Area.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Area.java
+END
+UserCredit.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserCredit.java
+END
+UserTag.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserTag.java
+END
+UserCreditLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserCreditLog.java
+END
+UserScoreLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserScoreLog.java
+END
+News.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/News.java
+END
+Room.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/pojo/Room.java
+END
+Topic.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Topic.java
+END
+UserLink.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserLink.hbm.xml
+END
+UserLogState.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserLogState.java
+END
+GameArea.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/GameArea.hbm.xml
+END
+FileSearch.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileSearch.hbm.xml
+END
+Area.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Area.hbm.xml
+END
+Game.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Game.hbm.xml
+END
+UserPicture.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserPicture.hbm.xml
+END
+UserAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/UserAuth.java
+END
+Room.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/pojo/Room.hbm.xml
+END
+News.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/News.hbm.xml
+END
+UserScoreLog.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserScoreLog.hbm.xml
+END
+UserRecordVideo.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserRecordVideo.java
+END
+FileSearch.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileSearch.java
+END
+Game.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Game.java
+END
+TopicSort.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/TopicSort.hbm.xml
+END
+Tag.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Tag.java
+END
+UserInfo.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/34/trunk/release-1.0/src/com/navigation/pojo/UserInfo.hbm.xml
+END
+TopicReply.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/TopicReply.hbm.xml
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/User.java
+END
+FileSearchConfig.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileSearchConfig.hbm.xml
+END
+UserStock.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserStock.java
+END
+UserAuth.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/UserAuth.hbm.xml
+END
+UserRecordVideo.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserRecordVideo.hbm.xml
+END
+UserVisitLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/7/trunk/release-1.0/src/com/navigation/pojo/UserVisitLog.java
+END
+UserCreditLog.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserCreditLog.hbm.xml
+END
+FileGpass.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileGpass.hbm.xml
+END
+GameArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/GameArea.java
+END
+UserMail.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserMail.hbm.xml
+END
+UserArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserArea.java
+END
+UserPicture.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserPicture.java
+END
+UserNews.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/UserNews.java
+END
+FileGpass.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileGpass.java
+END
+UserMail.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserMail.java
+END
+TopicSort.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/TopicSort.java
+END
+UserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserInfo.java
+END
+TopicReply.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/TopicReply.java
+END
+UserTag.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserTag.hbm.xml
+END

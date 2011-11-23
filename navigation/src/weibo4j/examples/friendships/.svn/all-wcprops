@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/friendships
+END
+ShowFriendships.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/friendships/ShowFriendships.java
+END
+CreateFriendship.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/friendships/CreateFriendship.java
+END
+ExistsFriendship.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/friendships/ExistsFriendship.java
+END
+DestroyFriendship.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/friendships/DestroyFriendship.java
+END

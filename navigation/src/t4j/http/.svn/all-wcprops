@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http
+END
+BASE64Encoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/BASE64Encoder.java
+END
+RequestToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/RequestToken.java
+END
+PostParameter.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/PostParameter.java
+END
+OAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/OAuth.java
+END
+AccessToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/AccessToken.java
+END
+HttpClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/HttpClient.java
+END
+OAuthToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/OAuthToken.java
+END
+Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/http/Response.java
+END

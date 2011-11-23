@@ -1,0 +1,479 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib
+END
+imap.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/imap.jar
+END
+aspectjrt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/aspectjrt.jar
+END
+smtp.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/smtp.jar
+END
+org.springframework.aspects-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.aspects-3.0.1.RELEASE.jar
+END
+commons-codec-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-codec-1.2.jar
+END
+spring-integration-core-2.0.0.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/spring-integration-core-2.0.0.RELEASE.jar
+END
+org.springframework.transaction-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.transaction-3.0.1.RELEASE.jar
+END
+commons-collections-3.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-collections-3.2.1.jar
+END
+commons-lang-2.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-lang-2.3.jar
+END
+commons-email-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-email-1.1.jar
+END
+memcached-2.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/memcached-2.5.jar
+END
+sitemesh-2.4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/sitemesh-2.4.2.jar
+END
+antlr-2.7.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/antlr-2.7.6.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar
+END
+slf4j-api-1.5.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/slf4j-api-1.5.8.jar
+END
+asm-3.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/asm-3.2.jar
+END
+org.springframework.orm-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.orm-3.0.1.RELEASE.jar
+END
+org.springframework.web.servlet-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.web.servlet-3.0.1.RELEASE.jar
+END
+struts2-core-2.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/struts2-core-2.2.1.jar
+END
+smackx.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/smackx.jar
+END
+org.springframework.context-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.context-3.0.1.RELEASE.jar
+END
+javassist-3.9.0.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/javassist-3.9.0.GA.jar
+END
+smack.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/smack.jar
+END
+spring-integration-xmpp-2.0.0.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/spring-integration-xmpp-2.0.0.RELEASE.jar
+END
+proxool-0.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/proxool-0.9.1.jar
+END
+stringtree-json-2.0.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/stringtree-json-2.0.5.jar
+END
+struts2-sitemesh-plugin-2.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/struts2-sitemesh-plugin-2.2.1.jar
+END
+rome-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/rome-1.0.jar
+END
+ognl-3.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/ognl-3.0.jar
+END
+org.springframework.aop-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.aop-3.0.1.RELEASE.jar
+END
+jstl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/jstl.jar
+END
+pop3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/pop3.jar
+END
+aspectjweaver.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/aspectjweaver.jar
+END
+freemarker-2.3.16.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/freemarker-2.3.16.jar
+END
+mailapi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/mailapi.jar
+END
+commons-httpclient-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-httpclient-3.0.1.jar
+END
+wsdl4j-1.5.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/wsdl4j-1.5.1.jar
+END
+org.springframework.jms-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.jms-3.0.1.RELEASE.jar
+END
+org.springframework.context.support-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.context.support-3.0.1.RELEASE.jar
+END
+commons-beanutils-1.8.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-beanutils-1.8.2.jar
+END
+communicator_NOKIAS60R2_JVP_EN_US.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/communicator_NOKIAS60R2_JVP_EN_US.jar
+END
+jsoup-1.5.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/jsoup-1.5.2.jar
+END
+proxool-cglib.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/proxool-cglib.jar
+END
+commons-io-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-io-1.4.jar
+END
+activation.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/activation.jar
+END
+jdom.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/jdom.jar
+END
+mysql-connector-java-5.1.7-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar
+END
+javabase64-1.3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/javabase64-1.3.1.jar
+END
+slf4j-log4j12-1.5.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/slf4j-log4j12-1.5.0.jar
+END
+aopalliance-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/aopalliance-1.0.jar
+END
+axis.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/axis.jar
+END
+org.springframework.oxm-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.oxm-3.0.1.RELEASE.jar
+END
+hibernate3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/hibernate3.jar
+END
+jaxrpc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/jaxrpc.jar
+END
+org.springframework.jdbc-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.jdbc-3.0.1.RELEASE.jar
+END
+dom4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/dom4j-1.6.1.jar
+END
+org.springframework.instrument.tomcat-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.instrument.tomcat-3.0.1.RELEASE.jar
+END
+hibernate-memcached-1.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/hibernate-memcached-1.2.2.jar
+END
+commons-fileupload-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-fileupload-1.2.1.jar
+END
+ehcache-1.6.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/ehcache-1.6.0.jar
+END
+log4j-1.2.15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/log4j-1.2.15.jar
+END
+commons-discovery-0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/commons-discovery-0.2.jar
+END
+gson-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/gson-1.3.jar
+END
+mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/mail.jar
+END
+org.springframework.asm-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.asm-3.0.1.RELEASE.jar
+END
+axis-ant.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/axis-ant.jar
+END
+standard.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/standard.jar
+END
+jta-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/jta-1.1.jar
+END
+dsn.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/dsn.jar
+END
+org.springframework.beans-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.beans-3.0.1.RELEASE.jar
+END
+struts2-spring-plugin-2.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/struts2-spring-plugin-2.2.1.jar
+END
+org.springframework.expression-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.expression-3.0.1.RELEASE.jar
+END
+quartz-1.5.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/quartz-1.5.1.jar
+END
+org.springframework.core-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.core-3.0.1.RELEASE.jar
+END
+cglib-2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/cglib-2.2.jar
+END
+xwork-core-2.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/xwork-core-2.2.1.jar
+END
+org.springframework.web-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.web-3.0.1.RELEASE.jar
+END
+smartupload20060520.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/smartupload20060520.jar
+END
+org.springframework.instrument-3.0.1.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/lib/org.springframework.instrument-3.0.1.RELEASE.jar
+END

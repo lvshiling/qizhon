@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/navigation/!svn/ver/48/trunk/release-1.0/WebRoot/commons
+END
+404.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/404.jsp
+END
+RSS.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/RSS.jsp
+END
+header.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/header.jsp
+END
+header_app.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/header_app.jsp
+END
+ajaxErrorResult.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/ajaxErrorResult.jsp
+END
+ajaxJSONResult.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/ajaxJSONResult.jsp
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/footer.jsp
+END
+footer_app.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/footer_app.jsp
+END
+taglib.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/commons/taglib.jsp
+END

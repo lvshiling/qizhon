@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/styles/*</pattern>
+        <pattern>/images/*</pattern>
+        <pattern>/js/*</pattern>
+        <pattern>/error*</pattern>
+        <pattern>/decorators/*</pattern>
+        <pattern>/commons/*</pattern>
+        <pattern>/login*</pattern>
+        <pattern>*ajax*</pattern>
+        <pattern>*404.jsp*</pattern>
+        <pattern>*rss.do*</pattern>
+    </excludes>
+    
+    <decorator name="jiasu" page="jiasu_main.jsp">
+        <pattern>/jiasu/*.do</pattern>
+    </decorator>
+    
+    <!-- <decorator name="application" page="main_app.jsp">
+        <pattern>*Page.do</pattern>
+    </decorator> -->
+
+    <decorator name="master" page="main_video.jsp">
+        <pattern>*</pattern>
+    </decorator>
+</decorators>

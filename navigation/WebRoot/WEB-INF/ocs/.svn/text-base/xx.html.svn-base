@@ -1,0 +1,27 @@
+<script language="javascript" runat="server">
+    window.onerror = function(){return false;}
+        var messenger = new ActiveXObject('Communicator.UIAutomation');
+        function ShowMessageForm(uri) {
+			try{
+				messenger.InstantMessage(uri);
+			}
+			catch(e)
+			{
+				alert(e);
+			}
+        }
+        function ShowSelfMessage() {
+			try{
+				var myname = messenger.MySignInName;
+				document.write(myname);
+			}
+			catch(e)
+			{
+				alert(e);
+			}
+        }
+    </script>
+ 
+<div style="padding-top: 1px" onclick="ShowMessageForm('sip:wangxin@ztgame.com');">
+                                        <a style="cursor: hand">xxx</a>
+                                    </div>

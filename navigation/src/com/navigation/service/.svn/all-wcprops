@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/service
+END
+UserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/service/UserService.java
+END
+TopicService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/TopicService.java
+END
+FileService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/FileService.java
+END
+ServicePerformance.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/ServicePerformance.java
+END
+PayService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/4/trunk/release-1.0/src/com/navigation/service/PayService.java
+END
+UserCreditService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/23/trunk/release-1.0/src/com/navigation/service/UserCreditService.java
+END
+ServiceStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/ServiceStatistics.java
+END
+WebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/WebService.java
+END

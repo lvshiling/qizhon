@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	 <import resource="../database/databaseContext.xml"/>
+	 
+	 <bean id="daoSupport" class="com.navigation.dao.base.DaoSupport">
+    	<property name="sessionFactory" ref="sessionFactory" />
+     </bean>
+     
+	 <bean id="userDao" class="com.navigation.dao.Impl.UserDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userLinkDao" class="com.navigation.dao.Impl.UserLinkDaoImpl" parent="daoSupport"></bean>
+	 <bean id="topicDao" class="com.navigation.dao.Impl.TopicDaoImpl" parent="daoSupport"></bean>
+	 <bean id="topicReplyDao" class="com.navigation.dao.Impl.TopicReplyDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userNoticeDao" class="com.navigation.dao.Impl.UserNoticeDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userEmailDao" class="com.navigation.dao.Impl.UserMailDaoImpl" parent="daoSupport"></bean>
+	 <bean id="topicSortDao" class="com.navigation.dao.Impl.TopicSortDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userStockDao" class="com.navigation.dao.Impl.UserStockDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userLogDao" class="com.navigation.dao.Impl.UserLogStateDaoImpl" parent="daoSupport"></bean>
+	 <bean id="fileSearchDao" class="com.navigation.dao.Impl.FileSearchDaoImpl" parent="daoSupport"></bean>
+	 <bean id="fileSearchConfigDao" class="com.navigation.dao.Impl.FileSearchConfigDaoImpl" parent="daoSupport"></bean>
+	 <bean id="fileGpassDao" class="com.navigation.dao.Impl.FileGpassDaoImpl" parent="daoSupport"></bean>
+	 
+	 <bean id="areaDao" class="com.navigation.dao.Impl.AreaDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userAreaDao" class="com.navigation.dao.Impl.UserAreaDaoImpl" parent="daoSupport"></bean>
+	 <bean id="tagDao" class="com.navigation.dao.Impl.TagDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userTagDao" class="com.navigation.dao.Impl.UserTagDaoImpl" parent="daoSupport"></bean>
+	 <bean id="newsDao" class="com.navigation.dao.Impl.NewsDaoImpl" parent="daoSupport"></bean>
+
+	 <bean id="gameDao" class="com.navigation.dao.Impl.GameDaoImpl" parent="daoSupport"></bean>
+	 <bean id="gameAreaDao" class="com.navigation.dao.Impl.GameAreaDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userInfoDao" class="com.navigation.dao.Impl.UserInfoDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userGameAreaDao" class="com.navigation.dao.Impl.UserGameAreaDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userPictureDao" class="com.navigation.dao.Impl.UserPictureDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userMsgDao" class="com.navigation.dao.Impl.UserMsgDaoImpl" parent="daoSupport"></bean>
+
+	 <bean id="userCreditDao" class="com.navigation.dao.Impl.UserCreditDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userCreditLogDao" class="com.navigation.dao.Impl.UserCreditLogDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userVisitLogDao" class="com.navigation.dao.Impl.UserVisitLogDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userRecordVideoDao" class="com.navigation.dao.Impl.UserRecordVideoDaoImpl" parent="daoSupport"></bean>
+	 <bean id="roomDao" class="com.navigation.dao.Impl.RoomDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userNewsDao" class="com.navigation.dao.Impl.UserNewsDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userAuthDao" class="com.navigation.dao.Impl.UserAuthDaoImpl" parent="daoSupport"></bean>
+	 <bean id="userScoreLogDao" class="com.navigation.dao.Impl.UserScoreLogDaoImpl" parent="daoSupport"></bean>
+	 
+	 <bean id="jiasuDaoSupport" class="com.navigation.dao.base.DaoSupport">
+    	<property name="sessionFactory" ref="jiasuSessionFactory" />
+     </bean>
+     <bean id="radacctDao" class="com.navigation.jiasu.dao.Impl.RadacctDaoImpl" parent="jiasuDaoSupport"></bean>
+     <bean id="gameDownStatusDao" class="com.navigation.jiasu.dao.Impl.GameDownStatusImpl" parent="jiasuDaoSupport"></bean>
+     <bean id="gameZoneDao" class="com.navigation.jiasu.dao.Impl.GameZoneDaoImpl" parent="jiasuDaoSupport"></bean>
+     <bean id="jiasuRoleDao" class="com.navigation.jiasu.dao.Impl.JiasuRoleDaoImpl"  parent="jiasuDaoSupport"></bean>
+</beans>

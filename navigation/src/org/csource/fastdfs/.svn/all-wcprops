@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs
+END
+ClientGlobal.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/ClientGlobal.java
+END
+DownloadCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/DownloadCallback.java
+END
+StorageClient1.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/StorageClient1.java
+END
+FileInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/FileInfo.java
+END
+DownloadStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/DownloadStream.java
+END
+TrackerGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/TrackerGroup.java
+END
+ProtoStructDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/ProtoStructDecoder.java
+END
+UploadCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/UploadCallback.java
+END
+StorageClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/StorageClient.java
+END
+StructBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/StructBase.java
+END
+TrackerClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/TrackerClient.java
+END
+UploadStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/UploadStream.java
+END
+StorageServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/StorageServer.java
+END
+StructGroupStat.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/StructGroupStat.java
+END
+TrackerServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/TrackerServer.java
+END
+StructStorageStat.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/StructStorageStat.java
+END
+ProtoCommon.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/ProtoCommon.java
+END
+ServerInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/org/csource/fastdfs/ServerInfo.java
+END

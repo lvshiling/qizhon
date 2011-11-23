@@ -1,0 +1,193 @@
+/**
+ * Copyright (C) 2004-2011 Giant Interactive Group, Inc. All rights reserved.
+ * Qule Video Layout CSS Version 1.0
+ */
+/*=========== header.jsp ============*/
+#header{display:block;height:83px;width:100%; text-align:center; background:#f6f6f6; border-bottom:1px solid #ccc; font-family:"Microsoft Yahei",Tahoma,Simsun,Arial,Helvetica,sans-serif;}
+#header #headerMain{display:block; height:83px; width: 986px; margin:auto;}
+#header #logoBar{ float:left; width:242px; }
+#header #logoBar .logoBox{ display:block; margin:0 0 0 9px;}
+#header #logoBar .logoImg{ display:block; width:233x; height:82px; }
+
+#header #rightBar{ float:right; width:744px;  }
+#header #topbar{ color:#ccced0; text-align:right; display:block; height:30px; padding-right:9px; padding-top:9px; font-size:11px;}
+#header #topbar a{font-size:13px; margin-left:7px; margin-right:7px;}
+
+#header #navbar{ color:#ccced0; text-align:left; width:744px; padding-left:15px; font-size:13px; padding-top:6px !important; padding-top:16px;}
+#header #navbar a{font-size:16px; margin-left:10px; margin-right:10px;}
+#header #navbar a:hover {text-decoration:none;}
+#header #navbar a.lit{color:#e37d00;font-weight:bold;}
+
+.ui-dialog fieldset{border-width: 0px;}
+.ui-dialog fieldset LABEL{width:100%;display: block; padding-left: 1px; padding-top: 12px; margin-bottom:3px; font-size: 12px;}
+.ui-dialog INPUT{padding: 3px; height:18px; line-height:16px; border:1px solid #999; width:280px;}
+.ui-dialog INPUT:HOVER{border-color: #FF4500;}
+.ui-dialog fieldset li{padding: 5px 0px; border-top: 1px solid #eee; line-height: 150%;}
+.validateTips{color: #FF4500; margin-top: 10px; margin-bottom: 5px;}
+
+/*=========== header2.jsp ============*/
+/*.ui-dialog fieldset{border-width:0px; margin:auto; }
+.ui-dialog label{float:left; font-size:12px; padding-right:1px; font-family:Verdana,Arial,Helvetica,"Lucida Grande","宋体",sans-serif;}
+.ui-dialog input{padding:3px; float:left; margin-left:6px;vertical-align:middle;border:1px solid #8a8a8a;height:20px;line-height:20px; }
+.ui-dialog input:hover{border: 1px solid #FF4500;}
+.ui-dialog dt{height:30px;margin-top:10px;}
+.ui-dialog dd{height:50px;}*/
+
+/*=========== footer.jsp ============*/
+#footer{margin-bottom:-30px;display:block;height:90px;width:100%; text-align:center; /*background:#f5f3f4;background:#e8e6e7;*/ border-top:1px solid #ccc; font-family:"Microsoft Yahei",Tahoma,Simsun,Arial,Helvetica,sans-serif;}
+#footer #footerMain{display:block; height:90px; width: 986px; margin: auto;}
+#footer #footerMain p{line-height:25px;padding-top:5px;}
+#footer #footerMain .sep{height:25px;width:0px;padding-left:10px;}
+
+/*=========== index.jsp ============*/
+#index{text-align: center;font-family:"Microsoft Yahei",Tahoma,Simsun,Arial,Helvetica,sans-serif;}
+#index #content{min-height: 1150px;_height:1150px;width: 986px; margin: auto; }
+#index #content img{border:0px; vertical-align: middle;}
+#index #loginBar{text-align:right; margin: 8px 25px 10px 0; }
+#index #loginBar input{margin-right:3px; vertical-align:middle;border:1px solid #999;font-size:13px;height:23px;line-height:23px;width:112px;color:#656565;}
+
+#index #topContainer{ display:block;width: 985px;height:244px; }
+#index #topContainer #slideControl{float:left; height:244px; width:248px; padding-top:20px;}
+#index #topContainer #slideControl li{display:block; height:35px; border:1px solid #e7e7e7;padding-top:15px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+#index #topContainer #slideControl li a{font-size:15px;}
+#index #topContainer #slideControl li.current{background:#009eaa;}
+#index #topContainer #slideControl li.current a{color:#fff;} 
+#index #topContainer #slider {float:right;width:734px; height:243px;}
+
+#index #leftSider{ float:left; margin-bottom:30px; }
+#index .showBoxTop{ padding-top:15px !important; padding-top:5px; display:block; width:775px; height:3px; background: #fff url(../../images/video/showbox_top.gif) no-repeat left bottom;}
+#index .showBox{ display:block; margin-bottom:0px !important; margin-bottom:-15px; width:775px; height:370px; background: #fff url(../../images/video/showbox_bg.gif) no-repeat left top; }
+
+#index .showBoxTitle{ display:block; width:747px; margin: auto; }
+#index .showBoxTitle .liveTitle{float:left; width:177px; height:26px; margin-top:7px; margin-left:7px; padding-top:5px; background:#fff url(../../images/video/live_icon.png) no-repeat left top; font-size:15px; font-weight:bold; color:#fd7600; }
+#index .showBoxTitle .photoTitle{float:left; width:140px; height:26px; margin-top:7px; margin-left:7px; padding-top:5px; background:#fff url(../../images/video/photo_icon.png) no-repeat left top; font-size:15px; font-weight:bold; color:#fd7600; }
+#index .showBoxTitle .morespan{float:right; width:40px; height:14px; margin-top:12px; background: #fff url(../../images/video/more_icon.png) no-repeat right center;}
+
+#index .showBoxSep{ display:block; width:747px; float:left; margin:0 0 0 14px !important; margin: 4px 0 0 14px;}
+#index .showBoxSep .showBoxline1{ float:left; border-top:1px solid #fd7600; height:1px; width:164px;}
+#index .showBoxSep .showBoxline2{ float:right; border-top:1px solid #d6d6d6; height:1px; width:583px;}
+#index .showBoxSep .showBoxline3{ float:left; border-top:1px solid #fd7600; height:1px; width:150px;}
+#index .showBoxSep .showBoxline4{ float:right; border-top:1px solid #d6d6d6; height:1px; width:597px;}
+
+#index .showBoxMain{ display:block; float:left; width:751px; height:316px; margin:5px 0 0 12px !important; margin:-5px 0 0 12px;  }
+#index .showBoxMain .sep1{ float:left; width:735px; height:1px; border-top:1px dotted #cbcbcb; border-bottom:0px; margin:7px 6px !important; margin:7px 0 -7px 0;}
+#index .showBoxMain .sep2{ float:left; width:735px; height:1px; border-top:1px dotted #cbcbcb; border-bottom:0px; margin:-2px 0 5px 6px !important; margin:7px 0 -7px 0;}
+#index .showBoxMain .boxOuter{width:149px; height:146px; float:left; margin-bottom:8px !important; margin-bottom: -7px; }
+#index .showBoxMain .boxInner{margin:9px; width:130px !important; width:132px; height:102px !important; height:104px; border:1px solid #d4d4d4;}
+#index .showBoxMain .boxImg{width:124px; height:74px; display:block; float:left; margin:3px;}
+#index .showBoxMain .boxName{float:left; font-size:13px; color:#b12973; padding-left:3px;}
+#index .showBoxMain .boxName img{margin-right:3px;}
+#index .showBoxMain .boxTitle{ vertical-align:middle; font-size:13px; color:#787878; margin-left:9px; width:128px; float:left; text-align:left; padding-left:3px;}
+#index .showboxgap{ display:block; width:775px; height:10px;}
+
+#index #rightSider{ float:right; padding-top:15px; margin-bottom:30px; }
+#index .listBox{display:block; margin-bottom: 6px; width:203px !important; width:205px; height:252px !important; min-height:243px;_height:243px; border:1px solid #ffd4b1; border-top: 1px solid #fdca9f; }
+#index .listBoxTop{ display:block; height:28px; background: #fff url(../../images/video/listbox_top.gif) repeat-x left top;}
+#index .listBoxTop .listBoxTitle{ float:left; margin-left:15px; padding-left:13px; background:url(../../images/video/title_tag.gif) no-repeat left center; width:150px; height:22px !important; height:27px; text-align:left; padding-top: 5px !important; padding-top:7px; font-size:15px; font-weight:bold; color:#fd7600;}
+#index .listBox .rowOdd{ font-size:13px; color:#343434; display:block; float:left; height:23px !important; height:28px; width:100%; padding-top:5px; }
+#index .listBox .rowEven{ font-size:13px; color:#343434; display:block; float:left; height:23px !important; height:28px; width:100%; background:#f6f6f6; padding-top:5px; }
+#index .listBox .rankIcon{ margin-left:7px; margin-right:9px;}
+#index .listBox .medalIcon{ margin-left:5px;}
+#index .listBox .incrIcon{ margin-left:7px; margin-right:9px;}
+
+/*=========== chat.jsp ============*/
+#chat{font-family: "Microsoft Yahei",Tahoma,Simsun,Arial,Helvetica,sans-serif; text-align: center;/*background:#e8e6e7;*/ padding-top:30px; padding-bottom:30px;}
+#chat #adminTopBar{display:none; margin: auto; overflow:visible; margin-top:-25px; margin-bottom:3px; height:50px;width:989px;background:#f8f8f8;}
+#chat #adminTopBar ul.fix{float:left;}
+#chat #adminTopBar ul.fix li{font-size:15px; float:left; width:110px; height:30px; margin-top:15px;}
+#chat #roomContent{min-height: 1280px;_height:1280px;width: 989px; margin: auto; overflow:visible; background:#fff;}
+#chat #introBox{text-align:left; margin-top:30px; float:left; margin-left:16px !important;margin-left:20px; width:442px; height:114px;}
+#chat .avatarBox{ float:left; width:76px !important;width:78px; height:74px !important;height:76px; border:1px solid #cacaca;}
+#chat .avatarBox a{width:70px; height:68px; display:block; float:left; margin:3px;}
+#chat .rightIntroBox{ line-height:25px; float:left; margin-left:14px; width:348px; height:114px;}
+#chat #introBox .ln1 img{margin-left:3px;}
+#chat .red1 { color:#b22873;}
+#chat .gray1 { color:#787878;}
+#chat .tabs{padding-left:40px;}
+#chat #introBox .ln2 { display:block; float:left; width:348px; height:25px; background:#efefef; padding-top:3px; padding-left:8px;}
+#chat #introBox .ln3 { line-height:0px; display:block; float:left; width:348px; height: 18px; padding-left:8px; vertical-align:text-top;}
+#chat #introBox .ln3 img { margin-left:2px; margin-right:2px; }
+#chat #introBox .ln3 .ts1{  float:left; margin-top: 16px !important; margin-top: 16px; height:16px;}
+#chat #introBox .ln3 .ts2{  float:left; margin-top: 10px !important; margin-top: 13px; height:16px;}
+
+#chat #infoBox{float:right; margin-top:30px; margin-right:16px !important;margin-right:20px; text-align:left; width:495px; height:114px; border:1px solid #fdd5b1;}
+
+#chat #chatContainer{ display:block;}
+#chat #videoBox{text-align:left; margin-top:18px; float:left; margin-left:13px; width:450px; height:478px; background:#525252; }
+#chat #chatBox{float:right; margin-top:16px !important; margin-top:18px; margin-right:16px !important;margin-right:20px; text-align:left; width:495px; height: 476px !important; height:478px; border:1px solid #fdd5b1;}
+
+#chat #bottomContainer{ display:block;}
+#chat #bottomContainer .leftBox{ text-align:left; margin-top:0px; float:left; margin-left:13px; margin-bottom:30px; }
+#chat .msgBoxTop{ padding-top:15px !important; padding-top:5px; display:block; width:450px; height:3px; background: #fff url(../../images/video/msgbox_top.gif) no-repeat left bottom;}
+#chat .msgBox{ display:block; width:450px; min-height:578px;_height:578px; background: #fff url(../../images/video/msgbox_bg.gif) no-repeat left top; }
+#chat .msgBoxTitle{ display:block; width:445px; margin: auto; }
+#chat .msgBoxTitle .msgTitle{float:left; width:177px; height:26px; margin-top:13px; margin-left:18px; padding-top:-5px; padding-left: 33px; background:#fff url(../../images/video/msg_icon.png) no-repeat left top; font-size:15px; font-weight:bold; color:#fd7600; }
+#chat .msgBoxSep{ display:block; width:423px; float:left; margin:0 0 0 14px;}
+#chat .msgBoxSep .msgBoxline1{ float:left; border-top:1px solid #fd7600; height:1px; width:90px;}
+#chat .msgBoxSep .msgBoxline2{ float:right; border-top:1px solid #d6d6d6; height:1px; width:333px;}
+
+#chat #videoBox img{ vertical-align:middle; margin-left:1px; margin-right:1px;}
+#chat #videoBox input.txt{margin:0 3px; vertical-align:middle;border:1px solid #999;font-size:13px;height:18px;line-height:16px;}
+#chat #videoBox .video{display:block; width:450px; height:333px;}
+#chat #videoBox #ln1{ width:450px; height:96px; border-bottom:1px solid #343434;margin-top:-160px;}
+#chat #videoBox #ls1{ width:450px; height:96px; border-bottom:1px solid #343434;margin-top:-160px; background:#eee; border:1px solid #d5d5d5;}
+#chat #videoBox #ls1 li{float:left; margin:5px;}
+#chat #videoBox #ls1 li a:hover{background-color:#ccc;}
+#chat #videoBox #ls1 li label{margin:0 7px; cursor:pointer;}
+#chat #videoBox .hid {display:none; margin-top:0px;}
+#chat #videoBox .ln2{ color:#ccc; font-size:13px; display:block; width:450px; float:left; padding-top:10px; padding-left:15px;}
+#chat #videoBox .ln3{ display:block; height:33px; color:#ccc; font-size:13px; text-align:right; padding-right:15px; padding-top:5px; margin-top:0px;}
+#chat #videoBox .ln4{ padding-left:45px;}
+#chat #videoBox .ln4 img{ margin-right:18px;}
+
+#chat #chatBox .chatBoxTop{ width:481px !important; width:495px; height:24px !important; height:30px; background:#fff url(../../images/video/chatbox_top.gif) repeat-x left top; padding-top:6px; padding-left:14px;font-size:15px; font-weight:bold; color:#fd7600;}
+#chat #chatBox .chatBoxTop img{ vertical-align: middle; margin-right:10px; margin-bottom:5px !important; margin-bottom:0px;}
+#chat #chatBox #chatRoom {width:100%; height:408px !important;height:410px; border-bottom:1px solid #fdd5b1;}
+#chat #chatBox #chatMain { float:left; height:100%; width:348px; border-right:1px solid #fdd5b1;}
+#chat #chatBox #chatTop{ display:block; height:293px; border-bottom:1px solid #fdd5b1;}
+#chat #chatBox #chatBot{display:block; padding-left:8px; padding-top:0; line-height:22px; color:#8a8a8a; font-size:12px; margin-top:10px; height:95px; overflow:auto;}
+#chat #chatBox input.txt{color:#000; font-size:12px;height:18px;line-height:16px;margin:0 3px 0 0;border:1px solid #CECECE;padding:4px 4px 2px;background: url(../../images/video/text_input_bg.png) no-repeat scroll 0 0 #FFF; vertical-align: middle;}
+#chat #chatBox input.check{vertical-align:middle;margin-right:2px; }
+#chat #chatBox .chatBoxBottom{width:483px !important; width:495px; background:#fff url(../../images/video/chatbox_bt2.gif) repeat-x left top; font-size:13px; float:left; height:30px !important; height:36px; display:block;  padding-left:10px; padding-top:6px;}
+#chat #chatBox .chatBoxBottom img{vertical-align:middle;}
+
+#chat .msgBoxMain .tt{width:416px !important; width:426px; height:46px !important;height:56px; border-bottom:1px dotted #ccc; display:block; float:left; margin-left:10px; padding-left:12px; padding-top:20px !important;padding-top:9px;}
+#chat .msgBoxMain .ln{width:416px !important; width:426px; height:46px !important;height:66px; border-bottom:1px dotted #ccc; display:block; float:left; margin-left:10px; padding-left:12px; padding-top:20px;}
+#chat .msgBoxMain img{margin-right:10px; vertical-align:top;}
+#chat .msgBoxMain .ts{ display:block; float:right; text-align:right; height:50px; padding-top:12px; padding-right:13px;}
+
+#chat #bottomContainer .rightBox{float:right; margin-top:16px; margin-right:16px !important;margin-right:20px; text-align:left; width:495px; height: 455px; border:1px solid #fdd5b1;}
+#chat .chartBoxTop{ width:481px !important; width:495px; height:24px !important; height:30px; background:#fff url(../../images/video/chatbox_top.gif) repeat-x left top; padding-top:6px; padding-left:14px;font-size:15px; font-weight:bold; color:#fd7600;}
+#chat .chartBoxTop img{ vertical-align: middle; margin-right:10px; margin-bottom:5px !important; margin-bottom:0px;}
+#chat .red0{color:#fd7704;}
+#chat .chartBoxMain {display:block;}
+#chat .chartBoxMain .chartBoxItem {height:70px; padding-left:22px; border-bottom:1px solid #e0e0e2;}
+#chat .chartBoxMain .rankf {margin-top:15px;float:left;margin-right:25px;}
+#chat .chartBoxMain .avatf {margin-top:5px;margin-right:20px;float:left;}
+#chat .chartBoxMain .namef {margin-top:17px;float:left;margin-right:80px;}
+#chat .chartBoxMain .coinf {float:left;margin-top:20px;margin-right:3px;}
+#chat .chartBoxMain .credf {float:left;margin-top:22px;font-size:18px;color:#933569;font-weight:700;}
+
+#chat #roomMateContent a:hover{text-decoration:none;}
+#chat #roomMateContent li.uli{height:35px;}
+#chat #roomMateContent li .gg{display:none;}
+#chat #roomMateContent li.cli{height:22px;}
+#chat #roomMateContent li.rowOdd{background:#f5f5f5;}
+#chat #roomMateContent li.rowEven{background:#fff;}
+
+#chat #userManager {display:none; border:1px solid #ccc; width:130px; height:162px; position:absolute; z-index:109; background:#eee;}
+#chat #userManager #umwrap {float:left; margin-left:2px; margin-top:2px; border:1px solid #ccc; width:124px; height:156px; background:#fff;overflow:auto;}
+#chat #userManager p {color:#f00;width:122px;height:25px; line-height:25px; overflow:hidden;}
+#chat #userManager #adminTool {display:none; padding-bottom:10px;}
+#chat #userManager .dl{height:0px; border-top:1px dotted #ccc; margin-bottom:5px;}
+#chat #userManager a {display:block; padding-left:15px; height:20px; line-height:20px;}
+#chat #userManager a:hover {background:#ff0099; color:#fff; cursor:pointer;text-decoration:none;}
+
+/*================ topay.jsp =================*/
+.paymentBox{text-align:left;}
+.paymentBox .pbln1 img{ vertical-align:top; float:left; margin-left:0 !important; margin-left:-3px; margin-right:0 !important; margin-right:-3px;}
+.paymentBox .pbln1{display:block; height:31px; }
+.paymentBox .pbln1 .pbmd{ float:left; width:492px; height:31px; background:#fff url(../../images/commons/paybar_tp.jpg) repeat-x left top; padding-top:7px;}
+.paymentBox .pbln1 label{ padding-left:5px; height:31px; font-size:13px; font-weight:bold;}
+.paymentBox .pbln2{padding-top:20px;display:block; border-left:1px solid #e6e6e6; border-right:1px solid #e6e6e6; height:176px; width:536px !important; width:538px; background:#fafafa;}
+.paymentBox .pbln3{display:block; height:10px; width:538px;}

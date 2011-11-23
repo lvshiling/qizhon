@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/user
+END
+GetFriends.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/user/GetFriends.java
+END
+GetUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/user/GetUserInfo.java
+END
+GetFollowers.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/user/GetFollowers.java
+END

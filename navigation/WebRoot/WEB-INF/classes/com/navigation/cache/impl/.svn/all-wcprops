@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/cache/impl
+END
+AbstractKeyStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/cache/impl/AbstractKeyStrategy.java
+END
+HashCodeKeyStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/cache/impl/HashCodeKeyStrategy.java
+END
+SpyMemcacheClientFactoryImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/cache/impl/SpyMemcacheClientFactoryImpl.java
+END
+SpyMemcacheClientImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/cache/impl/SpyMemcacheClientImpl.java
+END
+CacheServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/cache/impl/CacheServiceImpl.java
+END
+StringKeyStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/cache/impl/StringKeyStrategy.java
+END

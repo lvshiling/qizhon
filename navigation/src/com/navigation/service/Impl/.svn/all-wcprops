@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/service/Impl
+END
+WebServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/Impl/WebServiceImpl.java
+END
+UserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/service/Impl/UserServiceImpl.java
+END
+TopicServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/Impl/TopicServiceImpl.java
+END
+FileServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/Impl/FileServiceImpl.java
+END
+PayServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/28/trunk/release-1.0/src/com/navigation/service/Impl/PayServiceImpl.java
+END
+UserCreditServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/navigation/!svn/ver/24/trunk/release-1.0/src/com/navigation/service/Impl/UserCreditServiceImpl.java
+END

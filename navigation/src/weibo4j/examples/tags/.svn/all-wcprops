@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/tags
+END
+DestroyTag.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/tags/DestroyTag.java
+END
+GetTags.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/tags/GetTags.java
+END
+CreateTag.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/tags/CreateTag.java
+END
+GetSuggestions.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/tags/GetSuggestions.java
+END
+DestroyTags.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/tags/DestroyTags.java
+END

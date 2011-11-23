@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data
+END
+Comment.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/Comment.java
+END
+Venue.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/Venue.java
+END
+PagableResponseList.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/PagableResponseList.java
+END
+DirectMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/DirectMessage.java
+END
+Paging.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/Paging.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/User.java
+END
+SimpleStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/SimpleStatus.java
+END
+GeoInfor.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/GeoInfor.java
+END
+RecommendTopic.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/RecommendTopic.java
+END
+Status.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/data/Status.java
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/config/database
+END
+database.properties
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/config/database/database.properties
+END
+Proxool.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/config/database/Proxool.xml
+END
+databaseContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/config/database/databaseContext.xml
+END
+jiasuHibernate.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/config/database/jiasuHibernate.cfg.xml
+END
+hibernate.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/config/database/hibernate.cfg.xml
+END

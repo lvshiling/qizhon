@@ -1,0 +1,73 @@
+/**
+ * Copyright (C) 2004-2011 Giant Interective Group, Inc. All rights reserved.
+ * #version 1
+ */
+/* ===== 表单组件 ===== */
+input.normal {
+	border: 1px solid #ccc;
+}
+input.focus {
+	border: 1px solid #7f9db9;
+}
+input, textarea, blockquote, select, button {
+    font-size: 12px;
+}
+button.normal { /* 标准按钮 */
+    cursor: pointer;
+    height: 25px;
+    border: 0;
+}
+
+input.txt{
+	border:1px solid #ccc;
+	height:15px;
+	line-height:15px;
+	padding:3px 0 2px 4px;
+	color:#666;
+}
+textarea.txt {
+	padding: 2px 0 0 4px;
+	border: 1px solid #ccc;
+}
+
+/* ==== 按钮 ====*/
+a.btn1:link, a.btn1:visited, a.btn1:hover,
+a.btn2:link, a.btn2:visited, a.btn2:hover,
+a.btn3:link, a.btn3:visited, a.btn3:hover {
+	text-decoration: none;
+	color: #000;
+}
+.btn1, .btn2, .btn3 {
+	display: inline-block;
+	background: url(../images/commons/icon.gif) no-repeat 0 -2485px;
+	height: 21px;
+	line-height: 21px;
+	width: 60px;
+	text-align: center;
+}
+.btn2 {
+	background-position: 0 -1680px;
+	width: 90px;
+}
+.btn3 {
+	background-position: 0 -2556px;
+	width: 120px;
+}
+
+/* ==== 排行 ====*/
+.num1, .num2, .num3, .num4, .num5 {
+	background: url(../images/commons/icon.gif) no-repeat 3px -1360px;
+	padding: 2px 2px 2px 25px;
+}
+.num2 {
+	background-position: 3px -1421px;
+}
+.num3 {
+	background-position: 3px -1482px;
+}
+.num4 {
+	background-position: 3px -1543px;
+}
+.num5 {
+	background-position: 3px -1604px;
+}

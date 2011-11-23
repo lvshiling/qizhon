@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao
+END
+TagDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/TagDao.java
+END
+UserScoreLogDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/UserScoreLogDao.java
+END
+RoomDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/dao/RoomDao.java
+END
+NewsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/NewsDao.java
+END
+TopicDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/TopicDao.java
+END
+UserMsgDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserMsgDao.java
+END
+TopicSortDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/TopicSortDao.java
+END
+TopicReplyDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/TopicReplyDao.java
+END
+UserInfoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserInfoDao.java
+END
+FileSearchConfigDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/FileSearchConfigDao.java
+END
+UserVisitLogDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/7/trunk/release-1.0/src/com/navigation/dao/UserVisitLogDao.java
+END
+UserAuthDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/dao/UserAuthDao.java
+END
+UserGameAreaDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserGameAreaDao.java
+END
+UserRecordVideoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserRecordVideoDao.java
+END
+UserAreaDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserAreaDao.java
+END
+UserCreditDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserCreditDao.java
+END
+UserNewsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/dao/UserNewsDao.java
+END
+UserCreditLogDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserCreditLogDao.java
+END
+FileGpassDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/FileGpassDao.java
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/UserDao.java
+END
+UserNoticeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserNoticeDao.java
+END
+UserLogStateDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserLogStateDao.java
+END
+UserMailDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserMailDao.java
+END
+UserStockDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserStockDao.java
+END
+UserLinkDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserLinkDao.java
+END
+GameAreaDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/GameAreaDao.java
+END
+FileSearchDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/FileSearchDao.java
+END
+AreaDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/AreaDao.java
+END
+GameDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/GameDao.java
+END
+UserPictureDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/UserPictureDao.java
+END
+UserTagDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserTagDao.java
+END

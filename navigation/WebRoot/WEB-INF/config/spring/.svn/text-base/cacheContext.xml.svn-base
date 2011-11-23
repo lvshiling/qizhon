@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+ 
+ <!-- **************** Memcache config **************** 
+ <bean id="cacheClientFactory" class="com.acttree.cache.impl.SpyMemcacheClientFactoryImpl">
+ 	<property name="readBufferSize" value="16384" />
+	<property name="operationQueueLength" value="16384" />
+	<property name="operationTimeoutMillis" value="500" />
+	<property name="hashAlgorithm" value="KETAMA_HASH" />
+	<property name="connectionFactory" value="DefaultConnectionFactory" />
+	<property name="daemonMode" value="false" />
+ </bean>
+ 
+ <bean id="cacheGroup" abstract="true" class="com.acttree.cache.CacheGroup">
+   <property name="cacheClientFactory" ref="cacheClientFactory" />
+ </bean>
+ <bean id="cacheRegion" abstract="true" class="com.acttree.cache.CacheRegion" destroy-method="destroy">
+ 	<property name="regionName" value="default"/>
+ 	<property name="defaultCacheTimeSeconds" value="300" />
+ 	<property name="maxAsyncMilliseconds" value="100" />
+	<property name="keyStrategy" value="com.acttree.cache.impl.StringKeyStrategy"/>
+	<property name="clearSupported" value="false" />
+ </bean>
+ -->
+ <!-- Cache Group 
+ <bean id="localGroup" parent="cacheGroup">
+ 	<property name="servers" >
+ 		<value>127.0.0.1:11211</value>
+ 	</property>
+ </bean>
+ -->
+ 
+ <!-- Cache Region 
+ <bean id="localRegion" parent="cacheRegion">
+   <property name="groups">
+   		<list>
+   			<ref bean="localGroup"/>
+   		</list>
+   </property>
+   <property name="regionName" value="localRegion"/>
+   <property name="defaultCacheTimeSeconds" value="300"/>
+ </bean>
+ 
+ <bean id="queryRegion" parent="cacheRegion">
+   <property name="groups">
+   		<list>
+   			<ref bean="localGroup"/>
+   		</list>
+   </property>
+   <property name="regionName" value="queryRegion"/>
+   <property name="defaultCacheTimeSeconds" value="600"/>
+ </bean>
+ 
+ <bean id="clusterRegion" parent="cacheRegion">
+   <property name="groups">
+   		<list>
+   			<ref bean="localGroup"/>
+   		</list>
+   </property>
+   <property name="regionName" value="clusterRegion"/>
+   <property name="defaultCacheTimeSeconds" value="3600"/>
+ </bean>
+ -->
+ 
+
+
+ 
+ 
+ <!-- **************** Ehcache config **************** -->
+ <bean id="ehcacheRegion" abstract="true" class="com.navigation.cache.EhcacheRegion">
+ 	<property name="regionName" value="default"/>
+ </bean>
+ 
+ <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+	<property name="configLocation">
+	   <value>WEB-INF/classes/ehcache.xml</value>
+	</property>
+ </bean>
+ 
+ <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheFactoryBean" abstract="true">
+	<property name="cacheManager">
+		<ref local="cacheManager"/>
+	</property>
+ </bean>
+ 
+ <bean id="localRegion" parent="ehcacheRegion">
+   <property name="regionName" value="localRegion"/>
+   <property name="cache">
+   		<bean parent="ehcache">
+   			<property name="cacheName" value="localRegion" />
+   		</bean>
+   </property>
+ </bean>
+ 
+<bean id="queryRegion" parent="ehcacheRegion">
+   <property name="regionName" value="queryRegion"/>
+   <property name="cache">
+   		<bean parent="ehcache">
+   			<property name="cacheName" value="queryRegion" />
+   		</bean>
+   </property>
+ </bean>
+ 
+<bean id="clusterRegion" parent="ehcacheRegion">
+   <property name="regionName" value="clusterRegion"/>
+   <property name="cache">
+   		<bean parent="ehcache">
+   			<property name="cacheName" value="clusterRegion" />
+   		</bean>
+   </property>
+ </bean>
+ 
+ 
+ 
+  <!--****************************** Cache Service **************************************-->
+ <bean id="cacheService" class="com.navigation.cache.impl.CacheServiceImpl">
+ 	<property name="defaultCacheRegion" ref="queryRegion"/>
+ 	<property name="cacheRegions">
+		<list>
+	 	    <ref bean="localRegion"/>
+	 	    <ref bean="queryRegion"/>
+	 	    <ref bean="clusterRegion"/>
+ 	    </list>
+ 	</property>
+ </bean>
+ 
+ <bean id="cacheUtil" class="com.navigation.utils.CacheUtil">
+ 	<property name="cacheService" ref="cacheService" />
+ </bean>
+ 
+</beans>

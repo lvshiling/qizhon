@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses
+END
+DeleteStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/DeleteStatus.java
+END
+UpdateStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/UpdateStatus.java
+END
+GetRepostTimeline.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/GetRepostTimeline.java
+END
+Reply.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/Reply.java
+END
+GetStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/GetStatus.java
+END
+ForwardStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/ForwardStatus.java
+END
+UpdateComment.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/UpdateComment.java
+END
+DeleteComment.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/DeleteComment.java
+END
+Repost.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/Repost.java
+END
+RepostByMe.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/statuses/RepostByMe.java
+END

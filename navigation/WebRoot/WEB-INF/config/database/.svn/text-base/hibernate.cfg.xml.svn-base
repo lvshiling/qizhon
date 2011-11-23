@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping resource="com/navigation/pojo/User.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserLink.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserNotice.hbm.xml" />
+		<mapping resource="com/navigation/pojo/Topic.hbm.xml" />
+		<mapping resource="com/navigation/pojo/TopicReply.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserMail.hbm.xml" />
+		<mapping resource="com/navigation/pojo/TopicSort.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserStock.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserTopicSort.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserLogState.hbm.xml" />
+		<mapping resource="com/navigation/pojo/FileSearch.hbm.xml" />
+		<mapping resource="com/navigation/pojo/FileSearchConfig.hbm.xml" />
+		<mapping resource="com/navigation/pojo/FileGpass.hbm.xml" />
+		
+		<mapping resource="com/navigation/pojo/Tag.hbm.xml" />
+		<mapping resource="com/navigation/pojo/Area.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserTag.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserArea.hbm.xml" />
+		<mapping resource="com/navigation/pojo/News.hbm.xml" />
+
+		<mapping resource="com/navigation/pojo/Game.hbm.xml" />
+		<mapping resource="com/navigation/pojo/GameArea.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserInfo.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserGameArea.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserPicture.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserMsg.hbm.xml" />
+
+		<mapping resource="com/navigation/pojo/UserCredit.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserCreditLog.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserVisitLog.hbm.xml" />
+		<mapping resource="com/navigation/pojo/Room.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserNews.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserAuth.hbm.xml" />
+		<mapping resource="com/navigation/pojo/UserScoreLog.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

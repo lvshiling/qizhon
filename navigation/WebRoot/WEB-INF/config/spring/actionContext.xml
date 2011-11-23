@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <bean id="indexAction" class="com.navigation.action.IndexAction" scope="prototype" />
+    <bean id="userAction" class="com.navigation.action.user.UserAction" scope="prototype" />
+    <bean id="topicAction" class="com.navigation.action.topic.TopicAction" scope="prototype" />
+    <bean id="gpassAction" class="com.navigation.action.gpass.GpassAction" scope="prototype" />
+    <bean id="urlsAction" class="com.navigation.action.urls.UrlsAction" scope="prototype" />
+    <bean id="sinaAction" class="com.navigation.action.bind.SinaAction" scope="prototype" />
+    <bean id="giantSsoAction" class="com.navigation.action.bind.GiantSso" scope="prototype" />
+    <bean id="stockAction" class="com.navigation.action.app.stock.StockAction" scope="prototype" />
+    <bean id="weatherAction" class="com.navigation.action.app.weather.WeatherAction" scope="prototype" />
+    <bean id="mailAction" class="com.navigation.action.mail.MailAction" scope="prototype" />
+    <bean id="movieAction" class="com.navigation.action.movie.MovieAction" scope="prototype" />
+    <bean id="amtAction" class="com.navigation.action.app.amt.AmtAction" scope="prototype" />
+    <bean id="weiboAction" class="com.navigation.action.weibo.WeiboAction" scope="prototype" />
+    <bean id="qweiboAction" class="com.navigation.action.weibo.QweiboAction" scope="prototype" />
+    <bean id="fileAction" class="com.navigation.action.file.FileAction" scope="prototype" />
+    <bean id="neteasyWeiboAction" class="com.navigation.action.weibo.NeteasyWeiboAction" scope="prototype" />
+    <bean id="payAction" class="com.navigation.action.credit.PayAction" scope="prototype" />
+    
+    <bean id="jiasuAction" class="com.navigation.jiasu.action.IndexAction" scope="prototype" />
+    <bean id="rankAction" class="com.navigation.action.rank.RankAction" scope="prototype" />
+</beans>

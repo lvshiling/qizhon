@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client
+END
+ReturnSendMail.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnSendMail.java
+END
+ReturnSendMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnSendMessage.java
+END
+Wsdl_passport.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/Wsdl_passport.java
+END
+AdDn.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/AdDn.java
+END
+ReturnQueryAdUserByNameFix.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnQueryAdUserByNameFix.java
+END
+ReturnValidateAdOnlyByPasswd.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnValidateAdOnlyByPasswd.java
+END
+Wsdl_passportLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/Wsdl_passportLocator.java
+END
+ReturnQueryAdUserPartInfoByTelNum.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnQueryAdUserPartInfoByTelNum.java
+END
+Wsdl_passportPortType.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/Wsdl_passportPortType.java
+END
+Wsdl_passportBindingStub.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/Wsdl_passportBindingStub.java
+END
+ReturnQueryAdUserPartInfoByStaffNum.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnQueryAdUserPartInfoByStaffNum.java
+END
+ReturnSendSMS.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnSendSMS.java
+END
+AdUserStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/AdUserStatus.java
+END
+ReturnValidateAdByPasswd.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnValidateAdByPasswd.java
+END
+AdUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/AdUserInfo.java
+END
+ReturnQueryAdUserPartInfoByMuti.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnQueryAdUserPartInfoByMuti.java
+END
+AdUserNameAndPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/AdUserNameAndPassword.java
+END
+ReturnValidateAdByToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnValidateAdByToken.java
+END
+ReturnSendMessageOld.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/ReturnSendMessageOld.java
+END
+AdUserModifyInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/AdUserModifyInfo.java
+END
+AdUserMainInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/ztgame/webService/client/AdUserMainInfo.java
+END

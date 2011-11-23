@@ -1,0 +1,71 @@
+修改方法：getSWFHTML
+原代码：
+getSWFHTML: function() {
+		var swfNode = "";
+		if (navigator.plugins && navigator.mimeTypes && navigator.mimeTypes.length) { // netscape plugin architecture
+			if (this.getAttribute("doExpressInstall")) {
+				this.addVariable("MMplayerType", "PlugIn");
+				this.setAttribute('swf', this.xiSWFPath);
+			}
+			swfNode = '<embed type="application/x-shockwave-flash" wmode="transparent" src="'+ this.getAttribute('swf') +'" width="'+ this.getAttribute('width') +'" height="'+ this.getAttribute('height') +'" style="'+ this.getAttribute('style') +'"';
+			swfNode += ' id="'+ this.getAttribute('id') +'" name="'+ this.getAttribute('id') +'" ';
+			var params = this.getParams();
+			 for(var key in params){ swfNode += [key] +'="'+ params[key] +'" '; }
+			var pairs = this.getVariablePairs().join("&");
+			 if (pairs.length > 0){ swfNode += 'flashvars="'+ pairs +'"'; }
+			swfNode += '/>';
+		} else { // PC IE
+			if (this.getAttribute("doExpressInstall")) {
+				this.addVariable("MMplayerType", "ActiveX");
+				this.setAttribute('swf', this.xiSWFPath);
+			}
+			swfNode = '<object id="'+ this.getAttribute('id') +'" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="'+ this.getAttribute('width') +'" height="'+ this.getAttribute('height') +'" style="'+ this.getAttribute('style') +'">';
+			swfNode += '<param name="movie" value="'+ this.getAttribute('swf') +'" />';
+            swfNode += '<param name="wmode" value="transparent" />';
+			var params = this.getParams();
+			for(var key in params) {
+			 swfNode += '<param name="'+ key +'" value="'+ params[key] +'" />';
+			}
+			var pairs = this.getVariablePairs().join("&");
+			if(pairs.length > 0) {swfNode += '<param name="flashvars" value="'+ pairs +'" />';}
+			swfNode += "</object>";
+		}
+		return swfNode;
+	}
+修改后代码：
+getSWFHTML: function() {
+		var swfNode = "";
+		if (navigator.plugins && navigator.mimeTypes && navigator.mimeTypes.length) { // netscape plugin architecture
+			var wmode = 'wmode="transparent"';
+			if(this.getParams()['wmode']){
+				wmode = "";
+			}
+			if (this.getAttribute("doExpressInstall")) {
+				this.addVariable("MMplayerType", "PlugIn");
+				this.setAttribute('swf', this.xiSWFPath);
+			}
+			swfNode = '<embed type="application/x-shockwave-flash" '+ wmode +' src="'+ this.getAttribute('swf') +'" width="'+ this.getAttribute('width') +'" height="'+ this.getAttribute('height') +'" style="'+ this.getAttribute('style') +'"';
+			swfNode += ' id="'+ this.getAttribute('id') +'" name="'+ this.getAttribute('id') +'" ';
+			var params = this.getParams();
+			 for(var key in params){ swfNode += [key] +'="'+ params[key] +'" '; }
+			var pairs = this.getVariablePairs().join("&");
+			 if (pairs.length > 0){ swfNode += 'flashvars="'+ pairs +'"'; }
+			swfNode += '/>';
+		} else { // PC IE
+			if (this.getAttribute("doExpressInstall")) {
+				this.addVariable("MMplayerType", "ActiveX");
+				this.setAttribute('swf', this.xiSWFPath);
+			}
+			swfNode = '<object id="'+ this.getAttribute('id') +'" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="'+ this.getAttribute('width') +'" height="'+ this.getAttribute('height') +'" style="'+ this.getAttribute('style') +'">';
+			swfNode += '<param name="movie" value="'+ this.getAttribute('swf') +'" />';
+            swfNode += '<param name="wmode" value="transparent" />';
+			var params = this.getParams();
+			for(var key in params) {
+			 swfNode += '<param name="'+ key +'" value="'+ params[key] +'" />';
+			}
+			var pairs = this.getVariablePairs().join("&");
+			if(pairs.length > 0) {swfNode += '<param name="flashvars" value="'+ pairs +'" />';}
+			swfNode += "</object>";
+		}
+		return swfNode;
+	}

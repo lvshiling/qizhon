@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ 
+	font-size:12px; 
+	font-family:"宋体","Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", "Arial", "sans-serif";
+	color:#555;
+}
+body,form,p,img{ 
+	margin:0; 
+	padding:0;
+}
+img{ 
+	border:none;
+}
+a{ 
+	text-decoration:none;
+	color:#555;
+}
+a:hover{ 
+	text-decoration:underline;
+}
+a,button{ 
+	outline:none;
+	*hide-focus:expression(this.hideFocus=true);
+}
+.clear{ 
+	clear:both;
+}
+ul,li{ 
+	list-style:none; 
+	margin:0; 
+	padding:0;
+}
+
+a.blue{
+	color:#49a6f1
+}
+.center{
+	text-align:center;
+}
+span.blank{
+	display:inline-block;
+	width:24px;
+}
+.right{
+	text-align:right;
+}

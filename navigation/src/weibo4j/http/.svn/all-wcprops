@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http
+END
+HTMLEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/HTMLEntity.java
+END
+ImageItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/ImageItem.java
+END
+BASE64Encoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/BASE64Encoder.java
+END
+RequestToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/RequestToken.java
+END
+PostParameter.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/PostParameter.java
+END
+OAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/OAuth.java
+END
+AccessToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/AccessToken.java
+END
+HttpClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/HttpClient.java
+END
+OAuthToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/OAuthToken.java
+END
+Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/http/Response.java
+END

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 
+    answer 9-2
+-->
+<hibernate-mapping>
+    <class name="com.navigation.jiasu.pojo.JiasuRole" table="jiasu_role" catalog="jiasu">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="role_name" type="java.lang.String">
+            <column name="role_name" length="50" />
+        </property>
+        <property name="role_id" type="java.lang.Integer">
+            <column name="role_id" />
+        </property>
+        <property name="user_id" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>     
+        
+    </class>
+    
+</hibernate-mapping>

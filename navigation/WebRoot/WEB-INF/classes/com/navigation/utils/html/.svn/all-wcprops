@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html
+END
+HtmlRegexpUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html/HtmlRegexpUtils.java
+END
+CommentsRegxp.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html/CommentsRegxp.java
+END
+HtmlAttrs.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html/HtmlAttrs.java
+END
+CSSProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html/CSSProperties.java
+END
+CSSValues.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html/CSSValues.java
+END
+HtmlConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html/HtmlConstants.java
+END
+HtmlTags.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/html/HtmlTags.java
+END

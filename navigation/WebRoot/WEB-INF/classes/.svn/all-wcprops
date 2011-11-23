@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/navigation/!svn/ver/95/trunk/release-1.0/src
+END
+ehcache.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/ehcache.xml
+END
+struts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/navigation/!svn/ver/39/trunk/release-1.0/src/struts.xml
+END
+struts_app.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/struts_app.xml
+END
+fdfs_client.conf
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/fdfs_client.conf
+END
+struts_default.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/struts_default.xml
+END
+struts_video.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/navigation/!svn/ver/54/trunk/release-1.0/src/struts_video.xml
+END
+t4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j.properties
+END
+poller.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/poller.java
+END
+exception.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/exception.xml
+END
+struts_jiasu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/struts_jiasu.xml
+END

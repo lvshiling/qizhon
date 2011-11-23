@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json
+END
+XMLTokener.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/XMLTokener.java
+END
+CDL.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/CDL.java
+END
+HTTP.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/HTTP.java
+END
+JSONObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONObject.java
+END
+JSONML.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONML.java
+END
+JSONException.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONException.java
+END
+JSONStringer.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONStringer.java
+END
+Cookie.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/Cookie.java
+END
+CookieList.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/CookieList.java
+END
+JSONTokener.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONTokener.java
+END
+HTTPTokener.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/HTTPTokener.java
+END
+JSONWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONWriter.java
+END
+JSONString.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONString.java
+END
+XML.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/XML.java
+END
+Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/Test.java
+END
+JSONArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/t4j/org/json/JSONArray.java
+END

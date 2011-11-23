@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons
+END
+Friends_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Friends_API.java
+END
+T_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/T_API.java
+END
+Private_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Private_API.java
+END
+RequestAPI.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/RequestAPI.java
+END
+Statuses_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Statuses_API.java
+END
+Other_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Other_API.java
+END
+Info_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Info_API.java
+END
+Ht_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Ht_API.java
+END
+Fav_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Fav_API.java
+END
+User_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/User_API.java
+END
+Search_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Search_API.java
+END
+Trends_API.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/mime/qweibo/commons/Trends_API.java
+END

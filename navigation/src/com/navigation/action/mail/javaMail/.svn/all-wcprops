@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail
+END
+InstallCert.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail/InstallCert.java
+END
+MsgShow.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail/MsgShow.java
+END
+SmtpSend.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail/SmtpSend.java
+END
+FolderList.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail/FolderList.java
+END
+Monitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail/Monitor.java
+END
+MsgSend.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail/MsgSend.java
+END
+MsgSendSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/action/mail/javaMail/MsgSendSample.java
+END

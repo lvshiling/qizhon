@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <title>WebForm1</title>
+        <meta name="GENERATOR" Content="Microsoft Visual Studio .NET 7.1">
+        <meta name="CODE_LANGUAGE" Content="C#">
+        <meta name="vs_defaultClientScript" content="JavaScript">
+        <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <SCRIPT language='javascript' src='owsbrows.js'></SCRIPT>
+        <SCRIPT language='javascript' src='ows.js'></SCRIPT>
+    </HEAD>
+    <body MS_POSITIONING="GridLayout">
+        <form id="Form1" method="post" runat="server">
+            <FONT face="ËÎÌו">
+                <TABLE id="Table1" style="Z-INDEX: 101; LEFT: 88px; WIDTH: 424px; POSITION: absolute; TOP: 136px; HEIGHT: 24px"
+                    cellSpacing="1" cellPadding="1" width="424" border="1">
+                    <TR>
+                        <TD>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="PADDING-RIGHT: 3px"><img border="0" valign="middle" height="12" width="12" src="http://tp2.sinaimg.cn/2081411633/50/1/1"
+                                            onload="IMNRC('wanghui2@ztgame.com');" id="{95100999-a43f-4db3-bc74-a74fad6473a7}" Sortable="1">
+                                            1111
+                                    </td>
+                                </tr>
+                            </table>
+                        </TD>
+                    </TR>
+                </TABLE>
+            </FONT>
+        </form>
+    </body>
+</HTML>

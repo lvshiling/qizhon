@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd  
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd 
+	">
+	<bean id="proxool" class="com.navigation.config.DBpoolConfigurator" init-method="init" destroy-method="destroy">
+		<property name="xmlFile" value="/WEB-INF/config/database/Proxool.xml"/>
+	</bean>
+	
+	<bean id="abstractSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" abstract="true">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+				<prop key="hibernate.jdbc.fetch_size">30</prop>
+				<prop key="hibernate.jdbc.batch_size">30</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.default_batch_fetch_size">30</prop>
+				<prop key="hibernate.order_updates">true</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+				<prop key="hibernate.connection.autocommit">${hibernate.connection.autocommit}</prop>
+				<prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="hibernate.generate_statistics">${hibernate.generate_statistics}</prop>
+				<prop key="hibernate.cache.use_structured_entries">false</prop>
+				<prop key="hibernate.cache.use_minimal_puts">false</prop>
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="hibernate.current_session_context_class">jta</prop >
+				<!-- prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}</prop-->
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" depends-on="proxool" >
+		<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+		<property name="url" value="proxool.depiao"/>
+	</bean>
+	
+	<bean id="sessionFactory" parent="abstractSessionFactory">
+    	<property name="dataSource" ref="dataSource"/>
+        <property name="configLocations">
+            <list>
+                <value>/WEB-INF/config/database/hibernate.cfg.xml</value>
+            </list>
+        </property>
+    </bean>
+    
+    
+	<bean id="jiasuDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" depends-on="proxool" >
+		<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+		<property name="url" value="proxool.jiasu"/>
+	</bean>
+	
+	<bean id="jiasuSessionFactory" parent="abstractSessionFactory">
+    	<property name="dataSource" ref="jiasuDataSource"/>
+        <property name="configLocations">
+            <list>
+                <value>/WEB-INF/config/database/jiasuHibernate.cfg.xml</value>
+            </list>
+        </property>
+    </bean>
+    
+    
+    	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+    	<property name="transactionManager" ref="transactionManager"/>
+    </bean>
+    
+    <bean class="com.navigation.dao.base.TransactionUtils">
+    	<property name="transactionTemplate" ref="transactionTemplate"/>
+    </bean>
+    
+    <tx:annotation-driven transaction-manager="transactionManager" />
+</beans>

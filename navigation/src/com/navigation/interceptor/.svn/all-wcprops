@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/interceptor
+END
+ServiceMethodInterceptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/interceptor/ServiceMethodInterceptor.java
+END
+ClientIpAware.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/interceptor/ClientIpAware.java
+END
+AuthorizedInterceptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/interceptor/AuthorizedInterceptor.java
+END
+MethodAdvice.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/interceptor/MethodAdvice.java
+END

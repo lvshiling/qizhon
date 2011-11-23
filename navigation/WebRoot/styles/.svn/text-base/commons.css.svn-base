@@ -1,0 +1,1031 @@
+/**
+ * Copyright (C) 2004-2011 Giant Interective Group, Inc. All rights reserved.
+ * commons 公用样式库
+ * v #version, #date by zhaoxinle
+ */
+
+/* ===== 标签格式化 ===== */
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: Verdana, Arial, Helvetica,"Lucida Grande", "宋体", sans-serif;
+	font-size: 12px;
+	background: #C6C7C2; /* 强制定义背景色 */
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+p, pre, code, fieldset, legend, form, input, textarea,
+th, td, blockquote, select, button {
+	margin: 0;
+	padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+h2 {
+	font-size: 18px;
+	font-family: "微软雅黑", "黑体";
+	color: #000;
+}
+h3 {
+	font-size: 14px;
+}
+p {
+	line-height: 150%;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+.en-ft {
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+}
+.en-ft12 {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+a:link,a:visited {
+	text-decoration: none;
+	cursor: pointer;
+	color: #06C;
+}
+a:visited {
+	color: #666;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus { /* 消除链接虚线 For FF */
+	outline: none;
+}
+
+/* 解决ie浏览器图片缓存的bug 目前没有发现性能问题 暂时解决方案 songlu*/
+* html {
+	filter: expression(document .   execCommand("BackgroundImageCache", false, true)
+		);
+}
+
+.min-ht {
+	min-height: 800px;
+	_height: 800px;
+}
+.min-ht-500 {
+	min-height: 500px;
+	_height: 500px;
+}
+
+/* ===== 常用全局类 ===== */
+.prel {
+	position: relative;
+	z-index: 0;
+	zoom: 1;
+}
+
+.pabs {
+	position: absolute;
+}
+
+.tleft {
+	text-align: left;
+}
+
+.tright {
+	text-align: right;
+}
+
+.tcenter {
+	text-align: center;
+}
+
+.fleft {
+	float: left !important;
+}
+
+.fright {
+	float: right !important;
+}
+
+.vtop,.vtop * {
+	vertical-align: top;
+}
+
+.vmiddle,.vmiddle * {
+	vertical-align: middle;
+}
+
+.vbtm,.vbtm * {
+	vertical-align: bottom;
+}
+
+.mauto { /* 容器水平居中 */
+	margin: 0 auto;
+}
+
+.block {
+	display: block;
+}
+
+.inline {
+	_display: inline;
+}
+
+.none { /* 隐藏对象 */
+	display: none;
+}
+.dnone { /* 隐藏对象 */
+	display: none!important;
+}
+
+.hide { /* 超出隐藏 */
+	overflow: hidden;
+}
+.hide-table {
+    table-layout:fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+    *text-overflow: ellipsis;
+}
+.hide-table td {
+    padding-bottom:5px;
+}
+.pre {
+	overflow: hidden;
+	word-break: break-all;
+    word-wrap: break-word;
+}
+
+.tline {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+.nowrap {
+	white-space: nowrap;
+}
+
+.break {
+	word-break: break-all;
+	overflow: hidden;
+}
+
+.clr {
+	clear: both;
+}
+
+.clear { /* 清除浮动 */
+	clear: both;
+	display: block;
+	font: 0px/0px sans-serif;
+	height: 0;
+}
+
+.nopd {
+	padding: 0 !important;
+}
+
+.nobr {
+	border: 0 !important;
+}
+
+.z0 {
+	z-index: 0 !important;
+}
+.z1 {
+	z-index: 1 !important;
+}
+.z2 {
+	z-index: 2 !important;
+}
+.z3 {
+	z-index: 3 !important;
+}
+.z4 {
+	z-index: 4 !important;
+}
+.z5 {
+	z-index: 5 !important;
+}
+.z6 {
+	z-index: 6 !important;
+}
+.z7 {
+	z-index:7 !important;
+}
+.z8 {
+	z-index: 8 !important;
+}
+.z9 {
+	z-index: 9 !important;
+}
+
+.z99 {
+	z-index: 99 !important;
+}
+
+.z999 {
+	z-index: 999 !important;
+}
+
+.z9999 {
+	z-index: 9999 !important;
+}
+
+.zoom {
+	zoom: 1;
+}
+
+/* ----- 清除浮动 ----- */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix {
+	display: block;
+}
+
+.uline { /* 添加下划线 */
+	text-decoration: underline !important;
+}
+
+.noline { /* 无下划线 */
+	text-decoration: none;
+}
+
+.hand { /* 手型鼠标指针 */
+	cursor: pointer;
+}
+
+.default {
+	cursor: default;
+}
+
+.para { /* 段落首行缩进 */
+	text-indent: 2em;
+}
+
+.more { /* 查看更多 */
+	font-family: "宋体";
+	text-align: right;
+}
+.tomore { /* 查看更多 */
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+	font-family: "宋体";
+	text-align: right;
+}
+
+.crumb { /* 面包屑导航 */
+	padding-left: 15px;
+	line-height: 35px;
+}
+
+.crumb a:link, .crumb a:visited, .crumb a:hover {
+	color: #000;
+}
+
+.alert { /* 使醒目、警示 */
+	color: #f60;
+}
+
+.num-txt {
+	font-size: 12px;
+	font-family:Arial;
+	color: #999;
+}
+
+.gray { /* 使暗淡、不可选 */
+	color: #bbb;
+}
+
+.dim { /* 更暗淡、隐约 */
+	color: #ddd;
+}
+
+.fb { /* 文字加粗 */
+	font-weight: bold;
+}
+
+.fn { /* 取消加粗 */
+	font-weight: normal;
+}
+
+.bdr { /* 仅调试结构时查看边框使用 */
+	border: 1px solid #f00;
+}
+
+/* ===== 常用数值类 ===== */ 
+/* ----- 常用字号 ----- */
+.ft10 {
+	font-size: 10px;
+}
+
+.ft11 {
+	font-size: 11px !important;
+}
+
+.ft12 {
+	font-size: 12px !important;
+}
+
+.ft14 {
+	font-size: 14px;
+}
+
+.ft16 {
+	font-size: 16px;
+}
+
+.ft21 {
+	font-size: 21px;
+}
+
+
+/* ----- 常用行高 ----- */
+.lh100 {
+	line-height: 100%;
+}
+
+.lh120 {
+	line-height: 120%;
+}
+
+.lh140 {
+	line-height: 140%;
+}
+
+.lh150 {
+	line-height: 150%;
+}
+
+.lh160 {
+	line-height: 160%;
+}
+.lh180 {
+	line-height: 180%;
+}
+
+.lh200 {
+	line-height: 200%;
+}
+.lh-oly {
+	line-height: 100px;
+}
+
+/* ----- 常用宽度 ----- */
+.wp10 {
+	width: 10%;
+}
+
+.wp15 {
+	width: 15%;
+}
+
+.wp20 {
+	width: 20%;
+}
+
+.wp25 {
+	width: 25%;
+}
+
+.wp30 {
+	width: 30%;
+}
+
+.wp35 {
+	width: 35%;
+}
+
+.wp40 {
+	width: 40%;
+}
+
+.wp45 {
+	width: 45%;
+}
+
+.wp50 {
+	width: 50%;
+}
+
+.wp55 {
+	width: 55%;
+}
+
+.wp60 {
+	width: 60%;
+}
+
+.wp65 {
+	width: 65%;
+}
+
+.wp70 {
+	width: 70%;
+}
+
+.wp75 {
+	width: 75%;
+}
+
+.wp80 {
+	width: 80%;
+}
+
+.wp85 {
+	width: 85%;
+}
+
+.wp90 {
+	width: 90%;
+}
+
+.wp95 {
+	width: 95%;
+}
+
+.wp98 {
+	width: 98%;
+}
+
+.wp99 {
+	width: 99%;
+}
+
+.wp100 {
+	width: 100%;
+}
+
+.w10 {
+	width: 10px;
+}
+
+.w15 {
+	width: 15px;
+}
+
+.w20 {
+	width: 20px;
+}
+
+.w25 {
+	width: 25px;
+}
+
+.w30 {
+	width: 30px;
+}
+
+.w35 {
+	width: 35px;
+}
+
+.w40 {
+	width: 40px;
+}
+
+.w45 {
+	width: 45px;
+}
+
+.w50 {
+	width: 50px;
+}
+
+.w55 {
+	width: 55px;
+}
+
+.w60 {
+	width: 60px;
+}
+
+.w65 {
+	width: 65px;
+}
+
+.w70 {
+	width: 70px;
+}
+
+.w75 {
+	width: 75px;
+}
+
+.w80 {
+	width: 80px;
+}
+
+.w85 {
+	width: 85px;
+}
+
+.w90 {
+	width: 90px;
+}
+
+.w95 {
+	width: 95px;
+}
+
+.w100 {
+	width: 100px;
+}
+
+.w105 {
+	width: 105px;
+}
+
+.w110 {
+	width: 110px;
+}
+
+.w115 {
+	width: 115px;
+}
+
+.w120 {
+	width: 120px;
+}
+
+.w125 {
+	width: 125px;
+}
+
+.w130 {
+	width: 130px;
+}
+
+.w140 {
+	width: 140px;
+}
+
+.w150 {
+	width: 150px;
+}
+
+.w170 {
+	width: 170px;
+}
+
+
+.w175 {
+	width: 175px;
+}
+
+.w170 {
+	width: 170px;
+}
+
+.w180 {
+	width: 180px;
+}
+
+.w185 {
+	width: 185px;
+}
+
+.w200 {
+	width: 200px;
+}
+
+.w210 {
+	width: 210px;
+}
+
+.w220 {
+	width: 220px;
+}
+
+.w230 {
+	width: 230px;
+}
+
+.w260 {
+	width: 260px;
+}
+
+.w290 {
+	width: 290px;
+}
+
+.w300 {
+	width: 300px;
+}
+
+.w350 {
+	width: 350px;
+}
+
+.w370 {
+	width: 370px;
+}
+
+.w380 {
+	width: 380px;
+}
+
+.w410 {
+	width: 410px;
+}
+
+.w420 {
+	width: 420px;
+}
+
+.w440 {
+	width: 440px;
+}
+
+.w450 {
+	width: 450px;
+}
+
+.w500 {
+	width: 500px;
+}
+
+.w550 {
+	width: 550px;
+}
+
+.w580 {
+	width: 580px;
+}
+
+.w700 {
+	width: 700px;
+}
+
+/* ----- 常用单边距 ----- */
+.m0{
+    margin: 0px;
+}
+
+.m05 {
+	margin: 5px;
+}
+
+.m10 {
+	margin: 10px;
+}
+
+.m15 {
+	margin: 15px;
+}
+
+.m20 {
+	margin: 20px;
+}
+
+.m30 {
+	margin: 30px;
+}
+
+.mt05 {
+	margin-top: 5px;
+}
+
+.mt10 {
+	margin-top: 10px;
+}
+
+.mt15 {
+	margin-top: 15px;
+}
+
+.mt20 {
+	margin-top: 20px;
+}
+
+.mt25 {
+	margin-top: 25px;
+}
+
+.mt30 {
+	margin-top: 30px;
+}
+
+.mt40 {
+	margin-top: 40px;
+}
+
+.mt50 {
+	margin-top: 50px;
+}
+
+.mr05 {
+	margin-right: 5px;
+}
+
+.mr10 {
+	margin-right: 10px;
+}
+
+.mr15 {
+	margin-right: 15px;
+}
+
+.mr20 {
+	margin-right: 20px;
+}
+
+.mr25 {
+	margin-right: 25px;
+}
+
+.mr30 {
+	margin-right: 30px;
+}
+
+.mr40 {
+	margin-right: 40px;
+}
+
+.mr50 {
+	margin-right: 50px;
+}
+
+.mr55 {
+	margin-right: 55px;
+}
+
+.mr60 {
+	margin-right: 60px;
+}
+
+.mb05 {
+	margin-bottom: 5px;
+}
+
+.mb07 {
+	margin-bottom: 7px;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb15 {
+	margin-bottom: 15px;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.mb30 {
+	margin-bottom: 30px;
+}
+
+.mb40 {
+	margin-bottom: 40px;
+}
+
+.mb50 {
+	margin-bottom: 50px;
+}
+
+.mb60 {
+	margin-bottom: 60px;
+}
+
+.ml05 {
+	margin-left: 5px;
+}
+
+.ml10 {
+	margin-left: 10px;
+}
+
+.ml15 {
+	margin-left: 15px;
+}
+
+.ml20 {
+	margin-left: 20px;
+}
+
+.ml30 {
+	margin-left: 30px;
+}
+
+.ml35 {
+	margin-left: 35px;
+}
+
+.ml40 {
+	margin-left: 40px;
+}
+
+.ml50 {
+	margin-left: 50px;
+}
+
+.ml60 {
+	margin-left: 60px;
+}
+
+.ml75 {
+	margin-left: 75px;
+}
+
+.ml85 {
+	margin-left: 85px;
+}
+
+.ml120 {
+	margin-left: 120px;
+}
+
+.ml140 {
+	margin-left: 140px;
+}
+
+.ml160 {
+	margin-left: 160px;
+}
+
+.ml420 {
+	margin-left: 420px;
+}
+
+.ml580 {
+	margin-left: 580px;
+}
+
+.pd05 {
+	padding: 5px;
+}
+.pd10 {
+	padding: 10px;
+}
+.pd15 {
+	padding: 15px;
+}
+.pd20 {
+	padding: 20px;
+}
+.pd25 {
+	padding: 25px;
+}
+.pd30 {
+	padding: 30px;
+}
+.pd40 {
+	padding: 40px;
+}
+.pd50 {
+	padding: 50px;
+}
+.pd60 {
+	padding: 60px;
+}
+.pl05 {
+	padding-left: 5px;
+}
+.pl10 {
+	padding-left: 10px;
+}
+.pl15 {
+	padding-left: 15px;
+}
+.pl20 {
+	padding-left: 20px;
+}
+.pl30 {
+	padding-left: 30px;
+}
+.pl40 {
+	padding-left: 40px;
+}
+.pl50 {
+	padding-left: 50px;
+}
+.pl60 {
+	padding-left: 60px;
+}
+.pr05 {
+	padding-right: 5px;
+}
+.pr10 {
+	padding-right: 10px;
+}
+.pr15 {
+	padding-right: 15px;
+}
+.pr20 {
+	padding-right: 20px;
+}
+.pr30 {
+	padding-right: 30px;
+}
+.pr40 {
+	padding-right: 40px;
+}
+.pr50 {
+	padding-right: 50px;
+}
+.pr60 {
+	padding-right: 60px;
+}
+.pt05 {
+	padding-top: 5px;
+}
+.pt10 {
+	padding-top: 10px;
+}
+.pt15 {
+	padding-top: 15px;
+}
+.pt20 {
+	padding-top: 20px;
+}
+.pt30 {
+	padding-top: 30px;
+}
+.pt40 {
+	padding-top: 40px;
+}
+.pt50 {
+	padding-top: 50px;
+}
+.pt60 {
+	padding-top: 60px;
+}
+.pb05 {
+	padding-bottom: 5px;
+}
+.pb10 {
+	padding-bottom: 10px;
+}
+.pb15 {
+	padding-bottom: 15px;
+}
+.pb20 {
+	padding-bottom: 20px;
+}
+.pb30 {
+	padding-bottom: 30px;
+}
+.pb40 {
+	padding-bottom: 40px;
+}
+.pb50 {
+	padding-bottom: 50px;
+}
+.pb60 {
+	padding-bottom: 60px;
+}
+
+/* 清除边框  */
+.nl-t {
+	border-top: none !important;
+}
+
+.nl-r {
+	border-right: none !important;
+}
+
+.nl-b {
+	border-bottom: none !important;
+}
+
+.nl-l {
+	border-left: none !important;
+}
+/* 清除背景  */
+.nbg {
+	background: none !important;
+}
+
+.fc1 {
+	color: #999;
+}
+
+.hidden{visibility: hidden;}
+.ckepopBottom,.centerBottom{display: none;}

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo
+END
+GameZone.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/GameZone.java
+END
+GameDownStatus.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/GameDownStatus.hbm.xml
+END
+Radacct.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/Radacct.hbm.xml
+END
+JiasuRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/JiasuRole.java
+END
+JiasuRole.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/JiasuRole.hbm.xml
+END
+Radacct.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/Radacct.java
+END
+GameDownStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/GameDownStatus.java
+END
+GameZone.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/pojo/GameZone.hbm.xml
+END

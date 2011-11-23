@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples
+END
+OAuthUpdateTwo.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/OAuthUpdateTwo.java
+END
+GetDirectMessages.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/GetDirectMessages.java
+END
+OAuthUploadByFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/OAuthUploadByFile.java
+END
+OAuthUpdateProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/OAuthUpdateProfile.java
+END
+Update.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/Update.java
+END
+AsyncUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/AsyncUpdate.java
+END
+GetListMembers.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/GetListMembers.java
+END
+WebOAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/WebOAuth.java
+END
+upload.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/upload.java
+END
+OAuthUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/OAuthUpdate.java
+END
+GetListObjects.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/GetListObjects.java
+END
+GetFriends.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/GetFriends.java
+END
+GetTimelines.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/GetTimelines.java
+END
+OAuthSetTokenUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/OAuthSetTokenUpdate.java
+END
+SendDirectMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/SendDirectMessage.java
+END
+GetListStatuses.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/GetListStatuses.java
+END

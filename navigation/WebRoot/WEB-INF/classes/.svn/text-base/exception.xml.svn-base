@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//java.sun.com//DTD PROPERTIES//EN" "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="ex.no_logon">请先登录！</entry>
+	<entry key="ex.not_owner">您无所有权！</entry>
+	<entry key="ex.not_fount">资源未找到！</entry>
+	<entry key="ex.not_fount_user">找不到该用户 {0}！</entry>
+	<entry key="ex.not_fount">资源未找到！</entry>
+	<entry key="login.error">帐号或密码错误！</entry>
+	<entry key="activate.not_exsit">该激活帐号不存在！</entry>
+	<entry key="activate.valid_expire">该账号激活时间已过期！请重新注册！</entry>
+	<entry key="activate.has_activated">该账号已被激活！</entry>
+	<entry key="activate.validcode_error">激活验证码错误！</entry>
+</properties>

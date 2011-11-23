@@ -1,0 +1,160 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background:url(../images/index/bg_home_top.jpg) no-repeat top center;
+}
+#wrap{
+	width:1002px;
+	margin:0px auto;
+}
+#foot{
+	text-align:center;
+	background:url(../images/index/bg_home_foot.jpg) no-repeat bottom center;
+}
+#foot img{
+	vertical-align:bottom;
+}
+/* ----contant--- */
+.top{
+	text-align:right;
+	display:block;
+	height:41px;
+	line-height:41px;
+	padding-right:48px;
+	background:url(../images/index/bg_top1.jpg) no-repeat;
+}
+.top a{
+	color:#1963bb;
+	text-decoration:underline;
+}
+#menu{
+	background:#000;
+}
+#menu li{
+	float:left;
+}
+#menu .nav li{
+	height:41px;
+	float:left;
+}
+.nav li a{
+	display:block;
+	width:111px;
+	height:41px;
+	text-indent:-99999px;
+	background:url(../images/nav.jpg) no-repeat;
+}
+.nav li a.nav01{
+	width:119px;
+	background-position:0px 0px;
+}
+.nav li a.nav02{
+	background-position:-119px 0px;
+}
+.nav li a.nav03{
+	background-position:-230px 0px;
+}
+.nav li a.nav04{
+	background-position:-341px 0px;
+}
+.nav li a.nav05{
+	background-position:-452px 0px;
+}
+.nav li a.nav01:hover{
+	background-position:0px -41px;
+}
+.nav li a.nav02:hover{
+	background-position:-119px -41px;
+}
+.nav li a.nav03:hover{
+	background-position:-230px -41px;
+}
+.nav li a.nav04:hover{
+	background-position:-341px -41px;
+}
+.nav li a.nav05:hover{
+	background-position:-452px -41px;
+}
+#banner{
+	height:280px;
+	background:url(../images/index/bg_banner.jpg) no-repeat;
+}
+#banner ul{
+	padding-top:190px;
+	margin-left:22px;
+}
+#banner ul li{
+	float:left;
+}
+#banner ul li a{
+	display:block;
+	height:69px;
+	text-indent:-99999px;
+	background:url(../images/index/btn_banner.jpg) no-repeat;
+}
+#banner ul li a.reg{
+	width:193px;
+}
+#banner ul li a.down{
+	width:165px;
+	background-position:-193px 0px;
+}
+#msg{
+	height:272px;
+	background:url(../images/index/bg_new.jpg) no-repeat;
+}
+#msg #download{
+	float:left;
+	width:426px;
+	padding-left:61px;
+}
+#msg #download li.more{
+	text-align:right;
+	line-height:54px;
+	margin-right:25px;
+}
+#msg #download li.logo{
+	float:left;
+	margin-right:17px;
+	margin-bottom:10px;
+}
+#msg #download li.logo img{
+	padding:1px;
+	border:1px solid #c3ced7;
+}
+li.more a{
+	color:#49a6f1;
+}
+#msg #news{
+	float:left;
+	width:423px;
+	margin-left:37px;
+}
+#msg #news li.more{
+	text-align:right;
+	line-height:54px;
+	margin-right:25px;
+	margin-bottom:-7px;
+}
+#msg #news li.list{
+	line-height:28px;
+}
+li.list span.date{
+	display:inline-block;
+	width:45px;
+}
+#main{
+	background:url(../images/index/bg_h_m.jpg) repeat-y;
+}
+.m_top{
+	background:url(../images/index/bg_h_t.jpg) no-repeat top;
+}
+.m_bot{
+	padding-top:45px;
+	padding-bottom:49px;
+	background:url(../images/index/bg_h_b.jpg) no-repeat bottom;
+}
+.m_bot p{
+	margin:0px 61px;
+	line-height:20px;
+}

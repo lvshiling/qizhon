@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/navigation/!svn/ver/95/trunk/release-1.0/WebRoot/WEB-INF/config
+END
+constant.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/95/trunk/release-1.0/WebRoot/WEB-INF/config/constant.properties
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/config/log4j.properties
+END
+constant_local.properties
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/31/trunk/release-1.0/WebRoot/WEB-INF/config/constant_local.properties
+END

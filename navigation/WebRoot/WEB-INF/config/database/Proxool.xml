@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<something-else-entirely>
+   <proxool>
+      <alias>depiao</alias>
+      <driver-url>
+      	jdbc:mysql://127.0.0.1:3306/navigation
+      </driver-url>
+      <driver-class>com.mysql.jdbc.Driver</driver-class>
+      <driver-properties>
+          <property name="user" value="root"/>
+          <property name="password" value="root"/>
+          <property name="useUnicode" value="true"/>
+          <property name="characterEncoding" value="utf-8"/>
+          <property name="autoReconnect" value="true" />
+      </driver-properties>
+      <statistics>1m,30m,1d</statistics>
+      <prototype-count>1</prototype-count>
+	  <house-keeping-sleep-time>90000</house-keeping-sleep-time>
+	  <!-- test-before-use>true</test-before-use-->
+	  <house-keeping-test-sql>SELECT 1</house-keeping-test-sql>
+      <maximum-connection-count>5</maximum-connection-count>
+      <minimum-connection-count>0</minimum-connection-count>
+      <maximum-connection-lifetime>18000000</maximum-connection-lifetime> <!-- 5 hours -->
+      <simultaneous-build-throttle>5</simultaneous-build-throttle>
+      <recently-started-threshold>60000</recently-started-threshold>
+      <overload-without-refusal-lifetime>60000</overload-without-refusal-lifetime>
+      <maximum-active-time>240000</maximum-active-time>
+      <verbose>false</verbose>
+      <trace>false</trace>
+   </proxool>
+
+   <proxool>
+      <alias>jiasu</alias>
+      <driver-url>
+      	jdbc:mysql://127.0.0.1:3306/jiasu
+      </driver-url>
+      <driver-class>com.mysql.jdbc.Driver</driver-class>
+      <driver-properties>
+          <property name="user" value="root"/>
+          <property name="password" value="root"/>
+          <property name="useUnicode" value="true"/>
+          <property name="characterEncoding" value="utf-8"/>
+          <property name="autoReconnect" value="true" />
+      </driver-properties>
+      <statistics>1m,30m,1d</statistics>
+      <prototype-count>1</prototype-count>
+	  <house-keeping-sleep-time>90000</house-keeping-sleep-time>
+	  <!-- test-before-use>true</test-before-use-->
+	  <house-keeping-test-sql>SELECT 1</house-keeping-test-sql>
+      <maximum-connection-count>5</maximum-connection-count>
+      <minimum-connection-count>0</minimum-connection-count>
+      <maximum-connection-lifetime>18000000</maximum-connection-lifetime> <!-- 5 hours -->
+      <simultaneous-build-throttle>5</simultaneous-build-throttle>
+      <recently-started-threshold>60000</recently-started-threshold>
+      <overload-without-refusal-lifetime>60000</overload-without-refusal-lifetime>
+      <maximum-active-time>240000</maximum-active-time>
+      <verbose>false</verbose>
+      <trace>false</trace>
+   </proxool>
+   
+  
+</something-else-entirely>
+

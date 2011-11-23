@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/dao
+END
+GameDownStatusDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/dao/GameDownStatusDao.java
+END
+RadacctDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/dao/RadacctDao.java
+END
+JiasuRoleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/dao/JiasuRoleDao.java
+END
+GameZoneDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/jiasu/dao/GameZoneDao.java
+END

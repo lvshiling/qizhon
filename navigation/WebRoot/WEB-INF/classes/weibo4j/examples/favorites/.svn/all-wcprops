@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/favorites
+END
+CreateFavorite.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/favorites/CreateFavorite.java
+END
+DestroyFavorite.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/favorites/DestroyFavorite.java
+END
+GetFavorites.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/weibo4j/examples/favorites/GetFavorites.java
+END
