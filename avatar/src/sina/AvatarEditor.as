@@ -236,7 +236,7 @@ package sina
 			guideText.defaultTextFormat = tf;
 			guideText.selectable = false;
 			guideText.autoSize = TextFieldAutoSize.LEFT;
-			guideText.text = "仅支持JPG、GIF、PNG图片文件，且文件小于5M";
+			guideText.text = "仅支持JPG、GIF、PNG图片文件，且文件小于10M";
 			this.headGroup.addChild(guideText);
 			guideText.x = this.selectBtn.x + this.selectBtn.width + 10;
 			guideText.y = (this.selectBtn.height - guideText.height) / 2;

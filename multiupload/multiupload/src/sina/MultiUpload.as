@@ -62,7 +62,7 @@ package sina
 		private var _token:String = "";
 		private var _uid:int = 0;
 		private var _maxNum:int = 32;
-		private var _maxSize:Number = 3;
+		private var _maxSize:Number = 10;
 		private var _movieName:String = "Multiupload_0";
 		
 		private var _numImg:int = 0;

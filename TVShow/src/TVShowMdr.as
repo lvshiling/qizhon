@@ -34,11 +34,13 @@ package
 	{
 		private var tvShow:TVShow;
 		//private var rtmpUrl:String = "rtmp://222.73.33.202/tvshow"; //lvs
-		private var rtmpUrl:String = "rtmp://222.73.33.200/tvshow"; //now beta
+		//private var rtmpUrl:String = "rtmp://222.73.33.200/tvshow"; //now beta
 
 		//private var rtmpUrl:String = "rtmp://127.0.0.1/tvshow"; 
-		//private var rtmpUrl:String = "rtmp://192.168.82.140/tvshow"; 
-		//private var rtmpUrl:String = "rtmp://222.73.33.201/tvshow"; //origin
+		//private var rtmpUrl:String = "rtmp://192.168.82.140/tvshow"; //local edge
+		private var rtmpUrl:String = "rtmp://222.73.33.201/tvshow"; //beta origin
+		//private var rtmpUrl:String = "rtmp://222.73.33.202/tvshow"; //beta lvs 网通
+		//private var rtmpUrl:String = "rtmp://58.247.177.80/tvshow"; //beta lvs 电信
 		private var streamKey:String = "key";
 		//private var streamKey:String = "D89F3A35931C386956C1A402A8E09941";
 		private var streamName:String = "me";
