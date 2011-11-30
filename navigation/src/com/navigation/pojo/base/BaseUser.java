@@ -22,6 +22,8 @@ public abstract class BaseUser implements Serializable {
 	public static String PROP_POSTER = "poster";
 	public static String PROP_IS_AUTH = "isAuth";
 	public static String PROP_PIC = "pic";
+	public static String PROP_HASHID = "hashid";
+	public static String PROP_IS_ADMIN = "isAdmin";
 
 	// constructors
 	public BaseUser() {
@@ -53,6 +55,8 @@ public abstract class BaseUser implements Serializable {
 	private java.lang.String poster;
 	private java.lang.Integer isAuth;
 	private java.lang.String pic;
+	private java.lang.String hashid;
+	private java.lang.Integer isAdmin;
 
 	// collections
 	private java.util.Set<com.navigation.pojo.UserTopicSort> userTopicSorts;
@@ -144,7 +148,8 @@ public abstract class BaseUser implements Serializable {
 	 * Return the value associated with the column: icon
 	 */
 	public java.lang.String getIcon() {
-		return (icon == null) ? "/images/default.jpg" : icon;
+		// return (icon == null) ? "/images/default.jpg" : icon;
+		return "/images/default.jpg";
 	}
 
 	/**
@@ -525,6 +530,22 @@ public abstract class BaseUser implements Serializable {
 
 	public void setPic(java.lang.String pic) {
 		this.pic = pic;
+	}
+
+	public java.lang.String getHashid() {
+		return hashid;
+	}
+
+	public void setHashid(java.lang.String hashid) {
+		this.hashid = hashid;
+	}
+
+	public java.lang.Integer getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(java.lang.Integer isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 }

@@ -54,7 +54,7 @@ public class RoomDaoImpl extends DaoSupport implements RoomDao {
 			return list.get(0);
 		return null;
 	}
-
+	
 	@Override
 	public Room getRoom(Integer roomNo) {
 		String hql = "from Room r where r.roomNo = ?";

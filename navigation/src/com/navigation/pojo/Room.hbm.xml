@@ -22,5 +22,11 @@
         <property name="createTime" type="java.util.Date">
             <column name="create_time" length="19" />
         </property>
+        <property name="occupantsCount" type="java.lang.Integer">
+            <column name="occupants_count" />
+        </property>
+        <property name="roomKey" type="java.lang.String">
+            <column name="room_key" />
+        </property>
     </class>
 </hibernate-mapping>

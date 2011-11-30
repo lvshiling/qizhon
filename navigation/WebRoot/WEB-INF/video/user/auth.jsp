@@ -36,13 +36,12 @@
 
 #userAuth .inner dl dd a {
     margin: 5px 0 5px 0;
-    padding: 0 5px 0 10px;
+    padding: 5px 5px 10px 10px;
+    padding: 7px 5px 8px 10px\9;
     text-decoration: none;
     width: 192px;
 	color: #333;
 	display: block;
-    height: 32px;
-    line-height: 27px;
 }
 
 #userAuth .inner dl dd a:hover {
@@ -61,10 +60,11 @@
 }
 
 #userAuth #rBox .startAuth {
-	padding: 30px 0 300px;
+	padding: 0 0 100px;
 }
 
 #userAuth #rBox .startAuth p {
+    margin-bottom: 20px;
 	font-size: 14px;
 	line-height: 26px;
 }
@@ -73,13 +73,11 @@
 	padding: 0 5px;
 	vertical-align: middle;
 }
-
 #userAuth #rBox .startAuth .authBtn {
-	margin: 50px 0 0 300px;
+	margin: 0 0 40px 300px;
 	width: 202px;
 	text-align: center;
 }
-
 #userAuth #rBox .startAuth .authBtn a {
 	color: #FFF;
 	font-size: 13px;
@@ -88,8 +86,24 @@
 	display: block;
 	background: url('${domain}/images/video/buttons_bg.png') no-repeat left top;
 }
-#userAuth #rBox .photoAuth {
-	
+#showdiv_1 h2 {
+	font-size: 16px;
+    margin-bottom: 20px;
+}
+#userAuth .inner #showdiv_1 dl {
+    margin-bottom: 20px;
+    width: 100%;
+    line-height: 30px;
+    font-size: 13px;
+}
+#userAuth .inner #showdiv_1 dl dt {
+    margin-bottom: 0;
+	float: left;
+	clear:left;
+    font-weight: normal;
+}
+#userAuth .inner #showdiv_1 dl dd {
+	margin-left: 50px;
 }
 </style>
 </head>
@@ -105,8 +119,21 @@
 		</dl>
 		<div id="rBox">
 			<div id="showdiv_1" class="startAuth">
-				<p>视频认证，是通过与客服人员进行短暂视频连接，来判断您上传照片的真实性！<br />通过认证的用户，因诚信度有保障，将被重点推荐，并获得<img src="${domain}/images/video/ico_videoauth.gif" />图标！</p>
-				<p class="authBtn"><a href="javascript:showDiv(2);void(0);">我的电脑有摄像头，开始认证</a></p>
+			<h2>视频认证:</h2>
+				<p>视频认证，是通过上传本人生活照和视频头像，来判断您上传照片的真实性！<br />通过认证的用户，因诚信度有保障，将被重点推荐，并获得<img src="${domain}/images/video/ico_videoauth.gif" />图标！</p>
+				<dl class="clearfix">
+					<dt>第一步:</dt>
+					<dd>上传一张或多张生活照片,照片小于10M.</dd>
+					<dt>第二步:</dt>
+					<dd>通过摄像头抓拍一张照片</dd>
+					<dt>第三步:</dt>
+					<dd>三分钟后客服审核通过</dd>
+				</dl>	
+				
+				<p class="authBtn clear"><a href="javascript:showDiv(2);void(0);">我的电脑有摄像头，开始认证</a></p>
+				
+				
+					
 			</div>
 			<div id="showdiv_2" class="photoAuth none">
 				<div id="multUploader" style="width:700,height:560;">
@@ -127,6 +154,9 @@ var uid = '${userToken.user.id }';
 var nolog = (uid=='') ? true : false;
 var photoUrls = '';
 $(function(){
+	$('#navbar a.lit').removeClass('lit');
+	$('#navbar #nv_auth').addClass('lit');
+	$('#navbar #nv_auth').attr('target','_self');
 });
 function showDiv(type){
 	if(nolog){
@@ -140,18 +170,26 @@ function showDiv(type){
 	$('[id^="step"]').removeClass("on");
 	$('#step'+type).addClass("on");
 }
+var callPara = '';
+var callFlag = 0;
 var App = window.App || {};
 App.swfCall = function(result) {
+	//al(result['code']);
 	var code = result['code'];
-	if(code == "A00001"){
-		alert("提交成功！ 转向首先中...");
+	if(code && code.length==6){
+		callFlag++;
+		var data = result['data'];
+		if(data && data=='1'){
+			callPara = code;
+		}
+	}
+	if(callPara == "A00001"){
+		alert("提交成功！ 转向首页中...");
 		window.location = "/";
-	}else if(code == "R00001"){
+	}else if(callPara == "R00001"){
 		alert("不能重复认证");
-		window.location = "/";
-	}else if(code == "E00001"){
-		alert("没发现摄像头，不能进行视频认证");
-	}else if(code == "R00001"){
+		//window.location = "/";
+	}else{
 		al("出错了 "+result['data']);
 	}
 }
@@ -161,14 +199,17 @@ function endUpload(result){
 	for(var i=0; i<len; i++){
 		var code = result[i]['code'];
 		if(code == "A00001"){
-			urls += ',' + result[i]['data'];
+			urls += result[i]['data'] + ',';
 		}else if(code == "M00001"){
 			al("出错了 "+result[i]['data']);
 			return false;
 		}else{al("未知错误!");return false;}
 	}
 	if(i==len){
-		photoUrls = urls.substring(1);
+		var p = urls.split(',');
+		if(p.length > 0){
+			photoUrls = p[0];
+		}
 		//alert("上传成功！");
 		showDiv(3);
 	}

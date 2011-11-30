@@ -1,23 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/svn/navigation/!svn/ver/35/trunk/release-1.0/.settings
-END
-org.eclipse.wst.validation.prefs
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svn/navigation/!svn/ver/3/trunk/release-1.0/.settings/org.eclipse.wst.validation.prefs
-END
-org.eclipse.core.resources.prefs
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/navigation/!svn/ver/35/trunk/release-1.0/.settings/org.eclipse.core.resources.prefs
+/svn/navigation/!svn/ver/97/trunk/release-1.0/.settings
 END
 org.eclipse.core.runtime.prefs
 K 25
 svn:wc:ra_dav:version-url
 V 85
 /svn/navigation/!svn/ver/3/trunk/release-1.0/.settings/org.eclipse.core.runtime.prefs
+END
+org.eclipse.core.resources.prefs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/97/trunk/release-1.0/.settings/org.eclipse.core.resources.prefs
+END
+org.eclipse.wst.validation.prefs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/.settings/org.eclipse.wst.validation.prefs
 END

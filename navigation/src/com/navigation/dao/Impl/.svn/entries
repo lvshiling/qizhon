@@ -1,14 +1,14 @@
 10
 
 dir
-95
+111
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/dao/Impl
 http://192.168.82.213/svn/navigation
 
 
 
-2011-11-04T07:27:21.789471Z
-59
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -168,10 +168,10 @@ file
 
 
 
-2011-11-09T05:45:19.189638Z
-575aa04e3a0054074a937f3f68f85e68
-2011-11-02T03:52:58.739980Z
-47
+2011-11-30T02:42:57.821415Z
+96c6789763440567884463fdec754c25
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -194,7 +194,7 @@ zhuchuanyong
 
 
 
-2594
+2794
 
 UserGameAreaDaoImpl.java
 file
@@ -338,10 +338,10 @@ file
 
 
 
-2011-11-09T05:45:19.189638Z
-e5fa82baa5abb316061ad4c0f017c89e
-2011-11-02T03:52:58.739980Z
-47
+2011-11-30T02:42:57.837040Z
+f18f5122fb889345a952975ca7aa8af6
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -364,7 +364,7 @@ zhuchuanyong
 
 
 
-680
+1522
 
 UserCreditLogDaoImpl.java
 file
@@ -440,10 +440,10 @@ file
 
 
 
-2011-11-09T05:45:19.189638Z
-504ab57c8eb5b1a003567b34ab46a853
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:57.837040Z
+cc58fcc16919bff0a4cbb49f03d8d718
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -466,7 +466,7 @@ zhuchuanyong
 
 
 
-3578
+4114
 
 UserNoticeDaoImpl.java
 file
@@ -672,6 +672,40 @@ zhuchuanyong
 
 765
 
+TaskDaoImpl.java
+file
+
+
+
+
+2011-11-30T02:42:57.837040Z
+fdeab7a39257efa05da811dcb88e6be6
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2015
+
 FileSearchDaoImpl.java
 file
 
@@ -780,10 +814,10 @@ file
 
 
 
-2011-11-09T05:45:19.189638Z
-e11eb2d22078d9116a53d8bd0998da43
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:57.837040Z
+52adf352e8831e0c2dcbb9563a0dd15f
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -806,7 +840,7 @@ zhuchuanyong
 
 
 
-1084
+1312
 
 UserTagDaoImpl.java
 file
@@ -950,10 +984,10 @@ file
 
 
 
-2011-10-31T11:15:03.527000Z
-780e821fa34274d80063ecc7f336d858
-2011-10-24T04:17:48.351933Z
-38
+2011-11-30T02:42:57.837040Z
+5c130d08d349e9031698746712385544
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -976,7 +1010,7 @@ zhuchuanyong
 
 
 
-1276
+1277
 
 TopicDaoImpl.java
 file
@@ -1011,6 +1045,40 @@ zhuchuanyong
 
 
 4236
+
+TaskAcceptDaoImpl.java
+file
+
+
+
+
+2011-11-30T02:42:57.852665Z
+71c779df6330e292dfdd980fe417ad90
+2011-11-29T12:17:01.853361Z
+110
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1187
 
 UserMsgDaoImpl.java
 file

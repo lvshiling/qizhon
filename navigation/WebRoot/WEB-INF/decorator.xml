@@ -11,6 +11,8 @@
         <pattern>*ajax*</pattern>
         <pattern>*404.jsp*</pattern>
         <pattern>*rss.do*</pattern>
+        <pattern>*showpic.do*</pattern>
+        <pattern>*showvideo.do*</pattern>
     </excludes>
     
     <decorator name="jiasu" page="jiasu_main.jsp">

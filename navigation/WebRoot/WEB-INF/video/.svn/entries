@@ -1,15 +1,15 @@
 10
 
 dir
-95
+111
 http://192.168.82.213/svn/navigation/trunk/release-1.0/WebRoot/WEB-INF/video
 http://192.168.82.213/svn/navigation
 
 
 
-2011-11-21T11:42:27.556571Z
-94
-xuguocai
+2011-11-29T12:17:01.853361Z
+110
+zhuchuanyong
 
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-10-31T11:14:57.652000Z
-a553f51096a038c162954319d6bcb7cc
-2011-10-24T04:18:01.101933Z
-40
+2011-11-30T02:42:54.071439Z
+14b7f99b1ddbf6dcd405f5817301422c
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -58,41 +58,10 @@ zhuchuanyong
 
 
 
-7993
+12604
 
-index2.jsp
-file
-
-
-
-
-2011-11-16T02:42:05.868465Z
-8b9c78b8149ae5ce32032c562f2a8ba3
-2011-11-14T08:45:18.941047Z
-85
-xuguocai
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5350
+task
+dir
 
 rank
 dir

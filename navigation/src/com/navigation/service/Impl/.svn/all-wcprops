@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 77
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/service/Impl
+V 78
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/service/Impl
 END
 WebServiceImpl.java
 K 25
@@ -12,8 +12,8 @@ END
 UserServiceImpl.java
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/service/Impl/UserServiceImpl.java
+V 99
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/service/Impl/UserServiceImpl.java
 END
 TopicServiceImpl.java
 K 25
@@ -26,6 +26,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 97
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/service/Impl/FileServiceImpl.java
+END
+TaskServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/service/Impl/TaskServiceImpl.java
 END
 PayServiceImpl.java
 K 25

@@ -42,6 +42,8 @@
 	 <bean id="userNewsDao" class="com.navigation.dao.Impl.UserNewsDaoImpl" parent="daoSupport"></bean>
 	 <bean id="userAuthDao" class="com.navigation.dao.Impl.UserAuthDaoImpl" parent="daoSupport"></bean>
 	 <bean id="userScoreLogDao" class="com.navigation.dao.Impl.UserScoreLogDaoImpl" parent="daoSupport"></bean>
+	 <bean id="taskDao" class="com.navigation.dao.Impl.TaskDaoImpl" parent="daoSupport"></bean>
+	 <bean id="taskAcceptDao" class="com.navigation.dao.Impl.TaskAcceptDaoImpl" parent="daoSupport"></bean>
 	 
 	 <bean id="jiasuDaoSupport" class="com.navigation.dao.base.DaoSupport">
     	<property name="sessionFactory" ref="jiasuSessionFactory" />

@@ -16,16 +16,17 @@
 	</head>
 	<body>
 		<!-- 内容 -->
+		<div style="margin:12px auto 3px;"><jsp:include page="gnavi.jsp" /></div>
 		<div id="contentMain" class="layout clearfix">
 			<div class="columnleft">
 				<div class="idx-synopsis">
 					<h1>
-						${requestScope.user.name} <a href="javascript:;" onclick="changeUserName();">[修改昵称]</a>
+						${requestScope.user.name} <s:if test="#request.isSelf"><a href="javascript:;" onclick="changeUserName();">[修改昵称]</a></s:if><s:else><a href="${domain}/user/score.do?uid=${requestScope.user.id}" target="_blank">[给Ta打分]</a></s:else>
 					</h1>
 					
 					<div class="pt fix">
 						<p class="pic">
-							<a href="javascript:showDIV(4);void(0);"><img src="${requestScope.user.icon1}" onerror="this.src='${requestScope.user.icon}'" /></a>
+							<a href="javascript:uploadHead();void(0);"><img src="${requestScope.user.icon1}" onerror="this.src='${requestScope.user.icon}'" /></a>
 						</p>
 						<p>
 							明星：<script>document.write(getStarGradeText(${requestScope.user.userCredit.starGrade}));</script>
@@ -44,16 +45,24 @@
 						<p>
 							<a href="${domain}/${requestScope.user.room.roomNo }"><img src="${static}/styles/images/room.png" /></a>
 						</p>
-						<p onclick="javascript:showDIV(3);" class="w70"><a href="#"><img src="${static}/styles/images/avatar.png" /></a>
-						</p>
+						<s:if test="#request.isSelf">
+							<p class="w70"><a href="javascript:uploadHead();void(0);"><img src="${static}/styles/images/avatar.png" /></a></p>
+						</s:if>
+						<s:else>
+							<p class="w70"><a href="javascript:;" onclick="addAttention();"><img src="${static}/styles/images/guanzhu.png"/></a></p>
+						</s:else>
 					</div>
 					<!--/.pt-->
 					<p>
-						房号：
-						<span class="rnum">${requestScope.user.id}</span>
+						<s:if test="#request.user.isAuth==1"><a href="${domain}/user/auth.do" target="_blank"><img src="${domain}/images/video/ico_videosure.gif" style="vertical-align:bottom;" /></a> 认证用户</s:if>
+						<s:else><a href="${domain}/user/auth.do" target="_blank"><img src="${domain}/images/video/ico_videosure1.gif" style="vertical-align:bottom;" /></a> 未认证用户</s:else>
 					</p>
 					<p>
-						所属家族：
+						房号：
+						<span><a href="${domain}/${requestScope.user.room.roomNo }">${requestScope.user.room.roomNo}</a></span>
+					</p>
+					<p>
+						网友打分：<a href="${domain}/user/score.do?uid=${requestScope.user.id}" target="_blank" style="font-size:14px;color:#ff0099;font-weight:bold;">${requestScope.user.userCredit.score }</a> 分
 					</p>
 					<table>
 						<tbody>
@@ -62,7 +71,7 @@
 									<span class="num">${requestScope.user.userCredit.visits }</span>访问
 								</td>
 								<td>
-									<span class="num">${requestScope.user.userCredit.fansNum }</span>粉丝
+									<span id="fensi" class="num">${requestScope.user.userCredit.fansNum }</span>粉丝
 								</td>
 								<td>
 									<span class="num date">
@@ -84,10 +93,12 @@
 			<ul class="userUl">
 				<li onclick="javascript:showDIV(1);" class="li01">个人动态</li>
 				<li onclick="javascript:showDIV(2);" class="li02">个人资料</li>
-				<li onclick="javascript:showDIV(3);" class="li03">修改头像</li>
-				<!-- <li onclick="javascript:showDIV(4);" class="li04">绑定新浪微博</li> -->
+				<s:if test="#request.isSelf">
+				<!-- <li onclick="javascript:showDIV(3);" class="li03">修改头像</li>
+				<li onclick="javascript:showDIV(4);" class="li04">绑定新浪微博</li> -->
 				<li onclick="javascript:showDIV(5);" class="li05">帐户信息</li>
 				<li onclick="javascript:showDIV(6);" class="li06">修改密码</li>
+				</s:if>
 			</ul>
 			<div  id="showdiv_1"  class="columnRight">
 				<ul class="topTitle clearfix">
@@ -95,264 +106,61 @@
 					<li>对我的评论</li>
 				</ul>
 				<div class="box01">
-				<div class="formBox fix">
-					<form action="" method="get">
-						<textarea name="" cols="" rows="4"></textarea>
-						<ul>							
-							<li class="bg01"><a href="#">照片</a></li>
-							<li class="bg02"><a href="#">歌曲</a></li>
-							<li class="bg03"><a href="#">视频</a></li>	
-							<li class="rignt"><input type="image" src="${static}/styles/images/form_btn02.gif" value="" name="" /></li>	
-							<li class="rignt" id="onClick"><img src="${static}/styles/images/form_btn01.gif" />
-								<div class="expression">
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
-									<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>					
-								</div>
-							</li>
-						</ul>		
-					</form>
-				</div>
+				<s:if test="#request.isSelf==true">
+					<div class="formBox fix">
+						<form id="txtMsgForm" action="${domain}/user/pubMsg.do" method="post">
+							<textarea id="msg" name="msg" cols="" rows="4"></textarea>
+							<ul>							
+								<li class="bg01"><a href="#">照片</a></li>
+								<li class="bg02"><a href="#">歌曲</a></li>
+								<li class="bg03"><a href="#">视频</a></li>	
+								<li class="rignt"><input type="button" class="btnPub" onclick="pubMsg();" /></li>	
+								<li class="rignt" id="onClick"><img src="${static}/styles/images/form_btn01.gif" />
+									<!-- div class="expression">
+										<span><img src="${static}/styles/images/expression/01.gif" alt="" /></span>
+									</div> -->
+								</li>
+							</ul>		
+						</form>
+					</div>
+				</s:if>
 				<p class="hTitle">个人动态</p>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。当一个事件传到一个元素上，所有绑定在上面的针对哪个事件的处理函数都会触发。</p>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
-				<div class="dynamic fix">
-					<p><a href="#">╰★`馨儿☆’</a>上传了1张照片</p>
-					<div class="photo"><img src="${static}/styles/images/img01.jpg" alt="" /></div>
-					<ul class="fix">
-						<li class="fLeft">11-01 19:33</li>		
-						<li><a href="#">删除</a></li>
-						<li><a href="#">评论</a>|</li>
-						<li><a href="#">转发</a>|</li>
-					</ul>
-				</div>
+				<s:iterator value="#request.userNews" status="st">
+					<s:if test="type==1">
+						<div class="dynamic fix">
+							<p><a href="#">${requestScope.user.name }</a>${content}</p>
+							<ul class="fix">
+								<li class="fLeft">${updateTime }</li>		
+								<li><a href="#">删除</a></li>
+								<li><a href="#">评论</a>|</li>
+								<li><a href="#">转发</a>|</li>
+							</ul>
+						</div>
+					</s:if>
+					<s:elseif test="type==3">
+						<div class="dynamic fix">
+							<p><a href="#">${requestScope.user.name }</a>${content }</p>
+							<div class="photo"><img src="${domain}/upload/picture/${userId}/${refImg}" alt="" /></div>
+							<ul class="fix">
+								<li class="fLeft">${updateTime }</li>		
+								<li><a href="#">删除</a></li>
+								<li><a href="#">评论</a>|</li>
+								<li><a href="#">转发</a>|</li>
+							</ul>
+						</div>
+					</s:elseif>
+					<s:elseif test="type==5">
+						<div class="dynamic fix">
+							<p><a href="#">${requestScope.user.name }</a>关注了<a href="#">${content}</a></p>
+							<ul class="fix">
+								<li class="fLeft">${updateTime }</li>		
+								<li><a href="#">删除</a></li>
+								<li><a href="#">评论</a>|</li>
+								<li><a href="#">转发</a>|</li>
+							</ul>
+						</div>
+					</s:elseif>
+				</s:iterator>
 				<ul class="page">				
 					<li class="on"><a href="#">1</a></li>
 					<li><a href="#">2</a></li>
@@ -365,7 +173,7 @@
 				<div class="box02">
 					<p class="noComments">您没有新评论！</p>
 					<div class="dynamic fix" style="display:none">
-					<p><a href="#">╰★`馨儿☆’</a>你很完美</p>
+					<p><a href="#">${requestScope.user.name }</a>你很完美</p>
 					<ul class="fix">
 						<li class="fLeft">11-01 19:33</li>		
 						<li><a href="#">删除</a></li>
@@ -383,36 +191,15 @@
 				</div>
 				
 			</div>
-			<div  id="showdiv_2"  class="columnRight nodisplay">
-				<form action="" method="get" class="fix">
+			<div id="showdiv_2"  class="columnRight nodisplay">
+				<form method="post" id="userInfoForm" action="${domain}/user/ajaxUpdateUserInfoApi.do" class="fix">
 					<dl class="left">
 						<dt>年龄</dt>
-						<dd onclick="javascript:info(1);" class="dd01"><p>28</p><input name="" type="text" value="28" /></dd>
+						<dd onclick="javascript:info(1);" class="dd01"><p>${requestScope.userInfo.userAge }</p><input name="userInfo.userAge" onchange="inputChange();" value="${requestScope.userInfo.userAge}" type="text" /></dd>
 						<dt>身高</dt>
-						<dd onclick="javascript:info(2);" class="dd02"><p>210cm</p>
-						<select name="">
-							<option>210cm</option>
-							<option>205cm</option>
-							<option>200cm</option>
-							<option>195cm</option>
-							<option>190cm</option>
-							<option>185cm</option>
-							<option>180cm</option>
-							<option>175cm</option>
-							<option>170cm</option>
-							<option>165cm</option>
-							<option>160cm</option>
-							<option>155cm</option>
-							<option>150cm</option>
-							<option>145cm</option>
-							<option>140cm</option>
-							<option>135cm</option>
-							<option>130cm</option>
-							<option>125cm</option>
-							<option>120cm</option>
-						</select></dd>
+						<dd onclick="javascript:info(2);" class="dd02"><p>${requestScope.userInfo.userHeight}</p><input name="userInfo.userHeight" onchange="inputChange();" value="${requestScope.userInfo.userHeight}" type="text" /></dd>
 						<dt>来自</dt>
-						<dd onclick="javascript:info(3);" class="dd03 fix"><p>---请选择---</p>
+						<dd onclick="javascript:info(3);" class="dd03 fix"><p><script>document.write(getProvAndCity('${requestScope.userInfo.userCity}'));</script></p>
 						<select name="userInfo.userProvince" id="selProvince" onchange="getCity(this.options[this.selectedIndex].value)"> 
 						        <option value="0">---请选择---</option> 
 						        <option value="100">北京市</option> 
@@ -450,45 +237,41 @@
 						        <option value="3300">澳门特别行政区</option> 
 						        <option value="3400">台湾省</option> 
 							</select>
-							<select name="userInfo.userCity" id="selCity"> 
+							<select name="userInfo.userCity" id="selCity" onchange="inputChange();"> 
 								<option value="0">--请选择--</option> 
 							</select>
 </dd>
 						<dt>邮箱</dt>
-						<dd onclick="javascript:info(4);" class="dd04"><p>111@111.com</p><input name="" type="text" value="111@111.com" /></dd>
+						<dd onclick="javascript:info(4);" class="dd04"><p>${userToken.user.mail }</p><input type="text" value="${userToken.user.mail }" disabled="disabled" /></dd>
 					</dl>
 					<dl class="right">
 						<dt>性别</dt>
-						<dd onclick="javascript:info(5);" class="dd05"><p>男</p>
-						<select name="">
-							<option>男</option>
-							<option>女</option>
+						<dd onclick="javascript:info(5);" class="dd05"><p><script>document.write(getUserSexText('${requestScope.userInfo.userSex}'));</script></p>
+						<select name="userInfo.userSex" onchange="inputChange();">
+							<option value="1">男</option>
+							<option value="0">女</option>
 						</select></dd>
 						<dt>体型</dt>
-						<dd onclick="javascript:info(6);" class="dd06"><p>--请选择--</p>
-						<select name="">
-							<option value="">未填</option>
-							<option value="标准">标准</option>
-							<option value="匀称">匀称</option>
-							<option value="丰满">丰满</option>
-							<option value="性感">性感</option>
-							<option value="苗条">苗条</option>
-							<option value="精炼">精炼</option>
-							<option value="高挑">高挑</option>
-							<option value="小鸟依人">小鸟依人</option>
-							<option value="较瘦">较瘦</option>
-							<option value="较胖">较胖</option>
-							<option value="健壮">健壮</option>
-							<option value="残缺之美">残缺之美</option>
+						<dd onclick="javascript:info(6);" class="dd06"><p><script>document.write(getUserWgtText('${requestScope.userInfo.userWeight}'));</script></p>
+						<select name="userInfo.userWeight" onchange="inputChange();">
+							<option value="0">
+								请选择
+							</option>
+							<option value="1">
+								偏瘦
+							</option>
+							<option value="2">
+								标准
+							</option>
+							<option value="3">
+								偏胖
+							</option>
 						</select></dd>
 						<dt>VIP用户</dt>
-						<dd onclick="javascript:info(7);" class="dd07"><p>--请选择--</p>
-						<select name="">
-							<option>是</option>
-							<option>否</option>
-						</select></dd>
+						<dd onclick="javascript:info(7);" class="dd07"><p>是</p><input type="text" value="是" disabled="disabled" />
+						</dd>
 						<dt>问题</dt>
-						<dd onclick="javascript:info(8);" class="dd08"><p>我的名字?</p><input name="" type="text" value="我的名字?" /></dd>
+						<dd onclick="javascript:info(8);" class="dd08"><p><script>document.write(getFieldText('${requestScope.userInfo.userAnswer}'));</script></p><input onchange="inputChange();" type="text" name="userInfo.userAnswer" value="${requestScope.userInfo.userAnswer}" /></dd>
 					</dl>
 				</form>
 			</div>	
@@ -556,11 +339,7 @@
 								<tr>
 									<td align="right" class="w80 pt10" valign="top"></td>
 									<td>
-										<input class="btn" type="submit" value=" 修改登录密码 " />
-										<input class="btn" type="button" value=" 更多资料 "
-											onclick='$("#moreUserInfo").dialog("open");' />
-										<input class="btn" type="button" value=" 发送消息 "
-											onclick='sendMsgTo(${userToken.user.id});' />
+										<input class="btn" type="submit" value=" 提交修改 " />
 									</td>
 								</tr>
 							</s:if>
@@ -641,9 +420,9 @@
 				</div>-->
 				<div class="clear"></div>
 				<div class="small_content small_buttom">
-					<span style="float:left;margin-right:15px;">余额：${requestScope.user.userCredit.credit }</span>
+					<span>余额：<strong>${requestScope.user.userCredit.credit }</strong> 乐币</span>
 					<form action="${domain }/pay/topay.do" target="_blank">
-						<input class="btn" type="submit" value="充值" />
+						<input class="btn" type="submit" value="充 值" />
 					</form>
 					<div>
 						<ul>
@@ -659,7 +438,7 @@
 										<s:elseif test="type==20">消费
 										<font color="red">${credit }乐币</font>
 										</s:elseif>
-										<s:elseif test="type==30">赚得
+										<s:elseif test="type==30">获得
 										<font color="red">${credit }乐币</font>
 										</s:elseif>
 									</li>
@@ -671,12 +450,12 @@
 			</div>
 
 			<div id="showdiv_3" class="columnRight nodisplay">
-				<!-- <div class="lh200 wp100 small_title">
+				<div class="lh200 wp100 small_title">
 					<div class="fleft">
 						修改头像
 					</div>
 					<div class="fright"></div>
-				</div>-->
+				</div>
 				<div class="small_content small_buttom">
 					<form action="${domain }/user/ajaxChangeUserIconApi.do"
 						method="post" id="changeUserIconForm">
@@ -737,171 +516,13 @@
 		</div>
 		<div id="picGallery" title="相片列表" class="none"></div>
 		<div id="moreUserInfo" title="更多资料" class="none">
-			<form method="post" id="userMoreInfoForm" action="${domain }/user/ajaxUpdateUserInfoApi.do">
-				<table id="userInfoTable">
-					<tr>
-						<td>
-							年龄：
-						</td>
-						<td>
-							<input type="text" name="userInfo.userAge" value="${requestScope.userInfo.userAge }" />
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							性别：
-						</td>
-						<td>
-							<input class="rad fleft" type="radio" name="userInfo.userSex" value="1" <s:if test="#request.userInfo.userSex==1">checked</s:if> />
-							男&nbsp;&nbsp;&nbsp;
-							<input class="rad" type="radio" name="userInfo.userSex" value="0" <s:if test="#request.userInfo.userSex==0">checked</s:if> />
-							女
-						</td>
-					</tr>
-					<tr>
-						<td>
-							省份：
-						</td>
-						<td>
-							<select name="userInfo.userProvince" id="selProvince" onchange="getCity(this.options[this.selectedIndex].value)"> 
-						        <option value="0">---请选择---</option> 
-						        <option value="100">北京市</option> 
-						        <option value="200">上海市</option> 
-						        <option value="300">天津市</option> 
-						        <option value="400">重庆市</option> 
-						        <option value="500">河北省</option> 
-						        <option value="600">山西省</option> 
-						        <option value="700">内蒙古自治区</option> 
-						        <option value="800">辽宁省</option> 
-						        <option value="900">吉林省</option> 
-						        <option value="1000">黑龙江省</option> 
-						        <option value="1100">江苏省</option> 
-						        <option value="1200">浙江省</option> 
-						        <option value="1300">安徽省</option> 
-						        <option value="1400">福建省</option> 
-						        <option value="1500">江西省</option> 
-						        <option value="1600">山东省</option> 
-						        <option value="1700">河南省</option> 
-						        <option value="1800">湖北省</option> 
-						        <option value="1900">湖南省</option> 
-						        <option value="2000">广东省</option> 
-						        <option value="2100">广西壮族自治区</option> 
-						        <option value="2200">海南省</option> 
-						        <option value="2300">四川省</option> 
-						        <option value="2400">贵州省</option> 
-						        <option value="2500">云南省</option> 
-						        <option value="2600">西藏自治区</option> 
-						        <option value="2700">陕西省</option> 
-						        <option value="2800">甘肃省</option> 
-						        <option value="2900">宁夏回族自治区</option> 
-						        <option value="3000">青海省</option> 
-						        <option value="3100">新疆维吾尔族自治区</option> 
-						        <option value="3200">香港特别行政区</option> 
-						        <option value="3300">澳门特别行政区</option> 
-						        <option value="3400">台湾省</option> 
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							市/区：
-						</td>
-						<td>
-							<select name="userInfo.userCity" id="selCity"> 
-								<option value="0">--请选择--</option> 
-							</select> 
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							学历：
-						</td>
-						<td>
-							<select id="selDegree" name="userInfo.userDegree">
-								<option value="0">
-									请选择
-								</option>
-								<option value="2">
-									初中及以下
-								</option>
-								<option value="3">
-									高中
-								</option>
-								<option value="4">
-									中专
-								</option>
-								<option value="5">
-									大专
-								</option>
-								<option value="6">
-									大学本科
-								</option>
-								<option value="7">
-									硕士
-								</option>
-								<option value="8">
-									博士及以上
-								</option>
-							</select>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							身高：
-						</td>
-						<td>
-							<input type="text" name="userInfo.userHeight" value="${requestScope.userInfo.userHeight}" />
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							体型：
-						</td>
-						<td>
-							<select id="selWeight" name="userInfo.userWeight">
-								<option value="0">
-									请选择
-								</option>
-								<option value="1">
-									偏瘦
-								</option>
-								<option value="2">
-									标准
-								</option>
-								<option value="3">
-									偏胖
-								</option>
-							</select>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							密码找回答案：
-						</td>
-						<td>
-							<input type="text" name="userInfo.userAnswer" value="${requestScope.userInfo.userAnswer}" />
-						</td>
-					</tr>
-
-					<tr>
-						<td>&nbsp;
-							
-						</td>
-						<td>
-							<input style="width:85px;height:22px;padding-bottom:3px;" type="submit" value=" 提交修改 " />
-						</td>
-					</tr>
-
-				</table>
-			</form>
 		</div>
-		<script type="text/javascript">
+<script type="text/javascript">
 $(function(){
+	$('[id^="sbar_"]').removeClass('fb');
+    $('#sbar_index').addClass('fb');
+    $('#sbar_index').attr('target','_self');
+
 	$("#moreUserInfo").dialog({
 		width:700,height:560,position: ['',50],modal:true,autoOpen:false,buttons:{
 			" 关闭 ": function(){$(this).dialog('close');}
@@ -979,16 +600,17 @@ $(function(){
         	return true;
         }
     });
-    getRecommend();
+
+    //getRecommend();
     
-    var prov = '${requestScope.userInfo.userProvince}';
-    if(prov!='' && prov!='0') $('#selProvince').attr("value", prov);
-    var cit = '${requestScope.userInfo.userCity}';
-    if(cit!='' && cit!='0') $('#selCity').html("<option value='"+cit+"'>"+getCityText(cit)+"</option>");
-    var degr = '${requestScope.userInfo.userDegree}';
-    if(degr!='' && degr!='0') $('#selDegree').attr("value", degr);
-    var wgt = '${requestScope.userInfo.userWeight}';
-    if(wgt!='' && wgt!='0') $('#selWeight').attr("value", wgt);
+    //var prov = '${requestScope.userInfo.userProvince}';
+    //if(prov!='' && prov!='0') $('#selProvince').attr("value", prov);
+    //var cit = '${requestScope.userInfo.userCity}';
+    //if(cit!='' && cit!='0') $('#selCity').html("<option value='"+cit+"'>"+getCityText(cit)+"</option>");
+    //var degr = '${requestScope.userInfo.userDegree}';
+    //if(degr!='' && degr!='0') $('#selDegree').attr("value", degr);
+    //var wgt = '${requestScope.userInfo.userWeight}';
+    //if(wgt!='' && wgt!='0') $('#selWeight').attr("value", wgt);
 });
 function uploadHead(){
 	$('#avatarWrapper').avatar(
@@ -1027,6 +649,32 @@ function changeUserName(){
 			}else alert(d['message']||"修改失败");
 		},'json');
 	}
+}
+function pubMsg(){
+	if($('#msg').val()==''){
+		alert('请输入消息');
+		return false;
+	}else{
+		$('#txtMsgForm').submit();
+	}
+}
+function inputChange(){
+	if('${requestScope.isSelf}'=='true'){
+		$('#userInfoForm').ajaxSubmit();
+		//alert('修改成功！');
+	}
+	return false;
+}
+function addAttention(){
+	$.post("${domain}/user/ajaxAddAttentionApi.do?", {"target":"${requestScope.user.id }"}, function(d){
+		if(d['status'] == 1){
+			alert('关注成功！');
+			//window.location.reload();
+			if(d['values']['fansNum']) $('#fensi').text(d['values']['fansNum']);
+		}else if(d['status'] == -2){
+			login();
+		}else alert(d['message']||"关注失败");
+	},'json');
 }
 //推荐
 var global_recommend_page = 1;

@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svn/navigation/!svn/ver/93/trunk/release-1.0/WebRoot/images/video
-END
-send_btn.png
-K 25
-svn:wc:ra_dav:version-url
-V 78
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/send_btn.png
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/images/video
 END
 showbox_top.gif
 K 25
 svn:wc:ra_dav:version-url
 V 81
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/showbox_top.gif
+END
+send_btn.png
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/send_btn.png
 END
 arrow_up.png
 K 25
@@ -27,17 +27,23 @@ svn:wc:ra_dav:version-url
 V 76
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/msg_tg.gif
 END
-sh_kaixin.jpg
+ico_videosure1.gif
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/sh_kaixin.jpg
+V 85
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/images/video/ico_videosure1.gif
 END
 ico_img2.gif
 K 25
 svn:wc:ra_dav:version-url
 V 79
 /svn/navigation/!svn/ver/49/trunk/release-1.0/WebRoot/images/video/ico_img2.gif
+END
+sh_kaixin.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/sh_kaixin.jpg
 END
 sh_baidu.jpg
 K 25
@@ -81,17 +87,17 @@ svn:wc:ra_dav:version-url
 V 76
 /svn/navigation/!svn/ver/48/trunk/release-1.0/WebRoot/images/video/a_btn.png
 END
-avt_test.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 78
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/avt_test.jpg
-END
 link_back_bg.png
 K 25
 svn:wc:ra_dav:version-url
 V 83
 /svn/navigation/!svn/ver/49/trunk/release-1.0/WebRoot/images/video/link_back_bg.png
+END
+avt_test.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/avt_test.jpg
 END
 up_btn01.png
 K 25
@@ -183,17 +189,17 @@ svn:wc:ra_dav:version-url
 V 77
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/medal_1.gif
 END
-medal_2.gif
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/medal_2.gif
-END
 on_bg.png
 K 25
 svn:wc:ra_dav:version-url
 V 76
 /svn/navigation/!svn/ver/48/trunk/release-1.0/WebRoot/images/video/on_bg.png
+END
+medal_2.gif
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/medal_2.gif
 END
 medal_3.gif
 K 25
@@ -207,11 +213,11 @@ svn:wc:ra_dav:version-url
 V 81
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/listbox_top.gif
 END
-att_btn.png
+diamond_1.png
 K 25
 svn:wc:ra_dav:version-url
-V 77
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/att_btn.png
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/diamond_1.png
 END
 chatbox_top.gif
 K 25
@@ -219,11 +225,11 @@ svn:wc:ra_dav:version-url
 V 81
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/chatbox_top.gif
 END
-diamond_1.png
+att_btn.png
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/diamond_1.png
+V 77
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/att_btn.png
 END
 diamond_2.png
 K 25
@@ -231,17 +237,11 @@ svn:wc:ra_dav:version-url
 V 79
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/diamond_2.png
 END
-diamond_3.png
+fl.jpg
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/diamond_3.png
-END
-big_01.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/svn/navigation/!svn/ver/49/trunk/release-1.0/WebRoot/images/video/big_01.jpg
+V 73
+/svn/navigation/!svn/ver/49/trunk/release-1.0/WebRoot/images/video/fl.jpg
 END
 bg_roomheader.png
 K 25
@@ -249,11 +249,17 @@ svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/71/trunk/release-1.0/WebRoot/images/video/bg_roomheader.png
 END
-fl.jpg
+big_01.jpg
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/navigation/!svn/ver/49/trunk/release-1.0/WebRoot/images/video/fl.jpg
+V 77
+/svn/navigation/!svn/ver/49/trunk/release-1.0/WebRoot/images/video/big_01.jpg
+END
+diamond_3.png
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/diamond_3.png
 END
 msg_icon.png
 K 25
@@ -267,23 +273,17 @@ svn:wc:ra_dav:version-url
 V 74
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/logo.png
 END
-login_button.png
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/login_button.png
-END
 ico_videoauth.gif
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/48/trunk/release-1.0/WebRoot/images/video/ico_videoauth.gif
 END
-smile_face.gif
+login_button.png
 K 25
 svn:wc:ra_dav:version-url
-V 80
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/smile_face.gif
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/login_button.png
 END
 bg_roomheader-right.png
 K 25
@@ -291,17 +291,17 @@ svn:wc:ra_dav:version-url
 V 90
 /svn/navigation/!svn/ver/74/trunk/release-1.0/WebRoot/images/video/bg_roomheader-right.png
 END
+smile_face.gif
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/smile_face.gif
+END
 rank_1.png
 K 25
 svn:wc:ra_dav:version-url
 V 76
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_1.png
-END
-rank_2.png
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_2.png
 END
 bg_li.png
 K 25
@@ -309,11 +309,11 @@ svn:wc:ra_dav:version-url
 V 76
 /svn/navigation/!svn/ver/71/trunk/release-1.0/WebRoot/images/video/bg_li.png
 END
-rank_3.png
+rank_2.png
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_3.png
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_2.png
 END
 charge_btn.gif
 K 25
@@ -321,23 +321,23 @@ svn:wc:ra_dav:version-url
 V 80
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/charge_btn.gif
 END
+rank_3.png
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_3.png
+END
 rank_4.png
 K 25
 svn:wc:ra_dav:version-url
 V 76
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_4.png
 END
-sh_renren.jpg
+btn_up_ph.png
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/sh_renren.jpg
-END
-rank_5.png
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_5.png
+V 80
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/images/video/btn_up_ph.png
 END
 ico_nosound.png
 K 25
@@ -345,11 +345,17 @@ svn:wc:ra_dav:version-url
 V 82
 /svn/navigation/!svn/ver/49/trunk/release-1.0/WebRoot/images/video/ico_nosound.png
 END
-rank_6.png
+rank_5.png
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_6.png
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_5.png
+END
+sh_renren.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/sh_renren.jpg
 END
 ico_videosure.gif
 K 25
@@ -357,11 +363,17 @@ svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/93/trunk/release-1.0/WebRoot/images/video/ico_videosure.gif
 END
-arrow_down.png
+rank_6.png
 K 25
 svn:wc:ra_dav:version-url
-V 80
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/arrow_down.png
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_6.png
+END
+rank_7.png
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_7.png
 END
 slide.gif
 K 25
@@ -369,11 +381,11 @@ svn:wc:ra_dav:version-url
 V 75
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/slide.gif
 END
-rank_7.png
+arrow_down.png
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/rank_7.png
+V 80
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/images/video/arrow_down.png
 END
 rank_8.png
 K 25

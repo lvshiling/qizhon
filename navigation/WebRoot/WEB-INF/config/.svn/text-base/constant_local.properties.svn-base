@@ -18,7 +18,10 @@ xamppServer=192.168.82.213
 xamppServerPort=5222
 xamppServerAdmin=1
 xamppServerPassword=96E79218965EB72C92A549DD5A330112
-
-red5Server=rtmp\://192.168.82.234/tvshow
+#red5Server=rtmp\://222.73.33.202/tvshow
+xamppResource=tomcat1
+red5Server=rtmp\://live.qule.com/tvshow
 
 rmbLebiExchangeRate=100
+
+authCallbackBW=http://xxx.bingwang.com/xxxx.do

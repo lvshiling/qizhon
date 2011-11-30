@@ -1,7 +1,5 @@
 package com.navigation.pojo;
 
-import java.util.Date;
-
 import com.navigation.pojo.base.BaseUserNews;
 
 /**
@@ -13,6 +11,9 @@ public class UserNews extends BaseUserNews implements java.io.Serializable {
 
 	// Constructors
 	private static final long serialVersionUID = -8700440987873370444L;
+	
+	private String userName;
+	private String refUserName;
 
 	/** default constructor */
 	public UserNews() {
@@ -23,10 +24,19 @@ public class UserNews extends BaseUserNews implements java.io.Serializable {
 		super(id);
 	}
 
-	/** full constructor */
-	public UserNews(Integer id, Integer userId, String content, Integer type, Date updateTime, Integer refId, String refImg,
-			Integer refUid, Integer userGrade) {
-		super(id, userId, content, type, updateTime, refId, refImg, refUid, userGrade);
+	public String getUserName() {
+		return userName;
 	}
 
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getRefUserName() {
+		return refUserName;
+	}
+
+	public void setRefUserName(String refUserName) {
+		this.refUserName = refUserName;
+	}
 }

@@ -66,4 +66,6 @@ public interface UserAuthDao {
 	public UserAuth getBy(Integer userId, Integer status, boolean notequal);
 
 	public UserAuth getBy(Integer userId);
+
+	public List<UserAuth> getAwaitAuthList();
 }

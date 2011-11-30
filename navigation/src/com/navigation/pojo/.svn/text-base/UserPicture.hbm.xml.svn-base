@@ -16,5 +16,8 @@
         <property name="picturePath" type="java.lang.String">
             <column name="picture_path" length="50" />
         </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" />
+        </property>
     </class>
 </hibernate-mapping>

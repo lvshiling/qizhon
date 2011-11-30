@@ -105,4 +105,10 @@ public interface UserDao {
 	 * @return
 	 */
 	public List<User> randUsers(Integer userId, int num);
+
+	public List<User> randUsersWithPic(int num);
+
+	public List<User> randUsers(int num);
+	
+	public User getByHashid(String hashid);
 }

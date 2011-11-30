@@ -24,7 +24,9 @@ import javax.mail.Store;
 
 import org.apache.axis.AxisFault;
 import org.hibernate.HibernateException;
+import org.jivesoftware.smack.Connection;
 import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smackx.muc.MultiUserChat;
 
 import t4j.TBlog;
 import t4j.TBlogException;
@@ -35,6 +37,8 @@ import weibo4j.http.AccessToken;
 import com.mime.qweibo.OauthKey;
 import com.navigation.dao.AreaDao;
 import com.navigation.dao.RoomDao;
+import com.navigation.dao.TaskAcceptDao;
+import com.navigation.dao.TaskDao;
 import com.navigation.dao.TopicDao;
 import com.navigation.dao.UserAreaDao;
 import com.navigation.dao.UserAuthDao;
@@ -52,10 +56,13 @@ import com.navigation.dao.UserRecordVideoDao;
 import com.navigation.dao.UserScoreLogDao;
 import com.navigation.dao.UserVisitLogDao;
 import com.navigation.domain.Constant;
+import com.navigation.domain.PageBean;
 import com.navigation.exception.ServiceException;
 import com.navigation.exception.SessionException;
 import com.navigation.pojo.Area;
 import com.navigation.pojo.Room;
+import com.navigation.pojo.Task;
+import com.navigation.pojo.TaskAccept;
 import com.navigation.pojo.User;
 import com.navigation.pojo.UserArea;
 import com.navigation.pojo.UserAuth;
@@ -74,7 +81,10 @@ import com.navigation.pojo.UserVisitLog;
 import com.navigation.security.SessionUtil;
 import com.navigation.service.UserService;
 import com.navigation.utils.ChatRoomUtil;
+import com.navigation.utils.Constants;
 import com.navigation.utils.DateUtils;
+import com.navigation.utils.EncryptUtil;
+import com.navigation.utils.HTTPUtils;
 import com.navigation.utils.NumberUtils;
 import com.navigation.utils.StringUtil;
 import com.ztgame.webService.client.ReturnValidateAdOnlyByPasswd;
@@ -121,6 +131,10 @@ public class UserServiceImpl implements UserService {
 	public UserAuthDao userAuthDao;
 	@Resource
 	public UserScoreLogDao userScoreLogDao;
+	@Resource
+	public TaskDao taskDao;
+	@Resource
+	public TaskAcceptDao taskAcceptDao;
 
 	/*
 	 * (non-Javadoc)
@@ -874,10 +888,33 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public PageBean getUserPicsPageBean(Integer userId, Integer p, Integer pageSize) {
+		Integer count = this.userPictureDao.getUserPicsCount(userId);
+		if (count > 0) {
+			PageBean pb = new PageBean();
+			List<UserPicture> pics = this.userPictureDao.getUserPics(userId, p, pageSize);
+			pb.setRecordList(pics);
+			pb.setRecordCount(count);
+			return pb;
+		}
+		return null;
+	}
+
+	@Override
 	public List<User> randUsersWithPic(Integer userId, int num) {
 		List<User> lst = this.userDao.randUsersWithPic(userId, num);
 		if (lst.size() < num) {
 			List<User> ls = this.userDao.randUsers(userId, num - lst.size());
+			lst.addAll(ls);
+		}
+		return lst;
+	}
+
+	@Override
+	public List<User> randUsersWithPic(int num) {
+		List<User> lst = this.userDao.randUsersWithPic(num);
+		if (lst.size() < num) {
+			List<User> ls = this.userDao.randUsers(num - lst.size());
 			lst.addAll(ls);
 		}
 		return lst;
@@ -930,7 +967,21 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<User> getLiveUserList(int num) {
+	public Room getRoomLiveInfo(Room room) {
+		try {
+			Connection conn = SessionUtil.getConnection();
+			MultiUserChat muc2 = new MultiUserChat(conn, room.getRoomNo() + "@conference." + conn.getServiceName());
+			muc2.join("qule");
+			room.setOccupantsCount(muc2.getOccupantsCount());
+			muc2.leave();
+		} catch (XMPPException e) {
+			e.printStackTrace();
+		}
+		return room;
+	}
+
+	@Override
+	public Object[] getLiveUserList(int num) {
 		List<Integer> list = this.userDao.getLiveUserIdList(num);
 		List<User> ulist = new ArrayList<User>();
 		if (list != null) {
@@ -945,7 +996,10 @@ public class UserServiceImpl implements UserService {
 			if (lst != null && !lst.isEmpty())
 				ulist.addAll(lst);
 		}
-		for (User dbUser : ulist) {
+		int index = 0;
+		Integer max = 0;
+		for (int i = 0; i < ulist.size(); i++) {
+			User dbUser = ulist.get(i);
 			Room room = this.getRoomByOwner(dbUser.getId());
 			if (room == null) {
 				room = this.createRoom(dbUser.getId(), dbUser.getName());
@@ -954,10 +1008,22 @@ public class UserServiceImpl implements UserService {
 				} catch (XMPPException e) {
 					e.printStackTrace();
 				}
+			} else {
+				Integer cnt = room.getOccupantsCount();
+				if (cnt == null)
+					cnt = 0;
+				if (cnt > max) {
+					max = cnt;
+					index = i;
+				}
 			}
 			dbUser.setRoom(room);
 		}
-		return ulist;
+		Object[] objs = new Object[2];
+		objs[0] = ulist.get(index);
+		ulist.remove(index);
+		objs[1] = ulist;
+		return objs;
 	}
 
 	@Override
@@ -1065,7 +1131,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void addAttention(Integer userId, User targetUser) throws ServiceException {
+	public Integer addAttention(Integer userId, User targetUser) throws ServiceException {
 		Integer targetId = targetUser.getId();
 		// 更新关注列表
 		UserCredit userCredit = userCreditDao.getCredit(userId);
@@ -1082,7 +1148,8 @@ public class UserServiceImpl implements UserService {
 			throw new ServiceException("已关注了该用户");
 		targetCredit.setFansList(StringUtil.addStringItem(targetFans, userId.toString()));
 		Integer fansNum = targetCredit.getFansNum();
-		targetCredit.setFansNum((fansNum == null) ? 1 : fansNum + 1);
+		Integer newFansNum = (fansNum == null) ? 1 : fansNum + 1;
+		targetCredit.setFansNum(newFansNum);
 		userCreditDao.update(targetCredit);
 
 		// 更新用户动态
@@ -1093,6 +1160,8 @@ public class UserServiceImpl implements UserService {
 		userNews.setUserId(userId);
 		userNews.setType(Constant.USER_NEWS_TYPE_ATT_USER);
 		userNewsDao.save(userNews);
+
+		return newFansNum;
 	}
 
 	@Override
@@ -1104,12 +1173,19 @@ public class UserServiceImpl implements UserService {
 	public Room createRoom(Integer userId, String roomName) {
 		Room room = new Room();
 		room.setUserId(userId);
-		room.setRoomName(roomName);
+		// room.setRoomName(roomName);
 		room.setCreateTime(new Date());
 		Room dbRoom = roomDao.save(room);
-		dbRoom.setRoomNo(ChatRoomUtil.genRoomNo(dbRoom.getId()));
+		Integer roomNo = ChatRoomUtil.genRoomNo(dbRoom.getId());
+		dbRoom.setRoomNo(roomNo);
+		dbRoom.setRoomName(String.valueOf(roomNo));
 		roomDao.update(dbRoom);
 		return dbRoom;
+	}
+
+	@Override
+	public void updateRoom(Room room) {
+		this.roomDao.update(room);
 	}
 
 	@Override
@@ -1175,8 +1251,30 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public UserNews taskUserNews(Integer userId, Integer taskId, String taskName, Integer status) {
+		UserNews news = new UserNews();
+		news.setUserId(userId);
+		news.setContent(taskName);
+		news.setUpdateTime(new Date());
+		news.setType(status);
+		news.setRefId(taskId);
+		return userNewsDao.save(news);
+	}
+
+	@Override
+	public List<UserNews> getUserNewsList(Integer userId, Integer p, Integer pageSize) {
+		List<UserNews> userNews = this.userNewsDao.getUserNewsList(userId, p, pageSize);
+		return userNews;
+	}
+
+	@Override
 	public List<UserAuth> getAwaitAuthList(Integer p, Integer pageSize) {
 		return this.userAuthDao.getAwaitAuthList(p, pageSize);
+	}
+
+	@Override
+	public List<UserAuth> getAwaitAuthList() {
+		return this.userAuthDao.getAwaitAuthList();
 	}
 
 	@Override
@@ -1234,10 +1332,113 @@ public class UserServiceImpl implements UserService {
 		if (avg != null) {
 			UserCredit uc = this.userCreditDao.getCredit(userId);
 			Integer num = uc.getScoreNum();
-			uc.setScore(Double.valueOf(NumberUtils.format(avg, "###0.0")));
+			avg = Double.valueOf(NumberUtils.format(avg, "###0.0"));
 			uc.setScoreNum(num == null ? 0 : num + 1);
+			uc.setScore(avg);
 			this.userCreditDao.update(uc);
 		}
 		return avg;
+	}
+
+	@Override
+	public void updateRoomOccuCnt(Integer roomNo, Integer count) {
+		Room room = this.roomDao.getRoom(roomNo);
+		if (room != null) {
+			room.setOccupantsCount(count);
+			this.roomDao.update(room);
+		}
+	}
+
+	@Override
+	public List<UserNews> getPublicUserNews(int num, Date afterTime) {
+		List<UserNews> lst = this.userNewsDao.getUserNewsList(num, new Integer[] { 3, 5, 7, 8, 9 }, afterTime);
+		for (UserNews news : lst) {
+			Integer uid = news.getUserId();
+			if (uid != null) {
+				news.setUserName(userDao.get(uid).getName());
+			}
+			// Integer refUid = news.getRefUid();
+			// if (refUid != null) {
+			// news.setRefUserName(userDao.get(refUid).getName());
+			// }
+		}
+		return lst;
+	}
+
+	@Override
+	public void acceptTask(TaskAccept taskAccept) {
+		if (taskAccept != null) {
+			Date now = new Date();
+			taskAccept.setCreateTime(now);
+			taskAccept.setUpdateTime(now);
+			taskAccept.setStatus(Constant.TASK_ACCEPT_STATUS_NEW);
+			this.taskAcceptDao.save(taskAccept);
+		}
+	}
+
+	@Override
+	public void publishTask(Task task) {
+		if (task != null) {
+			Date now = new Date();
+			task.setCreateTime(now);
+			task.setUpdateTime(now);
+			task.setStatus(Constant.TASK_ACCEPT_STATUS_NEW);
+			this.taskDao.save(task);
+		}
+	}
+
+	@Override
+	public User getUserByHashid(String hashid) {
+		return this.userDao.getByHashid(hashid);
+	}
+
+	@Override
+	public void passAuth(Integer authId) {
+		UserAuth auth = this.userAuthDao.get(authId);
+		User user = this.userDao.get(auth.getUserId());
+		auth.setStatus(Constant.USER_AUTH_STATUS_VALID);
+		this.userAuthDao.update(auth);
+		user.setIsAuth(Constant.USER_IS_AUTH_YES);
+		this.userDao.update(user);
+
+		if (!StringUtil.isEmpty(user.getHashid())) {
+			this.authCallback(user.getHashid());
+		}
+	}
+
+	public void authCallback(String hashid) {
+		String[] ps = hashid.split("_");
+		if (ps.length == 2) {
+			String p = "gmid=" + ps[0] + "&hashid=" + ps[1];
+			String secret = EncryptUtil.DESencrypt(p);
+			HTTPUtils.sendGet(Constants.getInstance().auth_callback_BW, "emsg=" + secret);
+		}
+	}
+
+	@Override
+	public void unpassAuth(Integer authId) {
+		UserAuth auth = this.userAuthDao.get(authId);
+		User user = this.userDao.get(auth.getUserId());
+		auth.setStatus(Constant.USER_AUTH_STATUS_INVALID);
+		this.userAuthDao.update(auth);
+		user.setIsAuth(Constant.USER_IS_AUTH_NO);
+		this.userDao.update(user);
+	}
+
+	@Override
+	public void bindGameUser(String gmhashid, User user) {
+		if (StringUtil.isEmpty(user.getHashid())) {
+			user.setHashid(gmhashid);
+			this.userDao.update(user);
+			SessionUtil.freshSession(user.getId());
+		}
+	}
+
+	@Override
+	public void bindGameUser(String gmhashid, Integer userId) {
+		User user = this.getUser(userId);
+		if (user == null)
+			throw new ServiceException("用户不存在");
+		this.bindGameUser(gmhashid, user);
 	}
 }

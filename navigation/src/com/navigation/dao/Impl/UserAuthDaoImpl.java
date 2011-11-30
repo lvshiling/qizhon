@@ -44,6 +44,12 @@ public class UserAuthDaoImpl extends DaoSupport implements UserAuthDao {
 		String hql = "from UserAuth a where a.status=" + Constant.USER_AUTH_STATUS_NEW + " order by a.createTime desc";
 		return super.find(hql, (p - 1) * pageSize, pageSize);
 	}
+	
+	@Override
+	public List<UserAuth> getAwaitAuthList() {
+		String hql = "from UserAuth a where a.status=" + Constant.USER_AUTH_STATUS_NEW + " order by a.createTime desc";
+		return super.find(hql);
+	}
 
 	@Override
 	public PageBean getAwaitAuthPageBean(Integer p, Integer pageSize) {

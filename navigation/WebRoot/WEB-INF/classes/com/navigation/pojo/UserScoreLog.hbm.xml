@@ -13,7 +13,7 @@
         <property name="userId" type="java.lang.Integer">
             <column name="user_id" />
         </property>
-        <property name="score" type="java.lang.Integer">
+        <property name="score" type="java.lang.Double">
             <column name="score" />
         </property>
         <property name="userPhoto" type="java.lang.String">

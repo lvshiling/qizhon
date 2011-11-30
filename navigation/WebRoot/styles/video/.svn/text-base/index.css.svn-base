@@ -18,6 +18,13 @@ button {
     cursor: pointer;
     vertical-align: middle;
 }
+.btnPub {
+	background:url(../images/form_btn02.gif) no-repeat left top;
+	border:none;
+	width:52px;
+	height:20px;
+	cursor:pointer;
+}
 input, img, select {
     vertical-align: middle;
 }
@@ -64,7 +71,7 @@ legend {
 .layout {
     border: 1px solid #DBDBDB;
     border-radius: 2px 2px 2px 2px;
-    margin: 10px auto 20px;
+    margin: 0 auto 20px;
     padding-bottom: 20px;
     width: 988px;
 	background:url(../images/layout_bg.gif) repeat-y 312px top;
@@ -469,6 +476,7 @@ legend {
 #showdiv_2 form dl dd {
 	margin-bottom: 15px;
     padding: 6px 10px;
+    height: 23px;
 	border: 1px solid #D1D1D1;
 }
 #showdiv_2 form dl dd p {
@@ -506,4 +514,33 @@ legend {
 	border: 1px solid rgba(82, 168, 236, 0.75);
     box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
 }
-
+/*-----------showdiv_5-------------------------*/
+#showdiv_5 {
+	font-size: 14px;
+}
+#showdiv_5 .small_content span {
+	margin: 1px 15px 20px 0;
+	float:left;
+}
+#showdiv_5 .small_content form input {
+	width: 70px;
+	height: 25px;
+	line-height: 25px;
+	border: none;
+	cursor: pointer;
+	background:url(../images/btn01.png) no-repeat left top;
+}
+#showdiv_5 ul {
+	clear: both;
+}
+#showdiv_5 ul li {
+	padding: 10px 5px;
+	border-bottom: 1px dashed #CDCDCD;
+}
+.small_content{
+	border-left: none;
+	border-right: none;
+}
+.small_buttom{
+	border-bottom: none;
+}

@@ -107,6 +107,15 @@
     </package>
 
    	<package name="file" namespace="/file" extends="default">
+   		<action name="ajaxUploadAuth" class="fileAction" method="ajaxUploadAuth">
+        	<interceptor-ref name="fileUpload">  
+	          <param name="allowedTypes">  
+	　　　　　　		image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg,application/octet-stream
+	          </param>
+	          <param name="maximumSize">10240000</param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack" />  
+        </action>
     	<action name="*Api" class="fileAction" method="{1}">
         </action>
     	<action name="index" class="fileAction" method="index">

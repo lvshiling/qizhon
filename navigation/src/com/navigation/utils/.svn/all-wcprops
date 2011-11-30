@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/navigation/!svn/ver/95/trunk/release-1.0/src/com/navigation/utils
+V 71
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/utils
+END
+HTTPUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/utils/HTTPUtils.java
 END
 Utils.java
 K 25
@@ -9,17 +15,89 @@ svn:wc:ra_dav:version-url
 V 80
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/Utils.java
 END
-StackTracePrint.java
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/StackTracePrint.java
-END
 FileViewer.java
 K 25
 svn:wc:ra_dav:version-url
 V 85
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/FileViewer.java
+END
+SimpleJSONUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/utils/SimpleJSONUtils.java
+END
+UUIDUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/UUIDUtil.java
+END
+ChatRoomUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/ChatRoomUtil.java
+END
+RegexpUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/RegexpUtils.java
+END
+TopicUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/TopicUtil.java
+END
+Constants.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/utils/Constants.java
+END
+Convertor.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/Convertor.java
+END
+StringUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/StringUtils.java
+END
+ValidateCodeServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/ValidateCodeServlet.java
+END
+JSONUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/JSONUtils.java
+END
+UserAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/UserAgent.java
+END
+GenericUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/GenericUtils.java
+END
+StackTracePrint.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/StackTracePrint.java
 END
 CacheUtil.java
 K 25
@@ -36,8 +114,8 @@ END
 IdGenerator.java
 K 25
 svn:wc:ra_dav:version-url
-V 86
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/IdGenerator.java
+V 87
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/IdGenerator.java
 END
 WeiBoUtil.java
 K 25
@@ -69,35 +147,11 @@ svn:wc:ra_dav:version-url
 V 86
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/NumberUtils.java
 END
-ChatRoomUtil.java
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/utils/ChatRoomUtil.java
-END
-RegexpUtils.java
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/RegexpUtils.java
-END
 DESCrypto.java
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/DESCrypto.java
-END
-Constants.java
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/navigation/!svn/ver/95/trunk/release-1.0/src/com/navigation/utils/Constants.java
-END
-TopicUtil.java
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/TopicUtil.java
 END
 FileUtil.java
 K 25
@@ -111,35 +165,11 @@ svn:wc:ra_dav:version-url
 V 85
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/ParamUtils.java
 END
-Convertor.java
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/Convertor.java
-END
 EncryptUtil.java
 K 25
 svn:wc:ra_dav:version-url
-V 86
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/EncryptUtil.java
-END
-StringUtils.java
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/StringUtils.java
-END
-ValidateCodeServlet.java
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/ValidateCodeServlet.java
-END
-JSONUtils.java
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/JSONUtils.java
+V 88
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/utils/EncryptUtil.java
 END
 CookieUtils.java
 K 25
@@ -151,19 +181,7 @@ CreditUtils.java
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svn/navigation/!svn/ver/19/trunk/release-1.0/src/com/navigation/utils/CreditUtils.java
-END
-GenericUtils.java
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/GenericUtils.java
-END
-UserAgent.java
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/UserAgent.java
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/CreditUtils.java
 END
 DateUtils.java
 K 25

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay
+V 69
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay
 END
-aliNotify.jsp
+ali.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay/aliNotify.jsp
+V 76
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay/ali.jsp
 END
 pay.jsp
 K 25
@@ -18,12 +18,12 @@ END
 topay.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 78
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay/topay.jsp
+V 79
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay/topay.jsp
 END
-ali.jsp
+aliNotify.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay/ali.jsp
+V 82
+/svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/jsp/pay/aliNotify.jsp
 END

@@ -1,14 +1,14 @@
 10
 
 dir
-95
+111
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/service
 http://192.168.82.213/svn/navigation
 
 
 
-2011-11-04T07:27:21.789471Z
-59
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2011-11-09T05:45:19.095890Z
-2f5f166f884a7d12011a475a28b0fef9
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:56.165176Z
+654bfd447408e9d581850348c664f865
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -92,7 +92,7 @@ zhuchuanyong
 
 
 
-8797
+9857
 
 FileService.java
 file
@@ -164,6 +164,40 @@ zhuchuanyong
 
 
 2169
+
+TaskService.java
+file
+
+
+
+
+2011-11-30T02:42:56.165176Z
+2206e0638b9104cb7d2b397b81b9a366
+2011-11-29T12:17:01.853361Z
+110
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2117
 
 PayService.java
 file

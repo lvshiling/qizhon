@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50027
 File Encoding         : 65001
 
-Date: 2011-11-23 17:47:51
+Date: 2011-11-30 10:49:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -170,6 +170,7 @@ CREATE TABLE `room` (
   `room_name` varchar(30) default NULL,
   `create_time` datetime default NULL,
   `occupants_count` int(11) default NULL,
+  `room_key` varchar(40) default NULL,
   PRIMARY KEY  (`id`),
   KEY `idx_room_1` (`room_no`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -177,20 +178,19 @@ CREATE TABLE `room` (
 -- ----------------------------
 -- Records of room
 -- ----------------------------
-INSERT INTO room VALUES ('1', '10001', '38', '狼太郎', '2011-10-24 10:02:33', '2');
-INSERT INTO room VALUES ('2', '10002', '89', 'denny', '2011-10-24 10:02:34', '0');
-INSERT INTO room VALUES ('3', '10003', '66', 'sxd', '2011-10-24 10:02:34', '0');
-INSERT INTO room VALUES ('4', '10004', '36', '加速大神', '2011-10-24 10:02:34', '0');
-INSERT INTO room VALUES ('5', '10005', '67', '李飘飘', '2011-10-24 10:02:34', '2');
-INSERT INTO room VALUES ('6', '10006', '1', '路过', '2011-10-24 10:02:34', '0');
-INSERT INTO room VALUES ('7', '10007', '91', 'gwegd', '2011-11-01 15:50:25', null);
-INSERT INTO room VALUES ('8', '10008', '92', 'AAA', '2011-11-07 10:18:36', null);
-INSERT INTO room VALUES ('9', '10009', '76', '123', '2011-11-07 10:38:10', null);
-INSERT INTO room VALUES ('10', '10010', '3', 'tammy', '2011-11-07 10:55:33', null);
-INSERT INTO room VALUES ('11', '10011', '5', 'test', '2011-11-07 17:19:35', null);
-INSERT INTO room VALUES ('12', '10012', '82', 'allanzue', '2011-11-07 17:26:26', null);
-INSERT INTO room VALUES ('13', '10013', '7', '关注巨人', '2011-11-07 19:19:33', null);
-INSERT INTO room VALUES ('14', '10014', '2', 'wanghui2', '2011-11-16 11:48:47', null);
+INSERT INTO room VALUES ('1', '10001', '67', '10001', '2011-11-24 14:33:00', '2', '133dad6cf44dad14ada52d50002');
+INSERT INTO room VALUES ('2', '10002', '93', '10002', '2011-11-24 14:33:01', null, null);
+INSERT INTO room VALUES ('3', '10003', '14', '10003', '2011-11-24 14:33:01', null, null);
+INSERT INTO room VALUES ('4', '10004', '38', '10004', '2011-11-24 14:33:01', '2', '133ef76e3b8ef76e3b852d54925');
+INSERT INTO room VALUES ('5', '10005', '36', '10005', '2011-11-24 14:33:01', '4', '133d449582ed4484c6b52d52493');
+INSERT INTO room VALUES ('6', '10006', '89', '10006', '2011-11-24 14:33:02', null, null);
+INSERT INTO room VALUES ('7', '10007', '66', '10007', '2011-11-24 14:33:02', null, null);
+INSERT INTO room VALUES ('8', '10008', '94', '10008', '2011-11-24 14:39:04', '3', '133d50cc3a5d50cc3a552d50001');
+INSERT INTO room VALUES ('9', '10009', '8', '10009', '2011-11-28 11:47:43', null, null);
+INSERT INTO room VALUES ('10', '10010', '76', '10010', '2011-11-28 12:36:40', null, null);
+INSERT INTO room VALUES ('11', '10011', '95', '10011', '2011-11-28 19:56:44', null, null);
+INSERT INTO room VALUES ('12', '10012', '96', '10012', '2011-11-29 17:36:07', null, null);
+INSERT INTO room VALUES ('13', '10013', '68', '10013', '2011-11-29 19:31:24', null, null);
 
 -- ----------------------------
 -- Table structure for `tag`
@@ -218,6 +218,8 @@ CREATE TABLE `task` (
   `name` varchar(100) default NULL,
   `content` varchar(800) default NULL,
   `offer_price` float default NULL,
+  `start_date` datetime default NULL,
+  `end_date` datetime default NULL,
   `winner_id` int(11) default NULL,
   `winner_name` varchar(100) default NULL,
   `task_acpt_id` int(11) default NULL,
@@ -229,7 +231,6 @@ CREATE TABLE `task` (
 -- ----------------------------
 -- Records of task
 -- ----------------------------
-INSERT INTO task VALUES ('1', '38', '星星点点', '1', '陪玩', '陪玩1天', '300', null, null, null, '2011-11-21 19:06:36', '2011-11-21 19:06:36');
 
 -- ----------------------------
 -- Table structure for `task_accept`
@@ -252,8 +253,6 @@ CREATE TABLE `task_accept` (
 -- ----------------------------
 -- Records of task_accept
 -- ----------------------------
-INSERT INTO task_accept VALUES ('1', '1', '陪玩', '67', '李飘飘', '1', '450', '123@123.com', '2011-11-23 16:41:18', '2011-11-23 16:41:18');
-INSERT INTO task_accept VALUES ('2', '1', '陪玩', '39', '222', '1', '600', '222@222.com', '2011-11-23 17:29:46', '2011-11-23 17:29:46');
 
 -- ----------------------------
 -- Table structure for `topic`
@@ -1111,6 +1110,7 @@ CREATE TABLE `user` (
   `is_auth` tinyint(4) default NULL,
   `pic` varchar(100) default NULL,
   `hashid` varchar(300) default NULL,
+  `is_admin` int(11) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `mail` (`mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1118,82 +1118,86 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO user VALUES ('1', '319962@163.com', '96E79218965EB72C92A549DD5A330112', '路过', '/images/default.jpg', '0', null, null, null, '');
-INSERT INTO user VALUES ('2', 'i319962@163.com', '96E79218965EB72C92A549DD5A330112', 'wanghui2', '/images/default.jpg', '0', null, null, null, null);
-INSERT INTO user VALUES ('3', 'tammy2000s@hotmail.com', '96E79218965EB72C92A549DD5A330112', 'tammy', '/images/default.jpg', '0', null, null, null, null);
-INSERT INTO user VALUES ('4', 'i319962@gmail.com', '96E79218965EB72C92A549DD5A330112', '动不动', '/images/default.jpg', '0', null, null, null, null);
-INSERT INTO user VALUES ('5', 'test@ztgame.com', 'E10ADC3949BA59ABBE56E057F20F883E', 'test', '/images/default.jpg', '0', null, null, null, null);
-INSERT INTO user VALUES ('7', 'wanghui1@ztgame.com', '96E79218965EB72C92A549DD5A330112', '关注巨人', '/images/default.jpg', '0', null, null, null, null);
-INSERT INTO user VALUES ('8', '史玉柱@ztgame.com', 'DFF2C8BDAA7FDB50BB0F2B7DC94C0C1D', '@史玉柱', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('9', '巨人网络@ztgame.com', 'DFF2C8BDAA7FDB50BB0F2B7DC94C0C1D', '@巨人网络', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('10', '征途2@ztgame.com', 'DFF2C8BDAA7FDB50BB0F2B7DC94C0C1D', '@征途2', '/images/default.jpg', '0', null, null, null, null);
-INSERT INTO user VALUES ('11', '巨人Game@ztgame.com', '9F06C5D9DA9AD8C43972BFFE87B1CC06', '@巨人Game', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('12', '319962@ztgame.com', '96E79218965EB72C92A549DD5A330112', '319962', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('13', '纪学锋@ztgame.com', 'C62B9BA0C763CFCA2D4955FBED4101A7', '@纪学锋', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('14', 'wangxin@ztgame.com', 'E10ADC3949BA59ABBE56E057F20F883E', '加速大神', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('15', '关注巨人@ztgame.com', 'D53CA03281DE5C43A258E58CD61BB8D3', '@关注巨人', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('16', 'shelley_80@163.com', '6741E9E7C64E14D46DA607063E0A473E', 'momo', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('17', '巨人刘伟@ztgame.com', '7217051FA950785BA9F5B7B0B732EAFF', '@巨人刘伟', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('19', 'wanghui2@ztgame.com', 'B64C8C39FA0097A993537B35EC7DB752', '王慧', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('20', '1912304521', '92CE684D19F1E3A4C6225BF61D70BC3B', '@演出树', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('21', '2081411633', '9887FD6690B3FF64C76DB9BD1CAB8BA8', '@关注巨人', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('22', 'zhoujingwu@ztgame.com', '60549d132fbd0b3be17058476c0d8cbb', '周敬武', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('23', 'zjwxpy@163.com', 'E10ADC3949BA59ABBE56E057F20F883E', '123456', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('24', 'houxingang@ztgame.com', '2869718BAA534FD2BCB7AD7AC8402969', 'houxingang', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('25', '1684347414', '95768226EE2A31148143BCCC9DA59DE2', '@纪学锋', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('26', '1688258905', '95768226EE2A31148143BCCC9DA59DE2', '@征途2', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('27', '1647496602', '8423BC3D58C48C721AAD6E19D55FF7C9', '@巨人网络', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('28', '1670071920', '8423BC3D58C48C721AAD6E19D55FF7C9', '@史玉柱', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('29', '1860004212', '0243BF30D71CD67BA5C186FE7DF6CDFF', '@巨人Game', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('30', '1851875254', '77D9956570C7964F5BA76F5F858A2619', '@巨人刘伟', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('31', 'yaolijun@ztgame.com', '4873916A8F7044A7511550837772BB5B', '姚利军', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('32', 'i319962@1631.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('33', 'i319962@16312.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('34', 'i319962@gmail1.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('35', 'i319962@gmail11.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('36', 'wangxin@163.com', 'E10ADC3949BA59ABBE56E057F20F883E', '加速大神', '/images/default.jpg', '0', '/upload/haibao/36_n.jpg', '1', null, null);
-INSERT INTO user VALUES ('37', 'temp@ztgame.com', '96E79218965EB72C92A549DD5A330112', 'temp', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('38', '111@111.com', '698D51A19D8A121CE581499D7B701668', '星星点点', '/images/default.jpg', '0', '/upload/haibao/38_n.jpg', '1', '38_1321873349744.jpg', '1_123456789012');
-INSERT INTO user VALUES ('39', '222@222.com', 'BCBE3365E6AC95EA2C0343A2395834DD', '222', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('47', '333@333.com', '310DCBBF4CCE62F762A2AAA148D556BD', '333', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('49', '444@444.com', '550A141F12DE6341FBA65B0AD0433500', '444', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('50', '555@555.com', '15DE21C670AE7C3F6F3F1F37029303C9', '555', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('53', '666@666.com', 'FAE0B27C451C728867A567E8C1BB4E53', '666', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('54', '777@777.com', 'F1C1592588411002AF340CBAEDD6FC33', '777', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('55', '888@777.com', '0A113EF6B61820DAA5611C870ED8D5EE', '888', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('56', '888@888.com', '0A113EF6B61820DAA5611C870ED8D5EE', '888', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('57', '1111@111.com', '698D51A19D8A121CE581499D7B701668', '111', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('59', '112222@111.com', '698D51A19D8A121CE581499D7B701668', '111', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('60', '222@2222.com', 'BCBE3365E6AC95EA2C0343A2395834DD', '222', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('63', '22@2222.com', '182BE0C5CDCD5072BB1864CDEE4D3D6E', '33', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('65', 'lvshiling@ztgame.com', 'FEA0F6268F454D39C08B7303E324EEE0', 'lvshiling', '/images/default.jpg', '0', null, '1', null, null);
-INSERT INTO user VALUES ('66', 'lvshiling@qq.com', 'E10ADC3949BA59ABBE56E057F20F883E', 'sxd', '/images/default.jpg', null, '/upload/haibao/66_n.jpg', '1', null, null);
-INSERT INTO user VALUES ('67', '123@123.com', '202CB962AC59075B964B07152D234B70', '李飘飘', '/images/default.jpg', null, null, '1', '67_1321873596744.jpg', null);
-INSERT INTO user VALUES ('68', 'qule@qule.com', 'CFE14FAF52AD8D1B721427B378B9E65C', 'qule', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('69', 'qv@qv.com', '919E190D3A24095D669E5BB66899ABAC', 'qv', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('70', '13@13.com', 'C51CE410C124A10E0DB5E4B97FC2AF39', '13', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('71', 'sgl@123.com', '202CB962AC59075B964B07152D234B70', 'sgl', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('72', 'zhangyi@123.com', '202CB962AC59075B964B07152D234B70', 'zhangyi', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('73', 'abc@abc', '900150983CD24FB0D6963F7D28E17F72', 'abc', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('74', 'alex@qule.com', '534B44A19BF18D20B71ECC4EB77C572F', 'alex', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('75', '88@88.com', '21218CCA77804D2BA1922C33E0151105', '888888', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('76', 'ryan_rao@163.com', 'C4CA4238A0B923820DCC509A6F75849B', '123', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('77', 'aaa@aaa.com', '47BCE5C74F589F4867DBD57E9CA9F808', 'aaa', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('78', 'zcy@zcy.com', '7CA91D69339BEF8F49213DCEB24E00DB', 'zcy', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('79', 'ql@ql.com', '1D2B7612B3D09D15B0393C6208B4A4AD', 'ql', '/images/default.jpg', null, null, '1', null, null);
-INSERT INTO user VALUES ('80', 'test@test.com', '96E79218965EB72C92A549DD5A330112', 'test', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('81', 'steve@qule.com', '96E79218965EB72C92A549DD5A330112', 'steve', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('82', 'allanzue@126.com', '96E79218965EB72C92A549DD5A330112', 'allanzue', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('83', 'alan@alan.com', '96E79218965EB72C92A549DD5A330112', '天涯共此时', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('84', 'tiffany@qule.com', '96E79218965EB72C92A549DD5A330112', 'tiffany', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('85', '1122@qule.com', '96E79218965EB72C92A549DD5A330112', '1122', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('86', 'v@qule.com', '96E79218965EB72C92A549DD5A330112', 'v', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('87', 'er@qule.com', '96E79218965EB72C92A549DD5A330112', 'er', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('88', 'vv@vv.com', '96E79218965EB72C92A549DD5A330112', 'vv', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null);
-INSERT INTO user VALUES ('89', 'denny@qule.com', '96E79218965EB72C92A549DD5A330112', 'denny', '/images/default.jpg', null, '/images/poster.jpg', null, null, null);
-INSERT INTO user VALUES ('90', 'lvshiling@baidu.com', 'E10ADC3949BA59ABBE56E057F20F883E', 'baidu', '/images/default.jpg', null, '/images/poster.jpg', null, null, null);
-INSERT INTO user VALUES ('91', 'test20111101@qq.com', '489E7AE47C7F79E46A09C06EEBE93018', 'gwegd', '/images/default.jpg', null, '/images/poster.jpg', null, null, null);
-INSERT INTO user VALUES ('92', 'test20111107@qq.com', '489E7AE47C7F79E46A09C06EEBE93018', 'AAA', '/images/default.jpg', null, '/images/poster.jpg', null, null, null);
+INSERT INTO user VALUES ('1', '319962@163.com', '96E79218965EB72C92A549DD5A330112', '路过', '/images/default.jpg', '0', null, null, null, '', null);
+INSERT INTO user VALUES ('2', 'i319962@163.com', '96E79218965EB72C92A549DD5A330112', 'wanghui2', '/images/default.jpg', '0', null, null, null, null, null);
+INSERT INTO user VALUES ('3', 'tammy2000s@hotmail.com', '96E79218965EB72C92A549DD5A330112', 'tammy', '/images/default.jpg', '0', null, null, null, null, null);
+INSERT INTO user VALUES ('4', 'i319962@gmail.com', '96E79218965EB72C92A549DD5A330112', '动不动', '/images/default.jpg', '0', null, null, null, null, null);
+INSERT INTO user VALUES ('5', 'test@ztgame.com', 'E10ADC3949BA59ABBE56E057F20F883E', 'test', '/images/default.jpg', '0', null, null, null, null, null);
+INSERT INTO user VALUES ('7', 'wanghui1@ztgame.com', '96E79218965EB72C92A549DD5A330112', '关注巨人', '/images/default.jpg', '0', null, null, null, null, null);
+INSERT INTO user VALUES ('8', '史玉柱@ztgame.com', 'DFF2C8BDAA7FDB50BB0F2B7DC94C0C1D', '@史玉柱', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('9', '巨人网络@ztgame.com', 'DFF2C8BDAA7FDB50BB0F2B7DC94C0C1D', '@巨人网络', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('10', '征途2@ztgame.com', 'DFF2C8BDAA7FDB50BB0F2B7DC94C0C1D', '@征途2', '/images/default.jpg', '0', null, null, null, null, null);
+INSERT INTO user VALUES ('11', '巨人Game@ztgame.com', '9F06C5D9DA9AD8C43972BFFE87B1CC06', '@巨人Game', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('12', '319962@ztgame.com', '96E79218965EB72C92A549DD5A330112', '319962', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('13', '纪学锋@ztgame.com', 'C62B9BA0C763CFCA2D4955FBED4101A7', '@纪学锋', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('14', 'wangxin@ztgame.com', 'E10ADC3949BA59ABBE56E057F20F883E', '加速大神', '/images/default.jpg', '0', '/upload/haibao/14_n.jpg', '1', '14_1322567614822.jpg', null, null);
+INSERT INTO user VALUES ('15', '关注巨人@ztgame.com', 'D53CA03281DE5C43A258E58CD61BB8D3', '@关注巨人', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('16', 'shelley_80@163.com', '6741E9E7C64E14D46DA607063E0A473E', 'momo', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('17', '巨人刘伟@ztgame.com', '7217051FA950785BA9F5B7B0B732EAFF', '@巨人刘伟', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('19', 'wanghui2@ztgame.com', 'B64C8C39FA0097A993537B35EC7DB752', '王慧', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('20', '1912304521', '92CE684D19F1E3A4C6225BF61D70BC3B', '@演出树', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('21', '2081411633', '9887FD6690B3FF64C76DB9BD1CAB8BA8', '@关注巨人', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('22', 'zhoujingwu@ztgame.com', '60549d132fbd0b3be17058476c0d8cbb', '周敬武', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('23', 'zjwxpy@163.com', 'E10ADC3949BA59ABBE56E057F20F883E', '123456', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('24', 'houxingang@ztgame.com', '2869718BAA534FD2BCB7AD7AC8402969', 'houxingang', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('25', '1684347414', '95768226EE2A31148143BCCC9DA59DE2', '@纪学锋', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('26', '1688258905', '95768226EE2A31148143BCCC9DA59DE2', '@征途2', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('27', '1647496602', '8423BC3D58C48C721AAD6E19D55FF7C9', '@巨人网络', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('28', '1670071920', '8423BC3D58C48C721AAD6E19D55FF7C9', '@史玉柱', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('29', '1860004212', '0243BF30D71CD67BA5C186FE7DF6CDFF', '@巨人Game', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('30', '1851875254', '77D9956570C7964F5BA76F5F858A2619', '@巨人刘伟', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('31', 'yaolijun@ztgame.com', '4873916A8F7044A7511550837772BB5B', '姚利军', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('32', 'i319962@1631.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('33', 'i319962@16312.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('34', 'i319962@gmail1.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('35', 'i319962@gmail11.com', '96E79218965EB72C92A549DD5A330112', 'i319962', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('36', 'wangxin@163.com', 'E10ADC3949BA59ABBE56E057F20F883E', '加速大神', '/images/default.jpg', '0', '/upload/haibao/36_n.jpg', '2', null, '1_123456123456', null);
+INSERT INTO user VALUES ('37', 'temp@ztgame.com', '96E79218965EB72C92A549DD5A330112', 'temp', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('38', '111@111.com', '698D51A19D8A121CE581499D7B701668', '星星点点', '/images/default.jpg', '0', '/upload/haibao/38_n.jpg', '2', '38_1322567530634.jpg', '1_123456789012', '1');
+INSERT INTO user VALUES ('39', '222@222.com', 'BCBE3365E6AC95EA2C0343A2395834DD', '222', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('47', '333@333.com', '310DCBBF4CCE62F762A2AAA148D556BD', '333', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('49', '444@444.com', '550A141F12DE6341FBA65B0AD0433500', '444', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('50', '555@555.com', '15DE21C670AE7C3F6F3F1F37029303C9', '555', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('53', '666@666.com', 'FAE0B27C451C728867A567E8C1BB4E53', '666', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('54', '777@777.com', 'F1C1592588411002AF340CBAEDD6FC33', '777', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('55', '888@777.com', '0A113EF6B61820DAA5611C870ED8D5EE', '888', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('56', '888@888.com', '0A113EF6B61820DAA5611C870ED8D5EE', '888', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('57', '1111@111.com', '698D51A19D8A121CE581499D7B701668', '111', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('59', '112222@111.com', '698D51A19D8A121CE581499D7B701668', '111', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('60', '222@2222.com', 'BCBE3365E6AC95EA2C0343A2395834DD', '222', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('63', '22@2222.com', '182BE0C5CDCD5072BB1864CDEE4D3D6E', '33', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('65', 'lvshiling@ztgame.com', 'FEA0F6268F454D39C08B7303E324EEE0', 'lvshiling', '/images/default.jpg', '0', null, '1', null, null, null);
+INSERT INTO user VALUES ('66', 'lvshiling@qq.com', 'E10ADC3949BA59ABBE56E057F20F883E', 'sxd', '/images/default.jpg', null, '/upload/haibao/66_n.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('67', '123@123.com', '202CB962AC59075B964B07152D234B70', '李飘飘', '/images/default.jpg', null, null, '2', '67_1322481276357.jpg', null, null);
+INSERT INTO user VALUES ('68', 'qule@qule.com', 'CFE14FAF52AD8D1B721427B378B9E65C', 'qule', '/images/default.jpg', null, null, '2', null, null, null);
+INSERT INTO user VALUES ('69', 'qv@qv.com', '919E190D3A24095D669E5BB66899ABAC', 'qv', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('70', '13@13.com', 'C51CE410C124A10E0DB5E4B97FC2AF39', '13', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('71', 'sgl@123.com', '202CB962AC59075B964B07152D234B70', 'sgl', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('72', 'zhangyi@123.com', '202CB962AC59075B964B07152D234B70', 'zhangyi', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('73', 'abc@abc', '900150983CD24FB0D6963F7D28E17F72', 'abc', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('74', 'alex@qule.com', '534B44A19BF18D20B71ECC4EB77C572F', 'alex', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('75', '88@88.com', '21218CCA77804D2BA1922C33E0151105', '888888', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('76', 'ryan_rao@163.com', 'C4CA4238A0B923820DCC509A6F75849B', '123', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('77', 'aaa@aaa.com', '47BCE5C74F589F4867DBD57E9CA9F808', 'aaa', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('78', 'zcy@zcy.com', '7CA91D69339BEF8F49213DCEB24E00DB', 'zcy', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('79', 'ql@ql.com', '1D2B7612B3D09D15B0393C6208B4A4AD', 'ql', '/images/default.jpg', null, null, '1', null, null, null);
+INSERT INTO user VALUES ('80', 'test@test.com', '96E79218965EB72C92A549DD5A330112', 'test', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('81', 'steve@qule.com', '96E79218965EB72C92A549DD5A330112', 'steve', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('82', 'allanzue@126.com', '96E79218965EB72C92A549DD5A330112', 'allanzue', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('83', 'alan@alan.com', '96E79218965EB72C92A549DD5A330112', '天涯共此时', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('84', 'tiffany@qule.com', '96E79218965EB72C92A549DD5A330112', 'tiffany', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('85', '1122@qule.com', '96E79218965EB72C92A549DD5A330112', '1122', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('86', 'v@qule.com', '96E79218965EB72C92A549DD5A330112', 'v', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('87', 'er@qule.com', '96E79218965EB72C92A549DD5A330112', 'er', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('88', 'vv@vv.com', '96E79218965EB72C92A549DD5A330112', 'vv', '/images/default.jpg', null, '/images/poster.jpg', '1', null, null, null);
+INSERT INTO user VALUES ('89', 'denny@qule.com', '96E79218965EB72C92A549DD5A330112', 'denny', '/images/default.jpg', null, '/images/poster.jpg', null, null, null, null);
+INSERT INTO user VALUES ('90', 'lvshiling@baidu.com', 'E10ADC3949BA59ABBE56E057F20F883E', 'baidu', '/images/default.jpg', null, '/images/poster.jpg', null, null, null, null);
+INSERT INTO user VALUES ('91', 'test20111101@qq.com', '489E7AE47C7F79E46A09C06EEBE93018', 'gwegd', '/images/default.jpg', null, '/images/poster.jpg', null, null, null, null);
+INSERT INTO user VALUES ('92', 'test20111107@qq.com', '489E7AE47C7F79E46A09C06EEBE93018', 'AAA', '/images/default.jpg', null, '/images/poster.jpg', null, null, null, null);
+INSERT INTO user VALUES ('93', 'baidu@baidu.com', 'E10ADC3949BA59ABBE56E057F20F883E', 'baidu', '/images/default.jpg', null, '/images/poster.jpg', null, null, null, null);
+INSERT INTO user VALUES ('94', 'wangxin@sina.com', 'E10ADC3949BA59ABBE56E057F20F883E', '神啊稳定点', '/images/default.jpg', null, '/upload/haibao/94_n.jpg', null, null, '1_666666', null);
+INSERT INTO user VALUES ('95', 'alex@alex.com', '96E79218965EB72C92A549DD5A330112', 'alex', '/images/default.jpg', null, '/images/poster.jpg', '1', '95_1322481421841.jpg', null, null);
+INSERT INTO user VALUES ('96', 'v5@v5.com', '96E79218965EB72C92A549DD5A330112', 'v5', '/images/default.jpg', null, '/images/poster.jpg', '1', '96_1322559391993.jpg', '1_555555', null);
 
 -- ----------------------------
 -- Table structure for `user_area`
@@ -1240,6 +1244,10 @@ INSERT INTO user_area VALUES ('26', '89', '1');
 INSERT INTO user_area VALUES ('27', '90', '1');
 INSERT INTO user_area VALUES ('28', '91', '1');
 INSERT INTO user_area VALUES ('29', '92', '1');
+INSERT INTO user_area VALUES ('30', '93', '1');
+INSERT INTO user_area VALUES ('31', '94', '1');
+INSERT INTO user_area VALUES ('32', '95', '1');
+INSERT INTO user_area VALUES ('33', '96', '1');
 
 -- ----------------------------
 -- Table structure for `user_auth`
@@ -1259,10 +1267,13 @@ CREATE TABLE `user_auth` (
 -- ----------------------------
 -- Records of user_auth
 -- ----------------------------
-INSERT INTO user_auth VALUES ('1', '36', '1', '36_1320310007880.jpg', null, '2011-11-03 16:47:05', '2011-11-03 16:47:05');
-INSERT INTO user_auth VALUES ('2', '68', '1', '68_1320310569805.jpg', null, '2011-11-03 16:56:29', '2011-11-03 16:56:29');
-INSERT INTO user_auth VALUES ('3', '38', '1', '38_1320315470540.jpg', null, '2011-11-03 18:18:10', '2011-11-03 18:18:10');
-INSERT INTO user_auth VALUES ('4', '67', '1', '67_1320400159914.jpg', null, '2011-11-04 17:49:37', '2011-11-04 17:49:37');
+INSERT INTO user_auth VALUES ('1', '36', '3', '36_1320310007880.jpg', null, '2011-11-03 16:47:05', '2011-11-03 16:47:05');
+INSERT INTO user_auth VALUES ('2', '68', '3', '68_1320310569805.jpg', null, '2011-11-03 16:56:29', '2011-11-03 16:56:29');
+INSERT INTO user_auth VALUES ('3', '38', '3', '38_1320315470540.jpg', null, '2011-11-03 18:18:10', '2011-11-03 18:18:10');
+INSERT INTO user_auth VALUES ('4', '67', '3', '67_1320400159914.jpg', null, '2011-11-04 17:49:37', '2011-11-04 17:49:37');
+INSERT INTO user_auth VALUES ('5', '95', '2', '95_1322481421638.jpg', null, '2011-11-28 19:57:10', '2011-11-28 19:57:10');
+INSERT INTO user_auth VALUES ('6', '96', '2', '96_1322559391993.jpg', null, '2011-11-29 17:37:02', '2011-11-29 17:37:02');
+INSERT INTO user_auth VALUES ('7', '14', '1', '14_1322567614822.jpg', null, '2011-11-29 19:54:00', '2011-11-29 19:54:00');
 
 -- ----------------------------
 -- Table structure for `user_credit`
@@ -1291,36 +1302,43 @@ CREATE TABLE `user_credit` (
 -- Records of user_credit
 -- ----------------------------
 INSERT INTO user_credit VALUES ('1', '1', '10000', '9.3', '0', '0', '0', '0', '14', null, '38', '1', '22');
-INSERT INTO user_credit VALUES ('2', '38', '8962000', '6.0', '2875', '60600', '38', '60', '155', '89,67,76,3,1,36,2,66', '67,89', '2', '200');
+INSERT INTO user_credit VALUES ('2', '38', '8962000', '6.9', '2875', '60600', '38', '60', '191', '89,67,76,3,1,36,2,66', '67,89', '2', '216');
 INSERT INTO user_credit VALUES ('3', '5', '10000', '7.0', '0', '0', '0', '0', '4', null, null, '0', '313');
 INSERT INTO user_credit VALUES ('4', '76', '10000', '8.5', '0', '0', '0', '0', '4', null, '38', '1', '54');
-INSERT INTO user_credit VALUES ('5', '2', '10000', '6.5', '0', '0', '0', '0', '5', null, '38', '1', '4');
+INSERT INTO user_credit VALUES ('5', '2', '10000', '8.3', '0', '0', '0', '0', '5', null, '38', '1', '5');
 INSERT INTO user_credit VALUES ('6', '3', '10000', '0.0', '0', '0', '0', '0', '2', null, '38', '1', null);
-INSERT INTO user_credit VALUES ('7', '66', '10625', '0.0', '1375', '750', '23', '17', '40', null, '38', '1', null);
+INSERT INTO user_credit VALUES ('7', '66', '10625', '0.0', '1375', '750', '23', '17', '41', null, '38', '1', null);
 INSERT INTO user_credit VALUES ('8', '4', '10000', '0.0', '0', '0', '0', '0', '1', null, null, '0', null);
 INSERT INTO user_credit VALUES ('9', '7', '10000', '0.0', '0', '0', '0', '0', '1', null, null, '0', null);
-INSERT INTO user_credit VALUES ('10', '67', '10120', '6.3', '7125', '7005', '44', '44', '31', '38', '38', '1', '54');
-INSERT INTO user_credit VALUES ('11', '36', '1877', '5.0', '1877', '0', '28', '0', '19', null, '38', '1', '2');
+INSERT INTO user_credit VALUES ('10', '67', '10120', '7.0', '7125', '7005', '44', '44', '43', '38,36', '38', '1', '68');
+INSERT INTO user_credit VALUES ('11', '36', '1877', '5.0', '1877', '0', '28', '0', '40', null, '38,67', '2', '2');
 INSERT INTO user_credit VALUES ('12', '80', '0', '6.0', '0', '0', '0', '0', '0', null, null, '0', '0');
 INSERT INTO user_credit VALUES ('13', '81', '0', '6.0', '0', '0', '0', '0', '0', null, null, '0', '0');
-INSERT INTO user_credit VALUES ('14', '82', '0', '8.3', '0', '0', '0', '0', '1', null, null, '0', '1');
+INSERT INTO user_credit VALUES ('14', '82', '0', '8.8', '0', '0', '0', '0', '1', null, null, '0', '2');
 INSERT INTO user_credit VALUES ('15', '83', '0', '0.0', '0', '0', '0', '0', '1', null, null, '0', null);
 INSERT INTO user_credit VALUES ('16', '84', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
 INSERT INTO user_credit VALUES ('17', '85', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
 INSERT INTO user_credit VALUES ('18', '86', '0', '4.0', '0', '0', '0', '0', '0', null, null, '0', '0');
 INSERT INTO user_credit VALUES ('19', '87', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
 INSERT INTO user_credit VALUES ('20', '88', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
-INSERT INTO user_credit VALUES ('21', '89', '20925', '0.0', '20925', '0', '52', '0', '44', '38', '38', '1', null);
+INSERT INTO user_credit VALUES ('21', '89', '20925', '0.0', '20925', '0', '52', '0', '46', '38', '38', '1', null);
 INSERT INTO user_credit VALUES ('22', '90', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
 INSERT INTO user_credit VALUES ('23', '91', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
-INSERT INTO user_credit VALUES ('24', '10', '0', '6.5', '0', '0', '0', '0', null, null, null, null, '1');
+INSERT INTO user_credit VALUES ('24', '10', '0', '6.5', '0', '0', '0', '0', null, null, null, null, '2');
 INSERT INTO user_credit VALUES ('25', '37', '0', '7.0', '0', '0', '0', '0', null, null, null, null, '0');
-INSERT INTO user_credit VALUES ('26', '29', '0', '7.0', '0', '0', '0', '0', null, null, null, null, '0');
+INSERT INTO user_credit VALUES ('26', '29', '0', '8.5', '0', '0', '0', '0', null, null, null, null, '1');
 INSERT INTO user_credit VALUES ('27', '63', '0', '6.0', '0', '0', '0', '0', null, null, null, null, '0');
 INSERT INTO user_credit VALUES ('28', '39', '0', '6.5', '0', '0', '0', '0', null, null, null, null, '1');
 INSERT INTO user_credit VALUES ('29', '27', '0', '6.0', '0', '0', '0', '0', null, null, null, null, '0');
 INSERT INTO user_credit VALUES ('30', '8', '0', '7.0', '0', '0', '0', '0', null, null, null, null, '0');
 INSERT INTO user_credit VALUES ('31', '92', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
+INSERT INTO user_credit VALUES ('32', '93', '0', '0.0', '0', '0', '0', '0', '10', null, null, '0', null);
+INSERT INTO user_credit VALUES ('33', '14', '0', '9.2', '0', '0', '0', '0', '9', null, null, '0', '5');
+INSERT INTO user_credit VALUES ('34', '94', '0', '0.0', '0', '0', '0', '0', '20', null, null, '0', null);
+INSERT INTO user_credit VALUES ('35', '95', '0', '9.7', '0', '0', '0', '0', '0', null, null, '0', '2');
+INSERT INTO user_credit VALUES ('36', '96', '0', '9.6', '0', '0', '0', '0', '0', null, null, '0', '7');
+INSERT INTO user_credit VALUES ('37', '68', '0', '0.0', '0', '0', '0', '0', '0', null, null, '0', null);
+INSERT INTO user_credit VALUES ('38', '35', '0', '9.5', '0', '0', '0', '0', null, null, null, null, '0');
 
 -- ----------------------------
 -- Table structure for `user_credit_log`
@@ -1337,7 +1355,7 @@ CREATE TABLE `user_credit_log` (
   `add_time` datetime NOT NULL,
   `cash` int(11) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=266 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=267 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_credit_log
@@ -1607,6 +1625,7 @@ INSERT INTO user_credit_log VALUES ('262', '89', '30', '250', '0', '0', null, '2
 INSERT INTO user_credit_log VALUES ('263', '38', '20', '3000', '0', '0', null, '2011-11-14 19:29:52', null);
 INSERT INTO user_credit_log VALUES ('264', '89', '30', '1500', '0', '0', null, '2011-11-14 19:29:52', null);
 INSERT INTO user_credit_log VALUES ('265', '38', '0', '5000', '0', '0', null, '2011-11-21 11:30:39', '50');
+INSERT INTO user_credit_log VALUES ('266', '36', '0', '20000', '0', '0', null, '2011-11-24 12:01:26', '200');
 
 -- ----------------------------
 -- Table structure for `user_friend`
@@ -1757,6 +1776,11 @@ INSERT INTO user_info VALUES ('70', '92', '0', '0', '0', '0', '0', '0', '0', nul
 INSERT INTO user_info VALUES ('71', '4', '0', '0', '0', '0', '0', '0', '0', null);
 INSERT INTO user_info VALUES ('72', '22', '0', '0', '0', '0', '0', '0', '0', null);
 INSERT INTO user_info VALUES ('73', '56', '0', '0', '0', '0', '0', '0', '0', null);
+INSERT INTO user_info VALUES ('74', '78', '0', '0', '0', '0', '0', '0', '0', null);
+INSERT INTO user_info VALUES ('75', '93', '0', '0', '0', '0', '0', '0', '0', null);
+INSERT INTO user_info VALUES ('76', '94', '0', '0', '0', '0', '0', '0', '0', null);
+INSERT INTO user_info VALUES ('77', '95', '0', '0', '0', '0', '0', '0', '0', null);
+INSERT INTO user_info VALUES ('78', '96', '0', '0', '0', '0', '0', '0', '0', null);
 
 -- ----------------------------
 -- Table structure for `user_link`
@@ -1829,16 +1853,16 @@ CREATE TABLE `user_log_state` (
   PRIMARY KEY  (`id`),
   KEY `log_hash_code` (`log_hash_code`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_log_state
 -- ----------------------------
-INSERT INTO user_log_state VALUES ('1', '38', '1', '132905f6811905f67f252d56db7', '2011-11-23 17:32:15', '397800', '1', '2011-11-16 17:25:37', '1');
+INSERT INTO user_log_state VALUES ('1', '38', '1', '132905f6811905f67f252d56db7', '2011-11-29 21:06:09', '457200', '1', '2011-11-29 21:15:15', '1');
 INSERT INTO user_log_state VALUES ('2', '66', '1', '132944cec46944cec3752d56db7', '2011-11-01 21:36:45', '20700', '1', '2011-10-20 13:39:37', '1');
 INSERT INTO user_log_state VALUES ('3', '76', '1', '13294537a9594537a95533d2493', '2011-09-23 11:28:11', '0', '0', null, '1');
-INSERT INTO user_log_state VALUES ('4', '36', '1', '132a532307ca532306d52d50001', '2011-11-07 19:36:37', '9900', '1', '2011-10-10 16:22:24', '1');
-INSERT INTO user_log_state VALUES ('5', '67', '1', '132aa3586beaa35869e52d536dc', '2011-11-23 17:44:03', '86400', '1', '2011-11-16 18:14:41', '1');
+INSERT INTO user_log_state VALUES ('4', '36', '1', '132a532307ca532306d52d50001', '2011-11-28 11:33:25', '18900', '1', '2011-11-24 14:37:28', '1');
+INSERT INTO user_log_state VALUES ('5', '67', '1', '132aa3586beaa35869e52d536dc', '2011-11-28 19:49:57', '102600', '1', '2011-11-25 21:08:00', '1');
 INSERT INTO user_log_state VALUES ('6', '80', '1', '1331159705a1159704a52d5124a', '2011-10-17 18:07:13', '0', '0', null, '1');
 INSERT INTO user_log_state VALUES ('7', '83', '1', '133116a6eb1116a6ea152d54925', '2011-10-17 18:25:47', '0', '0', null, '1');
 INSERT INTO user_log_state VALUES ('8', '84', '1', '133117ed578117ed56952d56db7', '2011-10-17 18:48:04', '0', '0', null, '1');
@@ -1849,9 +1873,14 @@ INSERT INTO user_log_state VALUES ('12', '88', '1', '13314db6fcf14d9475252d56db8
 INSERT INTO user_log_state VALUES ('13', '89', '1', '1331517746f1517745f52d52493', '2011-10-25 16:03:46', '11700', '1', '2011-10-21 14:19:31', '1');
 INSERT INTO user_log_state VALUES ('14', '90', '1', '13326158fda26158fab52d5124a', '2011-10-21 19:19:40', '1800', '0', null, '1');
 INSERT INTO user_log_state VALUES ('15', '91', '1', '1335e1bc5be5e1bc5ae53775b6e', '2011-11-07 18:25:02', '21600', '0', null, '1');
-INSERT INTO user_log_state VALUES ('16', '68', '1', '133689e5aef689e5adf52d55b6e', '2011-11-03 19:08:23', '2700', '0', null, '1');
+INSERT INTO user_log_state VALUES ('16', '68', '1', '133689e5aef689e5adf52d55b6e', '2011-11-29 19:31:26', '4500', '0', null, '1');
 INSERT INTO user_log_state VALUES ('17', '92', '1', '1337bd1f61a7bd1f60a53775b6e', '2011-11-08 11:08:21', '20700', '0', null, '1');
 INSERT INTO user_log_state VALUES ('18', '39', '1', '133cfc228c9cfc2289a52d55b6e', '2011-11-23 17:29:27', '0', '0', null, '1');
+INSERT INTO user_log_state VALUES ('19', '93', '1', '133d3c5b1bad3baac8f52d536dd', '2011-11-24 12:11:48', '0', '1', '2011-11-24 12:21:45', '1');
+INSERT INTO user_log_state VALUES ('20', '14', '1', '133d3c84584d3baac8f52d536de', '2011-11-29 19:53:07', '900', '1', '2011-11-24 12:21:13', '1');
+INSERT INTO user_log_state VALUES ('21', '94', '1', '133d44c8ab9d4484c6b52d55b6e', '2011-11-25 21:01:27', '6300', '1', '2011-11-24 18:12:09', '1');
+INSERT INTO user_log_state VALUES ('22', '95', '1', '133ea08d445ea08d41652d536dc', '2011-11-28 19:56:46', '0', '0', null, '1');
+INSERT INTO user_log_state VALUES ('23', '96', '1', '133eeae6d7ceeae6d7c52d55b6e', '2011-11-29 17:36:08', '0', '0', null, '1');
 
 -- ----------------------------
 -- Table structure for `user_mail`
@@ -2456,6 +2485,39 @@ INSERT INTO user_news VALUES ('198', '67', '上传了1张照片', '3', '2011-11-
 INSERT INTO user_news VALUES ('199', '67', '上传了1张照片', '3', '2011-11-21 19:06:35', null, '67_1321873595947.jpg', null, null);
 INSERT INTO user_news VALUES ('200', '67', '上传了1张照片', '3', '2011-11-21 19:06:36', null, '67_1321873596556.jpg', null, null);
 INSERT INTO user_news VALUES ('201', '67', '上传了1张照片', '3', '2011-11-21 19:06:36', null, '67_1321873596744.jpg', null, null);
+INSERT INTO user_news VALUES ('202', '38', '包你满意', '7', '2011-11-24 18:31:33', '8', null, null, null);
+INSERT INTO user_news VALUES ('203', '67', '包你满意', '7', '2011-11-24 18:31:57', '9', null, null, null);
+INSERT INTO user_news VALUES ('204', '67', '陪玩三天', '7', '2011-11-24 18:41:11', '10', null, null, null);
+INSERT INTO user_news VALUES ('205', '67', '最新求保养', '7', '2011-11-24 18:42:41', '11', null, null, null);
+INSERT INTO user_news VALUES ('206', '67', '陪玩', '7', '2011-11-24 18:45:20', '12', null, null, null);
+INSERT INTO user_news VALUES ('207', '67', '125', '7', '2011-11-24 18:46:11', '13', null, null, null);
+INSERT INTO user_news VALUES ('208', '67', '123', '7', '2011-11-24 18:48:01', '14', null, null, null);
+INSERT INTO user_news VALUES ('209', '38', '123', '8', '2011-11-24 18:49:08', '14', null, null, null);
+INSERT INTO user_news VALUES ('210', '38', '123', '7', '2011-11-24 18:49:27', '15', null, null, null);
+INSERT INTO user_news VALUES ('211', '38', '124', '7', '2011-11-24 18:49:39', '16', null, null, null);
+INSERT INTO user_news VALUES ('212', '38', '123', '9', '2011-11-24 18:51:51', '14', null, null, null);
+INSERT INTO user_news VALUES ('213', '67', '124', '8', '2011-11-24 18:56:58', '16', null, null, null);
+INSERT INTO user_news VALUES ('214', '67', '加速大神', '5', '2011-11-24 18:59:29', null, null, '36', null);
+INSERT INTO user_news VALUES ('215', '67', '124', '9', '2011-11-25 16:35:52', '16', null, null, null);
+INSERT INTO user_news VALUES ('216', '36', '125', '8', '2011-11-25 16:54:50', '13', null, null, null);
+INSERT INTO user_news VALUES ('217', '94', '包养我吧', '8', '2011-11-25 17:15:10', '6', null, null, null);
+INSERT INTO user_news VALUES ('218', '94', '包养我吧', '8', '2011-11-25 17:16:45', '6', null, null, null);
+INSERT INTO user_news VALUES ('219', '94', '包养我吧', '9', '2011-11-25 17:18:53', '6', null, null, null);
+INSERT INTO user_news VALUES ('220', '38', '5555', '7', '2011-11-28 18:59:00', '17', null, null, null);
+INSERT INTO user_news VALUES ('221', '67', '5555', '8', '2011-11-28 18:59:20', '17', null, null, null);
+INSERT INTO user_news VALUES ('222', '67', '5555', '9', '2011-11-28 18:59:41', '17', null, null, null);
+INSERT INTO user_news VALUES ('223', '38', '上传了1张照片', '3', '2011-11-28 19:53:14', null, '38_1322481194623.jpg', null, null);
+INSERT INTO user_news VALUES ('224', '38', '上传了1张照片', '3', '2011-11-28 19:53:14', null, '38_1322481194951.jpg', null, null);
+INSERT INTO user_news VALUES ('225', '67', '上传了1张照片', '3', '2011-11-28 19:54:21', null, '67_1322481261201.jpg', null, null);
+INSERT INTO user_news VALUES ('226', '67', '上传了1张照片', '3', '2011-11-28 19:54:36', null, '67_1322481276154.jpg', null, null);
+INSERT INTO user_news VALUES ('227', '67', '上传了1张照片', '3', '2011-11-28 19:54:36', null, '67_1322481276357.jpg', null, null);
+INSERT INTO user_news VALUES ('228', '95', '上传了1张照片', '3', '2011-11-28 19:57:01', null, '95_1322481421638.jpg', null, null);
+INSERT INTO user_news VALUES ('229', '95', '上传了1张照片', '3', '2011-11-28 19:57:01', null, '95_1322481421841.jpg', null, null);
+INSERT INTO user_news VALUES ('230', '96', '上传了1张照片', '3', '2011-11-29 17:36:32', null, '96_1322559391993.jpg', null, null);
+INSERT INTO user_news VALUES ('231', '68', '可以利用空余时间陪玩兵王游戏', '7', '2011-11-29 18:18:19', '18', null, null, null);
+INSERT INTO user_news VALUES ('232', '38', '可以利用空余时间陪玩兵王游戏', '8', '2011-11-29 19:25:15', '18', null, null, null);
+INSERT INTO user_news VALUES ('233', '38', '上传了1张照片', '3', '2011-11-29 19:52:10', null, '38_1322567530634.jpg', null, null);
+INSERT INTO user_news VALUES ('234', '14', '上传了1张照片', '3', '2011-11-29 19:53:34', null, '14_1322567614822.jpg', null, null);
 
 -- ----------------------------
 -- Table structure for `user_notice`
@@ -2559,6 +2621,16 @@ INSERT INTO user_picture VALUES ('45', '67', '67_1321873595744.jpg', null);
 INSERT INTO user_picture VALUES ('46', '67', '67_1321873595947.jpg', null);
 INSERT INTO user_picture VALUES ('47', '67', '67_1321873596556.jpg', null);
 INSERT INTO user_picture VALUES ('48', '67', '67_1321873596744.jpg', null);
+INSERT INTO user_picture VALUES ('49', '38', '38_1322481194623.jpg', null);
+INSERT INTO user_picture VALUES ('50', '38', '38_1322481194951.jpg', null);
+INSERT INTO user_picture VALUES ('51', '67', '67_1322481261201.jpg', null);
+INSERT INTO user_picture VALUES ('52', '67', '67_1322481276154.jpg', null);
+INSERT INTO user_picture VALUES ('53', '67', '67_1322481276357.jpg', null);
+INSERT INTO user_picture VALUES ('54', '95', '95_1322481421638.jpg', null);
+INSERT INTO user_picture VALUES ('55', '95', '95_1322481421841.jpg', null);
+INSERT INTO user_picture VALUES ('56', '96', '96_1322559391993.jpg', null);
+INSERT INTO user_picture VALUES ('57', '38', '38_1322567530634.jpg', null);
+INSERT INTO user_picture VALUES ('58', '14', '14_1322567614822.jpg', null);
 
 -- ----------------------------
 -- Table structure for `user_record_video`
@@ -2730,6 +2802,58 @@ INSERT INTO user_score_log VALUES ('134', '67', '8.5', null, '38', '2011-11-09 1
 INSERT INTO user_score_log VALUES ('135', '67', '7.5', null, '38', '2011-11-09 18:40:56');
 INSERT INTO user_score_log VALUES ('136', '38', '9.0', null, '38', '2011-11-11 18:07:30');
 INSERT INTO user_score_log VALUES ('137', '67', '8.5', null, '38', '2011-11-11 18:07:33');
+INSERT INTO user_score_log VALUES ('138', '2', '10.0', null, '38', '2011-11-23 17:48:05');
+INSERT INTO user_score_log VALUES ('139', '67', '10.0', null, '38', '2011-11-23 17:48:20');
+INSERT INTO user_score_log VALUES ('140', '10', '6.5', null, '38', '2011-11-23 19:00:57');
+INSERT INTO user_score_log VALUES ('141', '38', '7.5', null, '38', '2011-11-23 19:01:00');
+INSERT INTO user_score_log VALUES ('142', '67', '9.0', null, '38', '2011-11-23 19:01:05');
+INSERT INTO user_score_log VALUES ('143', '38', '9.5', null, '38', '2011-11-23 19:01:08');
+INSERT INTO user_score_log VALUES ('144', '38', '9.0', null, '38', '2011-11-23 19:01:11');
+INSERT INTO user_score_log VALUES ('145', '67', '9.5', null, '38', '2011-11-23 19:01:14');
+INSERT INTO user_score_log VALUES ('146', '38', '10.0', null, '38', '2011-11-23 19:01:17');
+INSERT INTO user_score_log VALUES ('147', '67', '8.0', null, '38', '2011-11-23 19:01:21');
+INSERT INTO user_score_log VALUES ('148', '67', '10.0', null, '38', '2011-11-23 19:01:25');
+INSERT INTO user_score_log VALUES ('149', '38', '7.0', null, '36', '2011-11-24 17:37:12');
+INSERT INTO user_score_log VALUES ('150', '38', '6.0', null, '36', '2011-11-24 17:37:18');
+INSERT INTO user_score_log VALUES ('151', '38', '9.5', null, '67', '2011-11-24 18:54:22');
+INSERT INTO user_score_log VALUES ('152', '38', '10.0', null, '67', '2011-11-24 18:54:25');
+INSERT INTO user_score_log VALUES ('153', '67', '9.0', null, '67', '2011-11-24 18:54:28');
+INSERT INTO user_score_log VALUES ('154', '67', '9.5', null, '67', '2011-11-24 18:54:44');
+INSERT INTO user_score_log VALUES ('155', '67', '10.0', null, '67', '2011-11-24 18:54:53');
+INSERT INTO user_score_log VALUES ('156', '29', '10.0', null, '67', '2011-11-24 18:57:36');
+INSERT INTO user_score_log VALUES ('157', '38', '10.0', null, '67', '2011-11-24 18:57:40');
+INSERT INTO user_score_log VALUES ('158', '67', '9.5', null, '67', '2011-11-24 18:57:43');
+INSERT INTO user_score_log VALUES ('159', '67', '10.0', null, '67', '2011-11-24 19:02:52');
+INSERT INTO user_score_log VALUES ('160', '38', '10.0', null, '67', '2011-11-25 21:13:43');
+INSERT INTO user_score_log VALUES ('161', '82', '10.0', null, '38', '2011-11-28 12:37:04');
+INSERT INTO user_score_log VALUES ('162', '38', '9.0', null, '38', '2011-11-28 12:38:27');
+INSERT INTO user_score_log VALUES ('163', '67', '9.5', null, '38', '2011-11-28 12:38:32');
+INSERT INTO user_score_log VALUES ('164', '38', '9.5', null, '38', '2011-11-28 12:38:34');
+INSERT INTO user_score_log VALUES ('165', '38', '9.0', null, '38', '2011-11-29 19:32:49');
+INSERT INTO user_score_log VALUES ('166', '67', '9.5', null, '38', '2011-11-29 19:32:52');
+INSERT INTO user_score_log VALUES ('167', '38', '9.0', null, '38', '2011-11-29 19:33:07');
+INSERT INTO user_score_log VALUES ('168', '67', '9.5', null, '38', '2011-11-29 19:33:09');
+INSERT INTO user_score_log VALUES ('169', '96', '10.0', null, '38', '2011-11-29 19:33:12');
+INSERT INTO user_score_log VALUES ('170', '96', '8.5', null, '38', '2011-11-29 19:33:15');
+INSERT INTO user_score_log VALUES ('171', '96', '9.5', null, '38', '2011-11-29 19:33:17');
+INSERT INTO user_score_log VALUES ('172', '38', '9.5', null, '38', '2011-11-29 19:33:22');
+INSERT INTO user_score_log VALUES ('173', '14', '6.5', null, '14', '2011-11-29 19:54:45');
+INSERT INTO user_score_log VALUES ('174', '95', '9.5', null, '38', '2011-11-29 20:08:18');
+INSERT INTO user_score_log VALUES ('175', '96', '10.0', null, '38', '2011-11-29 20:08:20');
+INSERT INTO user_score_log VALUES ('176', '14', '9.5', null, '38', '2011-11-29 20:08:24');
+INSERT INTO user_score_log VALUES ('177', '14', '10.0', null, '38', '2011-11-29 20:08:27');
+INSERT INTO user_score_log VALUES ('178', '95', '10.0', null, '38', '2011-11-29 20:08:29');
+INSERT INTO user_score_log VALUES ('179', '96', '10.0', null, '38', '2011-11-29 20:08:31');
+INSERT INTO user_score_log VALUES ('180', '14', '10.0', null, '38', '2011-11-29 20:08:35');
+INSERT INTO user_score_log VALUES ('181', '96', '10.0', null, '38', '2011-11-29 20:08:36');
+INSERT INTO user_score_log VALUES ('182', '14', '9.5', null, '38', '2011-11-29 20:08:39');
+INSERT INTO user_score_log VALUES ('183', '67', '10.0', null, '38', '2011-11-29 20:08:41');
+INSERT INTO user_score_log VALUES ('184', '96', '9.5', null, '38', '2011-11-29 20:08:51');
+INSERT INTO user_score_log VALUES ('185', '38', '9.5', null, '38', '2011-11-29 20:09:31');
+INSERT INTO user_score_log VALUES ('186', '95', '9.5', null, '38', '2011-11-29 20:09:35');
+INSERT INTO user_score_log VALUES ('187', '96', '9.5', null, '38', '2011-11-29 20:09:38');
+INSERT INTO user_score_log VALUES ('188', '14', '9.5', null, '38', '2011-11-29 20:09:57');
+INSERT INTO user_score_log VALUES ('189', '35', '9.5', null, '38', '2011-11-29 20:10:46');
 
 -- ----------------------------
 -- Table structure for `user_stock`
@@ -2917,4 +3041,24 @@ INSERT INTO user_visit_log VALUES ('108', '89', '2', '2', '2011-11-21');
 INSERT INTO user_visit_log VALUES ('109', '66', '1', '2', '2011-11-21');
 INSERT INTO user_visit_log VALUES ('110', '1', '1', '2', '2011-11-21');
 INSERT INTO user_visit_log VALUES ('111', '67', '2', '2', '2011-11-21');
-INSERT INTO user_visit_log VALUES ('112', '67', '1', '2', '2011-11-23');
+INSERT INTO user_visit_log VALUES ('112', '67', '2', '2', '2011-11-23');
+INSERT INTO user_visit_log VALUES ('113', '66', '1', '2', '2011-11-23');
+INSERT INTO user_visit_log VALUES ('114', '38', '4', '2', '2011-11-23');
+INSERT INTO user_visit_log VALUES ('115', '89', '1', '2', '2011-11-23');
+INSERT INTO user_visit_log VALUES ('116', '36', '1', '2', '2011-11-23');
+INSERT INTO user_visit_log VALUES ('117', '38', '20', '2', '2011-11-24');
+INSERT INTO user_visit_log VALUES ('118', '36', '13', '2', '2011-11-24');
+INSERT INTO user_visit_log VALUES ('119', '93', '10', '2', '2011-11-24');
+INSERT INTO user_visit_log VALUES ('120', '14', '8', '2', '2011-11-24');
+INSERT INTO user_visit_log VALUES ('121', '67', '6', '2', '2011-11-24');
+INSERT INTO user_visit_log VALUES ('122', '94', '20', '2', '2011-11-24');
+INSERT INTO user_visit_log VALUES ('123', '67', '4', '2', '2011-11-25');
+INSERT INTO user_visit_log VALUES ('124', '36', '1', '2', '2011-11-25');
+INSERT INTO user_visit_log VALUES ('125', '38', '7', '2', '2011-11-25');
+INSERT INTO user_visit_log VALUES ('126', '38', '2', '2', '2011-11-28');
+INSERT INTO user_visit_log VALUES ('127', '36', '4', '2', '2011-11-28');
+INSERT INTO user_visit_log VALUES ('128', '14', '1', '2', '2011-11-28');
+INSERT INTO user_visit_log VALUES ('129', '67', '1', '2', '2011-11-28');
+INSERT INTO user_visit_log VALUES ('130', '89', '1', '2', '2011-11-29');
+INSERT INTO user_visit_log VALUES ('131', '36', '2', '2', '2011-11-29');
+INSERT INTO user_visit_log VALUES ('132', '38', '3', '2', '2011-11-29');

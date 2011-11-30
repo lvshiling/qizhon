@@ -18,8 +18,18 @@ public abstract class BaseRoom implements java.io.Serializable {
 	private Integer userId;
 	private String roomName;
 	private Date createTime;
+	private Integer occupantsCount;
+	private String roomKey;
 
 	// Constructors
+
+	public String getRoomKey() {
+		return roomKey;
+	}
+
+	public void setRoomKey(String roomKey) {
+		this.roomKey = roomKey;
+	}
 
 	/** default constructor */
 	public BaseRoom() {
@@ -28,15 +38,6 @@ public abstract class BaseRoom implements java.io.Serializable {
 	/** minimal constructor */
 	public BaseRoom(Integer id) {
 		this.id = id;
-	}
-
-	/** full constructor */
-	public BaseRoom(Integer id, Integer roomNo, Integer userId, String roomName, Date createTime) {
-		this.id = id;
-		this.roomNo = roomNo;
-		this.userId = userId;
-		this.roomName = roomName;
-		this.createTime = createTime;
 	}
 
 	// Property accessors
@@ -81,4 +82,11 @@ public abstract class BaseRoom implements java.io.Serializable {
 		this.createTime = createTime;
 	}
 
+	public Integer getOccupantsCount() {
+		return occupantsCount;
+	}
+
+	public void setOccupantsCount(Integer occupantsCount) {
+		this.occupantsCount = occupantsCount;
+	}
 }

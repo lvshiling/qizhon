@@ -52,7 +52,7 @@ public class ChatRoomUtil {
 		// submitForm.setAnswer("muc#roomconfig_roomadmins", admins);
 
 		// 设置房间名称
-		submitForm.setAnswer("muc#roomconfig_roomname", roomName);
+		submitForm.setAnswer("muc#roomconfig_roomname", roomNo);
 
 		// 给房间加密
 		// submitForm.setAnswer("muc#roomconfig_passwordprotectedroom", true);

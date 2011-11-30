@@ -4,6 +4,8 @@
 package com.navigation.dao;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 import com.navigation.pojo.UserNews;
 
@@ -48,4 +50,7 @@ public interface UserNewsDao {
 	 */
 	public void delete(UserNews record);
 
+	public List<UserNews> getUserNewsList(Integer userId, Integer p, Integer pageSize);
+	
+	public List<UserNews> getUserNewsList(int limit, Integer[] types, Date afterTime);
 }

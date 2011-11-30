@@ -52,11 +52,16 @@
 </form>
 </div>
 <script type="text/javascript">
-	function selAmount(amt){
-		var rate = ${requestScope.exchangeRate};
-		var rs = amt*rate;
-		document.getElementById("payGold").value = rs;
-	}
+$(function(){
+	$('#navbar a.lit').removeClass('lit');
+	$('#navbar #nv_charge').addClass('lit');
+});
+
+function selAmount(amt){
+	var rate = ${requestScope.exchangeRate};
+	var rs = amt*rate;
+	document.getElementById("payGold").value = rs;
+}
 </script>
 <!-- END for 内容 -->
 <!-- END for 在线支付 -->

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/Impl
+V 74
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/dao/Impl
 END
 TopicReplyDaoImpl.java
 K 25
@@ -30,8 +30,8 @@ END
 UserAuthDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
-V 94
-/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/dao/Impl/UserAuthDaoImpl.java
+V 95
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/dao/Impl/UserAuthDaoImpl.java
 END
 UserGameAreaDaoImpl.java
 K 25
@@ -61,7 +61,7 @@ UserNewsDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/dao/Impl/UserNewsDaoImpl.java
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/Impl/UserNewsDaoImpl.java
 END
 UserCreditLogDaoImpl.java
 K 25
@@ -79,7 +79,7 @@ UserDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/Impl/UserDaoImpl.java
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/Impl/UserDaoImpl.java
 END
 UserNoticeDaoImpl.java
 K 25
@@ -87,17 +87,17 @@ svn:wc:ra_dav:version-url
 V 95
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/UserNoticeDaoImpl.java
 END
-UserLogStateDaoImpl.java
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/UserLogStateDaoImpl.java
-END
 UserMailDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
 V 93
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/UserMailDaoImpl.java
+END
+UserLogStateDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/UserLogStateDaoImpl.java
 END
 UserStockDaoImpl.java
 K 25
@@ -117,6 +117,12 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/GameAreaDaoImpl.java
 END
+TaskDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/Impl/TaskDaoImpl.java
+END
 FileSearchDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
@@ -135,17 +141,17 @@ svn:wc:ra_dav:version-url
 V 89
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/GameDaoImpl.java
 END
-UserPictureDaoImpl.java
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/Impl/UserPictureDaoImpl.java
-END
 UserTagDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
 V 92
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/UserTagDaoImpl.java
+END
+UserPictureDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/Impl/UserPictureDaoImpl.java
 END
 TagDaoImpl.java
 K 25
@@ -153,29 +159,35 @@ svn:wc:ra_dav:version-url
 V 88
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/TagDaoImpl.java
 END
-UserScoreLogDaoImpl.java
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/Impl/UserScoreLogDaoImpl.java
-END
-RoomDaoImpl.java
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/dao/Impl/RoomDaoImpl.java
-END
 NewsDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
 V 89
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/NewsDaoImpl.java
 END
+RoomDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/Impl/RoomDaoImpl.java
+END
+UserScoreLogDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/Impl/UserScoreLogDaoImpl.java
+END
 TopicDaoImpl.java
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/Impl/TopicDaoImpl.java
+END
+TaskAcceptDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/dao/Impl/TaskAcceptDaoImpl.java
 END
 UserMsgDaoImpl.java
 K 25

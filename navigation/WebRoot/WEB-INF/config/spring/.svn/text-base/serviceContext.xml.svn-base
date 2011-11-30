@@ -39,6 +39,7 @@
 	<bean id="topicService" class="com.navigation.service.Impl.TopicServiceImpl"></bean>
 	<bean id="fileService" class="com.navigation.service.Impl.FileServiceImpl"></bean>
 	<bean id="payService" class="com.navigation.service.Impl.PayServiceImpl"></bean>
+	<bean id="taskService" class="com.navigation.service.Impl.TaskServiceImpl"></bean>
 
 	<bean id="weiboUtil" class="com.navigation.utils.WeiBoUtil">
 		<property name="userLinkDao" ref="userLinkDao"></property>

@@ -1,14 +1,14 @@
 10
 
 dir
-95
+111
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/pojo/base
 http://192.168.82.213/svn/navigation
 
 
 
-2011-11-04T07:27:21.789471Z
-59
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -100,10 +100,10 @@ file
 
 
 
-2011-11-09T05:45:19.549007Z
-39bd9fbc605efcc2ca614ae22b7a96f9
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:58.571410Z
+7a65645c144234f7b29ca2dc19dded8e
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -126,7 +126,7 @@ zhuchuanyong
 
 
 
-2905
+3111
 
 BaseUserTag.java
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2011-11-09T05:45:19.549007Z
-58ad3837a9202070cbb0d0007ea064f3
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:58.571410Z
+752aab8c05c45e151f8aa3e6908716fb
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -296,7 +296,7 @@ zhuchuanyong
 
 
 
-14423
+14928
 
 BaseUserNotice.java
 file
@@ -536,6 +536,40 @@ zhuchuanyong
 
 3615
 
+BaseTask.java
+file
+
+
+
+
+2011-11-30T02:42:58.571410Z
+a8653e8a529fd8f5930852a096f4484c
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2804
+
 BaseUserRecordVideo.java
 file
 
@@ -712,10 +746,10 @@ file
 
 
 
-2011-11-09T05:45:19.549007Z
-f4ab293cb951b8feae21587b31a60956
-2011-11-02T03:52:58.739980Z
-47
+2011-11-30T02:42:58.571410Z
+d738cc4c2d38b7de9e2a3ab7a19a0a6f
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -738,7 +772,7 @@ zhuchuanyong
 
 
 
-2329
+1902
 
 BaseUserScoreLog.java
 file
@@ -780,10 +814,10 @@ file
 
 
 
-2011-10-31T11:15:04.090000Z
-a83d30475631956ee19e893b64048dc7
-2011-10-24T04:17:48.351933Z
-38
+2011-11-30T02:42:58.587035Z
+d4156e9918c4619f588de37e2dfaf97a
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -806,7 +840,7 @@ zhuchuanyong
 
 
 
-1537
+1644
 
 BaseNews.java
 file
@@ -943,6 +977,40 @@ zhuchuanyong
 
 
 2857
+
+BaseTaskAccept.java
+file
+
+
+
+
+2011-11-30T02:42:58.587035Z
+9d32d013da412771c61205dc6b30d987
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2166
 
 BaseUserTopicSort.java
 file

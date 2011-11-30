@@ -49,7 +49,7 @@ function getCity(currProvince){
 	}
 }
 function getCityText(cityId){
-	if(cityId!="" && cityId!=0){
+	if(cityId!="" && cityId.length==3){
 		var cid = parseInt(cityId);
 		var i = parseInt(cid/100) - 1;
 		var j = cid % 100 - 1;
@@ -66,7 +66,7 @@ function getProvinceText(provId){
 	return text;
 }
 function getProvAndCity(cityId){
-	if(cityId!=='' && cityId>99){
+	if(cityId!=='' && cityId.length==3){
 		var cid = parseInt(cityId);
 		var i = parseInt(cid/100) - 1;
 		var j = cid % 100 - 1;
@@ -74,5 +74,20 @@ function getProvAndCity(cityId){
 		var citytext = cityArray[i][1].split("|")[j];
 		return provtext + citytext;
 	}
-	return "";
+	return "--";
+}
+function getUserWgtText(id){
+	if(id=='1') return "偏瘦";
+	else if(id=='2') return "标准";
+	else if(id=='3') return "偏胖";
+	else return "--";
+}
+function getUserSexText(id){
+	if(id=='1') return "男";
+	else if(id=='0') return "女";
+	else return "--";
+}
+function getFieldText(txt){
+	if(txt==null || txt=='') return "--";
+	return txt;
 }

@@ -45,6 +45,8 @@ public abstract class BaseUserPicture  implements Serializable {
 	// fields
 	private java.lang.String picturePath;
 	
+	private java.util.Date updateTime;
+	
 	// many to one
 	private com.navigation.pojo.User user;
 
@@ -131,6 +133,14 @@ public abstract class BaseUserPicture  implements Serializable {
 
 	public String toString () {
 		return super.toString();
+	}
+
+	public java.util.Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(java.util.Date updateTime) {
+		this.updateTime = updateTime;
 	}
 
 }

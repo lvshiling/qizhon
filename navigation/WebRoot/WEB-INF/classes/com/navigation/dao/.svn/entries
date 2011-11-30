@@ -1,14 +1,14 @@
 10
 
 dir
-95
+111
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/dao
 http://192.168.82.213/svn/navigation
 
 
 
-2011-11-04T07:27:21.789471Z
-59
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -195,6 +195,40 @@ zhuchuanyong
 
 
 1998
+
+TaskAcceptDao.java
+file
+
+
+
+
+2011-11-30T02:42:51.883953Z
+adce502b60a356b557f8e41f3a5f8e97
+2011-11-29T12:17:01.853361Z
+110
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1080
 
 UserMsgDao.java
 file
@@ -406,10 +440,10 @@ file
 
 
 
-2011-11-11T11:12:18.717416Z
-2a7eccfd0346ee369ba26029f008051e
-2011-11-02T03:52:58.739980Z
-47
+2011-11-30T02:42:51.883953Z
+c98607841ed2c848f795d7f85d86aa73
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -432,7 +466,7 @@ zhuchuanyong
 
 
 
-1224
+1268
 
 UserGameAreaDao.java
 file
@@ -610,10 +644,10 @@ file
 
 
 
-2011-11-11T11:12:18.858040Z
-aba732e4019d584c0ddeb8493edd912d
-2011-11-02T03:52:58.739980Z
-47
+2011-11-30T02:42:51.883953Z
+4626281d70382e544585b2b03ea6d238
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -636,7 +670,7 @@ zhuchuanyong
 
 
 
-754
+971
 
 FileGpassDao.java
 file
@@ -678,10 +712,10 @@ file
 
 
 
-2011-11-11T11:12:18.951788Z
-9c060a5ce84480a2e322a25af04464ec
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:51.883953Z
+e875654d2bd02be73385466311a76161
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -704,7 +738,7 @@ zhuchuanyong
 
 
 
-1693
+1823
 
 UserNoticeDao.java
 file
@@ -913,6 +947,40 @@ zhuchuanyong
 
 766
 
+TaskDao.java
+file
+
+
+
+
+2011-11-30T02:42:51.883953Z
+ef7f2d7251a77a7ab14dc59692fa01e5
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1360
+
 FileSearchDao.java
 file
 
@@ -1058,10 +1126,10 @@ file
 
 
 
-2011-11-11T11:12:20.858014Z
-68883e32fd2b696c66d52e6ec6b8f0b3
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:51.883953Z
+8df6c5bb9ed661bb34637d0ce6808012
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -1084,5 +1152,5 @@ zhuchuanyong
 
 
 
-806
+857
 

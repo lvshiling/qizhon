@@ -1,14 +1,14 @@
 10
 
 dir
-95
+111
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/pojo
 http://192.168.82.213/svn/navigation
 
 
 
-2011-11-04T07:27:21.789471Z
-59
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -93,6 +93,40 @@ zhuchuanyong
 
 
 2998
+
+TaskAccept.hbm.xml
+file
+
+
+
+
+2011-11-30T02:42:58.602660Z
+a988bad5b05fe77985d64a490d0c62b7
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1692
 
 BaseBoardBean.java
 file
@@ -576,10 +610,10 @@ file
 
 
 
-2011-11-09T05:45:19.564631Z
-4c6777b4d81e076a045b6b0006a4977b
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:58.602660Z
+13ee0923a6477974cbb09c31e2e84252
+2011-11-29T12:17:01.853361Z
+110
 zhuchuanyong
 
 
@@ -602,7 +636,41 @@ zhuchuanyong
 
 
 
-4475
+4707
+
+Task.java
+file
+
+
+
+
+2011-11-30T02:42:58.602660Z
+5939e735e8221aa775084bea7b1437be
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+445
 
 UserNotice.hbm.xml
 file
@@ -916,10 +984,10 @@ file
 
 
 
-2011-10-31T11:15:04.043000Z
-df095af4cad837cff60ebf23af2356d9
-2011-10-24T04:17:48.351933Z
-38
+2011-11-30T02:42:58.602660Z
+b1250f924b34ee6ffed2daadea085b3e
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -942,7 +1010,7 @@ zhuchuanyong
 
 
 
-647
+443
 
 Topic.java
 file
@@ -1045,6 +1113,40 @@ zhuchuanyong
 
 
 420
+
+TaskAccept.java
+file
+
+
+
+
+2011-11-30T02:42:58.602660Z
+4e8628a32d34c15155f1ddb0e6b84ac1
+2011-11-29T12:17:01.853361Z
+110
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+612
 
 GameArea.hbm.xml
 file
@@ -1188,10 +1290,10 @@ file
 
 
 
-2011-11-09T05:45:19.564631Z
-4ff0d481f9084bc5c48a09183800f2b2
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:58.602660Z
+ea2e9b21dd1794de901ff9a538350add
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -1214,7 +1316,7 @@ zhuchuanyong
 
 
 
-834
+955
 
 News.hbm.xml
 file
@@ -1256,10 +1358,10 @@ file
 
 
 
-2011-10-31T11:15:03.949000Z
-7246212256fa8237d9278faa8a916f9a
-2011-10-24T04:17:48.351933Z
-38
+2011-11-30T02:42:58.602660Z
+c7c36fd3bb602eca07c141177880aba8
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -1282,7 +1384,7 @@ zhuchuanyong
 
 
 
-1019
+1268
 
 UserAuth.java
 file
@@ -1324,10 +1426,10 @@ file
 
 
 
-2011-11-09T05:45:19.564631Z
-66d7bf8bac66f2f78b6ff01f9f90ae93
-2011-11-04T07:27:21.789471Z
-59
+2011-11-30T02:42:58.602660Z
+273d3e769a50f73534617aadbf975a4f
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -1350,7 +1452,7 @@ zhuchuanyong
 
 
 
-1151
+1150
 
 UserRecordVideo.java
 file
@@ -2004,10 +2106,10 @@ file
 
 
 
-2011-11-09T05:45:19.564631Z
-341f2ba178cc473ddc7cb7500e8e9737
-2011-11-02T03:52:58.739980Z
-47
+2011-11-30T02:42:58.633910Z
+cd55f1eeb96c0eae915fb12db9b0712d
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -2030,7 +2132,7 @@ zhuchuanyong
 
 
 
-773
+820
 
 FileGpass.java
 file
@@ -2133,6 +2235,40 @@ zhuchuanyong
 
 
 405
+
+Task.hbm.xml
+file
+
+
+
+
+2011-11-30T02:42:58.633910Z
+9adc6f5aba6c7da4c2bfae252f3f77b4
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2166
 
 base
 dir

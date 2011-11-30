@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao
+V 69
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/dao
 END
 TagDao.java
 K 25
@@ -32,6 +32,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 81
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/TopicDao.java
+END
+TaskAcceptDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/dao/TaskAcceptDao.java
 END
 UserMsgDao.java
 K 25
@@ -72,8 +78,8 @@ END
 UserAuthDao.java
 K 25
 svn:wc:ra_dav:version-url
-V 85
-/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/dao/UserAuthDao.java
+V 86
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/dao/UserAuthDao.java
 END
 UserGameAreaDao.java
 K 25
@@ -99,17 +105,17 @@ svn:wc:ra_dav:version-url
 V 86
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserCreditDao.java
 END
-UserNewsDao.java
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/dao/UserNewsDao.java
-END
 UserCreditLogDao.java
 K 25
 svn:wc:ra_dav:version-url
 V 89
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserCreditLogDao.java
+END
+UserNewsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/UserNewsDao.java
 END
 FileGpassDao.java
 K 25
@@ -121,7 +127,7 @@ UserDao.java
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/UserDao.java
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/UserDao.java
 END
 UserNoticeDao.java
 K 25
@@ -129,17 +135,17 @@ svn:wc:ra_dav:version-url
 V 86
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserNoticeDao.java
 END
-UserLogStateDao.java
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserLogStateDao.java
-END
 UserMailDao.java
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserMailDao.java
+END
+UserLogStateDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserLogStateDao.java
 END
 UserStockDao.java
 K 25
@@ -159,6 +165,12 @@ svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/GameAreaDao.java
 END
+TaskDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/TaskDao.java
+END
 FileSearchDao.java
 K 25
 svn:wc:ra_dav:version-url
@@ -177,15 +189,15 @@ svn:wc:ra_dav:version-url
 V 80
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/GameDao.java
 END
-UserPictureDao.java
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/dao/UserPictureDao.java
-END
 UserTagDao.java
 K 25
 svn:wc:ra_dav:version-url
 V 83
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/dao/UserTagDao.java
+END
+UserPictureDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/dao/UserPictureDao.java
 END

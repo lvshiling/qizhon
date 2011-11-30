@@ -45,9 +45,17 @@ public class UserPictureDaoImpl extends DaoSupport implements UserPictureDao {
 		super.update(record);
 	}
 
+	@Override
 	public List<UserPicture> getUserPics(Integer userId, Integer p, Integer pageSize) {
 		String hql = "from UserPicture p where p.user.id = ? order by p.id desc";
 		Object[] params = new Object[] { userId };
 		return super.find(hql, params, (p - 1) * pageSize, pageSize);
+	}
+
+	@Override
+	public Integer getUserPicsCount(Integer userId) {
+		String hql = "select count(*) from UserPicture p where p.user.id=?";
+		Object[] params = new Object[] { userId };
+		return super.count(hql, params);
 	}
 }

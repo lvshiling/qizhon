@@ -80,7 +80,7 @@ ul li{
             	<ul>
             	<s:iterator value="#request.starList">
                 	<li>
-                    	<span class="t1"><a href="/user/id.do?uid=${user.id }">${user.name }</a>(${user.id })</span>
+                    	<span class="t1"><a href="/user/index.do?uid=${user.id }">${user.name }</a>(${user.id })</span>
                         <span class="t3"><img alt="" src="${static}/styles/images/13_s.gif" align="absmiddle"/></span>
                     </li>
                 </s:iterator>    
@@ -97,7 +97,7 @@ ul li{
             	<ul>
             	<s:iterator value="#request.richList">	
                 	<li>
-                    	<span class="t1"><a href="/user/id.do?uid=${user.id }">${user.name }</a>(${user.id })</span>
+                    	<span class="t1"><a href="/user/index.do?uid=${user.id }">${user.name }</a>(${user.id })</span>
                         <span class="t3"><img alt="" src="${static}/styles/images/13_s.gif" align="absmiddle"/></span>
                     </li>
                 </s:iterator>    
@@ -114,7 +114,7 @@ ul li{
             	<ul>
             	<s:iterator value="#request.popList">	
                 	<li>
-                    	<span class="t1"><a href="/user/id.do?uid=${user.id }">${user.name }</a>(${user.id })</span>
+                    	<span class="t1"><a href="/user/index.do?uid=${user.id }">${user.name }</a>(${user.id })</span>
                         <span class="t3"><img alt="" src="${static}/styles/images/13_s.gif" align="absmiddle"/></span>
                     </li>
                 </s:iterator>    

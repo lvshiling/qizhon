@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/navigation/!svn/ver/94/trunk/release-1.0/WebRoot/WEB-INF/video/user
+V 73
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/video/user
 END
 ajaxGetNotice.jsp
 K 25
@@ -21,23 +21,17 @@ svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/75/trunk/release-1.0/WebRoot/WEB-INF/video/user/inAlbum.jsp
 END
+admin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/video/user/admin.jsp
+END
 userinfo.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 85
 /svn/navigation/!svn/ver/40/trunk/release-1.0/WebRoot/WEB-INF/video/user/userinfo.jsp
-END
-release_info.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/navigation/!svn/ver/94/trunk/release-1.0/WebRoot/WEB-INF/video/user/release_info.jsp
-END
-bingwang.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/video/user/bingwang.jsp
 END
 id.jsp
 K 25
@@ -45,17 +39,35 @@ svn:wc:ra_dav:version-url
 V 79
 /svn/navigation/!svn/ver/40/trunk/release-1.0/WebRoot/WEB-INF/video/user/id.jsp
 END
-auth.jsp
+bingwang.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/video/user/auth.jsp
+V 86
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/video/user/bingwang.jsp
+END
+album.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/video/user/album.jsp
 END
 ajaxGetUserPics.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 91
 /svn/navigation/!svn/ver/3/trunk/release-1.0/WebRoot/WEB-INF/video/user/ajaxGetUserPics.jsp
+END
+auth.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/video/user/auth.jsp
+END
+ajaxUserPics.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/video/user/ajaxUserPics.jsp
 END
 top.jsp
 K 25
@@ -67,7 +79,7 @@ gnavi.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/navigation/!svn/ver/72/trunk/release-1.0/WebRoot/WEB-INF/video/user/gnavi.jsp
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/video/user/gnavi.jsp
 END
 im.jsp
 K 25
@@ -78,36 +90,30 @@ END
 index.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/svn/navigation/!svn/ver/64/trunk/release-1.0/WebRoot/WEB-INF/video/user/index.jsp
+V 83
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/video/user/index.jsp
 END
-game.jsp
+showvideo.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/navigation/!svn/ver/94/trunk/release-1.0/WebRoot/WEB-INF/video/user/game.jsp
+V 86
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/video/user/showvideo.jsp
 END
 score.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/video/user/score.jsp
+V 83
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/video/user/score.jsp
+END
+showpic.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/video/user/showpic.jsp
 END
 chat.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/navigation/!svn/ver/48/trunk/release-1.0/WebRoot/WEB-INF/video/user/chat.jsp
-END
-release.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svn/navigation/!svn/ver/94/trunk/release-1.0/WebRoot/WEB-INF/video/user/release.jsp
-END
-album2.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svn/navigation/!svn/ver/75/trunk/release-1.0/WebRoot/WEB-INF/video/user/album2.jsp
+V 82
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/video/user/chat.jsp
 END

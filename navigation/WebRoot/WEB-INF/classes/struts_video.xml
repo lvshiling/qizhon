@@ -37,7 +37,7 @@
 	          <param name="allowedTypes">  
 	　　　　　　		image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg,application/octet-stream
 	          </param>
-	          <param name="maximumSize">4024000</param>  
+	          <param name="maximumSize">10240000</param>  
             </interceptor-ref>  
             <interceptor-ref name="defaultStack" />  
         </action>
@@ -58,6 +58,32 @@
         </action>
         <action name="score" class="userAction" method="score">
             <result name="score">/WEB-INF/video/user/score.jsp</result>
+        </action>
+        <action name="pubMsg" class="userAction" method="pubMsg">
+            <result name="index">/WEB-INF/video/user/index.jsp</result>
+        </action>
+        <action name="album" class="userAction" method="album">
+            <result name="album">/WEB-INF/video/user/album.jsp</result>
+        </action>
+        <action name="ajaxUserPics" class="userAction" method="ajaxUserPics">
+            <result name="ajaxUserPics">/WEB-INF/video/user/ajaxUserPics.jsp</result>
+        </action>
+        <action name="showpic" class="userAction" method="showpic">
+            <result name="showpic">/WEB-INF/video/user/showpic.jsp</result>
+        </action>
+        <action name="showvideo" class="userAction" method="showvideo">
+            <result name="showvideo">/WEB-INF/video/user/showvideo.jsp</result>
+        </action>
+        <action name="admin" class="userAction" method="admin">
+            <result name="admin">/WEB-INF/video/user/admin.jsp</result>
+        </action>
+        <action name="passAuth" class="userAction" method="passAuth">
+        	<result name="admin">/WEB-INF/video/user/admin.jsp</result>
+        	<result name="input">/WEB-INF/video/user/admin.jsp</result>
+        </action>
+        <action name="unpassAuth" class="userAction" method="unpassAuth">
+        	<result name="admin">/WEB-INF/video/user/admin.jsp</result>
+        	<result name="input">/WEB-INF/video/user/admin.jsp</result>
         </action>
     	<action name="*Page" class="userAction" method="{1}">
             <result name="{1}">/WEB-INF/video/user/{1}.jsp</result>
@@ -92,6 +118,36 @@
 	<package name="rank" namespace="/rank" extends="default">
         <action name="rank" class="rankAction" method="rank">
             <result name="rank">/WEB-INF/video/rank/rank.jsp</result>
+        </action>
+    </package>
+    
+    <package name="task" namespace="/task" extends="default">
+    	<action name="*Api" class="taskAction" method="{1}">
+        </action>
+        <action name="index" class="taskAction" method="index">
+            <result name="index">/WEB-INF/video/task/index.jsp</result>
+            <result name="center">/WEB-INF/video/task/center.jsp</result>
+        </action>
+        <action name="center" class="taskAction" method="center">
+            <result name="center">/WEB-INF/video/task/center.jsp</result>
+        </action>
+        <action name="detail" class="taskAction" method="detail">
+            <result name="detail">/WEB-INF/video/task/detail.jsp</result>
+        </action>
+        <action name="publish" class="taskAction" method="publish">
+        	<result name="input">/WEB-INF/video/task/index.jsp</result>
+            <result name="index">/WEB-INF/video/task/index.jsp</result>
+        </action>
+        <action name="admin" class="taskAction" method="admin">
+        	<result name="admin">/WEB-INF/video/task/admin.jsp</result>
+        </action>
+        <action name="passAccept" class="taskAction" method="passAccept">
+        	<result name="admin">/WEB-INF/video/task/admin.jsp</result>
+        	<result name="input">/WEB-INF/video/task/admin.jsp</result>
+        </action>
+        <action name="unpassAccept" class="taskAction" method="unpassAccept">
+        	<result name="admin">/WEB-INF/video/task/admin.jsp</result>
+        	<result name="input">/WEB-INF/video/task/admin.jsp</result>
         </action>
     </package>
     

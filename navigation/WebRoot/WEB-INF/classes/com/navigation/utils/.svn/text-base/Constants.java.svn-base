@@ -62,6 +62,9 @@ public class Constants {
 	
 	@Value("#{constant.rmbLebiExchangeRate}")
 	public int rmb_lebi_exchange_rate;
+	
+	@Value("#{constant.authCallbackBW}")
+	public String auth_callback_BW;
 
 	public static Constants getInstance() {
 		if (instance != null) {

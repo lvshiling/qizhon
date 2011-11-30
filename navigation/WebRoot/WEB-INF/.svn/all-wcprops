@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 61
-/svn/navigation/!svn/ver/95/trunk/release-1.0/WebRoot/WEB-INF
+V 62
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF
 END
 sitemesh.xml
 K 25
@@ -13,7 +13,7 @@ decorator.xml
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/navigation/!svn/ver/40/trunk/release-1.0/WebRoot/WEB-INF/decorator.xml
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/decorator.xml
 END
 web.xml
 K 25

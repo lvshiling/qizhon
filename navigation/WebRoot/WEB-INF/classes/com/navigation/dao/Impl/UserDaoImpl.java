@@ -131,4 +131,25 @@ public class UserDaoImpl extends DaoSupport implements UserDao {
 		String hql = "from User where id<>? order by rand()";
 		return super.find(hql, new Object[] { userId }, 0, num);
 	}
+
+	@Override
+	public List<User> randUsers(int num) {
+		String hql = "from User order by rand()";
+		return super.find(hql, 0, num);
+	}
+
+	@Override
+	public List<User> randUsersWithPic(int num) {
+		String hql = "from User where pic is not null order by rand()";
+		return super.find(hql, 0, num);
+	}
+
+	@Override
+	public User getByHashid(String hashid) {
+		String hql = "from User where hashid=?";
+		List<User> lst = super.find(hql, new Object[] { hashid }, 0, 1);
+		if (lst != null && !lst.isEmpty())
+			return lst.get(0);
+		return null;
+	}
 }

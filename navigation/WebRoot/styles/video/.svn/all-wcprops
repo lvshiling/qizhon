@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svn/navigation/!svn/ver/66/trunk/release-1.0/WebRoot/styles/video
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/styles/video
 END
 userinfo.css
 K 25
@@ -19,7 +19,7 @@ layout.css
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svn/navigation/!svn/ver/48/trunk/release-1.0/WebRoot/styles/video/layout.css
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/styles/video/layout.css
 END
 pager.css
 K 25
@@ -31,7 +31,7 @@ legacy.css
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svn/navigation/!svn/ver/66/trunk/release-1.0/WebRoot/styles/video/legacy.css
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/styles/video/legacy.css
 END
 module.css
 K 25
@@ -43,5 +43,5 @@ index.css
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/navigation/!svn/ver/65/trunk/release-1.0/WebRoot/styles/video/index.css
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/styles/video/index.css
 END

@@ -32,16 +32,21 @@ import weibo4j.org.json.JSONObject;
 import com.navigation.action.BaseAction;
 import com.navigation.domain.AjaxData;
 import com.navigation.domain.Constant;
+import com.navigation.domain.PageBean;
 import com.navigation.exception.AjaxJsonException;
 import com.navigation.exception.ServiceException;
 import com.navigation.exception.SessionException;
 import com.navigation.pojo.Room;
+import com.navigation.pojo.Task;
+import com.navigation.pojo.TaskAccept;
 import com.navigation.pojo.User;
+import com.navigation.pojo.UserAuth;
 import com.navigation.pojo.UserCredit;
 import com.navigation.pojo.UserCreditLog;
 import com.navigation.pojo.UserInfo;
 import com.navigation.pojo.UserLink;
 import com.navigation.pojo.UserLogState;
+import com.navigation.pojo.UserNews;
 import com.navigation.pojo.UserNotice;
 import com.navigation.pojo.UserPicture;
 import com.navigation.pojo.UserRecordVideo;
@@ -53,8 +58,11 @@ import com.navigation.utils.CacheUtil;
 import com.navigation.utils.ChatRoomUtil;
 import com.navigation.utils.Constants;
 import com.navigation.utils.CreditUtils;
+import com.navigation.utils.EncryptUtil;
 import com.navigation.utils.FileUtil;
+import com.navigation.utils.IdGenerator;
 import com.navigation.utils.JSONUtils;
+import com.navigation.utils.SimpleJSONUtils;
 import com.navigation.utils.StringUtil;
 
 /**
@@ -82,6 +90,7 @@ public class UserAction extends BaseAction {
 	public String newpassword;
 	public String userIcon;
 	public String hashCode;
+	public String hashid;
 
 	private Integer areaId = 1;
 
@@ -99,11 +108,19 @@ public class UserAction extends BaseAction {
 
 	private String recordFileName;
 
+	private Task task;
+	private TaskAccept taskAccept;
+
 	private String count;
 	private String sendTo;
 	private String roomNo;
 	private String towho;
 	private String value;
+	private String rating;
+	private String avg;
+	private String lastId;
+	private String msg;
+
 	/**
 	 * 统一页面跳转入口
 	 * 
@@ -121,13 +138,115 @@ public class UserAction extends BaseAction {
 		}
 	}
 
+	public String index() throws SessionException {
+		Integer hostId = null;
+		Integer guestId = null;
+
+		if (!StringUtil.isNullOrEmpty(uid)) {
+			hostId = new Integer(uid);
+		} else {
+			hostId = SessionUtil.getLogonUID();
+		}
+		this.getRequest().setAttribute("userId", hostId);
+
+		User user = this.userService.getUserAllInfo(hostId);
+		this.getRequest().setAttribute("user", user);
+
+		UserInfo userInfo = this.userService.findUserInfo(hostId);
+		this.getRequest().setAttribute("userInfo", userInfo);
+
+		List<UserNews> userNews = this.userService.getUserNewsList(hostId, p, pageSize);
+		this.getRequest().setAttribute("userNews", userNews);
+
+		// List<UserPicture> picList = this.userService.getUserPics(hostId, p,
+		// pageSize);
+		// this.getRequest().setAttribute("picList", picList);
+
+		if (SessionUtil.isLogon()) {
+			guestId = SessionUtil.getLogonUID();
+		}
+		if (hostId.equals(guestId)) {
+			this.getRequest().setAttribute("isSelf", true);
+			this.getRequest().setAttribute("target", StringUtil.encode(hostId.toString()));
+			List<UserCreditLog> logList = this.payService.getUserPayLog(hostId, p, pageSize);
+			this.getRequest().setAttribute("logList", logList);
+		}
+		return "index";
+	}
+
+	/**
+	 * 相册
+	 * 
+	 * @return
+	 * @throws SessionException
+	 */
+	public String album() throws SessionException {
+		Integer hostId = null;
+		Integer guestId = null;
+
+		if (!StringUtil.isNullOrEmpty(uid)) {
+			hostId = new Integer(uid);
+		} else {
+			hostId = SessionUtil.getLogonUID();
+		}
+		this.getRequest().setAttribute("userId", hostId);
+
+		User user = this.userService.getUserAllInfo(hostId);
+		this.getRequest().setAttribute("user", user);
+
+		if (SessionUtil.isLogon()) {
+			guestId = SessionUtil.getLogonUID();
+		}
+		if (hostId.equals(guestId)) {
+			this.getRequest().setAttribute("isSelf", true);
+			this.getRequest().setAttribute("target", StringUtil.encode(hostId.toString()));
+		}
+
+		this.setPageSize(8);
+
+		PageBean pb = this.userService.getUserPicsPageBean(hostId, p, pageSize);
+		this.getRequest().setAttribute("pageBean", pb);
+
+		return "album";
+	}
+
+	public String ajaxUserPics() throws SessionException {
+		if (StringUtil.isEmpty(uid))
+			throw new SessionException("参数错误");
+		this.setPageSize(8);
+		PageBean pb = this.userService.getUserPicsPageBean(Integer.valueOf(uid), p, pageSize);
+		this.getRequest().setAttribute("pageBean", pb);
+		return "ajaxUserPics";
+	}
+
+	public String pubMsg() throws SessionException {
+		Integer userId = SessionUtil.getLogonUID();
+		this.userService.msgUserNews(userId, msg);
+		return index();
+	}
+
+	public String ajaxPubMsg() throws AjaxJsonException {
+		if (StringUtil.isEmpty(msg))
+			throw new AjaxJsonException("消息不能为空");
+		try {
+			Integer userId = SessionUtil.getLogonUID();
+			this.userService.msgUserNews(userId, msg);
+			setJson(AjaxData.getSuccessJson("消息发布成功", null));
+		} catch (SessionException e) {
+			this.setJson(AjaxData.getNotLoginErrorJson(e.getMessage(), target, null));
+		} catch (Exception e) {
+			throw new AjaxJsonException(e.getMessage());
+		}
+		return AJAX_JSON_RESULT;
+	}
+
 	/**
 	 * 个人中心
 	 * 
 	 * @return
 	 * @throws SessionException
 	 */
-	public String index() throws SessionException {
+	public String index3() throws SessionException {
 		Integer userId = SessionUtil.getLogonUID();
 		User user = this.userService.getUserAllInfo(userId);
 		UserInfo userInfo = this.userService.findUserInfo(userId);
@@ -324,6 +443,9 @@ public class UserAction extends BaseAction {
 			throw new AjaxJsonException("密码不得为空");
 		try {
 			User dbUser = this.userService.login(user);
+			if (!StringUtil.isEmpty(user.getHashid())) {
+				this.userService.bindGameUser(user.getHashid(), dbUser);
+			}
 			Map<String, String> values = new HashMap<String, String>();
 			values.put("name", dbUser.getName());
 			values.put("id", dbUser.getId().toString());
@@ -718,6 +840,47 @@ public class UserAction extends BaseAction {
 		return AJAX_JSON_RESULT;
 	}
 
+	public String admin() throws SessionException {
+		User user = SessionUtil.getLogonUser().getUser();
+		if (user.getIsAdmin() != null && user.getIsAdmin().equals(1)) {
+			List<UserAuth> authList = this.userService.getAwaitAuthList();
+			this.getRequest().setAttribute("authList", authList);
+		} else {
+			throw new SessionException("对不起，您没有权限！");
+		}
+		return "admin";
+	}
+
+	public String passAuth() throws SessionException {
+		String[] authIds = this.getRequest().getParameterValues("authIds");
+		if (authIds == null || authIds.length == 0)
+			return INPUT;
+		try {
+			for (String authId : authIds) {
+				this.userService.passAuth(Integer.valueOf(authId));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SessionException(e.getMessage());
+		}
+		return admin();
+	}
+
+	public String unpassAuth() throws SessionException {
+		String[] authIds = this.getRequest().getParameterValues("authIds");
+		if (authIds == null || authIds.length == 0)
+			return INPUT;
+		try {
+			for (String authId : authIds) {
+				this.userService.unpassAuth(Integer.valueOf(authId));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SessionException(e.getMessage());
+		}
+		return admin();
+	}
+
 	public String ajaxSubmitAuth() {
 		Map<String, String> map = new HashMap<String, String>();
 		Integer userId = Integer.valueOf(uid);
@@ -742,11 +905,14 @@ public class UserAction extends BaseAction {
 				if (neededAuth) {
 					this.userService.submitAuth(userId, target);
 					map.put("code", "A00001"); // 提交成功
-					map.put("data", "");
+					map.put("data", fileType);
 				} else {
 					map.put("code", "R00001"); // 不能重复认证
-					map.put("data", "");
+					map.put("data", fileType);
 				}
+			} else {
+				map.put("code", "P00001");
+				map.put("data", fileType);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -872,8 +1038,32 @@ public class UserAction extends BaseAction {
 		return "id";
 	}
 
+	/**
+	 * 视频认证
+	 * 
+	 * @return
+	 * @throws SessionException
+	 */
 	public String auth() throws SessionException {
-		return "auth";
+		if (StringUtil.isEmpty(emsg)) {
+			return "auth";
+		} else {
+			return this.interCall("auth");
+		}
+	}
+
+	public String interCall(String retstr) throws SessionException {
+		String[] ps = this.gameParaDecrypt();
+		if (StringUtil.isEmpty(ps[0]) || StringUtil.isEmpty(ps[1]))
+			return retstr;
+		String gmhashid = ps[0] + "_" + ps[1];
+		if (SessionUtil.isLogon()) {
+			User user = SessionUtil.getLogonUser().getUser();
+			this.userService.bindGameUser(gmhashid, user);
+		} else {
+			this.getRequest().setAttribute("gmhashid", gmhashid);
+		}
+		return retstr;
 	}
 
 	public String bingwang() throws SessionException {
@@ -883,28 +1073,46 @@ public class UserAction extends BaseAction {
 	}
 
 	public String score() throws SessionException {
-		SessionUtil.getLogonUID();
-		Integer userId = Integer.valueOf(uid);
+		List<User> userList = this.userService.randUsersWithPic(10);
 
-		User user = this.userService.getUser(userId);
+		User user = null;
+		if (!StringUtil.isEmpty(emsg)) {
+			String[] ps = this.gameParaDecrypt();
+			System.out.println(ps[0] + "_" + ps[1]);
+			user = this.userService.getUserByHashid(ps[0] + "_" + ps[1]);
+		}
+		if (user == null) {
+			if (StringUtil.isNullOrEmpty(uid)) {
+				user = userList.get(0);
+			} else {
+				user = this.userService.getUser(Integer.valueOf(uid));
+			}
+		}
+		if (!StringUtil.isNullOrEmpty(rating))
+			this.getRequest().setAttribute("rating", rating);
+		if (!StringUtil.isNullOrEmpty(avg))
+			this.getRequest().setAttribute("avg", avg);
+		if (!StringUtil.isNullOrEmpty(lastId))
+			this.getRequest().setAttribute("lastUser", this.userService.getUser(Integer.valueOf(lastId)));
+
 		this.getRequest().setAttribute("scuser", user);
 
-		UserInfo userInfo = this.userService.findUserInfo(userId);
+		UserInfo userInfo = this.userService.findUserInfo(user.getId());
 		this.getRequest().setAttribute("userInfo", userInfo);
 
-		List<User> userList = this.userService.randUsersWithPic(userId, 9);
-		List<User> userList1 = new ArrayList<User>(userList.subList(0, 3));
-		List<User> userList2 = new ArrayList<User>(userList.subList(3, 9));
+		List<User> userList1 = new ArrayList<User>(userList.subList(0, 4));
+		List<User> userList2 = new ArrayList<User>(userList.subList(4, 10));
 		this.getRequest().setAttribute("userList1", userList1);
 		this.getRequest().setAttribute("userList2", userList2);
+
 		return "score";
 	}
 
 	public String ajaxGiveScore() throws AjaxJsonException {
-		if (StringUtil.isNullOrEmpty(uid)){System.out.println("-----------uid:"+uid);
-			throw new AjaxJsonException("参数不正确");}
-		if (StringUtil.isNullOrEmpty(value)){System.out.println("-----------value:"+value);
-			throw new AjaxJsonException("参数不正确");}
+		if (StringUtil.isNullOrEmpty(uid))
+			throw new AjaxJsonException("参数不正确");
+		if (StringUtil.isNullOrEmpty(value))
+			throw new AjaxJsonException("参数不正确");
 
 		try {
 			Integer logonUid = SessionUtil.getLogonUID();
@@ -916,12 +1124,29 @@ public class UserAction extends BaseAction {
 			if (avg == null)
 				avg = 0.0d;
 			Map<String, String> result = new HashMap<String, String>();
-			result.put("ratingScore", value);
-			result.put("avgScore", avg.toString());
+			result.put("rating", value);
+			result.put("avg", avg.toString());
+			result.put("lastId", uid);
 			this.setJson(AjaxData.getSuccessJson("success", result));
+		} catch (SessionException e) {
+			this.setJson(AjaxData.getNotLoginErrorJson(e.getMessage(), null, null));
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AjaxJsonException(e.getMessage());
+		}
+		return AJAX_JSON_RESULT;
+	}
+
+	public String ajaxUpdateRoomOccuCnt() throws AjaxJsonException {
+		if (StringUtil.isNullOrEmpty(roomNo))
+			return AJAX_JSON_RESULT;
+		if (StringUtil.isNullOrEmpty(count))
+			return AJAX_JSON_RESULT;
+		try {
+			userService.updateRoomOccuCnt(Integer.valueOf(roomNo), Integer.valueOf(count));
+			this.setJson(AjaxData.getSuccessJson("success", null));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return AJAX_JSON_RESULT;
 	}
@@ -934,7 +1159,7 @@ public class UserAction extends BaseAction {
 	 */
 	public String chat() throws SessionException {
 		Integer hostId = null; // 房主id
-		Integer guestId = null; // 访问者id
+		Integer guestId = null; // 访客id
 		Room room = null; // 房间
 		User user = null; // 房主
 
@@ -962,14 +1187,6 @@ public class UserAction extends BaseAction {
 				}
 			}
 		}
-		this.getRequest().setAttribute("user", user);
-		this.getRequest().setAttribute("userId", hostId);
-		this.getRequest().setAttribute("room", room);
-		this.getRequest().setAttribute("xamppServer", Constants.getInstance().xampp_server);
-		this.getRequest().setAttribute("red5Server", Constants.getInstance().red5_server);
-		this.getRequest().setAttribute("roomKey", StringUtil.md5(room.getRoomNo().toString()));
-		this.getRequest().setAttribute("pageId", Constant.PAGE_ID_CHAT);
-
 		if (SessionUtil.isLogon()) {
 			guestId = SessionUtil.getLogonUID();
 			UserCredit credit = this.payService.getUserCredit(guestId);
@@ -981,14 +1198,65 @@ public class UserAction extends BaseAction {
 			this.getRequest().setAttribute("guestName", guestName);
 			this.getRequest().setAttribute("anonymous", "YES");
 		}
-
-		if (hostId.equals(guestId))
+		String roomKey;
+		if (hostId.equals(guestId)) {
 			this.getRequest().setAttribute("isSelf", true); // 访问者是房主本人
+			roomKey = (String) IdGenerator.generateID();
+			room.setRoomKey(roomKey);
+			this.userService.updateRoom(room);
+		} else {
+			roomKey = room.getRoomKey();
+			if (StringUtil.isEmpty(roomKey)) {
+				roomKey = StringUtil.md5(room.getRoomNo().toString());
+			}
+		}
+		user.setRoom(room);
+
+		this.getRequest().setAttribute("user", user);
+		this.getRequest().setAttribute("userId", hostId);
+		this.getRequest().setAttribute("room", room);
+		this.getRequest().setAttribute("xamppServer", Constants.getInstance().xampp_server);
+		this.getRequest().setAttribute("red5Server", Constants.getInstance().red5_server);
+		this.getRequest().setAttribute("roomKey", roomKey);
+		this.getRequest().setAttribute("pageId", Constant.PAGE_ID_CHAT);
 
 		List<UserCredit> richList = userService.getUserSpendCreditList(6);
 		this.getRequest().setAttribute("richList", richList);
 
 		return "chat";
+	}
+
+	/**
+	 * 显示视频接口
+	 * 
+	 * @return
+	 * @throws SessionException
+	 */
+	public String showvideo() throws SessionException {
+		if (StringUtil.isEmpty(emsg))
+			return "showvideo";
+		String[] ps = this.gameParaDecrypt();
+		System.out.println(ps[0] + "_" + ps[1]);
+		User user = this.userService.getUserByHashid(ps[0] + "_" + ps[1]);
+		Room room = this.userService.getRoomByOwner(user.getId());
+		if (room == null) {
+			room = this.userService.createRoom(user.getId(), user.getName());
+			try {
+				ChatRoomUtil.createReservedRoom(user.getId(), room.getRoomNo(), room.getRoomName());
+			} catch (XMPPException e) {
+				e.printStackTrace();
+			}
+		}
+		String roomKey = room.getRoomKey();
+		if (StringUtil.isEmpty(roomKey)) {
+			roomKey = StringUtil.md5(room.getRoomNo().toString());
+		}
+		this.getRequest().setAttribute("user", user);
+		this.getRequest().setAttribute("userId", user.getId());
+		this.getRequest().setAttribute("room", room);
+		this.getRequest().setAttribute("red5Server", Constants.getInstance().red5_server);
+		this.getRequest().setAttribute("roomKey", roomKey);
+		return "showvideo";
 	}
 
 	/**
@@ -1011,6 +1279,31 @@ public class UserAction extends BaseAction {
 		return AJAX_JSON_RESULT;
 	}
 
+	public String ajaxPublicUserNews() throws AjaxJsonException {
+		try {
+			List<UserNews> userNews;
+			if (StringUtil.isEmpty(_)) {
+				userNews = userService.getPublicUserNews(8, null);
+			} else {
+				Date afterTime = new Date(Long.valueOf(_));
+				userNews = userService.getPublicUserNews(8, afterTime);
+			}
+			if (userNews != null && !userNews.isEmpty()) {
+				long time = userNews.get(0).getUpdateTime().getTime();
+				Map<String, Object> result = new HashMap<String, Object>();
+				result.put("status", AjaxData.STATUS_SUCCESS);
+				result.put("message", String.valueOf(time));
+				result.put("values", userNews);
+				String json = SimpleJSONUtils.map2json(result);
+				System.out.println(json);
+				this.setJson(json);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return AJAX_JSON_RESULT;
+	}
+
 	/**
 	 * 加关注
 	 * 
@@ -1027,8 +1320,10 @@ public class UserAction extends BaseAction {
 			Integer userId = SessionUtil.getLogonUID();
 			if (userId.toString().equals(target))
 				throw new AjaxJsonException("不能关注自己");
-			userService.addAttention(userId, targetUser);
-			this.setJson(AjaxData.getSuccessJson("success", null));
+			Integer newFansNum = userService.addAttention(userId, targetUser);
+			Map<String, String> result = new HashMap<String, String>();
+			result.put("fansNum", newFansNum == null ? "" : newFansNum.toString());
+			this.setJson(AjaxData.getSuccessJson("success", result));
 		} catch (SessionException e) {
 			this.setJson(AjaxData.getNotLoginErrorJson(e.getMessage(), null, null));
 		} catch (ServiceException e) {
@@ -1153,6 +1448,41 @@ public class UserAction extends BaseAction {
 	}
 
 	/**
+	 * 显示图片接口
+	 * 
+	 * @return
+	 * @throws SessionException
+	 */
+	public String showpic() throws SessionException {
+		if (StringUtil.isEmpty(emsg))
+			return "showpic";
+		String[] ps = this.gameParaDecrypt();
+		System.out.println(ps[0] + "_" + ps[1]);
+		User user = this.userService.getUserByHashid(ps[0] + "_" + ps[1]);
+		this.getRequest().setAttribute("user", user);
+		return "showpic";
+	}
+
+	/**
+	 * 游戏接口URL参数解密
+	 * 
+	 * @return String[] - String[0]: gmid , String[1]: hashid
+	 */
+	public String[] gameParaDecrypt() {
+		String msg = EncryptUtil.DESdecrypt(emsg);
+		String[] paras = msg.split("&");
+		String[] ps = new String[2];
+		for (String para : paras) {
+			String[] p = para.split("=");
+			if (p[0].trim().equals("gmid"))
+				ps[0] = p[1].trim();
+			else if (p[0].trim().equals("hashid"))
+				ps[1] = p[1].trim();
+		}
+		return ps;
+	}
+
+	/**
 	 * 普通个人信息页【未登录】
 	 * 
 	 * @return
@@ -1167,6 +1497,34 @@ public class UserAction extends BaseAction {
 		} catch (RuntimeException e) {
 			return null;
 		}
+	}
+
+	public String acceptTask() throws SessionException {
+		if (taskAccept == null)
+			return "acceptTask";
+		User user = SessionUtil.getLogonUser().getUser();
+		taskAccept.setUserId(user.getId());
+		taskAccept.setUserName(user.getName());
+		try {
+			this.userService.acceptTask(taskAccept);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "acceptTask";
+	}
+
+	public String publishTask() throws SessionException {
+		if (task == null)
+			return "publishTask";
+		User user = SessionUtil.getLogonUser().getUser();
+		task.setUserId(user.getId());
+		task.setUserName(user.getName());
+		try {
+			this.userService.publishTask(task);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "publishTask";
 	}
 
 	public User getUser() {
@@ -1255,5 +1613,45 @@ public class UserAction extends BaseAction {
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	public String getRating() {
+		return rating;
+	}
+
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
+
+	public String getAvg() {
+		return avg;
+	}
+
+	public void setAvg(String avg) {
+		this.avg = avg;
+	}
+
+	public String getLastId() {
+		return lastId;
+	}
+
+	public void setLastId(String lastId) {
+		this.lastId = lastId;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public String getHashid() {
+		return hashid;
+	}
+
+	public void setHashid(String hashid) {
+		this.hashid = hashid;
 	}
 }

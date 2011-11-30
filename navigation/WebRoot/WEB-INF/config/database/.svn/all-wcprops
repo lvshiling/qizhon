@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/config/database
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/config/database
 END
 database.properties
 K 25
@@ -31,5 +31,5 @@ hibernate.cfg.xml
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/WEB-INF/config/database/hibernate.cfg.xml
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/WEB-INF/config/database/hibernate.cfg.xml
 END

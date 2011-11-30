@@ -16,7 +16,7 @@
 					<a href="javascript:login();void(0);" title="帐户登录">登录</a>|<a href="javascript:register();void(0);" title="注册本站用户">注册</a>|<a href="/">视频客服</a>
 				</s:else>
 			</div>
-			<div id="navbar"><a id="nv_index" href="/" class="lit">首页</a>|<a id="nv_rank" href="/rank/rank.do">排行榜</a>|<a id="nv_task" href="/">任务</a>|<a id="nv_family" href="/">家族</a>|<a id="nv_game" href="/">小游戏</a>|<a id="nv_charge" href="${domain }/pay/topay.do" target="_blank">充值乐币</a></div>
+			<div id="navbar"><a id="nv_index" href="/" class="lit">首页</a>|<a id="nv_rank" href="/rank/rank.do">排行榜</a>|<a id="nv_contest" target="_blank" href="${domain}/contest/bingwang.do">选美大赛</a>|<a id="nv_task" href="${domain}/task/index.do">任务</a>|<a id="nv_auth" target="_blank" href="${domain}/user/auth.do">视频认证</a>|<a id="nv_charge" href="${domain}/pay/topay.do" target="_blank">充值乐币</a></div>
 		</div>
 	</div>
 </div>
@@ -30,6 +30,7 @@
 			<label for="nav_password">密码</label>
 			<input type="password" name="user.password" id="nav_password" value="" class="text wp95" />
 			<label><a href="javascript:;" onclick="register();" title="注册用户">注册本站用户</a></label>
+			<input type="hidden" name="user.hashid" id="nav_hashid" value="${requestScope.gmhashid}" />
 		</form>
 		<div class="fleft pd10 ml20">
 			<div class="mb10"><a href="${domain }/bind/sina/sinaLoginPage.do?opt=1" title="新浪微博登录"><img src="${domain }/images/video/icon/sina_login.png" /></a></div>
@@ -49,6 +50,7 @@
 			<label for="password">昵称</label>
 			<input type="text" name="user.name" value="" class="text wp95" />
 			<label class="mt10">已有帐号 <a href="javascript:;" onclick="login();" title="本站用户登录">立即登录</a></label>
+			<input type="hidden" name="user.hashid" id="registerHashid" value="${requestScope.gmhashid}" />
 		</form>
 		<div class="fleft pd10 ml20">
 			<div class="mb10"><a href="${domain }/bind/sina/sinaLoginPage.do?opt=1" title="新浪微博登录"><img src="${domain }/images/video/icon/sina_login.png" /></a></div>

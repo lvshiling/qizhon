@@ -45,4 +45,6 @@ public interface UserPictureDao {
 	public void delete(UserPicture record);
 
 	public List<UserPicture> getUserPics(Integer userId, Integer p, Integer pageSize);
+
+	public Integer getUserPicsCount(Integer userId);
 }

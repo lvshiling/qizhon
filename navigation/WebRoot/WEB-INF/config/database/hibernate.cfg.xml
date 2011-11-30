@@ -38,5 +38,8 @@
 		<mapping resource="com/navigation/pojo/UserNews.hbm.xml" />
 		<mapping resource="com/navigation/pojo/UserAuth.hbm.xml" />
 		<mapping resource="com/navigation/pojo/UserScoreLog.hbm.xml" />
+		
+		<mapping resource="com/navigation/pojo/Task.hbm.xml" />
+		<mapping resource="com/navigation/pojo/TaskAccept.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

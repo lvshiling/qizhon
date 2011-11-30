@@ -93,16 +93,13 @@ function checkLogin(){		//本站用户登录
 	//$("#password").val(hex_md5($("#password").val()));
 	var email = $("#nav_email").val();
 	var password = $("#nav_password").val();
-	//切换域用户登录
-	//if(email.toLowerCase().indexOf("@ztgame.com") != -1){
-	//	$("#adEmail").val(email);
-	//	$("#adPassword").val(password);
-	//	adLogin();
-	//	checkAdLogin();
-	//	return;
-	//}
+	var hashid = $("#nav_hashid").val();
+	var params = {"user.mail":email,"user.password":password};
+	if(hashid){
+		params = {"user.mail":email,"user.password":password,"user.hashid":hashid};
+	}
 	$("#login_tips").html("正在登录中，请稍候...");
-	$.post(Path.domain+"/user/ajaxLoginApi.do", {"user.mail":email,"user.password":password}, function(d){
+	$.post(Path.domain+"/user/ajaxLoginApi.do", params, function(d){
 		if(d['status'] == 1){
 			$("#login_tips").html(d['message']+"，请稍候");
 			switchLogin(true,d.values.name,d.values.id);
@@ -141,7 +138,8 @@ function logout(){	//登出
 	$.post(Path.domain+"/user/ajaxLogoutApi.do", {}, function(d){
 		if(d['status'] == 1){
 			alert((d['message']||"登出成功")+"，请稍候");
-			switchLogin(false);
+			//switchLogin(false);
+			location.href = "/";
 			window.setTimeout('alertClose();',1000);
 		}else alert( d['message']||"登出失败");
 	},'json');
@@ -450,6 +448,19 @@ function getCurTime(){
 	var mm = m < 10 ? '0'+m : m;
 	return hh + ":" + mm;
 }
+function getDateTimeHHmm(str){
+	var i = str.lastIndexOf(":");
+	if(i<0) return str;
+	return str.substring(0, i);
+}  
+function checkDateTime(str){   
+	var reg = /^(\d+)-(\d{1,2})-(\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})$/;   
+	return reg.test(str);
+}
+function trim(str) {return str.replace(/^\s+|\s+$/g,"");}
+function ltrim(str) {return str.replace(/^\s+/,"");}
+function rtrim(str) {return str.replace(/\s+$/,"");}
+
 function bubbleSort(array, n) { //由高到低
 	var temp = null;
 	var length = array.length;

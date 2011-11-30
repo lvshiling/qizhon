@@ -19,6 +19,7 @@
     <bean id="fileAction" class="com.navigation.action.file.FileAction" scope="prototype" />
     <bean id="neteasyWeiboAction" class="com.navigation.action.weibo.NeteasyWeiboAction" scope="prototype" />
     <bean id="payAction" class="com.navigation.action.credit.PayAction" scope="prototype" />
+    <bean id="taskAction" class="com.navigation.action.task.TaskAction" scope="prototype" />
     
     <bean id="jiasuAction" class="com.navigation.jiasu.action.IndexAction" scope="prototype" />
     <bean id="rankAction" class="com.navigation.action.rank.RankAction" scope="prototype" />

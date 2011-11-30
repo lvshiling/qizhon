@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo
+V 70
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/pojo
 END
 Tag.hbm.xml
 K 25
@@ -15,23 +15,29 @@ svn:wc:ra_dav:version-url
 V 82
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Topic.hbm.xml
 END
+TaskAccept.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/TaskAccept.hbm.xml
+END
 BaseBoardBean.java
 K 25
 svn:wc:ra_dav:version-url
 V 87
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/BaseBoardBean.java
 END
-UserTopicSort.hbm.xml
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserTopicSort.hbm.xml
-END
 UserMsg.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserMsg.hbm.xml
+END
+UserTopicSort.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserTopicSort.hbm.xml
 END
 UserNotice.java
 K 25
@@ -45,11 +51,11 @@ svn:wc:ra_dav:version-url
 V 89
 /svn/navigation/!svn/ver/7/trunk/release-1.0/src/com/navigation/pojo/UserVisitLog.hbm.xml
 END
-UserMsg.java
+UserGameArea.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserMsg.java
+V 89
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserGameArea.hbm.xml
 END
 UserTopicSort.java
 K 25
@@ -57,23 +63,23 @@ svn:wc:ra_dav:version-url
 V 87
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserTopicSort.java
 END
-UserGameArea.hbm.xml
+UserMsg.java
 K 25
 svn:wc:ra_dav:version-url
-V 89
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserGameArea.hbm.xml
-END
-FileSearchConfig.java
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileSearchConfig.java
+V 81
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserMsg.java
 END
 UserArea.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
 V 85
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserArea.hbm.xml
+END
+FileSearchConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/FileSearchConfig.java
 END
 UserLink.java
 K 25
@@ -102,8 +108,14 @@ END
 User.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/User.hbm.xml
+V 83
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/pojo/User.hbm.xml
+END
+Task.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/Task.java
 END
 UserNotice.hbm.xml
 K 25
@@ -163,7 +175,7 @@ Room.java
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/pojo/Room.java
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/Room.java
 END
 Topic.java
 K 25
@@ -182,6 +194,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 86
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserLogState.java
+END
+TaskAccept.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/pojo/TaskAccept.java
 END
 GameArea.hbm.xml
 K 25
@@ -211,19 +229,13 @@ UserPicture.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserPicture.hbm.xml
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/UserPicture.hbm.xml
 END
-UserAuth.java
+UserScoreLog.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
-V 83
-/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/UserAuth.java
-END
-Room.hbm.xml
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/navigation/!svn/ver/38/trunk/release-1.0/src/com/navigation/pojo/Room.hbm.xml
+V 90
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/UserScoreLog.hbm.xml
 END
 News.hbm.xml
 K 25
@@ -231,11 +243,17 @@ svn:wc:ra_dav:version-url
 V 81
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/News.hbm.xml
 END
-UserScoreLog.hbm.xml
+Room.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserScoreLog.hbm.xml
+V 82
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/Room.hbm.xml
+END
+UserAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/UserAuth.java
 END
 UserRecordVideo.java
 K 25
@@ -267,11 +285,11 @@ svn:wc:ra_dav:version-url
 V 77
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/Tag.java
 END
-UserInfo.hbm.xml
+User.java
 K 25
 svn:wc:ra_dav:version-url
-V 86
-/svn/navigation/!svn/ver/34/trunk/release-1.0/src/com/navigation/pojo/UserInfo.hbm.xml
+V 79
+/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/User.java
 END
 TopicReply.hbm.xml
 K 25
@@ -279,11 +297,11 @@ svn:wc:ra_dav:version-url
 V 87
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/TopicReply.hbm.xml
 END
-User.java
+UserInfo.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/User.java
+V 86
+/svn/navigation/!svn/ver/34/trunk/release-1.0/src/com/navigation/pojo/UserInfo.hbm.xml
 END
 FileSearchConfig.hbm.xml
 K 25
@@ -309,17 +327,17 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/navigation/!svn/ver/59/trunk/release-1.0/src/com/navigation/pojo/UserRecordVideo.hbm.xml
 END
-UserVisitLog.java
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/navigation/!svn/ver/7/trunk/release-1.0/src/com/navigation/pojo/UserVisitLog.java
-END
 UserCreditLog.hbm.xml
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/UserCreditLog.hbm.xml
+END
+UserVisitLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/navigation/!svn/ver/7/trunk/release-1.0/src/com/navigation/pojo/UserVisitLog.java
 END
 FileGpass.hbm.xml
 K 25
@@ -355,7 +373,7 @@ UserNews.java
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svn/navigation/!svn/ver/47/trunk/release-1.0/src/com/navigation/pojo/UserNews.java
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/UserNews.java
 END
 FileGpass.java
 K 25
@@ -374,6 +392,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 83
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/pojo/TopicSort.java
+END
+Task.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/pojo/Task.hbm.xml
 END
 UserInfo.java
 K 25

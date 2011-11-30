@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/svn/navigation/!svn/ver/76/trunk/release-1.0/WebRoot/js/video
+V 63
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/js/video
 END
 snimages.js
 K 25
@@ -12,12 +12,18 @@ END
 header.js
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/navigation/!svn/ver/36/trunk/release-1.0/WebRoot/js/video/header.js
+V 73
+/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/js/video/header.js
+END
+calendar.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/navigation/!svn/ver/96/trunk/release-1.0/WebRoot/js/video/calendar.js
 END
 userinfo.js
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/navigation/!svn/ver/59/trunk/release-1.0/WebRoot/js/video/userinfo.js
+/svn/navigation/!svn/ver/97/trunk/release-1.0/WebRoot/js/video/userinfo.js
 END

@@ -46,13 +46,13 @@
 #index #loginBar{text-align:right; margin: 8px 25px 10px 0; }
 #index #loginBar input{margin-right:3px; vertical-align:middle;border:1px solid #999;font-size:13px;height:23px;line-height:23px;width:112px;color:#656565;}
 
-#index #topContainer{ display:block;width: 985px;height:244px; }
+/*#index #topContainer{ display:block;width: 985px;height:244px; }
 #index #topContainer #slideControl{float:left; height:244px; width:248px; padding-top:20px;}
 #index #topContainer #slideControl li{display:block; height:35px; border:1px solid #e7e7e7;padding-top:15px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 #index #topContainer #slideControl li a{font-size:15px;}
 #index #topContainer #slideControl li.current{background:#009eaa;}
 #index #topContainer #slideControl li.current a{color:#fff;} 
-#index #topContainer #slider {float:right;width:734px; height:243px;}
+#index #topContainer #slider {float:right;width:734px; height:243px;}*/
 
 #index #leftSider{ float:left; margin-bottom:30px; }
 #index .showBoxTop{ padding-top:15px !important; padding-top:5px; display:block; width:775px; height:3px; background: #fff url(../../images/video/showbox_top.gif) no-repeat left bottom;}
@@ -91,7 +91,7 @@
 #index .listBox .incrIcon{ margin-left:7px; margin-right:9px;}
 
 /*=========== chat.jsp ============*/
-#chat{font-family: "Microsoft Yahei",Tahoma,Simsun,Arial,Helvetica,sans-serif; text-align: center;/*background:#e8e6e7;*/ padding-top:30px; padding-bottom:30px;}
+#chat{font-family: "Microsoft Yahei",Tahoma,Simsun,Arial,Helvetica,sans-serif; text-align: center;/*background:#e8e6e7;*/ padding-top:0; padding-bottom:30px;}
 #chat #adminTopBar{display:none; margin: auto; overflow:visible; margin-top:-25px; margin-bottom:3px; height:50px;width:989px;background:#f8f8f8;}
 #chat #adminTopBar ul.fix{float:left;}
 #chat #adminTopBar ul.fix li{font-size:15px; float:left; width:110px; height:30px; margin-top:15px;}
@@ -133,6 +133,7 @@
 #chat #videoBox #ls1{ width:450px; height:96px; border-bottom:1px solid #343434;margin-top:-160px; background:#eee; border:1px solid #d5d5d5;}
 #chat #videoBox #ls1 li{float:left; margin:5px;}
 #chat #videoBox #ls1 li a:hover{background-color:#ccc;}
+#chat #videoBox #ls1 li img{margin:0 7px;}
 #chat #videoBox #ls1 li label{margin:0 7px; cursor:pointer;}
 #chat #videoBox .hid {display:none; margin-top:0px;}
 #chat #videoBox .ln2{ color:#ccc; font-size:13px; display:block; width:450px; float:left; padding-top:10px; padding-left:15px;}
@@ -160,6 +161,7 @@
 #chat .chartBoxTop{ width:481px !important; width:495px; height:24px !important; height:30px; background:#fff url(../../images/video/chatbox_top.gif) repeat-x left top; padding-top:6px; padding-left:14px;font-size:15px; font-weight:bold; color:#fd7600;}
 #chat .chartBoxTop img{ vertical-align: middle; margin-right:10px; margin-bottom:5px !important; margin-bottom:0px;}
 #chat .red0{color:#fd7704;}
+#chat .FCRed{color:#ff0000;}
 #chat .chartBoxMain {display:block;}
 #chat .chartBoxMain .chartBoxItem {height:70px; padding-left:22px; border-bottom:1px solid #e0e0e2;}
 #chat .chartBoxMain .rankf {margin-top:15px;float:left;margin-right:25px;}

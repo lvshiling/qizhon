@@ -18,6 +18,50 @@ public class CreditUtils {
 	 * 礼物类型：猪头
 	 */
 	public static final String GIFT_TYPE_PIG = "pig";
+	/**
+	 * 礼物类型：花束
+	 */
+	public static final String GIFT_TYPE_BOUQUET = "bouquet";
+	/**
+	 * 礼物类型：棒棒糖
+	 */
+	public static final String GIFT_TYPE_LOLLIPOP = "lollipop";
+	/**
+	 * 礼物类型：蓝玫瑰
+	 */
+	public static final String GIFT_TYPE_BLUEROSE2 = "blueRose2";
+	/**
+	 * 礼物类型：搓板
+	 */
+	public static final String GIFT_TYPE_WASHBOARD = "washboard";
+	/**
+	 * 礼物类型：香烟
+	 */
+	public static final String GIFT_TYPE_CIGARETTE = "cigarette";
+	/**
+	 * 礼物类型：么么
+	 */
+	public static final String GIFT_TYPE_KISS = "kiss";
+	/**
+	 * 礼物类型：喉宝
+	 */
+	public static final String GIFT_TYPE_LOZENGE = "lozenge";
+	/**
+	 * 礼物类型：啤酒
+	 */
+	public static final String GIFT_TYPE_WINE = "wine";
+	/**
+	 * 礼物类型：眼霜
+	 */
+	public static final String GIFT_TYPE_EYECREAM = "eyeCream";
+	/**
+	 * 礼物类型：奶牛
+	 */
+	public static final String GIFT_TYPE_COW = "cow";
+	/**
+	 * 礼物类型：爱心
+	 */
+	public static final String GIFT_TYPE_ROSE99 = "rose99";
 
 	/**
 	 * 存储礼物对应的乐币价值
@@ -26,6 +70,17 @@ public class CreditUtils {
 	static {
 		GIFT_STORE.put(GIFT_TYPE_ROSE, 5);
 		GIFT_STORE.put(GIFT_TYPE_PIG, 10);
+		GIFT_STORE.put(GIFT_TYPE_BOUQUET, 10);
+		GIFT_STORE.put(GIFT_TYPE_LOLLIPOP, 20);
+		GIFT_STORE.put(GIFT_TYPE_BLUEROSE2, 30);
+		GIFT_STORE.put(GIFT_TYPE_WASHBOARD, 30);
+		GIFT_STORE.put(GIFT_TYPE_CIGARETTE, 40);
+		GIFT_STORE.put(GIFT_TYPE_KISS, 50);
+		GIFT_STORE.put(GIFT_TYPE_LOZENGE, 50);
+		GIFT_STORE.put(GIFT_TYPE_WINE, 60);
+		GIFT_STORE.put(GIFT_TYPE_EYECREAM, 60);
+		GIFT_STORE.put(GIFT_TYPE_COW, 80);
+		GIFT_STORE.put(GIFT_TYPE_ROSE99, 100);
 	}
 
 	/**
@@ -65,7 +120,7 @@ public class CreditUtils {
 			return result > 60 ? 60 : result;
 		}
 	}
-	
+
 	/**
 	 * 主播从礼物中获得的提成
 	 * 

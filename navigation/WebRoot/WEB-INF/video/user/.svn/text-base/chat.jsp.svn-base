@@ -16,19 +16,17 @@
 <body>
 <!-- 内容 -->
 <div id="chat">
-<div id="adminTopBar">
-	<ul class="fix"><li class="n1"><a href="">转移观众</a></li><li class="n2"><a href="">房间公告</a></li><li class="n3"><a href="">房间背景</a></li><li class="n4"><a href="">离线录像</a></li><li class="n5"><a href="">公聊</a></li><li class="n6"><a href="">金蛋</a></li><li class="n7"><a href="">设置游戏</a></li></ul>
-</div>
+<div style="margin:12px auto 3px;"><jsp:include page="gnavi.jsp" /></div>
 <div id="roomContent">
 	<div id="altContent"></div>
 	<div id="introContainer">
 		<div id="introBox">
 			<div class="avatarBox">
-				<a href="${domain}/user/id.do?uid=${requestScope.userId }"><img src="${requestScope.user.icon1}" onerror="this.src='${requestScope.user.icon}';" width="70" height="68" /></a>
+				<a href="${domain}/user/index.do?uid=${requestScope.userId }"><img src="${requestScope.user.icon1}" onerror="this.src='${requestScope.user.icon}';" width="70" height="68" /></a>
 			</div>
 			<div class="rightIntroBox">
 				<div class="ln1">
-					<div class="fleft"><span class="red1"><a href="${domain}/user/id.do?uid=${requestScope.userId }" style="color:#e37d00;">${requestScope.user.name}</a></span><img src="${domain }/images/video/diamond_3.png" /><br />
+					<div class="fleft"><span class="red1"><a href="${domain}/user/index.do?uid=${requestScope.userId }" style="color:#e37d00;">${requestScope.user.name}</a></span><img src="${domain }/images/video/diamond_3.png" /><br />
 					明星等级：<span class="gray1"><script>document.write(getStarGradeText(${requestScope.user.userCredit.starGrade}));</script></span><span class="tabs"></span>魅力值：<span class="gray1">${requestScope.user.userCredit.visits}</span></div>
 					<s:if test="userToken.user != null">
 						<s:if test="!#request.isSelf">
@@ -72,8 +70,8 @@
 					params_public.wmode = "transparent";
 					var flashvars_public = {};
 					flashvars_public.key = "${requestScope.roomKey}";
-					flashvars_public.rtmpUrl = "${requestScope.red5Server}";
-					flashvars_public.saveUrl = "${requestScope.red5Server}";
+					flashvars_public.rtmpUrl = "${requestScope.redOrginServer}";
+					//flashvars_public.saveUrl = "${requestScope.redOrginServer}";
 					flashvars_public.uid = "${userToken.user.id }";
 					flashvars_public.saveUrl = "${domain}/user/ajaxUploadHeadPage.do";
 					swfobject.embedSWF("${domain}/images/swf/TVShow.swf", "flashContent", "450", "333", swfVersionStr_public, 
@@ -221,8 +219,19 @@
 			</div>
 			<div id="ls1" class="hid">
 				<ul>
-					<li><a href="javascript:;" id="rose" onclick="selOneGift(this);" title="价值：5个乐币"><img src="${domain }/images/video/gift/rose.gif" width="32" height="32" /><br/><label>玫瑰</label></a></li>
-					<li><a href="javascript:;" id="pig" onclick="selOneGift(this);" title="价值：10个乐币"><img src="${domain }/images/video/gift/pig.gif" width="32" height="32" /><br/><label>猪头</label></a></li>
+					<li><a href="javascript:;" id="rose" onclick="selOneGift(this);" title="价值：5个乐币"><img src="${domain }/images/gift/rose.png" width="22" height="22" /><br/><label>玫瑰</label></a></li>
+					<li><a href="javascript:;" id="pig" onclick="selOneGift(this);" title="价值：10个乐币"><img src="${domain }/images/gift/pig.png" width="22" height="22" /><br/><label>猪头</label></a></li>
+					<li><a href="javascript:;" id="bouquet" onclick="selOneGift(this);" title="价值：10个乐币"><img src="${domain }/images/gift/bouquet.png" width="22" height="22" /><br/><label>花束</label></a></li>
+					<li><a href="javascript:;" id="lollipop" onclick="selOneGift(this);" title="价值：20个乐币"><img src="${domain }/images/gift/lollipop.png" width="22" height="22" /><br/><label>棒棒糖</label></a></li>
+					<li><a href="javascript:;" id="blueRose2" onclick="selOneGift(this);" title="价值：30个乐币"><img src="${domain }/images/gift/blueRose2.png" width="22" height="22" /><br/><label>蓝玫瑰</label></a></li>
+					<li><a href="javascript:;" id="washboard" onclick="selOneGift(this);" title="价值：30个乐币"><img src="${domain }/images/gift/washboard.png" width="22" height="22" /><br/><label>搓板</label></a></li>
+					<li><a href="javascript:;" id="cigarette" onclick="selOneGift(this);" title="价值：40个乐币"><img src="${domain }/images/gift/cigarette.png" width="22" height="22" /><br/><label>香烟</label></a></li>
+					<li><a href="javascript:;" id="kiss" onclick="selOneGift(this);" title="价值：50个乐币"><img src="${domain }/images/gift/kiss.png" width="22" height="22" /><br/><label>么么</label></a></li>
+					<li><a href="javascript:;" id="lozenge" onclick="selOneGift(this);" title="价值：50个乐币"><img src="${domain }/images/gift/lozenge.png" width="22" height="22" /><br/><label>喉宝</label></a></li>
+					<li><a href="javascript:;" id="wine" onclick="selOneGift(this);" title="价值：60个乐币"><img src="${domain }/images/gift/wine.png" width="22" height="22" /><br/><label>啤酒</label></a></li>
+					<li><a href="javascript:;" id="eyeCream" onclick="selOneGift(this);" title="价值：60个乐币"><img src="${domain }/images/gift/eyeCream.png" width="22" height="22" /><br/><label>眼霜</label></a></li>
+					<li><a href="javascript:;" id="cow" onclick="selOneGift(this);" title="价值：80个乐币"><img src="${domain }/images/gift/cow.png" width="22" height="22" /><br/><label>奶牛</label></a></li>
+					<li><a href="javascript:;" id="rose99" onclick="selOneGift(this);" title="价值：100个乐币"><img src="${domain }/images/gift/rose99.png" width="22" height="22" /><br/><label>爱心</label></a></li>
 				</ul>
 			</div>
 			<div class="ln2">
@@ -262,10 +271,10 @@
 						<div class="dl"></div>
 						<a href="javascript:;" onclick="goSendGift();">• 发送礼物</a>
 						<a>• 加为好友</a>
-						<a class="red">• 给Ta贴条</a>
+						<a id="lnkScr" href="javascript:;" target="_blank" class="FCRed">• 给Ta打分</a>
 						<a href="javascript:;" onclick="goSpeakPub();">• 公开地说</a>
 						<a href="javascript:;" onclick="goSpeakPriv();">• 悄悄地说</a>
-						<a class="lnkEntRm" href="javascript:;" target="_self">• 进入房间</a>
+						<a id="lnkEntRm" href="javascript:;" target="_self">• 进入房间</a>
 					</div>
 				</div>
 			</div>
@@ -314,8 +323,8 @@
 					<s:set name="richman" />
 					<div class="chartBoxItem">
 						<img src="${domain }/images/video/rankf_<s:property value='#status.count'/>.jpg" class="rankf" />
-						<a href="${domain }/user/id.do?uid=${richman.user.id}"><img class="avatf" src="${richman.user.icon1}" onerror="this.src='${richman.user.icon}';" width="60" height="60" /></a>
-						<span class="namef"><script type="text/javascript">document.write(getRichGradeText(${richman.richGrade}));</script><br/><a href="${domain }/user/id.do?uid=${richman.user.id}">${richman.user.name }</a></span>
+						<a href="${domain }/user/index.do?uid=${richman.user.id}"><img class="avatf" src="${richman.user.icon1}" onerror="this.src='${richman.user.icon}';" width="60" height="60" /></a>
+						<span class="namef"><script type="text/javascript">document.write(getRichGradeText(${richman.richGrade}));</script><br/><a href="${domain }/user/index.do?uid=${richman.user.id}">${richman.user.name }</a></span>
 						<div class="fright w170"><img class="coinf" src="${domain }/images/video/coin.jpg" />
 						<span class="credf">${richman.spendCredit }</span></div>
 					</div>
@@ -372,6 +381,8 @@ var onload = true;
 window.setTimeout('onload=false;',5000);
 window.setInterval("_REGET_ROOM=true;", 30000);
 $(function(){
+	$('#sbar_room').attr('target','_self');
+
 	if($('#anonymous').val()=='YES'){
 		flashvars.nickName = encodeGuest();
 		flashvars.anonymous = "YES";
@@ -433,7 +444,8 @@ $(function(){
 			towho = $(this).find("span.un").text();
 			towhonick = towhoid+","+towho+","+$(this).find("span.gg").text();
 			$('#userManager p').html(towho+':');
-			$('#userManager a.lnkEntRm').attr('href','${domain}/user/chat.do?uid='+towhoid);
+			$('#userManager a#lnkScr').attr('href','${domain}/user/score.do?uid='+towhoid);
+			$('#userManager a#lnkEntRm').attr('href','${domain}/user/chat.do?uid='+towhoid);
 			var t = $(this).offset().top;
 			var l = $(this).offset().left;
 			var ll = l - 130;
@@ -613,6 +625,9 @@ function getRoomates(){
 	var uarr = new Array(); //user array
 	var tarr = new Array(); //tourist array
 	var list = getRoom().getPartList().split(";");
+	if('${requestScope.isSelf}'=='true'){
+		$.post("${domain}/user/ajaxUpdateRoomOccuCntApi.do", {"roomNo":'${requestScope.room.roomNo}',"count":list.length}, function(d){},'json');
+	}
 	var x = 0, y = 0;
 	$.each(list,function(i,n){
 		if(n != "qule" && n != ""){
@@ -725,6 +740,28 @@ function getGiftText(giftId){
 		return " 朵玫瑰。";
 	}else if(giftId=="pig"){
 		return " 个猪头。";
+	}else if(giftId=="bouquet"){
+		return " 束鲜花。";
+	}else if(giftId=="cigarette"){
+		return " 包香烟。";
+	}else if(giftId=="cow"){
+		return " 头奶牛。";
+	}else if(giftId=="blueRose2"){
+		return " 束蓝玫瑰。";
+	}else if(giftId=="eyeCream"){
+		return " 瓶眼霜。";
+	}else if(giftId=="kiss"){
+		return " 个么么。";
+	}else if(giftId=="lollipop"){
+		return " 根棒棒糖。";
+	}else if(giftId=="lozenge"){
+		return " 个喉宝。";
+	}else if(giftId=="wine"){
+		return " 瓶啤酒。";
+	}else if(giftId=="washboard"){
+		return " 个搓板。";
+	}else if(giftId=="rose99"){
+		return " 个爱心。";
 	}else{
 		return "";
 	}

@@ -7,6 +7,23 @@
 <title>照片打分</title>
 <script type="text/javascript" src="${domain }/js/lib/swfobject.js"></script>
 <script type="text/javascript" src="${domain }/js/video/userinfo.js"></script>
+<script type="text/javascript">
+function getScoreText(rating, avg){
+	if(rating!='' && avg!=''){
+		var r = parseFloat(rating);
+		var a = parseFloat(avg);
+		if(r > a){
+			return "谢谢哦！";
+		}else if(r < a){
+			return "神马啊！";
+		}else{
+			return "评得真准！";
+		}
+	}else{
+		return "";
+	}
+}
+</script>
 <style type="text/css">
 body {
 	background-color: #FFF;
@@ -88,6 +105,7 @@ body {
 }
 .photoRate .b_photo_right .box_t_l p.list a img {
 	border:2px solid #fff;
+	max-height: 240px;
 }
 .photoRate .b_photo_right .box_t_l p.list a img:hover {
 	border:2px solid #F90;
@@ -158,6 +176,9 @@ body {
 	font-size: 13px;
 	font-weight: bold;
 }
+.photoRate .mb10 {
+	margin-bottom: 10px;
+}
 
 .photoRate .fs_12 {
 	font-size: 13px;
@@ -189,7 +210,7 @@ body {
 		    var xiSwfUrlStr_public = "${domain}/images/swf/expressInstall.swf"; 
 			var attributes_public = {};
 			var params_public = {};
-			//params_public.wmode = "transparent";
+			params_public.wmode = "transparent";
 			var flashvars_public = {};
 			flashvars_public.postUrl = "${domain}/user/ajaxGiveScoreApi.do";
 			flashvars_public.uid = "${scuser.id}";
@@ -204,34 +225,41 @@ body {
 		<div class="s_photo_left">
 			<p class="list"><img src="${domain}/images/video/ico_img2.gif" alt="" /></p>
 			<ul>
-				<li class="list"><a href="javascript:;"><img width="72" height="72" src="${scuser.icon1}" onerror="this.src='${domain}/images/default.jpg';" alt="" /></a></li>
 				<s:iterator value="#request.userList1" status="status">
-					<li class="list2"><a href="${domain}/user/score.do?uid=${id}"><img width="72" height="72" src="${icon1}" onerror="this.src='${domain}/images/default.jpg';" alt="" /></a></li>
+					<s:if test="#status.index==0">
+						<li class="list"><a href="${domain}/user/score.do?uid=${id}"><img width="72" height="72" src="${icon1}" onerror="this.src='${domain}/images/default.jpg';" alt="" /></a></li>
+					</s:if>
+					<s:else>
+						<li class="list2"><a href="${domain}/user/score.do?uid=${id}"><img width="72" height="72" src="${icon1}" onerror="this.src='${domain}/images/default.jpg';" alt="" /></a></li>
+					</s:else>
 				</s:iterator>
 			</ul>
 		</div>
 		<div class="b_photo_right">
 			<div class="box_t">
 				<div class="box_t_l">
-						<p class="list"><a href="${domain}/user/id.do?uid=${scuser.id}" target="_blank" title="点击查看更多资料，照片"><img id="current_user_img" src="${scuser.picPath}" alt="" /></a></p>
+						<p class="list"><a href="${domain}/user/index.do?uid=${scuser.id}" target="_blank" title="点击查看更多资料，照片"><img id="current_user_img" src="" alt="" /></a></p>
 						<p class="list2"><a href="#" target="_blank">${scuser.name}</a> <s:if test="#request.userInfo.userAge>0">${userInfo.userAge}岁</s:if> <script type="text/javascript">document.write(getProvAndCity('${userInfo.userCity}'));</script> <a href="#" target="_blank">详细资料</a></p>
 						<p><span class="fb_13">"</span><span>想和一个男生,25岁-35岁去看海</span><span class="fb_13 f_0">"</span></p>
 				</div>
 				<div class="info_box">
-					<ul>
-						<li><img src="${domain}/images/video/question_01.gif" alt="" /></li>
-						<li><strong>您的评分: </strong><span>暂无</span></li>
-						<li class="bg">得分待评</li>
-					</ul>
-					<div class="info" style="display:none">
-						<p class="fb_13">您给她打：<span class="yellow">7.1分</span></p>
-						<p class="fb_13">她的平均分：<span class="yellow">9.4分</span></p>
-						<p class="tipbg">神马啊！</p>
-						<p class="img_b" id="last_ping_img"><a href="#" target="_blank"><img src="${domain}/images/video/12.jpg" alt="" /></a></p>
-						<p class="f_6"><a href="#" target="_blank">joy</a> <span class="yellow">(4照片)</span></p>
-						<p class="f_6">25岁，上海浦东</p>
-						<p class="fs_12"><a href="#" target="_blank" class="f_6">查看我打过的人..</a></p>
-					</div>
+					<s:if test="#request.rating==null || #request.rating==''">
+						<ul>
+							<li><img src="${domain}/images/video/question_01.gif" alt="" /></li>
+							<li><strong>您的评分: </strong><span>暂无</span></li>
+							<li class="bg">得分待评</li>
+						</ul>
+					</s:if>
+					<s:else>
+						<div class="info">
+							<p class="fb_13">您给她打：<span class="yellow">${requestScope.rating}分</span></p>
+							<p class="fb_13 mb10">她的平均分：<span class="yellow">${requestScope.avg}分</span></p>
+							<p class="tipbg"><script type="text/javascript">document.write(getScoreText('${requestScope.rating}','${requestScope.avg}'));</script></p>
+							<p class="img_b" id="last_ping_img"><a href="#" target="_blank"><img width="72" height="72" src="${requestScope.lastUser.icon1 }" alt="" /></a></p>
+							<p class="f_6"><a href="#" target="_blank">${requestScope.lastUser.name }</a> </p>
+							<p class="fs_12"><a href="#" target="_blank" class="f_6">查看我打过的人</a></p>
+						</div>
+					</s:else>
 				</div>
 			</div>
 			<div class="box_b clear">
@@ -250,14 +278,14 @@ body {
 $(function(){
 	var img = new Image();
 	var imgUI = $('#current_user_img');
-	img.src = imgUI.attr('src');
+	img.src = '${scuser.picPath}';
 	var h = (img.height*296)/img.width;
 	var w = (img.width*240)/img.height;
 	if(img.width>296 && img.height<241){
 		imgUI.attr('width','296');
 		imgUI.attr('height', h.toString());
 	}else if(img.height>240 && img.width<297){
-		imgUI.attr('height','240');
+		imgUI.attr('height' ,'240');
 		imgUI.attr('width', w.toString());
 	}else if(img.height>240 && img.width>296){
 		if(h < 241){
@@ -271,11 +299,20 @@ $(function(){
 			imgUI.attr('height','240');
 		}
 	}
+	imgUI.attr('src','${scuser.picPath}');	
 });
 
 function giveScore(res){
-	al(res);
-	//var json = eval('('+res+')');
+	var json = eval('('+res+')');
+	var status = json.status;
+	if(status == 1){
+		var rating = json.values.rating;
+		var avg = json.values.avg;
+		var lastId = json.values.lastId;
+		location.href = "${domain}/user/score.do?rating="+rating+"&avg="+avg+"&lastId="+lastId;
+	}else if(status == -2){
+		login();
+	}
 }
 </script>
 </body>

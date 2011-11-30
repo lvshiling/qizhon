@@ -109,6 +109,9 @@ public class BaseAction extends ActionSupport {
     /** 页面ID */
     protected Integer pageId = null;
     
+    /** 加密消息 */
+    protected String emsg;
+    
     /** 模式开关 */
     protected String mode;
     
@@ -469,5 +472,13 @@ public class BaseAction extends ActionSupport {
 
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+
+	public String getEmsg() {
+		return emsg;
+	}
+
+	public void setEmsg(String emsg) {
+		this.emsg = emsg;
 	}
 }

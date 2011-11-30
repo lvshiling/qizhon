@@ -34,6 +34,12 @@
         <property name="pic" type="java.lang.String">
             <column name="pic" />
         </property>
+        <property name="hashid" type="java.lang.String">
+            <column name="hashid" />
+        </property>
+        <property name="isAdmin" type="java.lang.Integer">
+            <column name="is_admin" />
+        </property>
         <set name="userTopicSorts" inverse="true">
             <key>
                 <column name="user_id" not-null="true" />

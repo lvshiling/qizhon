@@ -20,6 +20,7 @@ import com.navigation.pojo.User;
 import com.navigation.pojo.UserCredit;
 import com.navigation.pojo.UserLink;
 import com.navigation.pojo.UserMail;
+import com.navigation.pojo.UserNews;
 import com.navigation.security.SessionUtil;
 import com.navigation.service.TopicService;
 import com.navigation.service.UserService;
@@ -65,10 +66,28 @@ public class IndexAction extends BaseAction {
 	/**
 	 * 首页
 	 */
+	@SuppressWarnings("unchecked")
 	public String index() throws Exception {
 		// 获取直播用户
-		List<User> liveList = userService.getLiveUserList(10);
+		Object[] objs = userService.getLiveUserList(11);
+
+		User recUser = (User) objs[0];
+		this.getRequest().setAttribute("recUser", recUser);
+
+		List<User> liveList = (List<User>) objs[1];
 		this.getRequest().setAttribute("liveList", liveList);
+
+		List<UserNews> publicUserNews = userService.getPublicUserNews(8, null);
+		this.getRequest().setAttribute("publicUserNews", publicUserNews);
+
+		try {
+			if (publicUserNews != null && !publicUserNews.isEmpty()) {
+				long timeFlag = publicUserNews.get(0).getUpdateTime().getTime();
+				this.getRequest().setAttribute("timeFlag", timeFlag);
+			}
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 
 		// 获取排行榜
 		List<UserCredit> starList = userService.getUserEarnCreditList(8);

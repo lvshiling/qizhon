@@ -13,9 +13,12 @@ import org.springframework.transaction.annotation.Transactional;
 import weibo4j.http.AccessToken;
 
 import com.mime.qweibo.OauthKey;
+import com.navigation.domain.PageBean;
 import com.navigation.exception.ServiceException;
 import com.navigation.exception.SessionException;
 import com.navigation.pojo.Room;
+import com.navigation.pojo.Task;
+import com.navigation.pojo.TaskAccept;
 import com.navigation.pojo.User;
 import com.navigation.pojo.UserAuth;
 import com.navigation.pojo.UserCredit;
@@ -349,9 +352,9 @@ public interface UserService {
 	 * 
 	 * @param num
 	 *            获取人数
-	 * @return
+	 * @return Object[] - recommend user and liveUserList
 	 */
-	public List<User> getLiveUserList(int num);
+	public Object[] getLiveUserList(int num);
 
 	/**
 	 * 获取用户及用户账户信息
@@ -386,7 +389,7 @@ public interface UserService {
 	 * @throws ServiceException
 	 */
 	@Transactional
-	public void addAttention(Integer userId, User targetUser) throws ServiceException;
+	public Integer addAttention(Integer userId, User targetUser) throws ServiceException;
 
 	/**
 	 * 获取人气排名列表
@@ -440,6 +443,8 @@ public interface UserService {
 
 	public UserNews commentImgUserNews(Integer userId, String comment, String refImg, Integer refUid);
 
+	public List<UserNews> getUserNewsList(Integer userId, Integer p, Integer pageSize);
+
 	public List<UserAuth> getAwaitAuthList(Integer p, Integer pageSize);
 
 	public void submitAuth(Integer userId, String photoNames);
@@ -455,4 +460,34 @@ public interface UserService {
 	public List<User> randUsersWithPic(Integer userId, int num);
 
 	public Double giveScore(Integer userId, Integer scorer, Double score);
+
+	public List<User> randUsersWithPic(int num);
+
+	public PageBean getUserPicsPageBean(Integer userId, Integer p, Integer pageSize);
+
+	public Room getRoomLiveInfo(Room room);
+
+	public void updateRoomOccuCnt(Integer roomNo, Integer count);
+
+	public List<UserNews> getPublicUserNews(int num, Date afterTime);
+	
+	public void publishTask(Task task);
+	
+	public void acceptTask(TaskAccept taskAccept);
+	
+	public User getUserByHashid(String hashid);
+
+	public void updateRoom(Room room);
+
+	public UserNews taskUserNews(Integer userId, Integer taskId, String taskName, Integer status);
+
+	public List<UserAuth> getAwaitAuthList();
+
+	public void passAuth(Integer authId);
+
+	public void unpassAuth(Integer authId);
+
+	public void bindGameUser(String gmhashid, User user);
+	
+	public void bindGameUser(String gmhashid, Integer userId);
 }

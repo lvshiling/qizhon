@@ -17,5 +17,7 @@ xamppServerAdmin=1
 xamppServerPassword=DBC962202E7D4A840734FEB86E6F791D
 xamppResource=tomcat1
 red5Server=rtmp\://live.qule.com/tvshow
-
+redOrginServer=rtmp\://222.73.33.201/tvshow
 rmbLebiExchangeRate=100
+
+authCallbackBW=http://xxx.bingwang.com/xxxx.do

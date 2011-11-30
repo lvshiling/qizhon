@@ -1,7 +1,5 @@
 package com.navigation.pojo;
 
-import java.util.Date;
-
 import com.navigation.pojo.base.BaseRoom;
 
 /**
@@ -21,11 +19,6 @@ public class Room extends BaseRoom implements java.io.Serializable {
 	/** minimal constructor */
 	public Room(Integer id) {
 		super(id);
-	}
-
-	/** full constructor */
-	public Room(Integer id, Integer roomNo, Integer userId, String roomName, Date createTime) {
-		super(id, roomNo, userId, roomName, createTime);
 	}
 
 }

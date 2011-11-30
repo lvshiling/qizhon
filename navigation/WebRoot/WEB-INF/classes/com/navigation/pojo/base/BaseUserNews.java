@@ -34,20 +34,6 @@ public abstract class BaseUserNews implements java.io.Serializable {
 		this.id = id;
 	}
 
-	/** full constructor */
-	public BaseUserNews(Integer id, Integer userId, String content, Integer type, Date updateTime, Integer refId, String refImg,
-			Integer refUid, Integer userGrade) {
-		this.id = id;
-		this.userId = userId;
-		this.content = content;
-		this.type = type;
-		this.updateTime = updateTime;
-		this.refId = refId;
-		this.refImg = refImg;
-		this.refUid = refUid;
-		this.userGrade = userGrade;
-	}
-
 	// Property accessors
 
 	public Integer getId() {
