@@ -1,7 +1,7 @@
 10
 
 dir
-111
+117
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/dao/base
 http://192.168.82.213/svn/navigation
 
@@ -25,40 +25,6 @@ zhuchuanyong
 
 
 e6867ff0-b6b8-0246-bd2b-9eb813c7fed0
-
-DaoSupport.java
-file
-
-
-
-
-2011-10-31T11:15:03.652000Z
-4d4207a3733fd77f841c1190b61c2865
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-33530
 
 GenericDao.java
 file
@@ -93,6 +59,40 @@ zhuchuanyong
 
 
 984
+
+DaoSupport.java
+file
+
+
+
+
+2011-10-31T11:15:03.652000Z
+4d4207a3733fd77f841c1190b61c2865
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+33530
 
 QueryOrder.java
 file
@@ -196,40 +196,6 @@ zhuchuanyong
 
 6962
 
-SqlBuilder.java
-file
-
-
-
-
-2011-10-31T11:15:03.668000Z
-bfa8cc08ed57e714e630508dbcc88e66
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3498
-
 TransactionUtils.java
 file
 
@@ -263,6 +229,40 @@ zhuchuanyong
 
 
 2398
+
+SqlBuilder.java
+file
+
+
+
+
+2011-10-31T11:15:03.668000Z
+bfa8cc08ed57e714e630508dbcc88e66
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3498
 
 LazyLoadUtil.java
 file

@@ -117,12 +117,12 @@
 			</a>
 		</div>
 		<div class="video">
-			<p class="title">最热"求包养"美眉</p>
+			<p class="title">最热"陪玩"美眉</p>
 			<a href="${domain}/task/center.do">
 				<img src="${domain }/images/video/slide/photo02.jpg" alt="" class="bigImg" />
 				<span class="clearfix">
 					<strong class="name">☜开芯格格☞</strong>
-					<strong class="number">有89人包养她</strong>
+					<strong class="number">有89人想和她玩</strong>
 					<strong class="grade">陪玩游戏名: 兵王</strong>
 				</span>
 			</a>

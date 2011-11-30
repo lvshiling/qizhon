@@ -12,6 +12,9 @@ import org.jivesoftware.smackx.muc.MultiUserChat;
 
 import com.navigation.security.SessionUtil;
 
+/**
+ * @author Alex
+ */
 public class ChatRoomUtil {
 
 	/**

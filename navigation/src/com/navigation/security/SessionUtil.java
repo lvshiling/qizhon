@@ -48,12 +48,17 @@ public class SessionUtil {
 		config.setReconnectionAllowed(true);
 		conn = new XMPPConnection(config);
 		try {
-			System.out.println("xmpp connecting!");
+			System.out.println("init xmpp connecting!"+'|'+Constants.getInstance().xampp_resource);
 			conn.connect();
-			conn.login(Constants.getInstance().xampp_admin, Constants.getInstance().xampp_password);
-			System.out.println("xmpp connected! " + conn.isAuthenticated());
+			conn.login(Constants.getInstance().xampp_admin, 
+					Constants.getInstance().xampp_password,
+					Constants.getInstance().xampp_resource
+					);
+			System.out.println("init xmpp connected! " + conn.isAuthenticated());
 		} catch (XMPPException e) {
 			e.printStackTrace();
+			conn.disconnect();
+			conn = null;
 		}
 	}
 
@@ -77,12 +82,12 @@ public class SessionUtil {
 	 * @throws XMPPException
 	 */
 	public static Connection getConnection(String name, String password, String resource) throws XMPPException {
-		if (conn == null || !conn.isConnected()) {
+		if (conn == null || !conn.isConnected() || !conn.isAuthenticated()) {
 			ConnectionConfiguration config = new ConnectionConfiguration(Constants.getInstance().xampp_server,
 					Constants.getInstance().xampp_port);
 			config.setReconnectionAllowed(true);
 			conn = new XMPPConnection(config);
-			System.out.println("xmpp connecting!");
+			System.out.println("xmpp connecting!"+"|"+resource);
 			conn.connect();
 			conn.login(name, password, resource);
 			System.out.println("xmpp connected! " + conn.isAuthenticated());

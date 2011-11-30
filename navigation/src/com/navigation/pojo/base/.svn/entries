@@ -1,7 +1,7 @@
 10
 
 dir
-111
+117
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/pojo/base
 http://192.168.82.213/svn/navigation
 
@@ -502,40 +502,6 @@ zhuchuanyong
 
 4792
 
-BaseGameArea.java
-file
-
-
-
-
-2011-10-31T11:15:04.121000Z
-ab23dc03164dacb860809d3f5feea7bb
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3615
-
 BaseTask.java
 file
 
@@ -569,6 +535,40 @@ zhuchuanyong
 
 
 2804
+
+BaseGameArea.java
+file
+
+
+
+
+2011-10-31T11:15:04.121000Z
+ab23dc03164dacb860809d3f5feea7bb
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3615
 
 BaseUserRecordVideo.java
 file
@@ -706,40 +706,6 @@ zhuchuanyong
 
 5136
 
-BaseTag.java
-file
-
-
-
-
-2011-10-31T11:15:04.090000Z
-e978f06f9e0213843b28f71f9d4226c5
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3005
-
 BaseUserNews.java
 file
 
@@ -774,16 +740,16 @@ zhuchuanyong
 
 1902
 
-BaseUserScoreLog.java
+BaseTag.java
 file
 
 
 
 
-2011-11-09T05:45:19.549007Z
-f3d42120b5c08f8f7c0d6a629afcebfa
-2011-11-04T07:27:21.789471Z
-59
+2011-10-31T11:15:04.090000Z
+e978f06f9e0213843b28f71f9d4226c5
+2011-09-14T11:52:49.271196Z
+3
 zhuchuanyong
 
 
@@ -806,41 +772,7 @@ zhuchuanyong
 
 
 
-1474
-
-BaseRoom.java
-file
-
-
-
-
-2011-11-30T02:42:58.587035Z
-d4156e9918c4619f588de37e2dfaf97a
-2011-11-25T07:57:09.240091Z
-97
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1644
+3005
 
 BaseNews.java
 file
@@ -876,16 +808,16 @@ zhuchuanyong
 
 3563
 
-BaseUserMail.java
+BaseRoom.java
 file
 
 
 
 
-2011-10-31T11:15:04.106000Z
-fb858662b08dc96a2270804195d73280
-2011-09-14T11:52:49.271196Z
-3
+2011-11-30T02:42:58.587035Z
+d4156e9918c4619f588de37e2dfaf97a
+2011-11-25T07:57:09.240091Z
+97
 zhuchuanyong
 
 
@@ -908,7 +840,41 @@ zhuchuanyong
 
 
 
-4468
+1644
+
+BaseUserScoreLog.java
+file
+
+
+
+
+2011-11-09T05:45:19.549007Z
+f3d42120b5c08f8f7c0d6a629afcebfa
+2011-11-04T07:27:21.789471Z
+59
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1474
 
 BaseUserLogState.java
 file
@@ -944,14 +910,14 @@ zhuchuanyong
 
 4833
 
-BaseUserStock.java
+BaseUserMail.java
 file
 
 
 
 
 2011-10-31T11:15:04.106000Z
-e4d0aaf504d78f1ba26a52ca509dc59d
+fb858662b08dc96a2270804195d73280
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -976,7 +942,7 @@ zhuchuanyong
 
 
 
-2857
+4468
 
 BaseTaskAccept.java
 file
@@ -1012,14 +978,14 @@ zhuchuanyong
 
 2166
 
-BaseUserTopicSort.java
+BaseUserStock.java
 file
 
 
 
 
 2011-10-31T11:15:04.106000Z
-368c4bfdcb5743d2fdb1c1c4cad5b2d9
+e4d0aaf504d78f1ba26a52ca509dc59d
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -1044,7 +1010,7 @@ zhuchuanyong
 
 
 
-2923
+2857
 
 BaseUserMsg.java
 file
@@ -1079,6 +1045,40 @@ zhuchuanyong
 
 
 3778
+
+BaseUserTopicSort.java
+file
+
+
+
+
+2011-10-31T11:15:04.106000Z
+368c4bfdcb5743d2fdb1c1c4cad5b2d9
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2923
 
 BaseUserInfo.java
 file

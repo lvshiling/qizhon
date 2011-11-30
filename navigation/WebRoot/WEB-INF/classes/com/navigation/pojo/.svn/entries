@@ -1,7 +1,7 @@
 10
 
 dir
-111
+117
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/navigation/pojo
 http://192.168.82.213/svn/navigation
 
@@ -162,40 +162,6 @@ zhuchuanyong
 
 692
 
-UserMsg.hbm.xml
-file
-
-
-
-
-2011-10-31T11:15:03.965000Z
-f7f9945e13aa7cedac692ae6aa51f535
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1207
-
 UserTopicSort.hbm.xml
 file
 
@@ -229,6 +195,40 @@ zhuchuanyong
 
 
 892
+
+UserMsg.hbm.xml
+file
+
+
+
+
+2011-10-31T11:15:03.965000Z
+f7f9945e13aa7cedac692ae6aa51f535
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1207
 
 UserNotice.java
 file
@@ -298,14 +298,14 @@ zhuchuanyong
 
 1000
 
-UserTopicSort.java
+UserGameArea.hbm.xml
 file
 
 
 
 
-2011-11-11T11:12:22.045499Z
-707df3c1b7deb999eaa01f7bf7ef16af
+2011-10-31T11:15:03.996000Z
+52fa7b6b0d7a774ead9e6f178bc75b1e
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -330,7 +330,7 @@ zhuchuanyong
 
 
 
-425
+1501
 
 UserMsg.java
 file
@@ -366,14 +366,14 @@ zhuchuanyong
 
 395
 
-UserGameArea.hbm.xml
+UserTopicSort.java
 file
 
 
 
 
-2011-10-31T11:15:03.996000Z
-52fa7b6b0d7a774ead9e6f178bc75b1e
+2011-11-11T11:12:22.045499Z
+707df3c1b7deb999eaa01f7bf7ef16af
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -398,41 +398,7 @@ zhuchuanyong
 
 
 
-1501
-
-FileSearchConfig.java
-file
-
-
-
-
-2011-11-11T11:12:22.092373Z
-dfe80c35facde2d42bad4b28c1cd9563
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-440
+425
 
 UserArea.hbm.xml
 file
@@ -467,6 +433,40 @@ zhuchuanyong
 
 
 850
+
+FileSearchConfig.java
+file
+
+
+
+
+2011-11-11T11:12:22.092373Z
+dfe80c35facde2d42bad4b28c1cd9563
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+440
 
 UserLink.java
 file
@@ -1318,16 +1318,16 @@ zhuchuanyong
 
 955
 
-UserScoreLog.hbm.xml
+News.hbm.xml
 file
 
 
 
 
-2011-11-30T02:42:52.633948Z
-273d3e769a50f73534617aadbf975a4f
-2011-11-25T07:57:09.240091Z
-97
+2011-10-31T11:15:03.949000Z
+397e7c543f5cbf65e2931d0448ec0c70
+2011-09-14T11:52:49.271196Z
+3
 zhuchuanyong
 
 
@@ -1350,41 +1350,7 @@ zhuchuanyong
 
 
 
-1150
-
-UserAuth.java
-file
-
-
-
-
-2011-11-11T11:12:22.186122Z
-47a0b7cefa38b770d2efc6cb822da34e
-2011-11-02T03:52:58.739980Z
-47
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-640
+1108
 
 Room.hbm.xml
 file
@@ -1420,16 +1386,16 @@ zhuchuanyong
 
 1268
 
-News.hbm.xml
+UserAuth.java
 file
 
 
 
 
-2011-10-31T11:15:03.949000Z
-397e7c543f5cbf65e2931d0448ec0c70
-2011-09-14T11:52:49.271196Z
-3
+2011-11-11T11:12:22.186122Z
+47a0b7cefa38b770d2efc6cb822da34e
+2011-11-02T03:52:58.739980Z
+47
 zhuchuanyong
 
 
@@ -1452,7 +1418,41 @@ zhuchuanyong
 
 
 
-1108
+640
+
+UserScoreLog.hbm.xml
+file
+
+
+
+
+2011-11-30T02:42:52.633948Z
+273d3e769a50f73534617aadbf975a4f
+2011-11-25T07:57:09.240091Z
+97
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1150
 
 UserRecordVideo.java
 file
@@ -1624,16 +1624,16 @@ zhuchuanyong
 
 375
 
-User.java
+UserInfo.hbm.xml
 file
 
 
 
 
-2011-11-11T11:12:22.295496Z
-f9aa030a2b2beb810a8027834082d4a3
-2011-11-04T07:27:21.789471Z
-59
+2011-10-31T11:15:03.965000Z
+8a60bd116fc60a05b3f5be836f895d45
+2011-10-14T02:40:29.229228Z
+34
 zhuchuanyong
 
 
@@ -1656,7 +1656,7 @@ zhuchuanyong
 
 
 
-1902
+1751
 
 TopicReply.hbm.xml
 file
@@ -1692,16 +1692,16 @@ zhuchuanyong
 
 1512
 
-UserInfo.hbm.xml
+User.java
 file
 
 
 
 
-2011-10-31T11:15:03.965000Z
-8a60bd116fc60a05b3f5be836f895d45
-2011-10-14T02:40:29.229228Z
-34
+2011-11-11T11:12:22.295496Z
+f9aa030a2b2beb810a8027834082d4a3
+2011-11-04T07:27:21.789471Z
+59
 zhuchuanyong
 
 
@@ -1724,7 +1724,7 @@ zhuchuanyong
 
 
 
-1751
+1902
 
 FileSearchConfig.hbm.xml
 file
@@ -1862,40 +1862,6 @@ zhuchuanyong
 
 933
 
-UserVisitLog.java
-file
-
-
-
-
-2011-11-11T11:12:22.326745Z
-49bd552220e3065413e5618eefee86b7
-2011-09-16T09:59:11.711376Z
-7
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-685
-
 UserCreditLog.hbm.xml
 file
 
@@ -1929,6 +1895,40 @@ zhuchuanyong
 
 
 1553
+
+UserVisitLog.java
+file
+
+
+
+
+2011-11-11T11:12:22.326745Z
+49bd552220e3065413e5618eefee86b7
+2011-09-16T09:59:11.711376Z
+7
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+685
 
 FileGpass.hbm.xml
 file

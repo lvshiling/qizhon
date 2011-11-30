@@ -1,7 +1,7 @@
 10
 
 dir
-111
+117
 http://192.168.82.213/svn/navigation/trunk/release-1.0/WebRoot/images/video
 http://192.168.82.213/svn/navigation
 
@@ -25,40 +25,6 @@ zhuchuanyong
 
 
 e6867ff0-b6b8-0246-bd2b-9eb813c7fed0
-
-send_btn.png
-file
-
-
-
-
-2011-10-31T11:14:48.621000Z
-970c0630d0bfb1f54740ed128c1b5b72
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2151
 
 showbox_top.gif
 file
@@ -93,6 +59,40 @@ has-props
 
 
 1499
+
+send_btn.png
+file
+
+
+
+
+2011-10-31T11:14:48.621000Z
+970c0630d0bfb1f54740ed128c1b5b72
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2151
 
 release
 dir
@@ -131,40 +131,6 @@ has-props
 
 2890
 
-msg_tg.gif
-file
-
-
-
-
-2011-10-31T11:14:48.621000Z
-78e2cc07cc01b367dc869f6a183e2818
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-113
-
 ico_videosure1.gif
 file
 
@@ -199,17 +165,17 @@ has-props
 
 786
 
-ico_img2.gif
+msg_tg.gif
 file
 
 
 
 
-2011-11-09T05:40:52.413511Z
-ef1503ee06249c38e1a21fdb972d8ae2
-2011-11-02T03:58:01.601293Z
-49
-xuguocai
+2011-10-31T11:14:48.621000Z
+78e2cc07cc01b367dc869f6a183e2818
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
 has-props
 
 
@@ -231,7 +197,7 @@ has-props
 
 
 
-1718
+113
 
 sh_kaixin.jpg
 file
@@ -266,6 +232,40 @@ has-props
 
 
 835
+
+ico_img2.gif
+file
+
+
+
+
+2011-11-09T05:40:52.413511Z
+ef1503ee06249c38e1a21fdb972d8ae2
+2011-11-02T03:58:01.601293Z
+49
+xuguocai
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1718
 
 sh_baidu.jpg
 file
@@ -1092,40 +1092,6 @@ has-props
 
 1468
 
-on_bg.png
-file
-
-
-
-
-2011-11-09T05:40:52.444760Z
-4dac342ddf69d90f7f30ecf6572c4948
-2011-11-02T03:53:07.880663Z
-48
-zhuchuanyong
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-183
-
 medal_2.gif
 file
 
@@ -1159,6 +1125,40 @@ has-props
 
 
 1498
+
+on_bg.png
+file
+
+
+
+
+2011-11-09T05:40:52.444760Z
+4dac342ddf69d90f7f30ecf6572c4948
+2011-11-02T03:53:07.880663Z
+48
+zhuchuanyong
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+183
 
 medal_3.gif
 file
@@ -1228,14 +1228,14 @@ has-props
 
 887
 
-att_btn.png
+diamond_1.png
 file
 
 
 
 
 2011-10-31T11:14:48.731000Z
-a71ec09fa2a60896553dbf33813c9cba
+14f6b95fbc43594f6d8e5dd3207a7469
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -1260,7 +1260,7 @@ has-props
 
 
 
-2271
+3413
 
 chatbox_top.gif
 file
@@ -1296,14 +1296,14 @@ has-props
 
 70
 
-diamond_1.png
+att_btn.png
 file
 
 
 
 
 2011-10-31T11:14:48.731000Z
-14f6b95fbc43594f6d8e5dd3207a7469
+a71ec09fa2a60896553dbf33813c9cba
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -1328,7 +1328,7 @@ has-props
 
 
 
-3413
+2271
 
 diamond_2.png
 file
@@ -1364,17 +1364,17 @@ has-props
 
 3556
 
-fl.jpg
+diamond_3.png
 file
 
 
 
 
-2011-11-09T05:40:52.444760Z
-97e735466a490ff3fa355fb682f17bfe
-2011-11-02T03:58:01.601293Z
-49
-xuguocai
+2011-10-31T11:14:48.746000Z
+120f5cdd2310e7552e689adabe7a2925
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
 has-props
 
 
@@ -1396,41 +1396,7 @@ has-props
 
 
 
-9247
-
-bg_roomheader.png
-file
-
-
-
-
-2011-11-09T05:40:52.444760Z
-410efe413c8b35c9b13390b9efa92094
-2011-11-07T06:16:47.209725Z
-71
-xuguocai
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-303
+3617
 
 big_01.jpg
 file
@@ -1466,17 +1432,17 @@ has-props
 
 9145
 
-diamond_3.png
+bg_roomheader.png
 file
 
 
 
 
-2011-10-31T11:14:48.746000Z
-120f5cdd2310e7552e689adabe7a2925
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
+2011-11-09T05:40:52.444760Z
+410efe413c8b35c9b13390b9efa92094
+2011-11-07T06:16:47.209725Z
+71
+xuguocai
 has-props
 
 
@@ -1498,7 +1464,41 @@ has-props
 
 
 
-3617
+303
+
+fl.jpg
+file
+
+
+
+
+2011-11-09T05:40:52.444760Z
+97e735466a490ff3fa355fb682f17bfe
+2011-11-02T03:58:01.601293Z
+49
+xuguocai
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9247
 
 msg_icon.png
 file
@@ -1568,40 +1568,6 @@ has-props
 
 23439
 
-ico_videoauth.gif
-file
-
-
-
-
-2011-11-09T05:40:52.444760Z
-7c7f09fa9af6a43dc7e09011df47d41b
-2011-11-02T03:53:07.880663Z
-48
-zhuchuanyong
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-789
-
 login_button.png
 file
 
@@ -1636,20 +1602,17 @@ has-props
 
 2134
 
-gift
-dir
-
-bg_roomheader-right.png
+ico_videoauth.gif
 file
 
 
 
 
 2011-11-09T05:40:52.444760Z
-238a039062c99e5aeda3d882810bcc57
-2011-11-07T07:07:40.419982Z
-74
-xuguocai
+7c7f09fa9af6a43dc7e09011df47d41b
+2011-11-02T03:53:07.880663Z
+48
+zhuchuanyong
 has-props
 
 
@@ -1671,7 +1634,10 @@ has-props
 
 
 
-42686
+789
+
+gift
+dir
 
 smile_face.gif
 file
@@ -1707,6 +1673,40 @@ has-props
 
 1207
 
+bg_roomheader-right.png
+file
+
+
+
+
+2011-11-09T05:40:52.444760Z
+238a039062c99e5aeda3d882810bcc57
+2011-11-07T07:07:40.419982Z
+74
+xuguocai
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+42686
+
 rank_1.png
 file
 
@@ -1740,40 +1740,6 @@ has-props
 
 
 641
-
-bg_li.png
-file
-
-
-
-
-2011-11-09T05:40:52.444760Z
-22fd5172726d3f99c525e582878d88f0
-2011-11-07T06:16:47.209725Z
-71
-xuguocai
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-412
 
 rank_2.png
 file
@@ -1809,17 +1775,17 @@ has-props
 
 705
 
-charge_btn.gif
+bg_li.png
 file
 
 
 
 
-2011-10-31T11:14:48.809000Z
-85b463e92c4fc58878b09951d03dd2e4
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
+2011-11-09T05:40:52.444760Z
+22fd5172726d3f99c525e582878d88f0
+2011-11-07T06:16:47.209725Z
+71
+xuguocai
 has-props
 
 
@@ -1841,7 +1807,10 @@ has-props
 
 
 
-943
+412
+
+slide
+dir
 
 rank_3.png
 file
@@ -1877,17 +1846,14 @@ has-props
 
 685
 
-slide
-dir
-
-rank_4.png
+charge_btn.gif
 file
 
 
 
 
-2011-10-31T11:14:49.074000Z
-30c46f47197a2415fb188136cfb84f61
+2011-10-31T11:14:48.809000Z
+85b463e92c4fc58878b09951d03dd2e4
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -1912,7 +1878,7 @@ has-props
 
 
 
-457
+943
 
 btn_up_ph.png
 file
@@ -1947,6 +1913,40 @@ has-props
 
 
 503
+
+rank_4.png
+file
+
+
+
+
+2011-10-31T11:14:49.074000Z
+30c46f47197a2415fb188136cfb84f61
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+457
 
 ico_nosound.png
 file

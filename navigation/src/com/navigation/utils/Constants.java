@@ -56,6 +56,9 @@ public class Constants {
 	
 	@Value("#{constant.red5Server}")
 	public String red5_server;
+	
+	@Value("#{constant.redOrginServer}")
+	public String red_orgin_server;
 
 	@Value("#{constant.recordTempPath}")
 	public String record_temp_path;

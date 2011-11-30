@@ -1217,6 +1217,7 @@ public class UserAction extends BaseAction {
 		this.getRequest().setAttribute("room", room);
 		this.getRequest().setAttribute("xamppServer", Constants.getInstance().xampp_server);
 		this.getRequest().setAttribute("red5Server", Constants.getInstance().red5_server);
+		this.getRequest().setAttribute("redOrginServer", Constants.getInstance().red_orgin_server);
 		this.getRequest().setAttribute("roomKey", roomKey);
 		this.getRequest().setAttribute("pageId", Constant.PAGE_ID_CHAT);
 

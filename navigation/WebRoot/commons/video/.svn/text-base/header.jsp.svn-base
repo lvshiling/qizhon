@@ -16,7 +16,7 @@
 					<a href="javascript:login();void(0);" title="帐户登录">登录</a>|<a href="javascript:register();void(0);" title="注册本站用户">注册</a>|<a href="/">视频客服</a>
 				</s:else>
 			</div>
-			<div id="navbar"><a id="nv_index" href="/" class="lit">首页</a>|<a id="nv_rank" href="/rank/rank.do">排行榜</a>|<a id="nv_contest" target="_blank" href="${domain}/contest/bingwang.do">选美大赛</a>|<a id="nv_task" href="${domain}/task/index.do">任务</a>|<a id="nv_auth" target="_blank" href="${domain}/user/auth.do">视频认证</a>|<a id="nv_charge" href="${domain}/pay/topay.do" target="_blank">充值乐币</a></div>
+			<div id="navbar"><a id="nv_index" href="/" class="lit">首页</a>|<a id="nv_rank" href="/rank/rank.do">排行榜</a>|<a id="nv_contest" target="_blank" href="${domain}/contest/bingwang.do">选美大赛</a>|<a id="nv_task" href="${domain}/task/index.do">任务</a>|<a id="nv_auth" target="_blank" href="${domain}/user/auth.do">视频认证</a>|<a id="nv_charge" href="${domain}/pay/topay.do" target="_blank">充值乐币</a>|<a id="nv_charge" href="${domain}/jiasu/index.do" target="_blank">趣乐加速</a></div>
 		</div>
 	</div>
 </div>

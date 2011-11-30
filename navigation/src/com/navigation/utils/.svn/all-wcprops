@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/utils
+/svn/navigation/!svn/ver/117/trunk/release-1.0/src/com/navigation/utils
 END
 HTTPUtils.java
 K 25
@@ -36,8 +36,8 @@ END
 ChatRoomUtil.java
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/ChatRoomUtil.java
+V 89
+/svn/navigation/!svn/ver/117/trunk/release-1.0/src/com/navigation/utils/ChatRoomUtil.java
 END
 RegexpUtils.java
 K 25
@@ -55,7 +55,7 @@ Constants.java
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/navigation/!svn/ver/110/trunk/release-1.0/src/com/navigation/utils/Constants.java
+/svn/navigation/!svn/ver/112/trunk/release-1.0/src/com/navigation/utils/Constants.java
 END
 Convertor.java
 K 25
@@ -93,17 +93,17 @@ svn:wc:ra_dav:version-url
 V 87
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/GenericUtils.java
 END
-StackTracePrint.java
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/StackTracePrint.java
-END
 CacheUtil.java
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/CacheUtil.java
+END
+StackTracePrint.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/StackTracePrint.java
 END
 PageBean.java
 K 25
@@ -111,17 +111,17 @@ svn:wc:ra_dav:version-url
 V 83
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/PageBean.java
 END
-IdGenerator.java
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/IdGenerator.java
-END
 WeiBoUtil.java
 K 25
 svn:wc:ra_dav:version-url
 V 84
 /svn/navigation/!svn/ver/3/trunk/release-1.0/src/com/navigation/utils/WeiBoUtil.java
+END
+IdGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/IdGenerator.java
 END
 StringUtil.java
 K 25
@@ -180,8 +180,8 @@ END
 CreditUtils.java
 K 25
 svn:wc:ra_dav:version-url
-V 87
-/svn/navigation/!svn/ver/97/trunk/release-1.0/src/com/navigation/utils/CreditUtils.java
+V 88
+/svn/navigation/!svn/ver/116/trunk/release-1.0/src/com/navigation/utils/CreditUtils.java
 END
 DateUtils.java
 K 25

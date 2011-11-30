@@ -1,7 +1,7 @@
 10
 
 dir
-111
+117
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/workflow/web
 http://192.168.82.213/svn/navigation
 
@@ -332,40 +332,6 @@ zhuchuanyong
 
 3583
 
-DetailModel.java
-file
-
-
-
-
-2011-11-11T11:12:26.045448Z
-db8530ff499b6ff92c9713ea2ef4cef2
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8762
-
 GetHrBylogonnameResponse.java
 file
 
@@ -400,14 +366,14 @@ zhuchuanyong
 
 4254
 
-DealWebService.java
+DetailModel.java
 file
 
 
 
 
-2011-11-11T11:12:26.092322Z
-76afcc272998baf827d8d392b6f9b889
+2011-11-11T11:12:26.045448Z
+db8530ff499b6ff92c9713ea2ef4cef2
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -432,7 +398,7 @@ zhuchuanyong
 
 
 
-585
+8762
 
 WorkflowServiceHttpBindingStub.java
 file
@@ -467,6 +433,40 @@ zhuchuanyong
 
 
 17499
+
+DealWebService.java
+file
+
+
+
+
+2011-11-11T11:12:26.092322Z
+76afcc272998baf827d8d392b6f9b889
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+585
 
 GetTodolistSizeByUsername.java
 file

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 用户账户等级工具
  * 
- * @author zhuchuanyong
+ * @author Alex
  */
 public class CreditUtils {
 

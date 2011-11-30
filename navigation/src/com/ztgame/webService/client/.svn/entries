@@ -1,7 +1,7 @@
 10
 
 dir
-111
+117
 http://192.168.82.213/svn/navigation/trunk/release-1.0/src/com/ztgame/webService/client
 http://192.168.82.213/svn/navigation
 
@@ -60,40 +60,6 @@ zhuchuanyong
 
 34711
 
-Wsdl_passport.java
-file
-
-
-
-
-2011-10-31T11:15:06.012000Z
-a1164d05ad993c8e58dfa9e378c5c276
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-602
-
 AdUserMainInfo.java
 file
 
@@ -128,14 +94,14 @@ zhuchuanyong
 
 22289
 
-AdDn.java
+Wsdl_passport.java
 file
 
 
 
 
 2011-10-31T11:15:06.012000Z
-46f678ca2bbc886c625e5ee7be31d165
+a1164d05ad993c8e58dfa9e378c5c276
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -160,7 +126,7 @@ zhuchuanyong
 
 
 
-6642
+602
 
 ReturnQueryAdUserPartInfoByMuti.java
 file
@@ -196,6 +162,40 @@ zhuchuanyong
 
 4756
 
+AdDn.java
+file
+
+
+
+
+2011-10-31T11:15:06.012000Z
+46f678ca2bbc886c625e5ee7be31d165
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6642
+
 AdUserModifyInfo.java
 file
 
@@ -229,74 +229,6 @@ zhuchuanyong
 
 
 13262
-
-Wsdl_passportPortType.java
-file
-
-
-
-
-2011-10-31T11:15:06.027000Z
-5f410d947f0cdfb94573517567ff4883
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3133
-
-ReturnQueryAdUserPartInfoByStaffNum.java
-file
-
-
-
-
-2011-10-31T11:15:06.027000Z
-9c7400450580fd01b96bc90f614d120f
-2011-09-14T11:52:49.271196Z
-3
-zhuchuanyong
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4800
 
 ReturnValidateAdByPasswd.java
 file
@@ -332,14 +264,14 @@ zhuchuanyong
 
 6069
 
-ReturnQueryAdUserByNameFix.java
+ReturnQueryAdUserPartInfoByStaffNum.java
 file
 
 
 
 
-2011-10-31T11:15:06.043000Z
-6e999ee4418507ad088e1b838429fd84
+2011-10-31T11:15:06.027000Z
+9c7400450580fd01b96bc90f614d120f
 2011-09-14T11:52:49.271196Z
 3
 zhuchuanyong
@@ -364,7 +296,41 @@ zhuchuanyong
 
 
 
-4701
+4800
+
+Wsdl_passportPortType.java
+file
+
+
+
+
+2011-10-31T11:15:06.027000Z
+5f410d947f0cdfb94573517567ff4883
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3133
 
 ReturnSendSMS.java
 file
@@ -399,6 +365,40 @@ zhuchuanyong
 
 
 4705
+
+ReturnQueryAdUserByNameFix.java
+file
+
+
+
+
+2011-10-31T11:15:06.043000Z
+6e999ee4418507ad088e1b838429fd84
+2011-09-14T11:52:49.271196Z
+3
+zhuchuanyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4701
 
 ReturnValidateAdOnlyByPasswd.java
 file

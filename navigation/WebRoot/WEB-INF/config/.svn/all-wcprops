@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/config
+/svn/navigation/!svn/ver/112/trunk/release-1.0/WebRoot/WEB-INF/config
 END
 constant.properties
 K 25
@@ -19,5 +19,5 @@ constant_local.properties
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svn/navigation/!svn/ver/110/trunk/release-1.0/WebRoot/WEB-INF/config/constant_local.properties
+/svn/navigation/!svn/ver/112/trunk/release-1.0/WebRoot/WEB-INF/config/constant_local.properties
 END
